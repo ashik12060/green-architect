@@ -53,7 +53,7 @@ const SmallHeader = () => {
           {/* Dark Mode Toggle Button */}
           <div
             className={`w-12 h-6 flex items-center rounded-full p-1 cursor-pointer transition duration-300 ${
-              enabled ? "bg-blue-600" : "bg-gray-300"
+              enabled ? "bg-green-600" : "bg-gray-300"
             }`}
             onClick={toggleSwitch}
           >
