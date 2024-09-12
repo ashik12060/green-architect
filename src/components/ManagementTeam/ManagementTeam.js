@@ -1,6 +1,6 @@
 import React from 'react';
 import team from '../../assets/team.jpg'
-import Footer from '../Shared/Footer/Footer';
+
 
 const ManagementTeam = () => {
   return (
@@ -99,7 +99,7 @@ const ManagementTeam = () => {
         </div>
       </div>
     </div>
-    <Footer />
+    
     </>
   );
 };
