@@ -41,7 +41,7 @@ const SmallHeader = () => {
           <a
             href="/"
             className={`hover:${
-              enabled ? "text-blue-300" : "text-blue-500"
+              enabled ? "text-green-300" : "text-green-500"
             }`}
           >
             Logo
@@ -124,11 +124,11 @@ const SmallHeader = () => {
           <button
             className={`px-4 py-1 rounded ${
               enabled
-                ? "bg-gray-700 text-white hover:bg-blue-600"
-                : "bg-green-700 text-white hover:bg-blue-500 hover:text-white"
+                ? "bg-gray-700 text-white hover:bg-green-600"
+                : "bg-green-700 text-white hover:bg-green-500 hover:text-white"
             } transition duration-300`}
           >
-            Sign Up
+            Buy Now
           </button>
         </div>
       </div>
