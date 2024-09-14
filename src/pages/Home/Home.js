@@ -6,12 +6,14 @@ import MiddleHeader from '../../components/Shared/Headers/MiddleHeader'
 import Footer from '../../components/Shared/Footer/Footer'
 import Faq from '../../components/Faq/Faq'
 import Carousel from '../../components/Carousel/Carousel'
+import Header from '../../components/Shared/Headers/Header'
 
 const Home = () => {
   return (
     <>
     <SmallHeader />
     <MiddleHeader />
+    <Header />
     <Carousel />
     <ProjectCount />
     <Faq />
