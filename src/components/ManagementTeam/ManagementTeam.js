@@ -7,7 +7,8 @@ const ManagementTeam = () => {
     <>
   
     <div className=" mx-auto px-20 py-16 bg-black">
-      <h2 className="text-3xl font-bold text-center mb-8">MANAGEMENT TEAM</h2>
+      <h2 className="text-3xl font-bold text-center text-white mb-32 "><span className='border-b-2'>MANAGEMENT TEAM </span> </h2>
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-20 gap-x-6">
         <div className="rounded-lg shadow-md bg-white p-4 text-center">
           <div className="flex items-center -mt-16 justify-center mb-4">

@@ -9,14 +9,14 @@ function Header() {
           
         </div>
         <nav className="flex space-x-6">
-          <a href="/about">Home</a>
-          <a href="/properties">Services</a>
-          <a href="/landowners">Projects</a>
-          <a href="/businesses">Products</a>
-          <a href="/construction-status">Research & Analysis</a>
-          <a href="/construction-status">Blog</a>
+          <Link to='/'>Home</Link>
+          <Link to='/services'>Services</Link>
+          <Link to='/projects'>Projects</Link>
+          <Link href="/businesses">Products</Link>
+          <Link href="/construction-status">Research & Analysis</Link>
+          <Link href="/construction-status">Blog</Link>
           <Link to='/team'>Team</Link>
-          <a href="/contact">Contact</a>
+          <Link href="/contact">Contact</Link>
           
         </nav>
       </div>

@@ -4,10 +4,12 @@ import Footer from '../../components/Shared/Footer/Footer'
 import Header from '../../components/Shared/Headers/Header'
 import CoverPhoto from '../../components/Shared/CoverPhoto/CoverPhoto'
 import ProjectCount from '../../components/ProjectCount'
+import SmallHeader from '../../components/Shared/Headers/SmallHeader'
 
 const Team = () => {
   return (
     <>
+    <SmallHeader />
     <Header />
     <CoverPhoto />
     <ManagementTeam />
