@@ -12,6 +12,7 @@ import OurProjects from "../../components/ProjectsComp/OurProjects";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import Videos from "../../components/Videos/Videos";
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <Videos />
 
       <ServiceCard />
       <Faq />
