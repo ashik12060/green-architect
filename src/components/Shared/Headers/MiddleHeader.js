@@ -6,7 +6,7 @@ import React from "react";
 
 const MiddleHeader = () => {
   return (
-    <header className="bg-blue-600 text-white shadow-md py-4">
+    <header className="bg-green-700 text-white shadow-md py-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo Section */}
         <div className="">

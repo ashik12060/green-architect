@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import imgg from '../../assets/23338.jpg';
+import imgg from '../../assets/architec1.jpg';
+import imgg1 from '../../assets/architect1.jpg';
+import imgg2 from '../../assets/architect2.jpg';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
@@ -7,17 +9,17 @@ import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 function SplitImageCarousel() {
   const images = [
     { src: imgg, title: "BAITUL MAMUR JAME MOSJID" },
-    { src: imgg, title: "HOTEL STAR VALLEY" },
-    { src: imgg, title: "SKY DYNE RESTAURANT" },
+    { src: imgg1, title: "HOTEL STAR VALLEY" },
+    { src: imgg2, title: "SKY DYNE RESTAURANT" },
     { src: imgg, title: "GREEN PARK" },
-    { src: imgg, title: "SUNRISE RESORT" },
-    { src: imgg, title: "BLUE SKY HOTEL" },
+    { src: imgg1, title: "SUNRISE RESORT" },
+    { src: imgg2, title: "BLUE SKY HOTEL" },
     { src: imgg, title: "OCEANIC VIEW" },
-    { src: imgg, title: "MOUNTAIN VILLA" },
-    { src: imgg, title: "CITY LIGHTS HOTEL" },
+    { src: imgg1, title: "MOUNTAIN VILLA" },
+    { src: imgg2, title: "CITY LIGHTS HOTEL" },
     { src: imgg, title: "HARBOR INN" },
-    { src: imgg, title: "DESERT OASIS" },
-    { src: imgg, title: "COASTAL ESCAPE" }
+    { src: imgg1, title: "DESERT OASIS" },
+    { src: imgg2, title: "COASTAL ESCAPE" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

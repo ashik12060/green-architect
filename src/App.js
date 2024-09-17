@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Team from "./pages/Team/Team";
 import Services from "./pages/Services/Services";
 import Projects from "./pages/Projects/Projects";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/home' element={<Home />}></Route>
+          <Route path='/about-us' element={<AboutUs />}></Route>
+
           <Route path='/team' element={<Team />}></Route>
           <Route path='/services' element={<Services />}></Route>
           <Route path='/projects' element={<Projects />}></Route>

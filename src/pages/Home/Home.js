@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import Videos from "../../components/Videos/Videos";
+import OurClients from "../../components/OurClients/OurClients";
 
 const Home = () => {
   return (
@@ -23,10 +24,11 @@ const Home = () => {
       <Carousel />
       <ProjectCount />
 
-      <div>
+      <div >
+        <h3 className='text-3xl text-center my-10 font-bold' >Our Projects</h3>
         <OurProjects />
 
-        <div className="flex items-center justify-center gap-2 mt-4">
+        <div className="flex items-center justify-center gap-2 my-10">
           <a
             href="tel:+8801711991792"
             className="text-green-500 hover:text-green-700"
@@ -45,6 +47,7 @@ const Home = () => {
       <Videos />
 
       <ServiceCard />
+      <OurClients />
       <Faq />
       <Footer />
     </>
