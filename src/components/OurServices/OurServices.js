@@ -7,7 +7,7 @@ function OurServices() {
     <>
     <ServiceCard />
 
-<div className="container mx-auto p-4">
+<div className="container mx-auto p-14">
 <h2 className="text-3xl font-bold text-center mb-10">
   Additional Services We Offer
 </h2>

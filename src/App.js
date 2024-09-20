@@ -4,6 +4,7 @@ import Team from "./pages/Team/Team";
 import Services from "./pages/Services/Services";
 import Projects from "./pages/Projects/Projects";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import Contact from "./pages/Contact/Contact";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/team' element={<Team />}></Route>
           <Route path='/services' element={<Services />}></Route>
           <Route path='/projects' element={<Projects />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -13,11 +13,11 @@ function Header() {
           <Link to='/about-us' className='hover:text-green-600 '>About Us</Link>
           <Link to='/services' className='hover:text-green-600 '>Services</Link>
           <Link to='/projects' className='hover:text-green-600 '>Projects</Link>
-          <Link href="/businesses" className='hover:text-green-600 '>Products</Link>
-          <Link href="/construction-status" className='hover:text-green-600 '>Research & Analysis</Link>
-          <Link href="/construction-status" className='hover:text-green-600 '>Blog</Link>
+          <Link to="/businesses" className='hover:text-green-600 '>Products</Link>
+          <Link to="/construction-status" className='hover:text-green-600 '>Research & Analysis</Link>
+          <Link to="/construction-status" className='hover:text-green-600 '>Blog</Link>
           <Link to='/team' className='hover:text-green-600 '>Team</Link>
-          <Link href="/contact" className='hover:text-green-600 '>Contact</Link>
+          <Link to="/contact" className='hover:text-green-600 '>Contact</Link>
           
         </nav>
       </div>
