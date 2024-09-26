@@ -1,10 +1,19 @@
+import {
+  faFacebook,
+  faLinkedin,
+  faSquareInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
+  faLocationDot,
   faMobileScreenButton,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from '../../../assets/logo/green shelter.jpeg'
 
 function Footer() {
   const [name, setName] = useState("");
@@ -24,31 +33,61 @@ function Footer() {
         <div className="flex flex-col lg:flex-row justify-evenly items-start gap-8">
           {/* Left Contact Section */}
           <div className="lg:w-1/3">
-            <h5 className="font-bold text-xl mb-4">Get in Touch</h5>
+            <img src={logo} className="rounded-full w-24 h-24" />
+
+            <div className="text-xl">
+              <nav className="space-x-6">
+                <a href="/" className="hover:text-blue-300">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="/" className="hover:text-blue-300">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </a>
+
+                <a href="/" className="hover:text-blue-300">
+                  <FontAwesomeIcon icon={faSquareInstagram} />
+                </a>
+
+                <a href="/" className="hover:text-blue-300">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a href="/" className="hover:text-blue-300">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </a>
+              </nav>
+            </div>
+            <div className="py-4">
+              <a href="/" className="hover:text-blue-300">
+                <FontAwesomeIcon icon={faLocationDot} /> Panthapath, Kalabagan,
+                Dhaka-1205
+              </a>
+            </div>
+            <h5 className="text-xl">Design Your Own World</h5>
+          </div>
+
+          {/* middle Contact Section */}
+          <div className="lg:w-1/3">
+            <h5 className="font-bold text-xl mb-4">Quick Links</h5>
             <ul className="text-gray-400 space-y-2">
               <li className="flex items-center gap-2">
-                <i className="fas fa-phone-alt"></i>
-                <a href="tel:16604" className="hover:text-white">
-                  <FontAwesomeIcon className="pe-2" icon={faPhone} />
-                  12345
-                </a>
+                <Link>About Us</Link>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-mobile-alt"></i>
-                <a href="tel:+8809813191919" className="hover:text-white">
-                  <FontAwesomeIcon
-                    className="pe-2"
-                    icon={faMobileScreenButton}
-                  />
-                  +880123456789
-                </a>
+                
+              <Link>Contact</Link>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-envelope"></i>
-                <a href="mailto:info@btibd.org" className="hover:text-white">
-                  <FontAwesomeIcon className="pe-2" icon={faEnvelope} />
-                  info@example.com
-                </a>
+              <Link>Blog</Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <Link>Services</Link>
+              </li>
+              <li className="flex items-center gap-2">
+                
+              <Link>Products</Link>
+              </li>
+              <li className="flex items-center gap-2">
+              <Link>Schedule a Meeting</Link>
               </li>
             </ul>
           </div>
@@ -98,7 +137,7 @@ function Footer() {
               </div>
               <button
                 type="submit"
-                className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md w-full"
+                className="bg-gradient-to-r from-green-500 to-emerald-700 text-white font-bold py-2 px-4 rounded-md w-full"
               >
                 Submit
               </button>
@@ -137,10 +176,11 @@ function Footer() {
         </div>
       </div>
       <div className="mt-8 border-t border-gray-700 pt-4 text-center">
-      <p className="text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} Green Shelter Design & Development. All rights reserved.
-      </p>
-    </div>
+        <p className="text-gray-400 text-sm">
+          &copy; {new Date().getFullYear()} Green Shelter Design & Development.
+          All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 }

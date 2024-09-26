@@ -21,7 +21,7 @@ export const ServiceCard = () => {
                 className="text-green-500 text-3xl"
                 icon={faBuilding}
               />
-              <h2 className="ml-2 text-xl font-bold">Architectural Design</h2>
+              <h2 className="ml-2 text-xl font-bold">Pre-Design</h2>
             </div>
             <p className="text-gray-700">
               Green Architect Provides Top-Notch Architectural Design Services,
@@ -39,7 +39,7 @@ export const ServiceCard = () => {
                 icon={faWandMagicSparkles}
               />
 
-              <h2 className="ml-2 text-xl font-bold">Interior Design</h2>
+              <h2 className="ml-2 text-xl font-bold">Design</h2>
             </div>
             <p className="text-gray-700">
               Transform Your Space into a Masterpiece with Our Expert Interior
@@ -57,7 +57,7 @@ export const ServiceCard = () => {
                 icon={faPlaceOfWorship}
               />
 
-              <h2 className="ml-2 text-xl font-bold">Structural Design</h2>
+              <h2 className="ml-2 text-xl font-bold">Build</h2>
             </div>
             <p className="text-gray-700">
               Committed to Delivering Exceptional Structural Design Services for
@@ -71,11 +71,11 @@ export const ServiceCard = () => {
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className=" items-center justify-center mb-4">
-              <FontAwesomeIcon
+            <FontAwesomeIcon
                 className="text-green-500 text-3xl"
-                icon={faCube}
+                icon={faHouseChimneyWindow}
               />
-              <h2 className="ml-2 text-xl font-bold">3D Visualisation</h2>
+              <h2 className="ml-2 text-xl font-bold">Interior</h2>
             </div>
             <p className="text-gray-700">
               Green Architect Provides Top-Notch Architectural Design Services,
@@ -88,11 +88,12 @@ export const ServiceCard = () => {
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className=" items-center justify-center mb-4">
+             
               <FontAwesomeIcon
                 className="text-green-500 text-3xl"
-                icon={faHouseChimneyWindow}
+                icon={faCube}
               />
-              <h2 className="ml-2 text-xl font-bold">House Design</h2>
+              <h2 className="ml-2 text-xl font-bold">3D Work</h2>
             </div>
             <p className="text-gray-700">
               Transform Your Space into a Masterpiece with Our Expert Interior
@@ -109,7 +110,7 @@ export const ServiceCard = () => {
                 className="text-green-500 text-3xl"
                 icon={faPlaceOfWorship}
               />
-              <h2 className="ml-2 text-xl font-bold">Construction</h2>
+              <h2 className="ml-2 text-xl font-bold">Real State</h2>
             </div>
             <p className="text-gray-700">
               Committed to Delivering Exceptional Structural Design Services for

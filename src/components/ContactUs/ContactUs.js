@@ -21,25 +21,7 @@ function ContactUs() {
           {/* Contact Details */}
           <div>
             <h2 className="text-3xl font-semibold mb-8">Contact Information</h2>
-            {/* <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-medium">Our Office</h3>
-                <p>Suite 2203, Level-R, Multicomplex, Gulshan 1, Dhaka 1212, Bangladesh</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium">Call Us</h3>
-                <p>+8801711-001726</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium">Email Us</h3>
-                <p><a href="mailto:info@architectcompany.com" className="text-green-500 hover:underline">info@architectcompany.com</a></p>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium">Working Hours</h3>
-                <p>Saturday - Thursday: 10am - 7pm</p>
-                <p>Friday: Closed</p>
-              </div>
-            </div> */}
+           
             <div className="space-y-8 p-6 rounded-lg shadow-lg">
               {/* Our Office */}
               <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">

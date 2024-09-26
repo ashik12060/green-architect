@@ -1,0 +1,6 @@
+/* Add this to your CSS file for background pattern */
+.bg-pattern {
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-size: cover;
+  }
+  

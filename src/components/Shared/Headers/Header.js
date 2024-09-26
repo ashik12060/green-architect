@@ -15,7 +15,7 @@ function Header() {
           <Link to='/projects' className='hover:text-green-600 '>Projects</Link>
           <Link to="/businesses" className='hover:text-green-600 '>Products</Link>
           <Link to="/construction-status" className='hover:text-green-600 '>Research & Analysis</Link>
-          <Link to="/construction-status" className='hover:text-green-600 '>Blog</Link>
+          <Link to="/blog" className='hover:text-green-600 '>Blog</Link>
           <Link to='/team' className='hover:text-green-600 '>Team</Link>
           <Link to="/contact" className='hover:text-green-600 '>Contact</Link>
           
