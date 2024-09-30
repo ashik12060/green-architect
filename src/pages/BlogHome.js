@@ -1,38 +1,127 @@
-import  { useEffect, useState } from 'react';
+// import  { useEffect, useState } from 'react';
+// import PostCard from '../components/PostCard';
+// import { Box, Container, Grid } from '@mui/material';
+// import moment from 'moment';
+// import Loader from '../components/Loader';
+// import { io } from 'socket.io-client';
+// import axiosInstance from './axiosInstance';
+// import Footer from '../components/Shared/Footer/Footer';
+// import Header from '../components/Shared/Headers/Header';
+// // import axiosInstance from './axiosInstance';
+
+// const socket = io('/', {
+//     reconnection: true
+// })
+
+
+
+// const BlogHome = () => {
+
+//     const [posts, setPosts] = useState([]);
+//     const [loading, setLoading] = useState(false);
+//     const [postAddLike, setPostAddLike] = useState([]);
+//     const [postRemoveLike, setPostRemoveLike] = useState([]);
+
+
+//     const showPosts = async () => {
+//         setLoading(true);
+//         try {
+//             // 
+//             const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/posts/show`);
+//             setPosts(data.posts);
+//             setLoading(false);
+//         } catch (error) {
+//         }
+//     }
+
+//     useEffect(() => {
+//         showPosts();
+//     }, []);
+
+//     useEffect(() => {
+//         socket.on('add-like', (newPosts) => {
+//             setPostAddLike(newPosts);
+//             setPostRemoveLike('');
+//         });
+//         socket.on('remove-like', (newPosts) => {
+//             setPostRemoveLike(newPosts);
+//             setPostAddLike('');
+//         });
+//     }, [])
+
+//     let uiPosts = postAddLike.length > 0 ? postAddLike : postRemoveLike.length > 0 ? postRemoveLike : posts;
+
+//     return (
+        
+//             <Box sx={{ bgColor: "#fafafa", minHeight: "100vh" }}>
+//                 <Header />
+//                 <Container sx={{ pt: 5, pb: 5, minHeight: "83vh" }}>
+//                     <Box sx={{ flexGrow: 1 }}>
+//                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+
+//                             {
+//                                 loading ? <Loader /> :
+//                                     uiPosts.map((post, index) => (
+//                                         <Grid item xs={12} sm={4} md={4} lg={4} key={index} className='overflow-hidden'>
+//                                             <PostCard
+//                                                 id={post._id}
+//                                                 title={post.title}
+//                                                 content={post.content}
+//                                                 image={post.image ? post.image.url : ''}
+//                                                 subheader={moment(post.createdAt).format('MMMM DD, YYYY')}
+//                                                 comments={post.comments.length}
+//                                                 likes={post.likes.length}
+//                                                 likesId={post.likes}
+//                                                 showPosts={showPosts}
+//                                             />
+//                                         </Grid>
+//                                     ))
+//                             }
+
+//                         </Grid>
+//                     </Box>
+
+//                 </Container>
+//                 <Footer />
+//             </Box>
+        
+//     )
+// }
+
+// export default BlogHome;
+
+
+
+import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
-import { Box, Container, Grid } from '@mui/material';
 import moment from 'moment';
 import Loader from '../components/Loader';
 import { io } from 'socket.io-client';
 import axiosInstance from './axiosInstance';
 import Footer from '../components/Shared/Footer/Footer';
 import Header from '../components/Shared/Headers/Header';
-// import axiosInstance from './axiosInstance';
 
 const socket = io('/', {
     reconnection: true
-})
-
-
+});
 
 const BlogHome = () => {
-
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [postAddLike, setPostAddLike] = useState([]);
     const [postRemoveLike, setPostRemoveLike] = useState([]);
 
-
     const showPosts = async () => {
         setLoading(true);
         try {
-            // 
             const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/posts/show`);
             setPosts(data.posts);
-            setLoading(false);
         } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
         }
-    }
+    };
 
     useEffect(() => {
         showPosts();
@@ -41,51 +130,45 @@ const BlogHome = () => {
     useEffect(() => {
         socket.on('add-like', (newPosts) => {
             setPostAddLike(newPosts);
-            setPostRemoveLike('');
+            setPostRemoveLike([]);
         });
         socket.on('remove-like', (newPosts) => {
             setPostRemoveLike(newPosts);
-            setPostAddLike('');
+            setPostAddLike([]);
         });
-    }, [])
+    }, []);
 
     let uiPosts = postAddLike.length > 0 ? postAddLike : postRemoveLike.length > 0 ? postRemoveLike : posts;
 
     return (
-        
-            <Box sx={{ bgColor: "#fafafa", minHeight: "100vh" }}>
-                <Header />
-                <Container sx={{ pt: 5, pb: 5, minHeight: "83vh" }}>
-                    <Box sx={{ flexGrow: 1 }}>
-                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-
-                            {
-                                loading ? <Loader /> :
-                                    uiPosts.map((post, index) => (
-                                        <Grid item xs={12} sm={4} md={4} lg={4} key={index} className='overflow-hidden'>
-                                            <PostCard
-                                                id={post._id}
-                                                title={post.title}
-                                                content={post.content}
-                                                image={post.image ? post.image.url : ''}
-                                                subheader={moment(post.createdAt).format('MMMM DD, YYYY')}
-                                                comments={post.comments.length}
-                                                likes={post.likes.length}
-                                                likesId={post.likes}
-                                                showPosts={showPosts}
-                                            />
-                                        </Grid>
-                                    ))
-                            }
-
-                        </Grid>
-                    </Box>
-
-                </Container>
-                <Footer />
-            </Box>
-        
-    )
-}
+        <div className=" min-h-screen">
+            <Header />
+            <div className="container mx-auto py-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {loading ? (
+                        <Loader />
+                    ) : (
+                        uiPosts.map((post, index) => (
+                            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                                <PostCard
+                                    id={post._id}
+                                    title={post.title}
+                                    content={post.content}
+                                    image={post.image ? post.image.url : ''}
+                                    subheader={moment(post.createdAt).format('MMMM DD, YYYY')}
+                                    comments={post.comments.length}
+                                    likes={post.likes.length}
+                                    likesId={post.likes}
+                                    showPosts={showPosts}
+                                />
+                            </div>
+                        ))
+                    )}
+                </div>
+            </div>
+            <Footer />
+        </div>
+    );
+};
 
 export default BlogHome;
