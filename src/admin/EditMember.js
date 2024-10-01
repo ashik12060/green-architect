@@ -15,19 +15,19 @@ import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
   title: yup
-    .string("Add a post title")
-    .min(4, "text content should havea minimum of 4 characters ")
-    .required("Post title is required"),
-  content: yup
-    .string("Add text content")
-    .min(10, "text content should havea minimum of 10 characters ")
-    .required("text content is required"),
+    .string("Add a title")
+    .min(1, "text content should have a minimum of 1 characters ")
+    .required("Title is required"),
+    designation: yup
+    .string("Add text designation")
+    .min(1, "text designation should have a minimum of 1 characters ")
+    .required("text designation is required"),
 });
 
-const EditGallery = () => {
+const EditMember = () => {
   const { id } = useParams();
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [designation, setDesignation] = useState("");
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
@@ -44,30 +44,30 @@ const EditGallery = () => {
   } = useFormik({
     initialValues: {
       title,
-      content,
+      designation,
       image: "",
     },
 
     validationSchema: validationSchema,
     enableReinitialize: true,
     onSubmit: (values, actions) => {
-      updatePost(values);
+      updateMember(values);
       //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
     },
   });
 
   //show post by Id
-  const singlePostById = async () => {
+  const singleMemberById = async () => {
     // console.log(id)
     try {
       // 
-      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/post/${id}`
+      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/member/${id}`
       );
-      setTitle(data.post.title);
-      setContent(data.post.content);
-      setImagePreview(data.post.image.url);
-      console.log("single post admin", data.post);
+      setTitle(data.member.title);
+      setDesignation(data.member.designation);
+      setImagePreview(data.member.image.url);
+      console.log("single member admin", data.member);
     } catch (error) {
       console.log(error);
       toast.error(error);
@@ -75,16 +75,16 @@ const EditGallery = () => {
   };
 
   useEffect(() => {
-    singlePostById();
+    singleMemberById();
   }, []);
 
-  const updatePost = async (values) => {
+  const updateMember = async (values) => {
     try {
-      const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/post/${id}`, values);
+      const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/member/${id}`, values);
 
       console.log(result)
       if (result?.data?.success === true) {
-        toast.success("post updated");
+        toast.success("member updated");
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -98,19 +98,19 @@ const EditGallery = () => {
       <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
           {" "}
-          Edit post{" "}
+          Edit member{" "}
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             sx={{ mb: 3 }}
             fullWidth
             id="title"
-            label="Post title"
+            label="member title"
             name="title"
             InputLabelProps={{
               shrink: true,
             }}
-            placeholder="Post title"
+            placeholder="member title"
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -137,17 +137,17 @@ const EditGallery = () => {
             <TextField
               sx={{ mb: 3 }}
               fullWidth
-              id="content"
-              label="Content"
-              name="content"
+              id="designation"
+              label="Designation"
+              name="designation"
               multiline
               rows={4}
-              placeholder="Write the post content..."
-              value={values.content}
+              placeholder="Write the designation..."
+              value={values.designation}
               onChange={handleChange}
               onBlur={handleBlur}
-              error={touched.content && Boolean(errors.content)}
-              helperText={touched.content && errors.content}
+              error={touched.designation && Boolean(errors.designation)}
+              helperText={touched.designation && errors.contdesignationent}
             />
           </Box>
         
@@ -243,4 +243,4 @@ const EditGallery = () => {
   );
 };
 
-export default EditGallery;
+export default EditMember;

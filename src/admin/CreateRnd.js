@@ -3,28 +3,25 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Dropzone from "react-dropzone";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import axios from "axios";
 import { toast } from "react-toastify";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { modules } from "../components/moduleToolbar";
+import { useEffect, useRef, useState } from "react";
 import axiosInstance from "../pages/axiosInstance";
-import { useNavigate } from "react-router-dom";
-// import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
   title: yup
-    .string("Add a gallery title")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("gallery title is required"),
+    .string("Add a rnd title")
+    .min(1, "Title should have a minimum of 1 characters")
+    .required("Rnd title is required"),
   content: yup
     .string("Add text content")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("text content is required"),
+    .min(1, "Text content should have a minimum of 1 characters")
+    .required("Text content is required"),
+
 });
 
-const CreateGallery = () => {
-  const navigate=useNavigate()
+
+const CreateRnd = () => {
   const {
     values,
     errors,
@@ -38,72 +35,96 @@ const CreateGallery = () => {
       title: "",
       content: "",
       image: null,
+     
     },
 
     validationSchema: validationSchema,
     onSubmit: (values, actions) => {
-      createNewGallery(values);
+      createNewRnd(values);
       //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
     },
   });
 
-  const createNewGallery = async (values) => {
-    try {
+  const [error, setError] = useState(null);
+  const observedElementRef = useRef(null);
 
-      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/gallery/create`, values);
-      if (result?.data?.success === true) {
-        toast.success("gallery created");
-        navigate("/admin/dashboard");
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      try {
+        // Your logic that could potentially throw an error
+      } catch (error) {
+        if (error.name === 'ResizeObserver loop completed') {
+          setError('ResizeObserver loop error');
+        } else {
+          // Handle other errors
+        }
       }
+    });
+
+    if (observedElementRef.current) {
+      resizeObserver.observe(observedElementRef.current);
+    }
+
+    return () => {
+      if (observedElementRef.current) {
+        resizeObserver.unobserve(observedElementRef.current);
+      }
+    };
+  }, [observedElementRef]);
+//stop
+  const createNewRnd = async (values) => {
+    try {
+       const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/rnd/create`, values);
+      
+       if (result?.data?.success === true) {
+        toast.success("Rnd created successfully");
+        // Navigate("/admin/dashboard");
+      }
+       
     } catch (error) {
       console.log(error);
       toast.error(error);
     }
   };
-  const modules = {
-    // ...
-    clipboard: {
-      matchVisual: false,
-    },
-    // ...
-  };
-
-  // const handlePostContent = () => {
-  //   const rawContent = values.content; // Get the content from ReactQuill
-
-  //   // Remove <p> tags from the raw content
-  //   const sanitizedContent = rawContent.replace(/<\/?p>/g, "");
-  //   createNewPost({ ...values, content: sanitizedContent });
-  // };
+  
 
   return (
-    <>
-      <Box sx={{ bgColor: "white",
+    <div ref={observedElementRef}>
+
+{error ? (
+        <div>Error: {error}</div>
+      ) : (
+      
+      <Box sx={{ bgcolor: "white",
       padding: "20px",
       width: "100%",
       maxWidth: "1200px",
-      margin: "0 auto",}}>
+      margin: "0 auto", }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
           {" "}
-          Create gallery{" "}
+          Create Research And Development{" "}
         </Typography>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+        {/* onSubmit={handleSubmit} */}
+        
+        {/* noValidate */}
+        <Box component="form"  onSubmit={handleSubmit}  sx={{ mt: 1 }}>
           <TextField
-            sx={{ mb: 3 }}
+            sx={{ mb: 3}}
             fullWidth
             id="title"
-            label="gallery title"
+            label="Rnd title"
             name="title"
             InputLabelProps={{
               shrink: true,
             }}
-            placeholder="gallery title"
+            placeholder="Rnd title"
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
             error={touched.title && Boolean(errors.title)}
             helperText={touched.title && errors.title}
+
           />
 
           <Box sx={{ mb: 3 }}>
@@ -115,13 +136,16 @@ const CreateGallery = () => {
               name="content"
               multiline
               rows={4}
-              placeholder="Write the gallery content..."
+              placeholder="Write the rnd post content..."
               value={values.content}
               onChange={handleChange}
               onBlur={handleBlur}
               error={touched.content && Boolean(errors.content)}
               helperText={touched.content && errors.content}
             />
+
+            
+
           </Box>
 
           <Box border="2px dashed blue" sx={{ p: 1 }}>
@@ -136,6 +160,7 @@ const CreateGallery = () => {
                   reader.onloadend = () => {
                     setFieldValue("image", reader.result);
                   };
+                  return null;
                 })
               }
             >
@@ -201,15 +226,18 @@ const CreateGallery = () => {
             variant="contained"
             elevation={0}
             sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
-            // onClick={handlePostContent}
+            // onClick={handleProductContent}
             // disabled={loading}
           >
-            Create gallery
+            Post 
           </Button>
+          
         </Box>
+        
       </Box>
-    </>
+      )}
+    </div>
   );
 };
 
-export default CreateGallery;
+export default CreateRnd;

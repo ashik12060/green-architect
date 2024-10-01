@@ -27,9 +27,8 @@ import EditPost from "./admin/EditPost";
 import UserDashboard from "./user/UserDashboard";
 //main
 import BlogHome from "./pages/BlogHome";
-import BlogPro from "./pages/BlogPro";
-import SinglePro from "./pages/SinglePro";
-import CreateProduct from "./admin/CreateProduct";
+import SinglePro from "./pages/SingleRnd";
+import CreateProduct from "./admin/CreateRnd";
 import EditProduct from "./admin/EditProduct";
 import { useEffect, useState } from "react";
 import CreateItem from "./admin/CreateItem";
@@ -40,15 +39,24 @@ import Home from "./pages/Home/Home";
 import Register from "./pages/Register";
 import SinglePost from "./pages/SinglePost";
 import SampleLogin from "./components/SampleLoginPage.js/SampleLogin";
+import RnD from "./pages/RnD";
+import CreateRnd from "./admin/CreateRnd";
+import SingleRnd from "./pages/SingleRnd";
+import Members from "./pages/Members";
+import CreateMembers from "./admin/CreateMembers";
+import EditMember from "./admin/EditMember";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
 
 const CreatePostHOC = Layout(CreatePost);
 const CreateItemHOC = Layout(CreateItem);
-const CreateProductHOC = Layout(CreateProduct);
+const CreateRndHOC = Layout(CreateRnd);
+const CreateMemberHOC = Layout(CreateMembers);
 const EditPostHOC = Layout(EditPost);
 const EditItemHOC = Layout(EditItem);
+const EditMemberHOC = Layout(EditMember);
+
 const EditProductHOC = Layout(EditProduct);
 const UserDashboardHOC = Layout(UserDashboard);
 
@@ -73,14 +81,22 @@ function App() {
               <Route path="/projects" element={<Projects />}></Route>
               <Route path='/contact' element={<Contact />}></Route>
               
-
+              {/* blog */}
               <Route path="/" element={<BlogHome />} />
               <Route path="/blog" element={<BlogHome />} />
+
+              {/* research and analysis */}
+              <Route path="/research-development" element={<RnD />} />
+              <Route path="/team-members" element={<Members />} />
+
+              
 
               <Route path="/login" element={<LogIn />} />
               <Route path="/register" element={<Register />} />
 
+{/* show single */}
               <Route path="/post/:id" element={<SinglePost />} />
+              <Route path="/rnd/:id" element={<SingleRnd />} />
 
               
               <Route path="/log" element={<SampleLogin />} />
@@ -95,7 +111,7 @@ function App() {
                   </AdminRoute>
                 }
               />
-
+  {/* create */}
               <Route
                 path="/admin/post/create"
                 element={
@@ -114,22 +130,24 @@ function App() {
               />
 
               <Route
-                path="/admin/product/create"
+                path="/admin/rnd/create"
                 element={
                   <AdminRoute>
-                    <CreateProductHOC />
+                    <CreateRndHOC />
                   </AdminRoute>
                 }
               />
-              {/* <Route
-                path="/admin/gallery/create"
+              <Route
+                path="/admin/member/create"
                 element={
                   <AdminRoute>
-                    <CreateGalleryHOC />
+                    <CreateMemberHOC />
                   </AdminRoute>
                 }
-              /> */}
+              />
 
+
+{/* update */}
               <Route
                 path="/admin/post/edit/:id"
                 element={
@@ -147,21 +165,21 @@ function App() {
                 }
               />
               <Route
-                path="/admin/product/edit/:id"
+                path="/admin/rnd/edit/:id"
                 element={
                   <AdminRoute>
                     <EditProductHOC />
                   </AdminRoute>
                 }
               />
-              {/* <Route
-                path="/admin/gallery/edit/:id"
+              <Route
+                path="/admin/member/edit/:id"
                 element={
                   <AdminRoute>
-                    <EditGalleryHOC />
+                    <EditMemberHOC />
                   </AdminRoute>
                 }
-              /> */}
+              />
 
               <Route
                 path="/user/dashboard"

@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 // import axiosInstance from "../pages/axiosInstance";
 
-const ProductCard = ({
+const RndCard = ({
   id,
   title,
   subheader,
@@ -26,7 +26,7 @@ const ProductCard = ({
   content,
   comments,
   likes,
-  showProducts,
+  showRnds,
   likesId,
 }) => {
   const { userInfo } = useSelector((state) => state.signIn);
@@ -41,11 +41,11 @@ const ProductCard = ({
   const addLike = async () => {
     try {
       const { data } = await axiosInstance.put(
-        `${process.env.REACT_APP_API_URL}/api/addlike/product/${id}`
+        `${process.env.REACT_APP_API_URL}/api/addlike/rnd/${id}`
       );
       console.log("likes", data.product);
       if (data.success == true) {
-        showProducts();
+        showRnds();
       }
     } catch (error) {
       console.log(error.response.data.error);
@@ -56,11 +56,11 @@ const ProductCard = ({
   const removeLike = async () => {
     try {
       const { data } = await axiosInstance.put(
-        `${process.env.REACT_APP_API_URL}/api/removelike/product/${id}`
+        `${process.env.REACT_APP_API_URL}/api/removelike/rnd/${id}`
       );
       console.log("remove likes", data.product);
       if (data.success == true) {
-        showProducts();
+        showRnds();
       }
     } catch (error) {
       console.log(error.response.data.error);
@@ -74,7 +74,7 @@ const ProductCard = ({
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4  ">
         <div id="productInfo" className=" advisors-info  w-100 shadow">
           <div>
-            <Link to={`/product/${id}`}>
+            <Link to={`/rnd/${id}`}>
               <img className="advisor-img w-100 border " src={image} alt="advisor_team" />
             </Link>
           </div>
@@ -91,7 +91,7 @@ const ProductCard = ({
               </div>
               
               <div className="pb-2">
-              <Link className=" fw-bold fs-6 link-to" to={`/product/${id}`}>
+              <Link className=" fw-bold fs-6 link-to" to={`/rnd/${id}`}>
                  
                  Find More <FontAwesomeIcon icon={faAnglesRight} />
                
@@ -106,4 +106,4 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default RndCard;

@@ -60,8 +60,8 @@ const logOutUser = () => {
           <Link to='/about-us' className='hover:text-green-600 '>About Us</Link>
           <Link to='/services' className='hover:text-green-600 '>Services</Link>
           <Link to='/projects' className='hover:text-green-600 '>Projects</Link>
-          <Link to="/businesses" className='hover:text-green-600 '>Products</Link>
-          <Link to="/construction-status" className='hover:text-green-600 '>Research & Analysis</Link>
+          <Link to="/products" className='hover:text-green-600 '>Products</Link>
+          <Link to="/research-development" className='hover:text-green-600 '>Research & Analysis</Link>
           <Link to="/blog" className='hover:text-green-600 '>Blog</Link>
           <Link to='/team' className='hover:text-green-600 '>Team</Link>
           <Link to="/contact" className='hover:text-green-600 '>Contact</Link>
@@ -71,7 +71,7 @@ const logOutUser = () => {
         <Box sx={{ flexGrow: 0 }} className="ms-lg-4 ms-md-4 mt-sm-2 ">
             <Tooltip title="Open settings ">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} className="">
-              <FontAwesomeIcon className="bg-admin" icon={faCircleUser} />
+              <FontAwesomeIcon className="text-green-700" icon={faCircleUser} />
                        
               </IconButton>
             </Tooltip>
