@@ -19,6 +19,7 @@ import CommentList from '../components/CommentList';
 import { io } from 'socket.io-client';
 import axiosInstance from './axiosInstance';
 import Header from '../components/Shared/Headers/Header';
+import Footer from '../components/Shared/Footer/Footer';
 
 const socket = io('/', {
     reconnection: true
@@ -201,7 +202,7 @@ const SinglePost = () => {
                                                 rows="3"
                                                 placeholder="Add a comment..."
                                             />
-                                            <button type='submit' className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">
+                                            <button type='submit' className="mt-2 bg-green-700 text-white px-4 py-2 rounded">
                                                 Comment
                                             </button>
                                         </form>
@@ -215,7 +216,7 @@ const SinglePost = () => {
                 </div>
             )}
         </div>
-           
+           <Footer />
         </div>
     );
 }

@@ -70,7 +70,7 @@ const RnD = () => {
        
 
         <div className='text-center mt-3  '>
-      <h3><span  className='product-header '>Research and Development</span></h3>
+      <h3><span  className='text-3xl font-bold '><span className="border-b-4 border-black">Research and Development</span></span></h3>
     </div>
         <Container sx={{ pt: 3, pb: 5, minHeight: "83vh" }}>
           <Box sx={{ flexGrow: 1 }}>
@@ -88,8 +88,6 @@ const RnD = () => {
                       title={product.title}
                       content={product.content}
                      
-
-                      
                       subheader={moment(product.createdAt).format("MMMM DD, YYYY")}
                       comments={product.comments.length}
                       likes={product.likes.length}

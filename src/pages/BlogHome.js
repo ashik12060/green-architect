@@ -137,19 +137,20 @@ const BlogHome = () => {
             setPostAddLike([]);
         });
     }, []);
+   
 
     let uiPosts = postAddLike.length > 0 ? postAddLike : postRemoveLike.length > 0 ? postRemoveLike : posts;
 
     return (
-        <div className=" min-h-screen">
+        <div className=" ">
             <Header />
-            <div className="container mx-auto py-10">
+            {/* <div className="container mx-auto py-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {loading ? (
                         <Loader />
                     ) : (
                         uiPosts.map((post, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div key={index} className="border-4 overflow-hidden">
                                 <PostCard
                                     id={post._id}
                                     title={post.title}
@@ -165,7 +166,32 @@ const BlogHome = () => {
                         ))
                     )}
                 </div>
-            </div>
+            </div> */}
+            <div className="container mx-auto py-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {loading ? (
+      <Loader />
+    ) : (
+      uiPosts.map((post, index) => (
+        <div key={index} className="border-1 border-green-100 overflow-hidden rounded-lg shadow-lg">
+          <PostCard
+            id={post._id}
+            title={post.title}
+            content={post.content}
+            image={post.image ? post.image.url : ''}
+            subheader={moment(post.createdAt).format('MMMM DD, YYYY')}
+            comments={post.comments.length}
+            likes={post.likes.length}
+            likesId={post.likes}
+            showPosts={showPosts}
+
+          />
+        </div>
+      ))
+    )}
+  </div>
+</div>
+
             <Footer />
         </div>
     );
