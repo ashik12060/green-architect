@@ -50,7 +50,7 @@ const logOutUser = () => {
   }, 500);
 };
   return (
-    <header className="bg-gray-100 text-black py-4">
+    <header className="bg-gray-100 text-black py-4 border">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           

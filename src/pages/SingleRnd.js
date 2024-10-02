@@ -175,7 +175,7 @@ const SingleRnd = () => {
   ) : (
     <div className="container mx-auto bg-white shadow-md rounded-lg">
       <div className="flex flex-col md:flex-row lg:flex-row">
-        <div className="md:w-1/3 p-4">
+        <div className="md:w-1/3 lg:w-1/2 p-4">
           <img
             src={image}
             className="img-fluid pt-2 border rounded-lg"
@@ -183,7 +183,7 @@ const SingleRnd = () => {
           />
          
         </div>
-        <div className="ps-4" >
+        <div className="ps-4 lg:w-2/3" >
          <h2 className="text-xl font-bold mt-4">{title}</h2>
          <p className="mt-2 text-gray-700">{content}</p>
          </div>

@@ -66,7 +66,7 @@ const RnD = () => {
     <>
     <MiddleHeader />
     <Header />
-      <Box sx={{ bgColor: "#fafafa", minHeight: "100vh" }}>
+      {/* <Box sx={{ bgColor: "#fafafa", minHeight: "100vh" }}>
        
 
         <div className='text-center mt-3  '>
@@ -108,7 +108,93 @@ const RnD = () => {
           </Box>
           
         </Container>
-      </Box>
+      </Box> */}
+
+
+      {/* fad */}
+      {/* <div className="bg-gray-100 min-h-screen">
+      <div className="text-center mt-3">
+        <h3>
+          <span className="text-3xl font-bold">
+            <span className="border-b-4 border-black">Research and Development</span>
+          </span>
+        </h3>
+      </div>
+      <div className="pt-3 pb-5 min-h-[83vh]">
+        <div className="flex-grow">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            {loading ? (
+              <Loader />
+            ) : (
+              uiPosts.slice(0, visibleRnds).map((product, index) => (
+                <div key={index} className="border rounded-lg overflow-hidden shadow">
+                  <RndCard
+                    image={product.image ? product.image.url : ""}
+                    id={product._id}
+                    title={product.title}
+                    content={product.content}
+                    subheader={moment(product.createdAt).format("MMMM DD, YYYY")}
+                    comments={product.comments.length}
+                    likes={product.likes.length}
+                    likesId={product.likes}
+                    showRnds={showRnds}
+                  />
+                </div>
+              ))
+            )}
+          </div>
+          {rnds.length > 4 && visibleRnds < rnds.length && (
+            <div className="text-center my-5">
+              <button onClick={showMoreRnds} className="see-more-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200">
+                See More <FontAwesomeIcon icon={faAnglesRight} />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div> */}
+
+<div className="bg-gray-100 min-h-screen">
+        <div className="text-center pt-4">
+          <h3>
+            <span className="text-3xl font-bold">
+              <span className="border-b-4 border-black">Research and Development</span>
+            </span>
+          </h3>
+        </div>
+        <div className="pt-3 pb-5 min-h-[83vh]">
+          <div className="flex-grow mx-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-x-4 gap-y-10 pt-6">
+              {loading ? (
+                <Loader />
+              ) : (
+                uiPosts.slice(0, visibleRnds).map((product, index) => (
+                  <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
+                    <RndCard
+                      image={product.image ? product.image.url : ""}
+                      id={product._id}
+                      title={product.title}
+                      content={product.content}
+                      subheader={moment(product.createdAt).format("MMMM DD, YYYY")}
+                      comments={product.comments.length}
+                      likes={product.likes.length}
+                      likesId={product.likes}
+                      showRnds={showRnds}
+                    />
+                  </div>
+                ))
+              )}
+            </div>
+            {rnds.length > 4 && visibleRnds < rnds.length && (
+              <div className="text-center my-5">
+                <button onClick={showMoreRnds} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200">
+                  See More <FontAwesomeIcon icon={faAnglesRight} />
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );

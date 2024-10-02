@@ -70,35 +70,58 @@ const RndCard = ({
 
 
   return (
-    <div className="overflow-hidden ">
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4  ">
-        <div id="productInfo" className=" advisors-info  w-100 shadow">
-          <div>
-            <Link to={`/rnd/${id}`}>
-              <img className="advisor-img w-100 border " src={image} alt="advisor_team" />
-            </Link>
-          </div>
+    // <div className="overflow-hidden ">
+    //   <div className="container ">
+    //     <div id="productInfo" className=" shadow border flex ">
+    //       <div>
+    //         <Link to={`/rnd/${id}`}>
+    //           <img className="w-100 h-72 p-4 border " src={image} alt="advisor_team" />
+    //         </Link>
+    //       </div>
 
-          <div className="mt-2  mb-3 card-styles ps-2 pt-2">
+    //       <div className="mb-3  ps-2">
 
-            <h3 className="pt-2">{title}</h3>
+    //         <h3 className="pt-2">{title}</h3>
             
 
-            <div className="me-4 ms-1 me-1" style={{ marginTop: "auto" }}>
-              <div style={{ maxHeight: "7em", overflow: "hidden" }}>
-                {truncatedContent}
+    //         <div className="me-4 ms-1 
+    //         " style={{ marginTop: "auto" }}>
+    //           <div style={{ maxHeight: "7em", overflow: "hidden" }}>
+    //             {truncatedContent}
                 
-              </div>
+    //           </div>
               
-              <div className="pb-2">
-              <Link className=" fw-bold fs-6 link-to" to={`/rnd/${id}`}>
+    //           <div className="pb-2">
+    //           <Link className=" fw-bold fs-6 link-to" to={`/rnd/${id}`}>
                  
-                 Find More <FontAwesomeIcon icon={faAnglesRight} />
+    //              Find More <FontAwesomeIcon icon={faAnglesRight} />
                
-             </Link>
+    //          </Link>
                
-              </div>
-            </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
+
+    <div className="overflow-hidden">
+      <div className="shadow border flex flex-col md:flex-row">
+        <div className="lg:w-1/2">
+          <Link to={`/rnd/${id}`}>
+            <img className="w-full h-72 object-cover p-4" src={image} alt="rnd" />
+          </Link>
+        </div>
+        <div className="p-4 flex-grow w-1/2">
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <div className="mt-2 max-h-28 overflow-hidden">
+            {truncatedContent}
+          </div>
+          <div className="mt-auto">
+            <Link className="fw-bold text-blue-500" to={`/rnd/${id}`}>
+              Find More <FontAwesomeIcon icon={faAnglesRight} />
+            </Link>
           </div>
         </div>
       </div>
