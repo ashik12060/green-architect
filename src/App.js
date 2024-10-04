@@ -31,8 +31,8 @@ import SinglePro from "./pages/SingleRnd";
 import CreateProduct from "./admin/CreateRnd";
 import EditProduct from "./admin/EditProduct";
 import { useEffect, useState } from "react";
-import CreateItem from "./admin/CreateItem";
-import EditItem from "./admin/EditItem";
+import CreateItem from "./admin/CreateCarousel";
+import EditCarousel from "./admin/EditCarousel";
 
 // new imports
 import Home from "./pages/Home/Home";
@@ -45,16 +45,17 @@ import SingleRnd from "./pages/SingleRnd";
 import Members from "./pages/Members";
 import CreateMembers from "./admin/CreateMembers";
 import EditMember from "./admin/EditMember";
+import CreateCarousel from "./admin/CreateCarousel";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
 
 const CreatePostHOC = Layout(CreatePost);
-const CreateItemHOC = Layout(CreateItem);
+const CreateCarouselHOC = Layout(CreateCarousel);
 const CreateRndHOC = Layout(CreateRnd);
 const CreateMemberHOC = Layout(CreateMembers);
 const EditPostHOC = Layout(EditPost);
-const EditItemHOC = Layout(EditItem);
+const EditCarouselHOC = Layout(EditCarousel);
 const EditMemberHOC = Layout(EditMember);
 
 const EditProductHOC = Layout(EditProduct);
@@ -121,10 +122,10 @@ function App() {
                 }
               />
               <Route
-                path="/admin/item/create"
+                path="/admin/carousel/create"
                 element={
                   <AdminRoute>
-                    <CreateItemHOC />
+                    <CreateCarouselHOC />
                   </AdminRoute>
                 }
               />
@@ -160,7 +161,7 @@ function App() {
                 path="/admin/item/edit/:id"
                 element={
                   <AdminRoute>
-                    <EditItemHOC />
+                    <EditCarouselHOC />
                   </AdminRoute>
                 }
               />

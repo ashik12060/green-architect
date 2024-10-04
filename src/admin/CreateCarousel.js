@@ -15,15 +15,11 @@ import { useNavigate } from "react-router-dom";
 const validationSchema = yup.object({
   title: yup
     .string("Add a Item title")
-    .min(1, "text content should have a minimum of 4 characters ")
+    .min(1, "text content should have a minimum of 1 characters ")
     .required("Item's title is required"),
-  content: yup
-    .string("Add text content")
-    .min(1, "text content should have a minimum of 10 characters ")
-    .required("text content is required"),
 });
 
-const CreateItem = () => {
+const CreateCarousel = () => {
   const navigate=useNavigate()
   const {
     values,
@@ -36,24 +32,23 @@ const CreateItem = () => {
   } = useFormik({
     initialValues: {
       title: "",
-      content: "",
       image: null,
     },
 
     validationSchema: validationSchema,
     onSubmit: (values, actions) => {
-      createNewItem(values);
+      createNewCarousel(values);
       //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
     },
   });
 
-  const createNewItem = async (values) => {
+  const createNewCarousel = async (values) => {
     try {
 
-      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/item/create`, values);
+      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/carousel/create`, values);
       if (result?.data?.success === true) {
-        toast.success("Item created");
+        toast.success("Carousel created");
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -69,13 +64,6 @@ const CreateItem = () => {
     // ...
   };
 
-  // const handlePostContent = () => {
-  //   const rawContent = values.content; // Get the content from ReactQuill
-
-  //   // Remove <p> tags from the raw content
-  //   const sanitizedContent = rawContent.replace(/<\/?p>/g, "");
-  //   createNewPost({ ...values, content: sanitizedContent });
-  // };
 
   return (
     <>
@@ -86,43 +74,25 @@ const CreateItem = () => {
       margin: "0 auto",}}>
         <Typography variant="h5" sx={{ pb: 4 }}>
           {" "}
-          Create Item{" "}
+          Create Carousel{" "}
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             sx={{ mb: 3 }}
             fullWidth
             id="title"
-            label="Item title"
+            label="Carousel title"
             name="title"
             InputLabelProps={{
               shrink: true,
             }}
-            placeholder="Item title"
+            placeholder="Carousel title"
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
             error={touched.title && Boolean(errors.title)}
             helperText={touched.title && errors.title}
           />
-
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              sx={{ mb: 3 }}
-              fullWidth
-              id="content"
-              label="Content"
-              name="content"
-              multiline
-              rows={4}
-              placeholder="Write the item content..."
-              value={values.content}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.content && Boolean(errors.content)}
-              helperText={touched.content && errors.content}
-            />
-          </Box>
 
           <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone
@@ -204,7 +174,7 @@ const CreateItem = () => {
             // onClick={handlePostContent}
             // disabled={loading}
           >
-            Create Item
+            Create Carousel
           </Button>
         </Box>
       </Box>
@@ -212,4 +182,4 @@ const CreateItem = () => {
   );
 };
 
-export default CreateItem;
+export default CreateCarousel;

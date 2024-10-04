@@ -15,19 +15,14 @@ import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
   title: yup
-    .string("Add an Item title")
+    .string("Add an Carousel title")
     .min(1, "text content should have a minimum of 1 characters ")
-    .required("Item title is required"),
-  content: yup
-    .string("Add text content")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("text content is required"),
+    .required("Carousel title is required")
 });
 
-const EditItem = () => {
+const EditCarousel = () => {
   const { id } = useParams();
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
@@ -44,30 +39,28 @@ const EditItem = () => {
   } = useFormik({
     initialValues: {
       title,
-      content,
       image: "",
     },
 
     validationSchema: validationSchema,
     enableReinitialize: true,
     onSubmit: (values, actions) => {
-      updateItem(values);
+      updateCarousel(values);
       //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
     },
   });
 
   //show post by Id
-  const singleItemById = async () => {
+  const singleCarouselById = async () => {
     // console.log(id)
     try {
       // 
-      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/item/${id}`
+      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/carousel/${id}`
       );
-      setTitle(data.item.title);
-      setContent(data.item.content);
-      setImagePreview(data.item.image.url);
-      console.log("single item admin", data.item);
+      setTitle(data.carousel.title);
+      setImagePreview(data.carousel.image.url);
+      console.log("single carousel admin", data.carousel);
     } catch (error) {
       console.log(error);
       toast.error(error);
@@ -75,16 +68,16 @@ const EditItem = () => {
   };
 
   useEffect(() => {
-    singleItemById();
+    singleCarouselById();
   }, []);
 
-  const updateItem = async (values) => {
+  const updateCarousel = async (values) => {
     try {
-      const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/item/${id}`, values);
+      const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/carousel/${id}`, values);
 
       console.log(result)
       if (result?.data?.success === true) {
-        toast.success("Item updated");
+        toast.success("carousel updated");
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -98,19 +91,19 @@ const EditItem = () => {
       <Box sx={{ bgColor: "white", padding: "20px 200px" }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
           {" "}
-          Edit Item{" "}
+          Edit Carousel{" "}
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             sx={{ mb: 3 }}
             fullWidth
-            id="title"
-            label="Item title"
-            name="title"
+            id="carousel"
+            label="carousel title"
+            name="carousel"
             InputLabelProps={{
               shrink: true,
             }}
-            placeholder="Item title"
+            placeholder="carousel title"
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -118,43 +111,8 @@ const EditItem = () => {
             helperText={touched.title && errors.title}
           />
 
-          {/* <Box sx={{ mb: 3 }}>
-            <ReactQuill
-              theme="snow"
-              placeholder={"Write the Item  content..."}
-              modules={modules}
-              value={values.content}
-              onChange={(e) => setFieldValue("content", e)}
-            />
-            <Box
-              component="span"
-              sx={{ color: "#d32f2f", fontSize: "12px", pl: 2 }}
-            >
-              {touched.content && errors.content}
-            </Box>
-          </Box> */}
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              sx={{ mb: 3 }}
-              fullWidth
-              id="content"
-              label="Content"
-              name="content"
-              multiline
-              rows={4}
-              placeholder="Write the Item content..."
-              value={values.content}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.content && Boolean(errors.content)}
-              helperText={touched.content && errors.content}
-            />
-          </Box>
-        
-   
-
-
-          <Box border="2px dashed blue" sx={{ p: 1 }}>
+             
+            <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone
               acceptedFiles=".jpg,.jpeg,.png"
               multiple={false}
@@ -235,7 +193,7 @@ const EditItem = () => {
             sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
             // disabled={loading}
           >
-            Update Item
+            Update Carousel
           </Button>
         </Box>
       </Box>
@@ -243,4 +201,4 @@ const EditItem = () => {
   );
 };
 
-export default EditItem;
+export default EditCarousel;
