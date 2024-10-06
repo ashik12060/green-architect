@@ -46,6 +46,9 @@ import Members from "./pages/Members";
 import CreateMembers from "./admin/CreateMembers";
 import EditMember from "./admin/EditMember";
 import CreateCarousel from "./admin/CreateCarousel";
+import Products from "./pages/Products/Products";
+import BuyForm from "./components/ProductsInfo/BuyForm";
+import { ThemeProvider } from "./context/ThemeContext";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -64,6 +67,7 @@ const UserDashboardHOC = Layout(UserDashboard);
 function App() {
   return (
     <>
+    <ThemeProvider >
       <ToastContainer />
       <Provider store={store}>
         <ProSidebarProvider>
@@ -80,7 +84,10 @@ function App() {
               <Route path="/team" element={<Team />}></Route>
               <Route path="/services" element={<Services />}></Route>
               <Route path="/projects" element={<Projects />}></Route>
+              <Route path="/products" element={<Products />}></Route>
               <Route path='/contact' element={<Contact />}></Route>
+
+              <Route path="/buy" element={<BuyForm />} />
               
               {/* blog */}
               <Route path="/" element={<BlogHome />} />
@@ -195,6 +202,7 @@ function App() {
           </BrowserRouter>
         </ProSidebarProvider>
       </Provider>
+      </ThemeProvider>
     </>
   );
 }

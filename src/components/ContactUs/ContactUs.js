@@ -3,7 +3,7 @@ import backgroundImage from "../../assets/architect2.jpg";
 
 function ContactUs() {
   return (
-    <div className="bg-white text-gray-800">
+    <div className="">
       {/* Hero Section with Architectural Image */}
       <div
         className="relative h-96 bg-cover bg-center"
@@ -219,7 +219,7 @@ function ContactUs() {
       </div>
 
       {/* Map Section */}
-      <div className="bg-gray-100 py-16">
+      <div className=" py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-8">
             Find Us on Google Maps

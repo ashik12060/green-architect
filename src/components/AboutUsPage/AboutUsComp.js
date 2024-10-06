@@ -4,7 +4,7 @@ import img from '../../assets/architec1.jpg'
 function AboutUsComp() {
   return (
    <>
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen fa-100">
       <div className="container mx-auto p-4 bg-white rounded-lg shadow-md">
         <h1 className="text-3xl text-center my-10 pb-10 font-bold text-green-700 mb-4"><span className='border-b-4 border-green-700'>About Our Process</span></h1>
         <div className="flex flex-col md:flex-row">
