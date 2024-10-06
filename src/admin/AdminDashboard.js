@@ -10,6 +10,7 @@ import axiosInstance from "../pages/axiosInstance";
 
 const AdminDashboard = () => {
   const [posts, setPosts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [rnds, setRnd] = useState([]);
   const [members, setMembers] = useState([]);
   const [carousels,setCarousels] = useState([]);
@@ -28,6 +29,23 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     displayPost();
+  }, []);
+
+
+  // Display products
+  const displayProduct = async () => {
+    try {
+      const { data } = await axiosInstance.get(
+        `${process.env.REACT_APP_API_URL}/api/products/show`
+      );
+      setProducts(data.products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    displayProduct();
   }, []);
 
   // display research and development
@@ -112,6 +130,24 @@ const AdminDashboard = () => {
         if (result?.data?.success === true) {
           toast.success("Post deleted");
           displayPost();
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error(error);
+      }
+    }
+  };
+
+  // Delete product by ID
+  const deleteProductById = async (e, id) => {
+    if (window.confirm("Are you sure you want to delete this product?")) {
+      try {
+        const result = await axiosInstance.delete(
+          `${process.env.REACT_APP_API_URL}/api/delete/product/${id}`
+        );
+        if (result?.data?.success === true) {
+          toast.success("Product deleted");
+          displayProduct();
         }
       } catch (error) {
         console.log(error);
@@ -215,6 +251,62 @@ const AdminDashboard = () => {
           <IconButton
             aria-label="delete"
             onClick={(e) => deletePostById(e, value.row._id)}
+          >
+            <DeleteIcon sx={{ color: "red" }} />
+          </IconButton>
+        </div>
+      ),
+    },
+  ];
+
+  // products column
+  const ProductColumns = [
+    {
+      field: "_id",
+      headerName: "Product ID",
+      width: 150,
+      editable: true,
+    },
+    {
+      field: "title",
+      headerName: "Product title",
+      width: 150,
+    },
+    {
+      field: "image",
+      headerName: "Image",
+      width: 150,
+      renderCell: (params) => (
+        <img width="40%" src={params.row.image.url} alt="img" />
+      ),
+    },
+    
+    {
+      field: "postedBy",
+      headerName: "Posted by",
+      width: 150,
+      renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
+    },
+    {
+      field: "createdAt",
+      headerName: "Created At",
+      width: 150,
+      renderCell: (params) =>
+        moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
+    },
+    {
+      field: "Actions",
+      width: 100,
+      renderCell: (value) => (
+        <div className="flex justify-between">
+          <Link to={`/admin/product/edit/${value.row._id}`}>
+            <IconButton aria-label="edit">
+              <EditIcon sx={{ color: "#1976d2" }} />
+            </IconButton>
+          </Link>
+          <IconButton
+            aria-label="delete"
+            onClick={(e) => deleteProductById(e, value.row._id)}
           >
             <DeleteIcon sx={{ color: "red" }} />
           </IconButton>
@@ -470,6 +562,52 @@ const AdminDashboard = () => {
             </table>
           </div>
         </div>
+
+
+        {/* Products */}
+        <div className="flex-1 p-10 bg-gray-100">
+          <h4 className="text-black text-4xl pb-3">Products</h4>
+          <div className="pb-2 flex justify-end">
+            <Link to="/admin/product/create">
+              <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                <AddIcon className="mr-2" />
+                Create Product
+              </button>
+            </Link>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                  {ProductColumns.map((column) => (
+                    <th key={column.field} className="py-3 px-6 text-left">
+                      {column.headerName}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="text-gray-600 text-sm font-light">
+                {products.map((product) => (
+                  <tr
+                    key={product._id}
+                    className="border-b border-gray-200 hover:bg-gray-100"
+                  >
+                    {ProductColumns.map((column) => (
+                      <td key={column.field} className="py-3 px-6 text-left">
+                        {column.renderCell
+                          ? column.renderCell({ row: product })
+                          : product[column.field]}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
 
         {/* Research and development */}
         <div className="flex-1 p-10 bg-gray-100">

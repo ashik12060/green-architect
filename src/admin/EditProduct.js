@@ -5,6 +5,7 @@ import Dropzone from "react-dropzone";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import axios from "axios";
 import { toast } from "react-toastify";
+import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { modules } from "../components/moduleToolbar";
 import { useEffect, useState } from "react";
@@ -14,19 +15,22 @@ import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
   title: yup
-    .string("Add a rnd title")
-    .min(4)
-    .required("RND title is required"),
+    .string("Add a Product title")
+    .min(1, "text content should havea minimum of 1 characters ")
+    .required("Product title is required"),
   content: yup
     .string("Add text content")
-    .min(10)
-    .required("Text content is required"),
-  
+    .min(1, "text content should havea minimum of 1 characters ")
+    .required("text content is required"),
 });
 
-const EditRnd = () => {
+const EditProduct = () => {
   const { id } = useParams();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
+
   const navigate = useNavigate();
 
   const {
@@ -39,28 +43,31 @@ const EditRnd = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: "",
-      content: "",
+      title,
+      content,
       image: "",
     },
+
     validationSchema: validationSchema,
     enableReinitialize: true,
     onSubmit: (values, actions) => {
-      updateRnd(values);
+      updateProduct(values);
+      //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
     },
   });
 
-  // Show rnd by Id
-  const singleRndById = async () => {
+  //show post by Id
+  const singleProductById = async () => {
+    // console.log(id)
     try {
       // 
-      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/rnd/${id}`);
-      const rnd = data.rnd;
-      setFieldValue("title", rnd.title);
-      setFieldValue("content", rnd.content);
-     
-      setImagePreview(rnd.image.url);
+      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/product/${id}`
+      );
+      setTitle(data.product.title);
+      setContent(data.product.content);
+      setImagePreview(data.product.image.url);
+      console.log("single product admin", data.product);
     } catch (error) {
       console.log(error);
       toast.error(error);
@@ -68,14 +75,16 @@ const EditRnd = () => {
   };
 
   useEffect(() => {
-    singleRndById();
+    singleProductById();
   }, []);
 
-  const updateRnd = async (values) => {
+  const updateProduct = async (values) => {
     try {
-      const { data } = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/rnd/${id}`, values);
-      if (data.success === true) {
-        toast.success("Rnd updated");
+      const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/product/${id}`, values);
+
+      console.log(result)
+      if (result?.data?.success === true) {
+        toast.success("product updated");
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -86,21 +95,22 @@ const EditRnd = () => {
 
   return (
     <>
-      <Box sx={{ bgColor: "white", padding: "20px 200px" }}>
+      <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
-          Edit Rnd
+          {" "}
+          Edit Product{" "}
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             sx={{ mb: 3 }}
             fullWidth
             id="title"
-            label="RND title"
+            label="Product title"
             name="title"
             InputLabelProps={{
               shrink: true,
             }}
-            placeholder="RND title"
+            placeholder="product title"
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -108,6 +118,7 @@ const EditRnd = () => {
             helperText={touched.title && errors.title}
           />
 
+          
           <Box sx={{ mb: 3 }}>
             <TextField
               sx={{ mb: 3 }}
@@ -117,7 +128,7 @@ const EditRnd = () => {
               name="content"
               multiline
               rows={4}
-              placeholder="Write the rnd content..."
+              placeholder="Write the product content..."
               value={values.content}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -125,12 +136,15 @@ const EditRnd = () => {
               helperText={touched.content && errors.content}
             />
           </Box>
+        
+   
 
 
           <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone
               acceptedFiles=".jpg,.jpeg,.png"
               multiple={false}
+              //maxFiles={3}
               onDrop={(acceptedFiles) =>
                 acceptedFiles.map((file, index) => {
                   const reader = new FileReader();
@@ -141,16 +155,61 @@ const EditRnd = () => {
                 })
               }
             >
-              {({ getRootProps, getInputProps }) => (
-                <div {...getRootProps()}>
-                  <input {...getInputProps()} />
-                  <p style={{ textAlign: "center" }}>
-                    <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
-                  </p>
-                  <p style={{ textAlign: "center", fontSize: "12px" }}>
-                    Drag and Drop image here or click to choose
-                  </p>
-                </div>
+              {({ getRootProps, getInputProps, isDragActive }) => (
+                <Box
+                  {...getRootProps()}
+                  p="1rem"
+                  sx={{
+                    "&:hover": { cursor: "pointer" },
+                    bgColor: isDragActive ? "#cceffc" : "#fafafa",
+                  }}
+                >
+                  <input name="image" {...getInputProps()} />
+                  {isDragActive ? (
+                    <>
+                      <p style={{ textAlign: "center" }}>
+                        <CloudUploadIcon
+                          sx={{ color: "primary.main", mr: 2 }}
+                        />
+                      </p>
+                      <p style={{ textAlign: "center", fontSize: "12px" }}>
+                        {" "}
+                        Drop here!
+                      </p>
+                    </>
+                  ) : values.image === null ? (
+                    <>
+                      <p style={{ textAlign: "center" }}>
+                        <CloudUploadIcon
+                          sx={{ color: "primary.main", mr: 2 }}
+                        />
+                      </p>
+                      <p style={{ textAlign: "center", fontSize: "12px" }}>
+                        Drag and Drop image here or click to choose
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Box>
+                          <img
+                            style={{ maxWidth: "100px" }}
+                            src={
+                              values.image === "" ? imagePreview : values.image
+                            }
+                            alt=""
+                          />
+                        </Box>
+                      </Box>
+                    </>
+                  )}
+                </Box>
               )}
             </Dropzone>
           </Box>
@@ -160,8 +219,9 @@ const EditRnd = () => {
             variant="contained"
             elevation={0}
             sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
+            // disabled={loading}
           >
-            Update RND
+            Update Product
           </Button>
         </Box>
       </Box>
@@ -169,4 +229,4 @@ const EditRnd = () => {
   );
 };
 
-export default EditRnd;
+export default EditProduct;

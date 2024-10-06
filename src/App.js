@@ -28,7 +28,6 @@ import UserDashboard from "./user/UserDashboard";
 //main
 import BlogHome from "./pages/BlogHome";
 import SinglePro from "./pages/SingleRnd";
-import CreateProduct from "./admin/CreateRnd";
 import EditProduct from "./admin/EditProduct";
 import { useEffect, useState } from "react";
 import CreateItem from "./admin/CreateCarousel";
@@ -40,7 +39,6 @@ import Register from "./pages/Register";
 import SinglePost from "./pages/SinglePost";
 import SampleLogin from "./components/SampleLoginPage.js/SampleLogin";
 import RnD from "./pages/RnD";
-import CreateRnd from "./admin/CreateRnd";
 import SingleRnd from "./pages/SingleRnd";
 import Members from "./pages/Members";
 import CreateMembers from "./admin/CreateMembers";
@@ -49,17 +47,22 @@ import CreateCarousel from "./admin/CreateCarousel";
 import Products from "./pages/Products/Products";
 import BuyForm from "./components/ProductsInfo/BuyForm";
 import { ThemeProvider } from "./context/ThemeContext";
+import CreateProduct from "./admin/CreateProduct";
+import CreateRnd from "./admin/CreateRnd";
+import EditRnd from "./admin/EditRnd";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
 
 const CreatePostHOC = Layout(CreatePost);
+const CreateProductHOC = Layout(CreateProduct);
 const CreateCarouselHOC = Layout(CreateCarousel);
 const CreateRndHOC = Layout(CreateRnd);
 const CreateMemberHOC = Layout(CreateMembers);
 const EditPostHOC = Layout(EditPost);
 const EditCarouselHOC = Layout(EditCarousel);
 const EditMemberHOC = Layout(EditMember);
+const EditRndHOC = Layout(EditRnd);
 
 const EditProductHOC = Layout(EditProduct);
 const UserDashboardHOC = Layout(UserDashboard);
@@ -129,6 +132,17 @@ function App() {
                 }
               />
               <Route
+                path="/admin/product/create"
+                element={
+                  <AdminRoute>
+                    <CreateProductHOC />
+                  </AdminRoute>
+                }
+              />
+
+
+
+              <Route
                 path="/admin/carousel/create"
                 element={
                   <AdminRoute>
@@ -165,6 +179,14 @@ function App() {
                 }
               />
               <Route
+                path="/admin/product/edit/:id"
+                element={
+                  <AdminRoute>
+                    <EditProductHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
                 path="/admin/item/edit/:id"
                 element={
                   <AdminRoute>
@@ -176,7 +198,7 @@ function App() {
                 path="/admin/rnd/edit/:id"
                 element={
                   <AdminRoute>
-                    <EditProductHOC />
+                    <EditRndHOC />
                   </AdminRoute>
                 }
               />
