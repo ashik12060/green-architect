@@ -9,7 +9,7 @@ import Members from '../Members'
 const Team = () => {
   return (
     <>
-    <SmallHeader />
+    
     <Header />
     <CoverPhoto />
     <Members />

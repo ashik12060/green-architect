@@ -1,29 +1,52 @@
+
+
 import React, { useState, useEffect } from 'react';
-import imgg from '../../assets/architec1.jpg';
-import imgg1 from '../../assets/architect1.jpg';
-import imgg2 from '../../assets/architect2.jpg';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import axiosInstance from '../../pages/axiosInstance';
+
+const Modal = ({ showModal, closeModal, project }) => {
+  if (!showModal || !project) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white text-black p-6 rounded-md w-1/2 md:w-1/2 lg:w-1/2">
+        <div className="flex flex-col justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold">{project.title}</h2> 
+         
+          {/* <button onClick={closeModal} className="text-gray-500 hover:text-gray-800">
+            X
+          </button> */}
+          <p>{project.content}</p>
+        </div>
+        <p>{project.description}</p>
+        <div className="mt-4 flex justify-end">
+          <button
+            onClick={closeModal}
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
 
 function SplitImageCarousel() {
-  const images = [
-    { src: imgg, title: "BAITUL MAMUR JAME MOSJID" },
-    { src: imgg1, title: "HOTEL STAR VALLEY" },
-    { src: imgg2, title: "SKY DYNE RESTAURANT" },
-    { src: imgg, title: "GREEN PARK" },
-    { src: imgg1, title: "SUNRISE RESORT" },
-    { src: imgg2, title: "BLUE SKY HOTEL" },
-    { src: imgg, title: "OCEANIC VIEW" },
-    { src: imgg1, title: "MOUNTAIN VILLA" },
-    { src: imgg2, title: "CITY LIGHTS HOTEL" },
-    { src: imgg, title: "HARBOR INN" },
-    { src: imgg1, title: "DESERT OASIS" },
-    { src: imgg2, title: "COASTAL ESCAPE" }
-  ];
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+    const [projects, setProjects] = useState([]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3); // default to 3 images
+
+  const [showModal, setShowModal] = useState(false); // State to handle modal visibility
+  const [selectedProject, setSelectedProject] = useState(null); // State to handle selected project for the modal
+
 
   // Function to update the number of items to show based on screen size
   const updateItemsToShow = () => {
@@ -47,34 +70,71 @@ function SplitImageCarousel() {
     };
   }, []);
 
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/projects/show`);
+        console.log(data);
+        setProjects(data.projects || []); 
+      } catch (err) {
+        console.error("Error fetching projects:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - itemsToShow ? 0 : prevIndex + itemsToShow
+      prevIndex === projects.length - itemsToShow ? 0 : prevIndex + itemsToShow
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - itemsToShow : prevIndex - itemsToShow
+      prevIndex === 0 ? projects.length - itemsToShow : prevIndex - itemsToShow
     );
   };
 
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedProject(null);
+  };
+
+  
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
     <div className="flex flex-col items-center justify-center gap-4 mx-32 mt-10 mb-16">
-      {/* Image Carousel */}
+    
       <div className="relative w-full flex justify-between items-center">
-        {/* Image Grid */}
+  
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-          {images.slice(currentIndex, currentIndex + itemsToShow).map((image, index) => (
+          {projects.slice(currentIndex, currentIndex + itemsToShow).map((project, index) => (
             <div key={index} className="relative w-full h-80 overflow-hidden rounded-md">
               <img
-                src={image.src}
-                alt={image.title}
+                src={project.image.url}
+                alt={project.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 w-full p-4 bg-gray-800 bg-opacity-50 text-white text-center">
-                <p className="font-bold">{image.title}</p>
-                <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                <p className="font-bold">{project.title}</p>
+                <button
+                  onClick={() => openModal(project)}
+                  className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                >
                   Learn More
                 </button>
               </div>
@@ -85,7 +145,7 @@ function SplitImageCarousel() {
 
       {/* Navigation Dots */}
       <div className="flex gap-2 mt-4">
-        {Array.from({ length: Math.ceil(images.length / itemsToShow) }).map((_, index) => (
+        {Array.from({ length: Math.ceil(projects.length / itemsToShow) }).map((_, index) => (
           <span
             key={index}
             onClick={() => setCurrentIndex(index * itemsToShow)}
@@ -95,6 +155,7 @@ function SplitImageCarousel() {
       </div>
 
       
+      <Modal showModal={showModal} closeModal={closeModal} project={selectedProject} />
 
       
     </div>

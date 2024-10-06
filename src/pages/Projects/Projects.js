@@ -7,7 +7,7 @@ import Footer from '../../components/Shared/Footer/Footer'
 const Projects = () => {
   return (
     <>
-    <SmallHeader />
+    
     <Header />
    <div>
     <h2 className='text-center text-4xl font-bold mt-10'>Our Projects</h2>

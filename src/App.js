@@ -50,16 +50,21 @@ import { ThemeProvider } from "./context/ThemeContext";
 import CreateProduct from "./admin/CreateProduct";
 import CreateRnd from "./admin/CreateRnd";
 import EditRnd from "./admin/EditRnd";
+import CreateProject from "./admin/CreateProject";
+import EditProject from "./admin/EditProject";
+import SmallHeader from "./components/Shared/Headers/SmallHeader";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
 
 const CreatePostHOC = Layout(CreatePost);
 const CreateProductHOC = Layout(CreateProduct);
+const CreateProjectHOC = Layout(CreateProject);
 const CreateCarouselHOC = Layout(CreateCarousel);
 const CreateRndHOC = Layout(CreateRnd);
 const CreateMemberHOC = Layout(CreateMembers);
 const EditPostHOC = Layout(EditPost);
+const EditProjectHOC = Layout(EditProject);
 const EditCarouselHOC = Layout(EditCarousel);
 const EditMemberHOC = Layout(EditMember);
 const EditRndHOC = Layout(EditRnd);
@@ -72,9 +77,12 @@ function App() {
     <>
     <ThemeProvider >
       <ToastContainer />
+      
       <Provider store={store}>
+      
         <ProSidebarProvider>
           <BrowserRouter>
+          <SmallHeader />
           <SocialMediaButton />
       <ScrollToTopButton />
             <Routes>
@@ -139,6 +147,14 @@ function App() {
                   </AdminRoute>
                 }
               />
+              <Route
+                path="/admin/project/create"
+                element={
+                  <AdminRoute>
+                    <CreateProjectHOC />
+                  </AdminRoute>
+                }
+              />
 
 
 
@@ -183,6 +199,14 @@ function App() {
                 element={
                   <AdminRoute>
                     <EditProductHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/project/edit/:id"
+                element={
+                  <AdminRoute>
+                    <EditProjectHOC />
                   </AdminRoute>
                 }
               />

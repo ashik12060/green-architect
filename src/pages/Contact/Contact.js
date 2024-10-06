@@ -7,7 +7,7 @@ import Footer from '../../components/Shared/Footer/Footer'
 const Contact = () => {
   return (
     <>
-    <SmallHeader />
+  
     <Header />
     <ContactUs />
     <Footer />

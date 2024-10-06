@@ -24,7 +24,7 @@ const Home = () => {
   
   return (
     <>
-      <SmallHeader />
+     
       <MiddleHeader />
       <Header />
       <Carousel />

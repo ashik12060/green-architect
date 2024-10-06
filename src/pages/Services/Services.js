@@ -8,7 +8,7 @@ import img from '../../assets/23338.jpg'
 const Services = () => {
   return (
     <>
-     <SmallHeader />
+     
      <Header />
 
      {/* cover photo */}
