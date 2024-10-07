@@ -42,13 +42,11 @@ function SplitImageCarousel() {
     const [projects, setProjects] = useState([]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsToShow, setItemsToShow] = useState(3); // default to 3 images
+  const [itemsToShow, setItemsToShow] = useState(3); 
 
-  const [showModal, setShowModal] = useState(false); // State to handle modal visibility
-  const [selectedProject, setSelectedProject] = useState(null); // State to handle selected project for the modal
+  const [showModal, setShowModal] = useState(false); 
+  const [selectedProject, setSelectedProject] = useState(null); 
 
-
-  // Function to update the number of items to show based on screen size
   const updateItemsToShow = () => {
     if (window.innerWidth < 768) {
       setItemsToShow(1);
@@ -58,13 +56,10 @@ function SplitImageCarousel() {
   };
 
   useEffect(() => {
-    // Set the correct number of items to show on initial load
     updateItemsToShow();
 
-    // Update number of items on window resize
     window.addEventListener('resize', updateItemsToShow);
 
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener('resize', updateItemsToShow);
     };

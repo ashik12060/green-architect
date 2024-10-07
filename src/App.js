@@ -53,6 +53,8 @@ import EditRnd from "./admin/EditRnd";
 import CreateProject from "./admin/CreateProject";
 import EditProject from "./admin/EditProject";
 import SmallHeader from "./components/Shared/Headers/SmallHeader";
+import CreateVideo from "./admin/CreateVideo";
+import EditVideo from './admin/EditVideo'
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -63,11 +65,14 @@ const CreateProjectHOC = Layout(CreateProject);
 const CreateCarouselHOC = Layout(CreateCarousel);
 const CreateRndHOC = Layout(CreateRnd);
 const CreateMemberHOC = Layout(CreateMembers);
+const CreateVideoHOC = Layout(CreateVideo);
+
 const EditPostHOC = Layout(EditPost);
 const EditProjectHOC = Layout(EditProject);
 const EditCarouselHOC = Layout(EditCarousel);
 const EditMemberHOC = Layout(EditMember);
 const EditRndHOC = Layout(EditRnd);
+const EditVideoHOC = Layout(EditVideo);
 
 const EditProductHOC = Layout(EditProduct);
 const UserDashboardHOC = Layout(UserDashboard);
@@ -140,6 +145,14 @@ function App() {
                 }
               />
               <Route
+                path="/admin/video/create"
+                element={
+                  <AdminRoute>
+                    <CreateVideoHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
                 path="/admin/product/create"
                 element={
                   <AdminRoute>
@@ -191,6 +204,22 @@ function App() {
                 element={
                   <AdminRoute>
                     <EditPostHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/post/edit/:id"
+                element={
+                  <AdminRoute>
+                    <EditVideoHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/video/edit/:id"
+                element={
+                  <AdminRoute>
+                    <EditVideoHOC />
                   </AdminRoute>
                 }
               />

@@ -15,6 +15,7 @@ const AdminDashboard = () => {
   const [rnds, setRnd] = useState([]);
   const [members, setMembers] = useState([]);
   const [carousels,setCarousels] = useState([]);
+  const [videos,setVideos] = useState([]);
 
   // Display posts
   const displayPost = async () => {
@@ -30,6 +31,23 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     displayPost();
+  }, []);
+
+
+  // Display video
+  const displayVideo = async () => {
+    try {
+      const { data } = await axiosInstance.get(
+        `${process.env.REACT_APP_API_URL}/api/videos/show`
+      );
+      setVideos(data.videos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    displayVideo();
   }, []);
 
 
@@ -64,10 +82,6 @@ const AdminDashboard = () => {
   useEffect(() => {
     displayProject();
   }, []);
-
-
-
-
 
 
 
@@ -135,6 +149,24 @@ const AdminDashboard = () => {
         if (result?.data?.success === true) {
           toast.success("Item deleted");
           displayRnd();
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error(error);
+      }
+    }
+  };
+
+  // Delete video by ID
+  const deleteVideoById = async (e, id) => {
+    if (window.confirm("Are you sure you want to delete this video?")) {
+      try {
+        const result = await axiosInstance.delete(
+          `${process.env.REACT_APP_API_URL}/api/delete/video/${id}`
+        );
+        if (result?.data?.success === true) {
+          toast.success("Item deleted");
+          displayVideo();
         }
       } catch (error) {
         console.log(error);
@@ -360,7 +392,7 @@ const AdminDashboard = () => {
     },
   ];
 
-  
+
   // project column
   const ProjectColumns = [
     {
@@ -409,6 +441,63 @@ const AdminDashboard = () => {
           <IconButton
             aria-label="delete"
             onClick={(e) => deleteProjectById(e, value.row._id)}
+          >
+            <DeleteIcon sx={{ color: "red" }} />
+          </IconButton>
+        </div>
+      ),
+    },
+  ];
+
+
+  // video column
+  const VideoColumns = [
+    {
+      field: "_id",
+      headerName: "Video ID",
+      width: 150,
+      editable: true,
+    },
+    {
+      field: "title",
+      headerName: "Video title",
+      width: 150,
+    },
+    {
+      field: "image",
+      headerName: "Image",
+      width: 150,
+      renderCell: (params) => (
+        <img width="40%" src={params.row.image.url} alt="img" />
+      ),
+    },
+    
+    {
+      field: "postedBy",
+      headerName: "Posted by",
+      width: 150,
+      renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
+    },
+    {
+      field: "createdAt",
+      headerName: "Created At",
+      width: 150,
+      renderCell: (params) =>
+        moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
+    },
+    {
+      field: "Actions",
+      width: 100,
+      renderCell: (value) => (
+        <div className="flex justify-between">
+          <Link to={`/admin/video/edit/${value.row._id}`}>
+            <IconButton aria-label="edit">
+              <EditIcon sx={{ color: "#1976d2" }} />
+            </IconButton>
+          </Link>
+          <IconButton
+            aria-label="delete"
+            onClick={(e) => deleteVideoById(e, value.row._id)}
           >
             <DeleteIcon sx={{ color: "red" }} />
           </IconButton>
@@ -742,6 +831,48 @@ const AdminDashboard = () => {
                         {column.renderCell
                           ? column.renderCell({ row: project })
                           : project[column.field]}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Video  */}
+        <div className="flex-1 p-10 bg-gray-100">
+          <h4 className="text-black text-4xl pb-3">Videos</h4>
+          <div className="pb-2 flex justify-end">
+            <Link to="/admin/video/create">
+              <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                <AddIcon className="mr-2" />
+                Create Videos
+              </button>
+            </Link>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                  {VideoColumns.map((column) => (
+                    <th key={column.field} className="py-3 px-6 text-left">
+                      {column.headerName}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="text-gray-600 text-sm font-light">
+                {videos.map((video) => (
+                  <tr
+                    key={video._id}
+                    className="border-b border-gray-200 hover:bg-gray-100"
+                  >
+                    {VideoColumns.map((column) => (
+                      <td key={column.field} className="py-3 px-6 text-left">
+                        {column.renderCell
+                          ? column.renderCell({ row: video })
+                          : video[column.field]}
                       </td>
                     ))}
                   </tr>
