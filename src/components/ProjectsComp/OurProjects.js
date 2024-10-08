@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import axiosInstance from '../../pages/axiosInstance';
+
+
 const Modal = ({ showModal, closeModal, project }) => {
   if (!showModal || !project) return null;
 
