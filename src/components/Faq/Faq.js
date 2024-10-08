@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -25,11 +26,13 @@ const Faq = () => {
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+  const { isDarkMode } = useTheme();
 
   return (
-    <div className=" py-10 px-4">
+    <div className={`py-10 px-4 ${isDarkMode ? 'text-black bg-black' : 'bg-gray-100'}`}>
+
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
@@ -46,7 +49,7 @@ const Faq = () => {
                 </span>
               </div>
               {activeIndex === index && (
-                <div className="mt-4 text-gray-600">
+                <div className="mt-4 ">
                   {faq.answer}
                 </div>
               )}

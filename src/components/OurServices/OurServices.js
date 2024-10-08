@@ -1,14 +1,16 @@
 
 import React from "react";
 import { ServiceCard } from "./ServiceCard";
+import { useTheme } from "../../context/ThemeContext";
 
 function OurServices() {
+  const { isDarkMode } = useTheme();
   return (
     <>
     <ServiceCard />
 
 <div className="container mx-auto p-14">
-<h2 className="text-3xl font-bold text-center mb-10">
+<h2 className={`text-3xl font-bold text-center mb-10  ${isDarkMode ? ' text-white ' : 'text-black'}`}>
   Additional Services We Offer
 </h2>
 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -97,7 +99,7 @@ function OurServices() {
     </div>
   </div>
 </div>
-<p className="mt-4 text-gray-700 text-center text-justify	">
+<p className={`mt-4  text-center text-justify	 ${isDarkMode ? ' text-white' : 'text-black'}`}>
   Green Architect simplifies the process of obtaining RAJUK and City
   Corporation approvals for building plans. Our experienced team ensures
   fast, hassle-free, and compliant approvals, protecting clients from legal

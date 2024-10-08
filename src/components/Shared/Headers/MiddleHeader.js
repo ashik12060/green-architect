@@ -54,10 +54,12 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useTheme } from "../../../context/ThemeContext";
 
 const MiddleHeader = () => {
+  const { isDarkMode } = useTheme();
   return (
-    <header className="bg-green-700 text-white shadow-md py-4 hidden sm:flex">
+    <header className={`border border-green-50 text-white shadow-md py-4 hidden sm:flex ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-green-700 text-white'}`}>
       <div className="container mx-2 flex flex-row md:flex-row justify-between items-center space-y-4 md:space-y-0">
         {/* Location Section */}
         <div className="text-center md:text-left">

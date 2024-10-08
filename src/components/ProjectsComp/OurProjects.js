@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../pages/axiosInstance';
+import { useTheme } from '../../context/ThemeContext';
 
 
 const Modal = ({ showModal, closeModal, project }) => {
@@ -19,7 +20,7 @@ const Modal = ({ showModal, closeModal, project }) => {
         <div className="mt-4 flex justify-end">
           <button
             onClick={closeModal}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
           >
             Close
           </button>
@@ -37,6 +38,8 @@ function SplitImageCarousel() {
   const [itemsToShow, setItemsToShow] = useState(3);
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+
+  const { isDarkMode } = useTheme();
 
   const updateItemsToShow = () => {
     if (window.innerWidth < 640) {
@@ -99,6 +102,8 @@ function SplitImageCarousel() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
+ 
+
   return (
     <div className="flex flex-col items-center justify-center gap-4 mx-4 sm:mx-8 lg:mx-32 mt-10 mb-16">
       <div className="relative w-full flex justify-between items-center">
@@ -115,7 +120,7 @@ function SplitImageCarousel() {
                 <p className="font-bold">{project.title}</p>
                 <button
                   onClick={() => openModal(project)}
-                  className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+                  className={`mt-2  px-4 py-2 rounded-md  transition ${isDarkMode ? ' border-2 bg-gray-800 hover:bg-black hover:text-white hover:border-white border-green-700 text-white' : 'bg-green-700 text-white'}`}
                 >
                   Learn More
                 </button>

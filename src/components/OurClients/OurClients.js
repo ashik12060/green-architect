@@ -3,12 +3,14 @@ import img from '../../assets/logo/333.png';
 import img1 from '../../assets/logo/999.png';
 import img2 from '../../assets/logo/333.png';
 import img3 from '../../assets/logo/surokkha.png';
+import { useTheme } from '../../context/ThemeContext';
 
 const OurClients = () => {
+  const { isDarkMode } = useTheme();
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className={`container mx-auto px-4 py-16 ${isDarkMode ? 'text-white border-t-2 border-gray-100' : ''}`}>
       <h2 className="text-3xl font-bold text-center mb-8">Discover the amazing clients we’ve partnered with</h2>
-      <p className="text-center text-gray-600 mb-12">
+      <p className="text-center  mb-12">
         We've successfully partnered with these companies, and you could be the next to join us!
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">

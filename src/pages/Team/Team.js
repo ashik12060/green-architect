@@ -5,8 +5,11 @@ import CoverPhoto from '../../components/Shared/CoverPhoto/CoverPhoto'
 import ProjectCount from '../../components/ProjectCount'
 import SmallHeader from '../../components/Shared/Headers/SmallHeader'
 import Members from '../Members'
+import { useTheme } from '../../context/ThemeContext'
+
 
 const Team = () => {
+  const { isDarkMode } = useTheme();
   return (
     <>
     
@@ -14,7 +17,7 @@ const Team = () => {
     <CoverPhoto />
     <Members />
     <div>
-      <h3 className='text-center text-3xl font-bold py-4'>A Numerical Snapshot of Our Story</h3>
+      <h3 className={`text-center text-3xl font-bold py-4 ${isDarkMode ? ' text-white' : 'text-black'}`}>A Numerical Snapshot of Our Story</h3>
       <ProjectCount />
     </div>
     

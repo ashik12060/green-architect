@@ -8,20 +8,22 @@ import {
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "../../context/ThemeContext";
 
 export const ServiceCard = () => {
+  const { isDarkMode } = useTheme();
   return (
-    <div className="bg-gray-100">
+    <div className={` ${isDarkMode ? 'text-white' : 'bg-gray-300 '}`}>
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-center mb-10">Our Services</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h1 className={`text-4xl  font-bold text-center mb-10  ${isDarkMode ? ' text-white' : 'text-black'}`}><span className="${isDarkMode ? ' border-b-4 border-white' : 'text-black  border-b-4 border-black'}">Our Services</span></h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className="justify-center mb-4">
               <FontAwesomeIcon
                 className="text-green-500 text-3xl"
                 icon={faBuilding}
               />
-              <h2 className="ml-2 text-xl font-bold">Pre-Design</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">Pre-Design</h2>
             </div>
             <p className="text-gray-700">
               Green Architect Provides Top-Notch Architectural Design Services,
@@ -39,7 +41,7 @@ export const ServiceCard = () => {
                 icon={faWandMagicSparkles}
               />
 
-              <h2 className="ml-2 text-xl font-bold">Design</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">Design</h2>
             </div>
             <p className="text-gray-700">
               Transform Your Space into a Masterpiece with Our Expert Interior
@@ -57,7 +59,7 @@ export const ServiceCard = () => {
                 icon={faPlaceOfWorship}
               />
 
-              <h2 className="ml-2 text-xl font-bold">Build</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">Build</h2>
             </div>
             <p className="text-gray-700">
               Committed to Delivering Exceptional Structural Design Services for
@@ -75,7 +77,7 @@ export const ServiceCard = () => {
                 className="text-green-500 text-3xl"
                 icon={faHouseChimneyWindow}
               />
-              <h2 className="ml-2 text-xl font-bold">Interior</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">Interior</h2>
             </div>
             <p className="text-gray-700">
               Green Architect Provides Top-Notch Architectural Design Services,
@@ -93,7 +95,7 @@ export const ServiceCard = () => {
                 className="text-green-500 text-3xl"
                 icon={faCube}
               />
-              <h2 className="ml-2 text-xl font-bold">3D Work</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">3D Work</h2>
             </div>
             <p className="text-gray-700">
               Transform Your Space into a Masterpiece with Our Expert Interior
@@ -110,7 +112,7 @@ export const ServiceCard = () => {
                 className="text-green-500 text-3xl"
                 icon={faPlaceOfWorship}
               />
-              <h2 className="ml-2 text-xl font-bold">Real State</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">Real State</h2>
             </div>
             <p className="text-gray-700">
               Committed to Delivering Exceptional Structural Design Services for

@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../../assets/logo/green shelter.jpeg'
+import { useTheme } from "../../../context/ThemeContext";
 
 function Footer() {
   const [name, setName] = useState("");
@@ -27,8 +28,11 @@ function Footer() {
     console.log("Form submitted:", { name, email, phoneNumber, message });
   };
 
+  
+  const { isDarkMode } = useTheme();
+
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className={`bg-gray-900 text-white py-8 ${isDarkMode ? 'bg-gray-700' : 'bg-black'}`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-evenly items-start gap-8">
           {/* Left Contact Section */}

@@ -1,18 +1,21 @@
 import React from "react";
 import img from '../../assets/architect1.jpg'
+import { useTheme } from "../../context/ThemeContext";
 
 const WhyChoose = () => {
+   
+  const { isDarkMode } = useTheme();
   return (
     <div>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <div className="container mx-auto p-4 bg-white rounded-lg shadow-md">
+      <div className={`flex flex-col items-center justify-center min-h-screen ${isDarkMode ? ' text-white  bg-black' : 'bg-white'}`}>
+        <div className={`container mx-auto p-4 rounded-lg shadow-md ${isDarkMode ? ' text-white  bg-black  shadow-md shadow-gray-800' : ''}`}>
           <h1 className="text-3xl text-center my-10 pb-10 font-bold text-green-700  mb-4">
-          <span className="border-b-4 border-green-700"> Why Choose Us</span>
+          <span className={`${isDarkMode ? 'border-b-4 border-white text-white  ' : 'text-green-700 border-b-4 border-green-700'}`}> Why Choose Us</span>
           </h1>
           <div className="flex flex-col md:flex-row">
             
             <div className="md:w-1/2 p-4">
-              <p className="text-gray-600 mb-4">
+              <p className=" mb-4">
                 SHELLMARK LIMITED was established in 2012 as a partnership firm
                 with the name of SHELLMARK Engineers & Architects. A group of
                 professionals were willing to pool their resources to define a
@@ -21,7 +24,7 @@ const WhyChoose = () => {
                 Joint Stock Companies of Bangladesh under the Companies
                 Act-1994.
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className=" mb-4">
                 Today, it is a fast growing Company for Building Design,
                 Architectural and Structural Consultancy, Soil Test, Digital
                 Survey, RAJUK Plan Pass, Civil Construction & Project
@@ -29,7 +32,7 @@ const WhyChoose = () => {
                 resources comprise modern & world class solutions to meet the
                 needs of today.
               </p>
-              <p className="text-gray-600">
+              <p className="">
                 Our Mission is to offer excellent service in each of our
                 professional disciplines, in accordance with state of the art
                 practices, codes of conduct and integrity.

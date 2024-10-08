@@ -1,9 +1,11 @@
 import React from "react";
 import backgroundImage from "../../assets/architect2.jpg";
+import { useTheme } from "../../context/ThemeContext";
 
 function ContactUs() {
+  const { isDarkMode } = useTheme();
   return (
-    <div className="">
+    <div className={`${isDarkMode ? ' text-white' : 'text-black'}`}>
       {/* Hero Section with Architectural Image */}
       <div
         className="relative h-96 bg-cover bg-center"
@@ -20,7 +22,7 @@ function ContactUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Details */}
           <div>
-            <h2 className="text-3xl font-semibold mb-8">Contact Information</h2>
+            <h2 className={`text-3xl font-semibold mb-8  ${isDarkMode ? ' text-white' : 'text-black'}`}>Contact Information</h2>
            
             <div className="space-y-8 p-6 rounded-lg shadow-lg">
               {/* Our Office */}
@@ -46,7 +48,7 @@ function ContactUs() {
                   <h3 className="text-2xl font-bold text-gray-900">
                     Our Office
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Suite 2203, Level-R, Multicomplex, Gulshan 1, Dhaka 1212,
                     Bangladesh
                   </p>
@@ -74,7 +76,7 @@ function ContactUs() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">Call Us</h3>
-                  <p className="text-gray-700">+8801711-001726</p>
+                  <p className="text-gray-900">+8801711-001726</p>
                 </div>
               </div>
 
@@ -102,7 +104,7 @@ function ContactUs() {
                   <p>
                     <a
                       href="mailto:info@architectcompany.com"
-                      className="text-green-500 hover:text-green-600 hover:underline transition duration-200"
+                      className=" text-gray-900 hover:text-green-600 hover:underline transition duration-200"
                     >
                       info@architectcompany.com
                     </a>
@@ -133,10 +135,10 @@ function ContactUs() {
                   <h3 className="text-2xl font-bold text-gray-900">
                     Working Hours
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Saturday - Thursday: 10am - 7pm
                   </p>
-                  <p className="text-gray-700">Friday: Closed</p>
+                  <p className="text-gray-900">Friday: Closed</p>
                 </div>
               </div>
             </div>
@@ -144,14 +146,14 @@ function ContactUs() {
 
           {/* Contact Form */}
           <div>
-            <h2 className="text-3xl font-semibold mb-8">
+            <h2 className={`text-3xl font-semibold mb-8  ${isDarkMode ? ' text-white' : 'text-black'}`}>
               Request a Free Quote
             </h2>
             <form className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium "
                 >
                   Your Name
                 </label>
@@ -166,7 +168,7 @@ function ContactUs() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium "
                 >
                   Your Email
                 </label>
@@ -180,7 +182,7 @@ function ContactUs() {
               <div>
                 <label
                   htmlFor="number"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium "
                 >
                   Your Phone Number
                 </label>
@@ -195,7 +197,7 @@ function ContactUs() {
               <div>
                 <label
                   htmlFor="projectDetails"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium "
                 >
                   Project Details
                 </label>

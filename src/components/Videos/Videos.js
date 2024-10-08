@@ -94,12 +94,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // Make sure you have axios installed
 import axiosInstance from "../../pages/axiosInstance";
+import { useTheme } from "../../context/ThemeContext";
 
 function Videos() {
   const [videos, setVideos] = useState([]); // Store videos from the API
   const [playingVideo, setPlayingVideo] = useState(null); // Store the id of the playing video
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -124,9 +127,9 @@ function Videos() {
 
   if (loading) return <p>Loading videos...</p>;
   if (error) return <p>Error loading videos: {error}</p>;
-
+  
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-10">
+    <div className={`flex flex-col items-center justify-center min-h-screen  pt-10  text-center my-10 font-bold  ${isDarkMode ? ' text-white bg-white' : 'text-black border border-gray-700'}`}>
       <div className="w-full">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-3xl font-bold text-gray-800">Luxury Collection</h1>

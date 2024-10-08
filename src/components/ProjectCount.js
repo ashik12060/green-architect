@@ -1,15 +1,17 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { useTheme } from '../context/ThemeContext';
 
 const ProjectCount = () => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
     threshold: 0.1, // Trigger when 10% of the element is visible
   });
+  const { isDarkMode } = useTheme();
 
   return (
-    <div className="bg-gray-100 py-8">
+    <div className={` bg-gray-100 py-8 ${isDarkMode ? 'bg-black text-white border border-gray-600' : 'bg-white-700 text-black'}`}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div
