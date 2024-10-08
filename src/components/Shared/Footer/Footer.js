@@ -93,7 +93,7 @@ function Footer() {
           </div>
 
           {/* Right Form Section */}
-          <div className="lg:w-1/3">
+          {/* <div className="lg:w-1/3">
             <h5 className="font-bold text-xl mb-4">Get in Touch</h5>
             <form className="space-y-4">
               <div className="flex flex-col">
@@ -142,7 +142,64 @@ function Footer() {
                 Submit
               </button>
             </form>
-          </div>
+          </div> */}
+          <div className="flex flex-col lg:w-1/3 w-full">
+  <h5 className="font-bold text-xl mb-4">Get in Touch</h5>
+  <form className="space-y-4">
+    <div className="flex flex-col">
+      <label htmlFor="name" className="text-gray-400">
+        NAME *
+      </label>
+      <input
+        type="text"
+        id="name"
+        className="border border-gray-600 bg-gray-800 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+    </div>
+    <div className="flex flex-col">
+      <label htmlFor="email" className="text-gray-400">
+        EMAIL *
+      </label>
+      <input
+        type="email"
+        id="email"
+        className="border border-gray-600 bg-gray-800 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+    </div>
+    <div className="flex flex-col">
+      <label htmlFor="phone" className="text-gray-400">
+        CONTACT NUMBER *
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        className="border border-gray-600 bg-gray-800 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+    </div>
+    <div className="flex flex-col">
+      <label htmlFor="message" className="text-gray-400">
+        MESSAGE *
+      </label>
+      <textarea
+        id="message"
+        className="border border-gray-600 bg-gray-800 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+        rows="4"
+      />
+    </div>
+    <button
+      type="submit"
+      className="bg-gradient-to-r from-green-500 to-emerald-700 text-white font-bold py-2 px-4 rounded-md w-full hover:bg-green-600 transition duration-300"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+
+
         </div>
 
         {/* Newsletter Section */}
