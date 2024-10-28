@@ -1,26 +1,248 @@
+// import { Box, Button, TextField, Typography } from "@mui/material";
+// import { useFormik } from "formik";
+// import * as yup from "yup";
+// import Dropzone from "react-dropzone";
+// import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+// import { toast } from "react-toastify";
+// import "react-quill/dist/quill.snow.css";
+// import axiosInstance from "../pages/axiosInstance";
+// import { useNavigate } from "react-router-dom";
+
+// const validationSchema = yup.object({
+//   title: yup
+//     .string("Add a gallery title")
+//     .min(1, "text content should have a minimum of 1 characters ")
+//     .required("gallery title is required"),
+//     designation: yup
+//     .string("Add text designation")
+//     .min(1, "text designation should have a minimum of 1 characters ")
+//     .required("text designation is required"),
+// });
+
+// const CreateMembers = () => {
+//   const navigate=useNavigate()
+//   const {
+//     values,
+//     errors,
+//     touched,
+//     handleBlur,
+//     handleChange,
+//     handleSubmit,
+//     setFieldValue,
+//   } = useFormik({
+//     initialValues: {
+//       title: "",
+//       designation: "",
+//       image: null,
+//     },
+
+//     validationSchema: validationSchema,
+//     onSubmit: (values, actions) => {
+//       createNewMember(values);
+//       //alert(JSON.stringify(values, null, 2));
+//       actions.resetForm();
+//     },
+//   });
+
+//   const createNewMember = async (values) => {
+//     try {
+
+//       const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/member/create`, values);
+//       if (result?.data?.success === true) {
+//         toast.success("Member added successfully.");
+//         navigate("/admin/dashboard");
+//       }
+//     } catch (error) {
+//       console.log(error);
+//       toast.error(error);
+//     }
+//   };
+//   const modules = {
+//     // ...
+//     clipboard: {
+//       matchVisual: false,
+//     },
+//     // ...
+//   };
+
+//   return (
+//     <>
+//       <Box sx={{ bgColor: "white",
+//       padding: "20px",
+//       width: "100%",
+//       maxWidth: "1200px",
+//       margin: "0 auto",}}>
+//         <Typography variant="h5" sx={{ pb: 4 }}>
+//           {" "}
+//           Add Member{" "}
+//         </Typography>
+//         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+//           <TextField
+//             sx={{ mb: 3 }}
+//             fullWidth
+//             id="title"
+//             label="member title"
+//             name="title"
+//             InputLabelProps={{
+//               shrink: true,
+//             }}
+//             placeholder="member title"
+//             value={values.title}
+//             onChange={handleChange}
+//             onBlur={handleBlur}
+//             error={touched.title && Boolean(errors.title)}
+//             helperText={touched.title && errors.title}
+//           />
+
+//           <Box sx={{ mb: 3 }}>
+//             <TextField
+//               sx={{ mb: 3 }}
+//               fullWidth
+//               id="designation"
+//               label="Designation"
+//               name="designation"
+//               multiline
+//               rows={4}
+//               placeholder="Write the designation..."
+//               value={values.designation}
+//               onChange={handleChange}
+//               onBlur={handleBlur}
+//               error={touched.designation && Boolean(errors.designation)}
+//               helperText={touched.designation && errors.designation}
+//             />
+//           </Box>
+
+//           <Box border="2px dashed blue" sx={{ p: 1 }}>
+//             <Dropzone
+//               acceptedFiles=".jpg,.jpeg,.png"
+//               multiple={false}
+//               //maxFiles={3}
+//               onDrop={(acceptedFiles) =>
+//                 acceptedFiles.map((file, index) => {
+//                   const reader = new FileReader();
+//                   reader.readAsDataURL(file);
+//                   reader.onloadend = () => {
+//                     setFieldValue("image", reader.result);
+//                   };
+//                 })
+//               }
+//             >
+//               {({ getRootProps, getInputProps, isDragActive }) => (
+//                 <Box
+//                   {...getRootProps()}
+//                   p="1rem"
+//                   sx={{
+//                     "&:hover": { cursor: "pointer" },
+//                     bgColor: isDragActive ? "#cceffc" : "#fafafa",
+//                   }}
+//                 >
+//                   <input name="banner" {...getInputProps()} />
+//                   {isDragActive ? (
+//                     <>
+//                       <p style={{ textAlign: "center" }}>
+//                         <CloudUploadIcon
+//                           sx={{ color: "primary.main", mr: 2 }}
+//                         />
+//                       </p>
+//                       <p style={{ textAlign: "center", fontSize: "12px" }}>
+//                         {" "}
+//                         Drop here!
+//                       </p>
+//                     </>
+//                   ) : values.image === null ? (
+//                     <>
+//                       <p style={{ textAlign: "center" }}>
+//                         <CloudUploadIcon
+//                           sx={{ color: "primary.main", mr: 2 }}
+//                         />
+//                       </p>
+//                       <p style={{ textAlign: "center", fontSize: "12px" }}>
+//                         Drag and Drop here or click to choose
+//                       </p>
+//                     </>
+//                   ) : (
+//                     <>
+//                       <Box
+//                         sx={{
+//                           display: "flex",
+//                           justifyContent: "space-around",
+//                           alignItems: "center",
+//                         }}
+//                       >
+//                         <Box>
+//                           <img
+//                             style={{ maxWidth: "100px" }}
+//                             src={values.image}
+//                             alt=""
+//                           />
+//                         </Box>
+//                       </Box>
+//                     </>
+//                   )}
+//                 </Box>
+//               )}
+//             </Dropzone>
+//           </Box>
+//           <Button
+//             type="submit"
+//             fullWidth
+//             variant="contained"
+//             elevation={0}
+//             sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
+//             // onClick={handlePostContent}
+//             // disabled={loading}
+//           >
+//             Add Member
+//           </Button>
+//         </Box>
+//       </Box>
+//     </>
+//   );
+// };
+
+// export default CreateMembers;
+
+
+
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import Dropzone from "react-dropzone";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { toast } from "react-toastify";
-import "react-quill/dist/quill.snow.css";
 import axiosInstance from "../pages/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
+// Validation schema for form fields
 const validationSchema = yup.object({
-  title: yup
-    .string("Add a gallery title")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("gallery title is required"),
-    designation: yup
-    .string("Add text designation")
-    .min(1, "text designation should have a minimum of 1 characters ")
-    .required("text designation is required"),
+  titleEn: yup
+    .string("Add a  title in English")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in English is required"),
+  titleBn: yup
+    .string("Add a  title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in Bengali is required"),
+  titleEs: yup
+    .string("Add a  title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in Danish is required"),
+  designationEn: yup
+    .string("Add text designation in English")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in English is required"),
+  designationBn: yup
+    .string("Add text designation in Bengali")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in bengali is required"),
+  designationEs: yup
+    .string("Add text designation in Danish")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in Danish is required"),
 });
 
 const CreateMembers = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const {
     values,
     errors,
@@ -31,172 +253,233 @@ const CreateMembers = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: "",
-      designation: "",
+      titleEn: "",
+      titleBn: "",
+      titleEs: "",
+      designationEn: "",
+      designationBn: "",
+      designationEs: "",
       image: null,
     },
-
     validationSchema: validationSchema,
     onSubmit: (values, actions) => {
       createNewMember(values);
-      //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
     },
   });
 
   const createNewMember = async (values) => {
     try {
+      const { titleEn,titleBn, titleEs, designationEn,designationBn, designationEs, image } = values;
 
-      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/member/create`, values);
+      // Structure the data for multilingual support
+      const data = {
+        title: { en: titleEn, bn: titleBn, es: titleEs },
+        designation: { en: designationEn,bn: designationBn, es: designationEs },
+        image: image,
+      };
+
+      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/member/create`, data);
       if (result?.data?.success === true) {
         toast.success("Member added successfully.");
         navigate("/admin/dashboard");
       }
     } catch (error) {
       console.log(error);
-      toast.error(error);
+      toast.error("Error adding member. Please try again.");
     }
-  };
-  const modules = {
-    // ...
-    clipboard: {
-      matchVisual: false,
-    },
-    // ...
   };
 
   return (
-    <>
-      <Box sx={{ bgColor: "white",
-      padding: "20px",
-      width: "100%",
-      maxWidth: "1200px",
-      margin: "0 auto",}}>
-        <Typography variant="h5" sx={{ pb: 4 }}>
-          {" "}
-          Add Member{" "}
-        </Typography>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-          <TextField
-            sx={{ mb: 3 }}
-            fullWidth
-            id="title"
-            label="member title"
-            name="title"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            placeholder="member title"
-            value={values.title}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.title && Boolean(errors.title)}
-            helperText={touched.title && errors.title}
-          />
+    <Box
+      sx={{
+        bgColor: "white",
+        padding: "20px",
+        width: "100%",
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}
+    >
+      <Typography variant="h5" sx={{ pb: 4 }}>
+        Add Member
+      </Typography>
+      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+        {/* Title in English */}
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="titleEn"
+          label="Member Title (English)"
+          name="titleEn"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          placeholder="Member title in English"
+          value={values.titleEn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.titleEn && Boolean(errors.titleEn)}
+          helperText={touched.titleEn && errors.titleEn}
+        />
+        {/* Title in Bengali */}
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="titleBn"
+          label="Member Title (Bengali)"
+          name="titleBn"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          placeholder="Member title in Bengali"
+          value={values.titleBn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.titleBn && Boolean(errors.titleBn)}
+          helperText={touched.titleBn && errors.titleBn}
+        />
 
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              sx={{ mb: 3 }}
-              fullWidth
-              id="designation"
-              label="Designation"
-              name="designation"
-              multiline
-              rows={4}
-              placeholder="Write the designation..."
-              value={values.designation}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.designation && Boolean(errors.designation)}
-              helperText={touched.designation && errors.designation}
-            />
-          </Box>
+        {/* Title in Danish */}
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="titleEs"
+          label="Member Title (Danish)"
+          name="titleEs"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          placeholder="Member title in Danish"
+          value={values.titleEs}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.titleEs && Boolean(errors.titleEs)}
+          helperText={touched.titleEs && errors.titleEs}
+        />
 
-          <Box border="2px dashed blue" sx={{ p: 1 }}>
-            <Dropzone
-              acceptedFiles=".jpg,.jpeg,.png"
-              multiple={false}
-              //maxFiles={3}
-              onDrop={(acceptedFiles) =>
-                acceptedFiles.map((file, index) => {
-                  const reader = new FileReader();
-                  reader.readAsDataURL(file);
-                  reader.onloadend = () => {
-                    setFieldValue("image", reader.result);
-                  };
-                })
-              }
-            >
-              {({ getRootProps, getInputProps, isDragActive }) => (
-                <Box
-                  {...getRootProps()}
-                  p="1rem"
-                  sx={{
-                    "&:hover": { cursor: "pointer" },
-                    bgColor: isDragActive ? "#cceffc" : "#fafafa",
-                  }}
-                >
-                  <input name="banner" {...getInputProps()} />
-                  {isDragActive ? (
-                    <>
-                      <p style={{ textAlign: "center" }}>
-                        <CloudUploadIcon
-                          sx={{ color: "primary.main", mr: 2 }}
-                        />
-                      </p>
-                      <p style={{ textAlign: "center", fontSize: "12px" }}>
-                        {" "}
-                        Drop here!
-                      </p>
-                    </>
-                  ) : values.image === null ? (
-                    <>
-                      <p style={{ textAlign: "center" }}>
-                        <CloudUploadIcon
-                          sx={{ color: "primary.main", mr: 2 }}
-                        />
-                      </p>
-                      <p style={{ textAlign: "center", fontSize: "12px" }}>
-                        Drag and Drop here or click to choose
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-around",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Box>
-                          <img
-                            style={{ maxWidth: "100px" }}
-                            src={values.image}
-                            alt=""
-                          />
-                        </Box>
-                      </Box>
-                    </>
-                  )}
-                </Box>
-              )}
-            </Dropzone>
-          </Box>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            elevation={0}
-            sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
-            // onClick={handlePostContent}
-            // disabled={loading}
+        {/* Designation in English */}
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="designationEn"
+          label="Designation (English)"
+          name="designationEn"
+          multiline
+          rows={4}
+          placeholder="Write the designation in English..."
+          value={values.designationEn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.designationEn && Boolean(errors.designationEn)}
+          helperText={touched.designationEn && errors.designationEn}
+        />
+        {/* Designation in Bengali */}
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="designationBn"
+          label="Designation (Bengali)"
+          name="designationBn"
+          multiline
+          rows={4}
+          placeholder="Write the designation in Bengali..."
+          value={values.designationBn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.designationBn && Boolean(errors.designationBn)}
+          helperText={touched.designationBn && errors.designationBn}
+        />
+
+        {/* Designation in Danish */}
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="designationEs"
+          label="Designation (Danish)"
+          name="designationEs"
+          multiline
+          rows={4}
+          placeholder="Write the designation in Danish..."
+          value={values.designationEs}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.designationEs && Boolean(errors.designationEs)}
+          helperText={touched.designationEs && errors.designationEs}
+        />
+
+        {/* Image Upload */}
+        <Box border="2px dashed blue" sx={{ p: 1 }}>
+          <Dropzone
+            acceptedFiles=".jpg,.jpeg,.png"
+            multiple={false}
+            onDrop={(acceptedFiles) =>
+              acceptedFiles.map((file) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = () => {
+                  setFieldValue("image", reader.result);
+                };
+              })
+            }
           >
-            Add Member
-          </Button>
+            {({ getRootProps, getInputProps, isDragActive }) => (
+              <Box
+                {...getRootProps()}
+                p="1rem"
+                sx={{
+                  "&:hover": { cursor: "pointer" },
+                  bgColor: isDragActive ? "#cceffc" : "#fafafa",
+                }}
+              >
+                <input name="banner" {...getInputProps()} />
+                {isDragActive ? (
+                  <>
+                    <p style={{ textAlign: "center" }}>
+                      <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
+                    </p>
+                    <p style={{ textAlign: "center", fontSize: "12px" }}>
+                      Drop here!
+                    </p>
+                  </>
+                ) : values.image === null ? (
+                  <>
+                    <p style={{ textAlign: "center" }}>
+                      <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
+                    </p>
+                    <p style={{ textAlign: "center", fontSize: "12px" }}>
+                      Drag and Drop here or click to choose
+                    </p>
+                  </>
+                ) : (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-around",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box>
+                      <img style={{ maxWidth: "100px" }} src={values.image} alt="" />
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+            )}
+          </Dropzone>
         </Box>
+
+        {/* Submit Button */}
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          elevation={0}
+          sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
+        >
+          Add Member
+        </Button>
       </Box>
-    </>
+    </Box>
   );
 };
 

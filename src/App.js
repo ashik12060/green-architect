@@ -54,7 +54,8 @@ import CreateProject from "./admin/CreateProject";
 import EditProject from "./admin/EditProject";
 import SmallHeader from "./components/Shared/Headers/SmallHeader";
 import CreateVideo from "./admin/CreateVideo";
-import EditVideo from './admin/EditVideo'
+import EditVideo from "./admin/EditVideo";
+import Theader from "./components/Shared/Headers/Theader";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -80,203 +81,195 @@ const UserDashboardHOC = Layout(UserDashboard);
 function App() {
   return (
     <>
-    <ThemeProvider >
-      <ToastContainer />
-      
-      <Provider store={store}>
-      
-        <ProSidebarProvider>
-          <BrowserRouter>
-          <SmallHeader />
-          <SocialMediaButton />
-      <ScrollToTopButton />
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/home" element={<Home />}></Route>
+      <ThemeProvider>
+        <ToastContainer />
 
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/home" element={<Home />}></Route>
-              <Route path="/about-us" element={<AboutUs />}></Route>
-              <Route path="/team" element={<Team />}></Route>
-              <Route path="/services" element={<Services />}></Route>
-              <Route path="/projects" element={<Projects />}></Route>
-              <Route path="/products" element={<Products />}></Route>
-              <Route path='/contact' element={<Contact />}></Route>
+        <Provider store={store}>
+          <ProSidebarProvider>
+            <BrowserRouter>
+              <Theader />
+              {/* <SmallHeader /> */}
+              <SocialMediaButton />
+              <ScrollToTopButton />
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/home" element={<Home />}></Route>
 
-              <Route path="/buy" element={<BuyForm />} />
-              
-              {/* blog */}
-              <Route path="/" element={<BlogHome />} />
-              <Route path="/blog" element={<BlogHome />} />
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/home" element={<Home />}></Route>
+                <Route path="/about-us" element={<AboutUs />}></Route>
+                <Route path="/team" element={<Team />}></Route>
+                <Route path="/services" element={<Services />}></Route>
+                <Route path="/projects" element={<Projects />}></Route>
+                <Route path="/products" element={<Products />}></Route>
+                <Route path="/contact" element={<Contact />}></Route>
 
-              {/* research and analysis */}
-              <Route path="/research-development" element={<RnD />} />
-              <Route path="/team-members" element={<Members />} />
+                <Route path="/buy" element={<BuyForm />} />
 
-              
+                {/* blog */}
+                <Route path="/" element={<BlogHome />} />
+                <Route path="/blog" element={<BlogHome />} />
 
-              <Route path="/login" element={<LogIn />} />
-              <Route path="/register" element={<Register />} />
+                {/* research and analysis */}
+                <Route path="/research-development" element={<RnD />} />
+                <Route path="/team-members" element={<Members />} />
 
-{/* show single */}
-              <Route path="/post/:id" element={<SinglePost />} />
-              <Route path="/rnd/:id" element={<SingleRnd />} />
+                <Route path="/login" element={<LogIn />} />
+                <Route path="/register" element={<Register />} />
 
-              
-              <Route path="/log" element={<SampleLogin />} />
+                {/* show single */}
+                <Route path="/post/:id" element={<SinglePost />} />
+                <Route path="/rnd/:id" element={<SingleRnd />} />
 
-              
+                <Route path="/log" element={<SampleLogin />} />
 
-              <Route
-                path="/admin/dashboard"
-                element={
-                  <AdminRoute>
-                    <AdminDashboardHOC />
-                  </AdminRoute>
-                }
-              />
-  {/* create */}
-              <Route
-                path="/admin/post/create"
-                element={
-                  <AdminRoute>
-                    <CreatePostHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/video/create"
-                element={
-                  <AdminRoute>
-                    <CreateVideoHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/product/create"
-                element={
-                  <AdminRoute>
-                    <CreateProductHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/project/create"
-                element={
-                  <AdminRoute>
-                    <CreateProjectHOC />
-                  </AdminRoute>
-                }
-              />
+                <Route
+                  path="/admin/dashboard"
+                  element={
+                    <AdminRoute>
+                      <AdminDashboardHOC />
+                    </AdminRoute>
+                  }
+                />
+                {/* create */}
+                <Route
+                  path="/admin/post/create"
+                  element={
+                    <AdminRoute>
+                      <CreatePostHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/video/create"
+                  element={
+                    <AdminRoute>
+                      <CreateVideoHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/product/create"
+                  element={
+                    <AdminRoute>
+                      <CreateProductHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/project/create"
+                  element={
+                    <AdminRoute>
+                      <CreateProjectHOC />
+                    </AdminRoute>
+                  }
+                />
 
+                <Route
+                  path="/admin/carousel/create"
+                  element={
+                    <AdminRoute>
+                      <CreateCarouselHOC />
+                    </AdminRoute>
+                  }
+                />
 
+                <Route
+                  path="/admin/rnd/create"
+                  element={
+                    <AdminRoute>
+                      <CreateRndHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/member/create"
+                  element={
+                    <AdminRoute>
+                      <CreateMemberHOC />
+                    </AdminRoute>
+                  }
+                />
 
-              <Route
-                path="/admin/carousel/create"
-                element={
-                  <AdminRoute>
-                    <CreateCarouselHOC />
-                  </AdminRoute>
-                }
-              />
+                {/* update */}
+                <Route
+                  path="/admin/post/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditPostHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/post/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditVideoHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/video/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditVideoHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/product/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditProductHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/project/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditProjectHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/carousel/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditCarouselHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/rnd/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditRndHOC />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/member/edit/:id"
+                  element={
+                    <AdminRoute>
+                      <EditMemberHOC />
+                    </AdminRoute>
+                  }
+                />
 
-              <Route
-                path="/admin/rnd/create"
-                element={
-                  <AdminRoute>
-                    <CreateRndHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/member/create"
-                element={
-                  <AdminRoute>
-                    <CreateMemberHOC />
-                  </AdminRoute>
-                }
-              />
-
-
-{/* update */}
-              <Route
-                path="/admin/post/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditPostHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/post/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditVideoHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/video/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditVideoHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/product/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditProductHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/project/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditProjectHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/item/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditCarouselHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/rnd/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditRndHOC />
-                  </AdminRoute>
-                }
-              />
-              <Route
-                path="/admin/member/edit/:id"
-                element={
-                  <AdminRoute>
-                    <EditMemberHOC />
-                  </AdminRoute>
-                }
-              />
-
-              <Route
-                path="/user/dashboard"
-                element={
-                  <UserRoute>
-                    <UserDashboardHOC />
-                  </UserRoute>
-                }
-              />
-              {/* <Route path='*' element={<NotFound />}></Route> */}
-            </Routes>
-          </BrowserRouter>
-        </ProSidebarProvider>
-      </Provider>
+                <Route
+                  path="/user/dashboard"
+                  element={
+                    <UserRoute>
+                      <UserDashboardHOC />
+                    </UserRoute>
+                  }
+                />
+                {/* <Route path='*' element={<NotFound />}></Route> */}
+              </Routes>
+            </BrowserRouter>
+          </ProSidebarProvider>
+        </Provider>
       </ThemeProvider>
     </>
   );

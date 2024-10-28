@@ -14,10 +14,11 @@ import axiosInstance from "../pages/axiosInstance";
 // import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup
-    .string("Add an Carousel title")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("Carousel title is required")
+  title: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
 });
 
 const EditCarousel = () => {
@@ -35,10 +36,11 @@ const EditCarousel = () => {
     handleBlur,
     handleChange,
     handleSubmit,
+    resetForm,
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title,
+      title: { en: "",bn: "", es: "" }, // Initialize for multiple languages
       image: "",
     },
 
@@ -58,7 +60,9 @@ const EditCarousel = () => {
       // 
       const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/carousel/${id}`
       );
-      setTitle(data.carousel.title);
+      values.title.en = data.member.title.en; // Fetch English title
+      values.title.bn = data.member.title.bn; // Fetch Bengali title
+      values.title.es = data.member.title.es; // Fetch Danish title
       setImagePreview(data.carousel.image.url);
       console.log("single carousel admin", data.carousel);
     } catch (error) {
@@ -76,8 +80,10 @@ const EditCarousel = () => {
       const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/carousel/${id}`, values);
 
       console.log(result)
-      if (result?.data?.success === true) {
-        toast.success("carousel updated");
+      if (result?.data?.success) {
+        toast.success("Carousel updated successfully");
+        resetForm();
+        setImagePreview("");
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -97,18 +103,54 @@ const EditCarousel = () => {
           <TextField
             sx={{ mb: 3 }}
             fullWidth
-            id="carousel"
-            label="carousel title"
-            name="carousel"
+            id="title-en"
+            label="Title (English)"
+            name="title.en"
             InputLabelProps={{
               shrink: true,
             }}
-            placeholder="carousel title"
-            value={values.title}
+            placeholder="Title in English"
+            value={values.title.en}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.title && Boolean(errors.title)}
-            helperText={touched.title && errors.title}
+            error={touched.title?.en && Boolean(errors.title?.en)}
+          helperText={touched.title?.en && errors.title?.en}
+          />
+
+             
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="title-bn"
+            label="Title (Bengali)"
+            name="title.bn"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            placeholder="Title in Bengali"
+            value={values.title.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.title?.bn && Boolean(errors.title?.bn)}
+          helperText={touched.title?.bn && errors.title?.bn}
+          />
+
+             
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="title-es"
+            label="Title (Danish)"
+            name="title.es"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            placeholder="Title in Danish"
+            value={values.title.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.title?.es && Boolean(errors.title?.es)}
+          helperText={touched.title?.es && errors.title?.es}
           />
 
              

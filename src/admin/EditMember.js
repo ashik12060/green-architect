@@ -3,34 +3,28 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Dropzone from "react-dropzone";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import axios from "axios";
 import { toast } from "react-toastify";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import { modules } from "../components/moduleToolbar";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../pages/axiosInstance";
-// import axiosInstance from "../pages/axiosInstance";
 
+// Define validation schema for both languages
 const validationSchema = yup.object({
-  title: yup
-    .string("Add a title")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("Title is required"),
-    designation: yup
-    .string("Add text designation")
-    .min(1, "text designation should have a minimum of 1 characters ")
-    .required("text designation is required"),
+  title: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  designation: yup.object({
+    en: yup.string("Add a designation in English").required("Designation is required"),
+    bn: yup.string("Add a designation in Bengali").required("Designation is required"),
+    es: yup.string("Add a designation in Danish").required("Designation is required"),
+  }),
 });
 
 const EditMember = () => {
   const { id } = useParams();
-  const [title, setTitle] = useState("");
-  const [designation, setDesignation] = useState("");
-  const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
-
   const navigate = useNavigate();
 
   const {
@@ -41,36 +35,35 @@ const EditMember = () => {
     handleChange,
     handleSubmit,
     setFieldValue,
+    resetForm,
   } = useFormik({
     initialValues: {
-      title,
-      designation,
+      title: { en: "",bn: "", es: "" }, // Initialize for multiple languages
+      designation: { en: "",bn: "", es: "" }, // Initialize for multiple languages
       image: "",
     },
-
     validationSchema: validationSchema,
     enableReinitialize: true,
-    onSubmit: (values, actions) => {
-      updateMember(values);
-      //alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values, actions) => {
+      await updateMember(values);
       actions.resetForm();
     },
   });
 
-  //show post by Id
+  // Fetch member details by ID
   const singleMemberById = async () => {
-    // console.log(id)
     try {
-      // 
-      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/member/${id}`
-      );
-      setTitle(data.member.title);
-      setDesignation(data.member.designation);
+      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/member/${id}`);
+      values.title.en = data.member.title.en; // Fetch English title
+      values.title.bn = data.member.title.bn; // Fetch Bengali title
+      values.title.es = data.member.title.es; // Fetch Danish title
+      values.designation.en = data.member.designation.en; // Fetch English designation
+      values.designation.bn = data.member.designation.bn; // Fetch Bengali designation
+      values.designation.es = data.member.designation.es; // Fetch Danish designation
       setImagePreview(data.member.image.url);
-      console.log("single member admin", data.member);
     } catch (error) {
-      console.log(error);
-      toast.error(error);
+      console.error(error);
+      toast.error("Failed to fetch member data");
     }
   };
 
@@ -81,165 +74,165 @@ const EditMember = () => {
   const updateMember = async (values) => {
     try {
       const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/member/${id}`, values);
-
-      console.log(result)
-      if (result?.data?.success === true) {
-        toast.success("member updated");
+      if (result?.data?.success) {
+        toast.success("Member updated successfully");
+        resetForm();
+        setImagePreview("");
         navigate("/admin/dashboard");
       }
     } catch (error) {
-      console.log(error);
-      toast.error(error.response.data.error);
+      console.error(error);
+      toast.error(error.response?.data?.error || "Failed to update member");
     }
   };
 
   return (
-    <>
-      <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
-        <Typography variant="h5" sx={{ pb: 4 }}>
-          {" "}
-          Edit member{" "}
-        </Typography>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-          <TextField
-            sx={{ mb: 3 }}
-            fullWidth
-            id="title"
-            label="member title"
-            name="title"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            placeholder="member title"
-            value={values.title}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.title && Boolean(errors.title)}
-            helperText={touched.title && errors.title}
-          />
-
-          {/* <Box sx={{ mb: 3 }}>
-            <ReactQuill
-              theme="snow"
-              placeholder={"Write the post content..."}
-              modules={modules}
-              value={values.content}
-              onChange={(e) => setFieldValue("content", e)}
-            />
-            <Box
-              component="span"
-              sx={{ color: "#d32f2f", fontSize: "12px", pl: 2 }}
-            >
-              {touched.content && errors.content}
-            </Box>
-          </Box> */}
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              sx={{ mb: 3 }}
-              fullWidth
-              id="designation"
-              label="Designation"
-              name="designation"
-              multiline
-              rows={4}
-              placeholder="Write the designation..."
-              value={values.designation}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.designation && Boolean(errors.designation)}
-              helperText={touched.designation && errors.contdesignationent}
-            />
-          </Box>
+    <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
+      <Typography variant="h5" sx={{ pb: 4 }}>
+        Edit Member
+      </Typography>
+      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+        {/* Title Inputs for Multiple Languages */}
+        <Typography variant="subtitle1">Title</Typography>
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="title-en"
+          label="Title (English)"
+          name="title.en"
+          placeholder="Title in English"
+          value={values.title.en}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.title?.en && Boolean(errors.title?.en)}
+          helperText={touched.title?.en && errors.title?.en}
+        />
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="title-bn"
+          label="Title (Bengali)"
+          name="title.bn"
+          placeholder="Title in Bengali"
+          value={values.title.bn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.title?.bn && Boolean(errors.title?.bn)}
+          helperText={touched.title?.bn && errors.title?.bn}
+        />
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="title-es"
+          label="Title (Danish)"
+          name="title.es"
+          placeholder="Título en Danish"
+          value={values.title.es}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.title?.es && Boolean(errors.title?.es)}
+          helperText={touched.title?.es && errors.title?.es}
+        />
         
-   
+        {/* Designation Inputs for Multiple Languages */}
+        <Typography variant="subtitle1">Designation</Typography>
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="designation-en"
+          label="Designation (English)"
+          name="designation.en"
+          placeholder="Designation in English"
+          value={values.designation.en}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.designation?.en && Boolean(errors.designation?.en)}
+          helperText={touched.designation?.en && errors.designation?.en}
+        />
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="designation-bn"
+          label="Designation (Bengali)"
+          name="designation.bn"
+          placeholder="Designation in Bengali"
+          value={values.designation.bn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.designation?.bn && Boolean(errors.designation?.bn)}
+          helperText={touched.designation?.bn && errors.designation?.bn}
+        />
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="designation-es"
+          label="Designation (Danish)"
+          name="designation.es"
+          placeholder="Designation in Danish"
+          value={values.designation.es}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.designation?.es && Boolean(errors.designation?.es)}
+          helperText={touched.designation?.es && errors.designation?.es}
+        />
 
-
-          <Box border="2px dashed blue" sx={{ p: 1 }}>
-            <Dropzone
-              acceptedFiles=".jpg,.jpeg,.png"
-              multiple={false}
-              //maxFiles={3}
-              onDrop={(acceptedFiles) =>
-                acceptedFiles.map((file, index) => {
-                  const reader = new FileReader();
-                  reader.readAsDataURL(file);
-                  reader.onloadend = () => {
-                    setFieldValue("image", reader.result);
-                  };
-                })
-              }
-            >
-              {({ getRootProps, getInputProps, isDragActive }) => (
-                <Box
-                  {...getRootProps()}
-                  p="1rem"
-                  sx={{
-                    "&:hover": { cursor: "pointer" },
-                    bgColor: isDragActive ? "#cceffc" : "#fafafa",
-                  }}
-                >
-                  <input name="image" {...getInputProps()} />
-                  {isDragActive ? (
-                    <>
+        {/* Dropzone for Image Upload */}
+        <Box border="2px dashed blue" sx={{ p: 1, mb: 3 }}>
+          <Dropzone
+            acceptedFiles=".jpg,.jpeg,.png"
+            multiple={false}
+            onDrop={(acceptedFiles) => {
+              acceptedFiles.map((file) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = () => {
+                  setFieldValue("image", reader.result);
+                  setImagePreview(reader.result);
+                };
+              });
+            }}
+          >
+            {({ getRootProps, getInputProps, isDragActive }) => (
+              <Box
+                {...getRootProps()}
+                p="1rem"
+                sx={{
+                  "&:hover": { cursor: "pointer" },
+                  bgColor: isDragActive ? "#cceffc" : "#fafafa",
+                }}
+              >
+                <input name="image" {...getInputProps()} />
+                {isDragActive ? (
+                  <p style={{ textAlign: "center" }}>
+                    <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
+                    Drop here!
+                  </p>
+                ) : (
+                  <>
+                    {imagePreview ? (
+                      <img style={{ maxWidth: "100px" }} src={imagePreview} alt="Preview" />
+                    ) : (
                       <p style={{ textAlign: "center" }}>
-                        <CloudUploadIcon
-                          sx={{ color: "primary.main", mr: 2 }}
-                        />
-                      </p>
-                      <p style={{ textAlign: "center", fontSize: "12px" }}>
-                        {" "}
-                        Drop here!
-                      </p>
-                    </>
-                  ) : values.image === null ? (
-                    <>
-                      <p style={{ textAlign: "center" }}>
-                        <CloudUploadIcon
-                          sx={{ color: "primary.main", mr: 2 }}
-                        />
-                      </p>
-                      <p style={{ textAlign: "center", fontSize: "12px" }}>
+                        <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
                         Drag and Drop image here or click to choose
                       </p>
-                    </>
-                  ) : (
-                    <>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-around",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Box>
-                          <img
-                            style={{ maxWidth: "100px" }}
-                            src={
-                              values.image === "" ? imagePreview : values.image
-                            }
-                            alt=""
-                          />
-                        </Box>
-                      </Box>
-                    </>
-                  )}
-                </Box>
-              )}
-            </Dropzone>
-          </Box>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            elevation={0}
-            sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
-            // disabled={loading}
-          >
-            Update Post
-          </Button>
+                    )}
+                  </>
+                )}
+              </Box>
+            )}
+          </Dropzone>
         </Box>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
+        >
+          Update Member
+        </Button>
       </Box>
-    </>
+    </Box>
   );
 };
 
