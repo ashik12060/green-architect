@@ -1,0 +1,26 @@
+{
+    "getInTouch": "যোগাযোগ করুন",
+    "contactInfo": "যোগাযোগের তথ্য",
+    "ourOffice": "আমাদের অফিস",
+    "officeAddress": "সুইট ২২০৩, লেভেল-আর, মাল্টিকমপ্লেক্স, গুলশান ১, ঢাকা ১২১২, বাংলাদেশ",
+    "callUs": "আমাদের কল করুন",
+    "phoneNumber": "+৮৮০১৭১১-০০১৭২৬",
+    "emailUs": "ইমেইল করুন",
+    "emailAddress": "info@architectcompany.com",
+    "workingHours": "কাজের সময়",
+    "workingDays": "শনিবার - বৃহস্পতিবার: সকাল ১০টা - সন্ধ্যা ৭টা",
+    "fridayClosed": "শুক্রবার: বন্ধ",
+    "requestQuote": "একটি বিনামূল্যে কোট চাই",
+    "yourName": "আপনার নাম",
+    "namePlaceholder": "নাম",
+    "yourEmail": "আপনার ইমেইল",
+    "emailPlaceholder": "ইমেইল",
+    "yourPhoneNumber": "আপনার ফোন নম্বর",
+    "phonePlaceholder": "ফোন নম্বর",
+    "projectDetails": "প্রকল্পের বিবরণ",
+    "detailsPlaceholder": "আপনার প্রশ্ন লিখুন",
+    "submitRequest": "অনুরোধ পাঠান",
+    "findUs": "গুগল ম্যাপে আমাদের খুঁজুন",
+    "googleMap": "গুগল ম্যাপ"
+  }
+  
