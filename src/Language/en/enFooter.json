@@ -1,0 +1,43 @@
+{
+  "footer": {
+    "contact": {
+      "address": "Panthapath, Kalabagan, Dhaka-1205",
+      "designQuote": "Design Your Own World",
+      
+      "quickLinks": "Quick Links",
+      "getInTouch": "Get in Touch",
+     "cell":"+8801317424004",
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "blog": "Blog",
+      "services": "Services",
+      "products": "Products",
+      "scheduleMeeting": "Schedule a Meeting",
+      "subscribeNewsletter": "SUBSCRIBE TO OUR NEWSLETTER",
+      "newsletterDescription": "Get all the latest updates easily"
+    },
+    "form": {
+      "getInTouch": "Get in Touch",
+      "name": "NAME *",
+      "email": "EMAIL *",
+      "phone": "CONTACT NUMBER *",
+      "message": "MESSAGE *",
+      "submit": "Submit"
+    },
+    "newsletter": {
+      "subscribe": "SUBSCRIBE TO OUR NEWSLETTER",
+      "description": "Get all the latest updates easily",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "connectButton": "Connect"
+    },
+    "socialMedia": {
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "footerMessage": "&copy; {{year}} Green Shelter Design & Development. All rights reserved."
+  }
+}

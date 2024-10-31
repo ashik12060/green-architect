@@ -1,0 +1,14 @@
+{
+    "projects": "Vore projekter",
+    "allProjects":"Alle projekter",
+    "schedule_meeting": "Planlæg et møde",
+    "popup_title": "Udfyld denne formular",
+    "LearnMore":"Lær mere",
+    "form": {
+      "name": "Navn:",
+      "email": "E-mail:",
+      "message": "Besked:",
+      "submit": "Indsend",
+      "close": "Luk"
+    }
+  }

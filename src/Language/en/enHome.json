@@ -1,0 +1,14 @@
+{
+    "projects": "Our Projects",
+    "allProjects":"All Projects",
+    "schedule_meeting": "Schedule a Meeting",
+    "popup_title": "Fill Out This Form",
+    "LearnMore":"Learn More",
+    "form": {
+      "name": "Name:",
+      "email": "Email:",
+      "message": "Message:",
+      "submit": "Submit",
+      "close": "Close"
+    }
+}

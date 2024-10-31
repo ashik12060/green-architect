@@ -1,0 +1,22 @@
+{
+    "title": "Ofte Stillede Spørgsmål",
+    "faqs": [
+      {
+        "question": "Hvad er jeres returpolitik?",
+        "answer": "Vores returpolitik varer i 30 dage. Hvis der er gået 30 dage siden dit køb, kan vi desværre ikke tilbyde dig en refusion eller ombytning."
+      },
+      {
+        "question": "Hvordan sporer jeg min ordre?",
+        "answer": "Når din ordre er blevet afsendt, modtager du et trackingnummer via e-mail eller SMS. Du kan bruge dette nummer til at spore din ordre på vores hjemmeside."
+      },
+      {
+        "question": "Tilbyder I international fragt?",
+        "answer": "Ja, vi tilbyder international fragt til udvalgte lande. Tjek venligst fragtsiden for flere detaljer."
+      },
+      {
+        "question": "Hvordan kontakter jeg kundeservice?",
+        "answer": "Du kan kontakte vores kundeserviceteam ved at sende en e-mail til support@yourcompany.com eller ringe til vores hotline på +123-456-789."
+      }
+    ]
+  }
+  

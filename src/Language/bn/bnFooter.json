@@ -1,0 +1,43 @@
+{
+    "footer": {
+      "contact": {
+        "address": "পন্থাপথ, কালাবাগান, ঢাকা-1205",
+        "designQuote": "আপনার নিজস্ব বিশ্ব ডিজাইন করুন",
+        "quickLinks": "দ্রুত লিঙ্ক",
+        "cell":"+০১৩১৭৪২৪০০৪",
+        "getInTouch": "যোগাযোগ করুন",
+        "aboutUs": "আমাদের সম্পর্কে",
+        "contact": "যোগাযোগ",
+        "blog": "ব্লগ",
+        "services": "সেবা",
+        "products": "পণ্য",
+        "scheduleMeeting": "মিটিংয়ের সময় নির্ধারণ করুন",
+        "subscribeNewsletter": "আমাদের নিউজলেটারের জন্য সাবস্ক্রাইব করুন",
+        "newsletterDescription": "সর্বশেষ আপডেটগুলি সহজেই পান"
+      },
+      "form": {
+        "getInTouch":"যোগাযোগ করুন",
+        "name": "নাম *",
+        "email": "ইমেইল *",
+        "phone": "যোগাযোগ নম্বর *",
+        "message": "বার্তা *",
+        "submit": "জমা দিন"
+      },
+      "newsletter": {
+      "subscribe": "আমাদের নিউজলেটারে সাবস্ক্রাইব করুন",
+      "description": "সবশেষ আপডেট সহজেই পান",
+      "namePlaceholder": "আপনার নাম",
+      "emailPlaceholder": "আপনার ইমেইল",
+      "connectButton": "সংযোগ করুন"
+    },
+      "socialMedia": {
+        "facebook": "ফেসবুক",
+        "youtube": "ইউটিউব",
+        "instagram": "ইনস্টাগ্রাম",
+        "linkedin": "লিঙ্কডইন",
+        "email": "ইমেইল"
+      },
+      "footerMessage": "&copy; {{year}} গ্রিন শেল্টার ডিজাইন ও ডেভেলপমেন্ট। সকল অধিকার সংরক্ষিত।"
+    }
+  }
+  

@@ -1,0 +1,30 @@
+{
+  "title": "Vores Tjenester",
+  "readMore":"Læs mere",
+  "services": [
+    {
+      "title": "For-Design",
+      "description": "Green Architect tilbyder førsteklasses arkitektoniske designtjenester, der kombinerer kreativitet og ekspertise for at realisere din vision."
+    },
+    {
+      "title": "Design",
+      "description": "Forvandl dit rum til et mesterværk med vores ekspertinteriørdesigntjenester. Lad os gøre din vision til virkelighed."
+    },
+    {
+      "title": "Byggeri",
+      "description": "Forpligtet til at levere enestående strukturelle designtjenester for en række byggeprojekter, der sikrer stabilitet og sikkerhed for hver struktur."
+    },
+    {
+      "title": "Interiør",
+      "description": "Green Architect tilbyder førsteklasses arkitektoniske designtjenester, der kombinerer kreativitet og ekspertise for at realisere din vision."
+    },
+    {
+      "title": "3D Arbejde",
+      "description": "Forvandl dit rum til et mesterværk med vores ekspertinteriørdesigntjenester. Lad os gøre din vision til virkelighed."
+    },
+    {
+      "title": "Fast Ejendom",
+      "description": "Forpligtet til at levere enestående strukturelle designtjenester for en række byggeprojekter, der sikrer stabilitet og sikkerhed for hver struktur."
+    }
+  ]
+}

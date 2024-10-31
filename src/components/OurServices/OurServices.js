@@ -2,16 +2,18 @@
 import React from "react";
 import { ServiceCard } from "./ServiceCard";
 import { useTheme } from "../../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 function OurServices() {
   const { isDarkMode } = useTheme();
+  const { t } = useTranslation('AdditionalService');
   return (
     <>
     <ServiceCard />
 
 <div className="container mx-auto p-14">
 <h2 className={`text-3xl font-bold text-center mb-10  ${isDarkMode ? ' text-white ' : 'text-black'}`}>
-  Additional Services We Offer
+ {t('additionalServices')}
 </h2>
 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
   <div className="bg-green-500 p-10 rounded-full shadow-md">
@@ -31,7 +33,7 @@ function OurServices() {
         />
       </svg>
       <h3 className="ml-2 text-lg font-bold text-white">
-        Rajuk Approval
+       {t('rajukApproval')}
       </h3>
     </div>
   </div>
@@ -52,7 +54,7 @@ function OurServices() {
         />
       </svg>
       <h3 className="ml-2 text-lg font-bold text-white ">
-        Soil Test
+      {t('soilTest')}
       </h3>
     </div>
   </div>
@@ -73,7 +75,7 @@ function OurServices() {
         />
       </svg>
       <h3 className="ml-2 text-lg font-bold text-white">
-        Cost Estimate
+      {t('costEstimate')}
       </h3>
     </div>
   </div>
@@ -94,19 +96,13 @@ function OurServices() {
         />
       </svg>
       <h3 className="ml-2 text-lg font-bold text-white">
-        Digital Land Survey
+     {t('digitalSurvey')}
       </h3>
     </div>
   </div>
 </div>
 <p className={`mt-4  text-center text-justify	 ${isDarkMode ? ' text-white' : 'text-black'}`}>
-  Green Architect simplifies the process of obtaining RAJUK and City
-  Corporation approvals for building plans. Our experienced team ensures
-  fast, hassle-free, and compliant approvals, protecting clients from legal
-  issues and delays. Trust us to guide you through the complex process,
-  providing personalized support and ensuring a smooth, efficient
-  experience. Choose Green Architect for peace of mind and a stress-free
-  building plan approval process.
+ {t('description')}
 </p>
 </div>
     </>
