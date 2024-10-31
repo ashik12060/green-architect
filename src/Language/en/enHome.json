@@ -1,8 +1,10 @@
 {
     "projects": "Our Projects",
+    "ResearchDevelopment":"Research and Development",
     "allProjects":"All Projects",
     "schedule_meeting": "Schedule a Meeting",
     "popup_title": "Fill Out This Form",
+    "FindMore ":"Find More",
     "LearnMore":"Learn More",
     "form": {
       "name": "Name:",

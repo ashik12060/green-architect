@@ -26,6 +26,7 @@ const RnD = () => {
   const [postRemoveLike, setPostRemoveLike] = useState([]);
   const [visibleRnds, setVisibleRnds] = useState(4);
   const { i18n } = useTranslation();
+  const { t } = useTranslation('Home'); 
 
   const showMoreRnds = () => {
     setVisibleRnds(rnds.length);

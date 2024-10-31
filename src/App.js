@@ -87,8 +87,8 @@ function App() {
         <Provider store={store}>
           <ProSidebarProvider>
             <BrowserRouter>
-              <Theader />
-              {/* <SmallHeader /> */}
+              {/* <Theader /> */}
+              <SmallHeader />
               <SocialMediaButton />
               <ScrollToTopButton />
               <Routes>

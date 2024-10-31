@@ -16,6 +16,7 @@ import axiosInstance from "../pages/axiosInstance";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 // import axiosInstance from "../pages/axiosInstance";
 
 const RndCard = ({
@@ -31,6 +32,8 @@ const RndCard = ({
 }) => {
   const { userInfo } = useSelector((state) => state.signIn);
   const [truncatedContent, setTruncatedContent] = useState("");
+  
+  const { t } = useTranslation('Home'); 
 
   useEffect(() => {
     const contentArray = content.split("\n");
@@ -70,42 +73,7 @@ const RndCard = ({
 
 
   return (
-    // <div className="overflow-hidden ">
-    //   <div className="container ">
-    //     <div id="productInfo" className=" shadow border flex ">
-    //       <div>
-    //         <Link to={`/rnd/${id}`}>
-    //           <img className="w-100 h-72 p-4 border " src={image} alt="advisor_team" />
-    //         </Link>
-    //       </div>
-
-    //       <div className="mb-3  ps-2">
-
-    //         <h3 className="pt-2">{title}</h3>
-            
-
-    //         <div className="me-4 ms-1 
-    //         " style={{ marginTop: "auto" }}>
-    //           <div style={{ maxHeight: "7em", overflow: "hidden" }}>
-    //             {truncatedContent}
-                
-    //           </div>
-              
-    //           <div className="pb-2">
-    //           <Link className=" fw-bold fs-6 link-to" to={`/rnd/${id}`}>
-                 
-    //              Find More <FontAwesomeIcon icon={faAnglesRight} />
-               
-    //          </Link>
-               
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-
-
+     <>
     <div className="overflow-hidden">
       <div className="shadow border flex flex-col md:flex-row">
         <div className="lg:w-1/2">
@@ -120,12 +88,13 @@ const RndCard = ({
           </div>
           <div className="mt-auto">
             <Link className="fw-bold text-blue-500" to={`/rnd/${id}`}>
-              Find More <FontAwesomeIcon icon={faAnglesRight} />
+               {t('FindMore')} <FontAwesomeIcon icon={faAnglesRight} />
             </Link>
           </div>
         </div>
       </div>
     </div>
+  </>
   );
 };
 

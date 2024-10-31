@@ -1,21 +1,21 @@
-import React, { createContext, useContext, useState } from "react";
+// import React, { createContext, useContext, useState } from "react";
 
-const LanguageContext = createContext();
+// const LanguageContext = createContext();
 
-export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("EN");
+// export const LanguageProvider = ({ children }) => {
+//   const [language, setLanguage] = useState("EN");
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-  };
+//   const changeLanguage = (lang) => {
+//     setLanguage(lang);
+//   };
 
-  return (
-    <LanguageContext.Provider value={{ language, changeLanguage }}>
-      {children}
-    </LanguageContext.Provider>
-  );
-};
+//   return (
+//     <LanguageContext.Provider value={{ language, changeLanguage }}>
+//       {children}
+//     </LanguageContext.Provider>
+//   );
+// };
 
-export const useLanguage = () => {
-  return useContext(LanguageContext);
-};
+// export const useLanguage = () => {
+//   return useContext(LanguageContext);
+// };
