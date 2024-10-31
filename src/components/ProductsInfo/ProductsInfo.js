@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../pages/axiosInstance';
+import { useTranslation } from 'react-i18next';
 
 const ProductsInfo = () => {
   const [loading, setLoading] = useState(true);
@@ -8,34 +9,7 @@ const ProductsInfo = () => {
 
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
-
-
-  //   const products = [
-  //   {
-  //     id: 1,
-  //     name: 'Product 1',
-  //     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-  //     image: 'https://via.placeholder.com/150',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Product 2',
-  //     description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-  //     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkAPZfrna3OaTDoriwFW5j2OeQueHmpbAl8DZJVGbTYLax0jhOfKD-1qikHVRKB1xfcvA&usqp=CAU',
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Product 3',
-  //     description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-  //     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkAPZfrna3OaTDoriwFW5j2OeQueHmpbAl8DZJVGbTYLax0jhOfKD-1qikHVRKB1xfcvA&usqp=CAU',
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'Product 4',
-  //     description: 'This is a description for Product 4.',
-  //     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkAPZfrna3OaTDoriwFW5j2OeQueHmpbAl8DZJVGbTYLax0jhOfKD-1qikHVRKB1xfcvA&usqp=CAU',
-  //   },
-  // ];
+    const { t, i18n } = useTranslation(); 
 
 
   useEffect(() => {
@@ -87,10 +61,11 @@ const ProductsInfo = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105">
-              <img src={product.image.url} alt={product.title} className="w-full h-40 object-cover" />
+              <img src={product.image.url} alt="fd" className="w-full h-40 object-cover" />
               <div className="p-4">
-                <h3 className="text-lg text-black font-semibold">{product.title}</h3>
-                <p className="text-gray-600 line-clamp-3">{product.content}</p>
+              {/* {product.title} */}
+                <h3 className="text-lg text-black font-semibold"> {product.title[i18n.language]}</h3>
+                <p className="text-gray-600 line-clamp-3">{product.content[i18n.language]}</p>
                 <button
                   onClick={() => handleOpen(product)}
                   className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
@@ -108,10 +83,10 @@ const ProductsInfo = () => {
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white text-black rounded-lg shadow-lg w-11/12 sm:w-1/2 max-h-[90vh] overflow-hidden">
             <div className="p-4 border-b">
-              <h2 className="text-xl font-semibold">{selectedProduct?.title}</h2>
+              <h2 className="text-xl font-semibold">{selectedProduct?.title[i18n.language]}</h2>
             </div>
             <div className="p-4 overflow-y-auto max-h-[70vh]">
-              <p>{selectedProduct?.content}</p>
+              <p>{selectedProduct?.content[i18n.language]}</p>
               <img src={selectedProduct?.image.url} alt={selectedProduct?.title} className="mt-4 w-full" />
             </div>
             <div className="p-4 border-t flex justify-between">

@@ -24,6 +24,7 @@ import "./Pro.css";
 import Header from "../components/Shared/Headers/Header";
 import Footer from "../components/Shared/Footer/Footer";
 import { useTheme } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 // const socket = io("/", {
 //   reconnection: true,
 // });
@@ -51,6 +52,7 @@ const SingleRnd = () => {
   const [image, setImage] = useState("");
   const [createdAt, setCreatedAt] = useState("");
   const [loading, setLoading] = useState(false);
+  const { t, i18n } = useTranslation(); 
 
   const { id } = useParams();
   //fetch single post
@@ -104,8 +106,8 @@ const SingleRnd = () => {
          
         </div>
         <div className="ps-4 lg:w-2/3" >
-         <h2 className="text-xl font-bold mt-4">{title}</h2>
-         <p className="mt-2 ">{content}</p>
+         <h2 className="text-xl font-bold mt-4">{title[i18n.language]}</h2>
+         <p className="mt-2 ">{content[i18n.language]}</p>
          </div>
       
       </div>

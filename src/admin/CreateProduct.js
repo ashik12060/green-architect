@@ -13,14 +13,31 @@ import { useNavigate } from "react-router-dom";
 // import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup
-    .string("Add a product title")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("product title is required"),
-  content: yup
-    .string("Add text content")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("text content is required"),
+  titleEn: yup
+    .string("Add a  title in English")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in English is required"),
+  titleBn: yup
+    .string("Add a  title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in Bengali is required"),
+  titleEs: yup
+    .string("Add a  title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in Danish is required"),
+
+  contentEn: yup
+    .string("Add text designation in English")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in English is required"),
+  contentBn: yup
+    .string("Add text designation in Bengali")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in bengali is required"),
+  contentEs: yup
+    .string("Add text designation in Danish")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in Danish is required"),
 });
 
 const CreateProduct = () => {
@@ -35,8 +52,13 @@ const CreateProduct = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: "",
-      content: "",
+      titleEn: "",
+      titleBn: "",
+      titleEs: "",
+
+      contentEn: "",
+      contentBn: "",
+      contentEs: "",
       image: null,
     },
 
@@ -50,8 +72,25 @@ const CreateProduct = () => {
 
   const createNewProduct = async (values) => {
     try {
+      const {
+        titleEn,
+        titleBn,
+        titleEs,
+        contentEn,
+        contentBn,
+        contentEs,
+        image,
+      } = values;
 
-      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/product/create`, values);
+       // Structure the data for multilingual support
+       const data = {
+        title: { en: titleEn, bn: titleBn, es: titleEs },
+        content: { en: contentEn, bn: contentBn, es: contentEs },
+        image: image,
+      };
+
+
+      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/product/create`, data);
       if (result?.data?.success === true) {
         toast.success("product created");
         navigate("/admin/dashboard");
@@ -82,30 +121,84 @@ const CreateProduct = () => {
         <div className="mb-3">
           <label htmlFor="title" className="block mb-1 text-sm font-medium">Product title</label>
           <input
-            id="title"
-            name="title"
+            id="titleEn"
+            name="titleEn"
             placeholder="Product title"
-            value={values.title}
+            value={values.titleEn}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.title && errors.title ? 'border-red-500' : ''}`}
+            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.titleEn && errors.titleEn ? 'border-red-500' : ''}`}
           />
-          {touched.title && errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
+          {touched.titleEn && errors.titleEn && <p className="text-red-500 text-sm">{errors.titleEn}</p>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="title" className="block mb-1 text-sm font-medium">Product title</label>
+          <input
+            id="titleBn"
+            name="titleBn"
+            placeholder="Product title"
+            value={values.titleBn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.titleBn && errors.titleEn ? 'border-red-500' : ''}`}
+          />
+          {touched.titleBn && errors.titleBn && <p className="text-red-500 text-sm">{errors.titleBn}</p>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="title" className="block mb-1 text-sm font-medium">Product title</label>
+          <input
+            id="titleEs"
+            name="titleEs"
+            placeholder="Product title"
+            value={values.titleEs}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.titleEs && errors.titleEs ? 'border-red-500' : ''}`}
+          />
+          {touched.titletitleEsEn && errors.titleEs && <p titleEs="text-red-500 text-sm">{errors.titleEs}</p>}
         </div>
 
         <div className="mb-3">
           <label htmlFor="content" className="block mb-1 text-sm font-medium">Content</label>
           <textarea
-            id="content"
-            name="content"
+            id="contentEn"
+            name="contentEn"
             placeholder="Write the Product content..."
             rows={4}
-            value={values.content}
+            value={values.contentEn}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.content && errors.content ? 'border-red-500' : ''}`}
+            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.contentEn && errors.contentEn ? 'border-red-500' : ''}`}
           />
-          {touched.content && errors.content && <p className="text-red-500 text-sm">{errors.content}</p>}
+          {touched.contentEn && errors.contentEn && <p className="text-red-500 text-sm">{errors.contentEn}</p>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="content" className="block mb-1 text-sm font-medium">Content</label>
+          <textarea
+            id="contentBn"
+            name="contentBn"
+            placeholder="Write the Product content..."
+            rows={4}
+            value={values.contentBn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.contentBn && errors.contentBn ? 'border-red-500' : ''}`}
+          />
+          {touched.contentBn && errors.contentBn && <p className="text-red-500 text-sm">{errors.contentBn}</p>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="content" className="block mb-1 text-sm font-medium">Content</label>
+          <textarea
+            id="contentEs"
+            name="contentEs"
+            placeholder="Write the Product content..."
+            rows={4}
+            value={values.contentEs}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.contentEs && errors.contentEs ? 'border-red-500' : ''}`}
+          />
+          {touched.contentEs && errors.contentEs && <p className="text-red-500 text-sm">{errors.contentEs}</p>}
         </div>
 
         <div className="border-2 border-dashed border-blue-500 p-2">

@@ -4,7 +4,7 @@ import moment from "moment";
 import Loader from "../components/Loader";
 import { io } from "socket.io-client";
 // import NavbarProducts from "../components/NavbarProducts";
-import './Pro.css'
+import "./Pro.css";
 import axiosInstance from "./axiosInstance";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +13,7 @@ import Header from "../components/Shared/Headers/Header";
 import MiddleHeader from "../components/Shared/Headers/MiddleHeader";
 import Footer from "../components/Shared/Footer/Footer";
 import { useTheme } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 // import axiosInstance from "./axiosInstance";
 const socket = io("/", {
   reconnection: true,
@@ -23,7 +24,8 @@ const RnD = () => {
   const [loading, setLoading] = useState(false);
   const [postAddLike, setPostAddLike] = useState([]);
   const [postRemoveLike, setPostRemoveLike] = useState([]);
-  const [visibleRnds, setVisibleRnds] = useState(4); 
+  const [visibleRnds, setVisibleRnds] = useState(4);
+  const { i18n } = useTranslation();
 
   const showMoreRnds = () => {
     setVisibleRnds(rnds.length);
@@ -31,13 +33,12 @@ const RnD = () => {
   const showRnds = async () => {
     setLoading(true);
     try {
-      // ${process.env.REACT_APP_API_URL}
-      // 
-      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/rnds/show`);
+      const { data } = await axiosInstance.get(
+        `${process.env.REACT_APP_API_URL}/api/rnds/show`
+      );
       setRnds(data.rnds);
       setLoading(false);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -60,20 +61,33 @@ const RnD = () => {
       ? postAddLike
       : postRemoveLike.length > 0
       ? postRemoveLike
-      // : products;
-      : rnds.slice(0, visibleRnds);
+      : // : products;
 
+        rnds;
+  // : rnds.slice(0, visibleRnds);
 
-      const { isDarkMode } = useTheme();
+  const { isDarkMode } = useTheme();
   return (
     <>
-    <MiddleHeader />
-    <Header />
-<div className={`min-h-screen my-8 ${isDarkMode ? ' text-white' : 'text-black'}`}>
+      <MiddleHeader />
+      <Header />
+      <div
+        className={`min-h-screen my-8 ${
+          isDarkMode ? " text-white" : "text-black"
+        }`}
+      >
         <div className="text-center pt-4">
           <h3>
             <span className="text-3xl font-bold">
-              <span className={` ${isDarkMode ? ' text-white border-b-4 border-white' : 'text-black border-b-4 border-black'}`}>Research and Development</span>
+              <span
+                className={` ${
+                  isDarkMode
+                    ? " text-white border-b-4 border-white"
+                    : "text-black border-b-4 border-black"
+                }`}
+              >
+                Research and Development
+              </span>
             </span>
           </h3>
         </div>
@@ -84,13 +98,23 @@ const RnD = () => {
                 <Loader />
               ) : (
                 uiPosts.slice(0, visibleRnds).map((product, index) => (
-                  <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
+                  <div
+                    key={index}
+                    className="border rounded-lg overflow-hidden shadow-lg"
+                  >
                     <RndCard
                       image={product.image ? product.image.url : ""}
                       id={product._id}
-                      title={product.title}
-                      content={product.content}
-                      subheader={moment(product.createdAt).format("MMMM DD, YYYY")}
+                      title={
+                        product.title?.[i18n.language] || "Title not available"
+                      } // Safe access with fallback
+                      content={
+                        product.content?.[i18n.language] ||
+                        "Content not available"
+                      }
+                      subheader={moment(product.createdAt).format(
+                        "MMMM DD, YYYY"
+                      )}
                       comments={product.comments.length}
                       likes={product.likes.length}
                       likesId={product.likes}
@@ -102,7 +126,10 @@ const RnD = () => {
             </div>
             {rnds.length > 4 && visibleRnds < rnds.length && (
               <div className="text-center my-5">
-                <button onClick={showMoreRnds} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200">
+                <button
+                  onClick={showMoreRnds}
+                  className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+                >
                   See More <FontAwesomeIcon icon={faAnglesRight} />
                 </button>
               </div>

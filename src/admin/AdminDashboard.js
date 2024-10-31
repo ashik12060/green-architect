@@ -63,7 +63,12 @@ const AdminDashboard = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/products/show`
       );
-      setProducts(data.products);
+      const englishProducts = data.products.map((product) => ({
+        ...product,
+        title: product.title.en, // Use the English translation directly
+        content: product.content.en,
+      }));
+      setProducts(englishProducts);
     } catch (error) {
       console.log(error);
     }
@@ -79,7 +84,14 @@ const AdminDashboard = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/projects/show`
       );
-      setProjects(data.projects);
+      // Extract only English fields for admin panel display
+      const englishProjects = data.projects.map((project) => ({
+        ...project,
+        title: project.title.en, // Use the English translation directly
+        content: project.content.en,
+      }));
+
+      setProjects(englishProjects);
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +107,12 @@ const AdminDashboard = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/rnds/show`
       );
-      setRnd(data.rnds);
+      const englishRnd = data.rnds.map((rnd) => ({
+        ...rnd,
+        title: rnd.title.en, // Use the English translation directly
+        content: rnd.content.en,
+      }));
+      setRnd(englishRnd);
     } catch (error) {
       console.log(error);
     }
@@ -901,344 +918,76 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
-
+      case "products":
         return (
-          //   <div className="flex ">
-          //     {/* Sidebar */}
-          //     <div className="w-64 bg-gray-800 h-screen p-5">
-
-          //       <h2 className="text-white text-2xl font-bold mb-5">Admin Dashboard</h2>
-          //       <ul>
-          //         <li className="text-white mb-2">
-          //           <Link to="/admin">Home</Link>
-          //         </li>
-          //         <li className="text-white mb-2">
-          //           <Link to="/admin/posts">Posts</Link>
-          //         </li>
-          //         <li className="text-white mb-2">
-          //           <Link to="/admin/users">Users</Link>
-          //         </li>
-          //         <li className="text-white mb-2">
-          //           <Link to="/admin/settings">Settings</Link>
-          //         </li>
-          //       </ul>
-          //     </div>
-
-          //     <div className="flex flex-col">
-
-          //       {/* Main Content */}
-          //       <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Blog Posts</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/post/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Create Post
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {PostColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {posts.map((post) => (
-          //                 <tr
-          //                   key={post._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {PostColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: post })
-          //                         : post[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          //       {/* Products */}
-          //       <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Products</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/product/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Create Product
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {ProductColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {products.map((product) => (
-          //                 <tr
-          //                   key={product._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {ProductColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: product })
-          //                         : product[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          //       {/* Projects  */}
-          //       <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Projects</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/project/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Create Project
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {ProjectColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {projects.map((project) => (
-          //                 <tr
-          //                   key={project._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {ProjectColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: project })
-          //                         : project[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          //       {/* Video  */}
-          //       <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Videos</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/video/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Create Videos
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {VideoColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {videos.map((video) => (
-          //                 <tr
-          //                   key={video._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {VideoColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: video })
-          //                         : video[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          //       {/* Research and development */}
-          //       <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Research and development</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/rnd/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Create Research and Dev
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {RndColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {rnds.map((rnd) => (
-          //                 <tr
-          //                   key={rnd._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {RndColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: rnd })
-          //                         : rnd[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          //       {/* Team members */}
-          //       <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Members</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/member/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Add Member
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {MembersColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {members.map((member) => (
-          //                 <tr
-          //                   key={member._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {MembersColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: member })
-          //                         : member[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          // {/* Carousel */}
-          // <div className="flex-1 p-10 bg-gray-100">
-          //         <h4 className="text-black text-4xl pb-3">Carousel Images</h4>
-          //         <div className="pb-2 flex justify-end">
-          //           <Link to="/admin/carousel/create">
-          //             <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //               <AddIcon className="mr-2" />
-          //               Post Image
-          //             </button>
-          //           </Link>
-          //         </div>
-          //         <div className="overflow-x-auto">
-          //           <table className="min-w-full bg-white">
-          //             <thead>
-          //               <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //                 {CarouselColumns.map((column) => (
-          //                   <th key={column.field} className="py-3 px-6 text-left">
-          //                     {column.headerName}
-          //                   </th>
-          //                 ))}
-          //               </tr>
-          //             </thead>
-          //             <tbody className="text-gray-600 text-sm font-light">
-          //               {carousels.map((carousel) => (
-          //                 <tr
-          //                   key={carousel._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {CarouselColumns.map((column) => (
-          //                     <td key={column.field} className="py-3 px-6 text-left">
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: carousel })
-          //                         : carousel[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))}
-          //             </tbody>
-          //           </table>
-          //         </div>
-          //       </div>
-
-          //     </div>
-          //   </div>
-
           <div>
-            <h4 className="text-black text-4xl pb-3">Products</h4>
-            <div className="pb-2 flex justify-end">
-              <Link to="/admin/product/create">
-                <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-                  <AddIcon className="mr-2" />
-                  Create Product
-                </button>
-              </Link>
-            </div>
+                       
             <div className="overflow-x-auto">
-              {/* Replace with your products table here */}
-              <p>Your Products Table Here</p>
+              {/* Replace with your posts table here */}
+              <div>
+                <h4 className="text-black text-4xl pb-3">Products</h4>
+                <div className="pb-2 flex justify-end">
+                  <Link to="/admin/product/create">
+                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                      <AddIcon className="mr-2" />
+                      Add Product
+                    </button>
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        {ProductColumns.map((column) => (
+                          <th
+                            key={column.field}
+                            className="py-3 px-6 text-left"
+                          >
+                            {column.headerName}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                      {products.length > 0 ? (
+                        products.map((product) => (
+                          <tr
+                            key={product._id}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                          >
+                            {ProductColumns.map((column) => (
+                              <td
+                                key={column.field}
+                                className="py-3 px-6 text-left"
+                              >
+                                {column.renderCell
+                                  ? column.renderCell({ row: product })
+                                  : product[column.field]}
+                              </td>
+                            ))}
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td
+                            colSpan={PostColumns.length}
+                            className="text-center py-4"
+                          >
+                            No product found.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p>Your product Table Here</p>
             </div>
           </div>
         );
+
+    
+        
       case "projects":
         return (
           <div>
@@ -1253,6 +1002,65 @@ const AdminDashboard = () => {
             </div>
             <div className="overflow-x-auto">
               {/* Replace with your projects table here */}
+              <div>
+                <h4 className="text-black text-4xl pb-3">Project</h4>
+                <div className="pb-2 flex justify-end">
+                  <Link to="/admin/project/create">
+                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                      <AddIcon className="mr-2" />
+                      Add Project
+                    </button>
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        {ProjectColumns.map((column) => (
+                          <th
+                            key={column.field}
+                            className="py-3 px-6 text-left"
+                          >
+                            {column.headerName}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                      {projects.length > 0 ? (
+                        projects.map((project) => (
+                          <tr
+                            key={project._id}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                          >
+                            {ProjectColumns.map((column) => (
+                              <td
+                                key={column.field}
+                                className="py-3 px-6 text-left"
+                              >
+                                {column.renderCell
+                                  ? column.renderCell({ row: project })
+                                  : project[column.field]}
+                              </td>
+                            ))}
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td
+                            colSpan={ProjectColumns.length}
+                            className="text-center py-4"
+                          >
+                            No Projects found.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
               <p>Your Projects Table Here</p>
             </div>
           </div>
@@ -1291,6 +1099,66 @@ const AdminDashboard = () => {
             </div>
             <div className="overflow-x-auto">
               {/* Replace with your R&D table here */}
+
+              <div>
+                <h4 className="text-black text-4xl pb-3">Products</h4>
+                <div className="pb-2 flex justify-end">
+                  <Link to="/admin/rnd/create">
+                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                      <AddIcon className="mr-2" />
+                      Add Product
+                    </button>
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        {RndColumns.map((column) => (
+                          <th
+                            key={column.field}
+                            className="py-3 px-6 text-left"
+                          >
+                            {column.headerName}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                      {rnds.length > 0 ? (
+                        rnds.map((rnd) => (
+                          <tr
+                            key={rnd._id}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                          >
+                            {RndColumns.map((column) => (
+                              <td
+                                key={column.field}
+                                className="py-3 px-6 text-left"
+                              >
+                                {column.renderCell
+                                  ? column.renderCell({ row: rnd })
+                                  : rnd[column.field]}
+                              </td>
+                            ))}
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td
+                            colSpan={PostColumns.length}
+                            className="text-center py-4"
+                          >
+                            No product found.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
               <p>Your R&D Table Here</p>
             </div>
           </div>

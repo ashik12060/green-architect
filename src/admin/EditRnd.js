@@ -13,14 +13,16 @@ import axiosInstance from "../pages/axiosInstance";
 // import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup
-    .string("Add a rnd title")
-    .min(4)
-    .required("RND title is required"),
-  content: yup
-    .string("Add text content")
-    .min(10)
-    .required("Text content is required"),
+  title: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  content: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
   
 });
 
@@ -39,8 +41,8 @@ const EditRnd = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: "",
-      content: "",
+      title: { en: "", bn: "", es: "" },
+      content: { en: "", bn: "", es: "" },
       image: "",
     },
     validationSchema: validationSchema,
@@ -56,11 +58,14 @@ const EditRnd = () => {
     try {
       // 
       const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/rnd/${id}`);
-      const rnd = data.rnd;
-      setFieldValue("title", rnd.title);
-      setFieldValue("content", rnd.content);
-     
-      setImagePreview(rnd.image.url);
+      
+      values.title.en = data.rnd.title.en; // Fetch English title
+      values.title.bn = data.rnd.title.bn; // Fetch Bengali title
+      values.title.es = data.rnd.title.es; // Fetch Danish title
+      values.content.en = data.rnd.designation.en; // Fetch English designation
+      values.content.bn = data.rnd.designation.bn; // Fetch Bengali designation
+      values.content.es = data.rnd.designation.es; // Fetch Danish designation
+      setImagePreview(data.rnd.image.url);
     } catch (error) {
       console.log(error);
       toast.error(error);
@@ -91,40 +96,93 @@ const EditRnd = () => {
           Edit Rnd
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+        <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="title-en"
+            label="Title (English)"
+            name="title.en"
+            placeholder="Title in English"
+            value={values.title.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.title?.en && Boolean(errors.title?.en)}
+            helperText={touched.title?.en && errors.title?.en}
+          />
           <TextField
             sx={{ mb: 3 }}
             fullWidth
-            id="title"
-            label="RND title"
-            name="title"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            placeholder="RND title"
-            value={values.title}
+            id="title-bn"
+            label="Title (Bengali)"
+            name="title.bn"
+            placeholder="Title in Bengali"
+            value={values.title.bn}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.title && Boolean(errors.title)}
-            helperText={touched.title && errors.title}
+            error={touched.title?.bn && Boolean(errors.title?.bn)}
+            helperText={touched.title?.bn && errors.title?.bn}
+          />
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="title-es"
+            label="Title (Danish)"
+            name="title.es"
+            placeholder="Title in Danish"
+            value={values.title.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.title?.es && Boolean(errors.title?.es)}
+            helperText={touched.title?.es && errors.title?.es}
           />
 
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              sx={{ mb: 3 }}
-              fullWidth
-              id="content"
-              label="Content"
-              name="content"
-              multiline
-              rows={4}
-              placeholder="Write the rnd content..."
-              value={values.content}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.content && Boolean(errors.content)}
-              helperText={touched.content && errors.content}
-            />
-          </Box>
+          {/* Content Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">Content</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="content-en"
+            label="Content (English)"
+            name="content.en"
+            multiline
+            rows={4}
+            placeholder="Content in English"
+            value={values.content.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.content?.en && Boolean(errors.content?.en)}
+            helperText={touched.content?.en && errors.content?.en}
+          />
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="content-bn"
+            label="Content (Bengali)"
+            name="content.bn"
+            multiline
+            rows={4}
+            placeholder="Content in Bengali"
+            value={values.content.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.content?.bn && Boolean(errors.content?.bn)}
+            helperText={touched.content?.bn && errors.content?.bn}
+          />
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="content-es"
+            label="Content (Danish)"
+            name="content.es"
+            multiline
+            rows={4}
+            placeholder="Content in Danish"
+            value={values.content.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.content?.es && Boolean(errors.content?.es)}
+            helperText={touched.content?.es && errors.content?.es}
+          />
 
 
           <Box border="2px dashed blue" sx={{ p: 1 }}>

@@ -9,14 +9,31 @@ import { useEffect, useRef, useState } from "react";
 import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup
-    .string("Add a rnd title")
-    .min(1, "Title should have a minimum of 1 characters")
-    .required("Rnd title is required"),
-  content: yup
-    .string("Add text content")
-    .min(1, "Text content should have a minimum of 1 characters")
-    .required("Text content is required"),
+  titleEn: yup
+    .string("Add a  title in English")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in English is required"),
+  titleBn: yup
+    .string("Add a  title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in Bengali is required"),
+  titleEs: yup
+    .string("Add a  title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required(" title in Danish is required"),
+
+  contentEn: yup
+    .string("Add text designation in English")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in English is required"),
+  contentBn: yup
+    .string("Add text designation in Bengali")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in bengali is required"),
+  contentEs: yup
+    .string("Add text designation in Danish")
+    .min(1, "Designation must have at least 1 character")
+    .required("Text designation in Danish is required"),
 
 });
 
@@ -32,8 +49,13 @@ const CreateRnd = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: "",
-      content: "",
+      titleEn: "",
+      titleBn: "",
+      titleEs: "",
+
+      contentEn: "",
+      contentBn: "",
+      contentEs: "",
       image: null,
      
     },
@@ -52,6 +74,7 @@ const CreateRnd = () => {
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
       try {
+        
         // Your logic that could potentially throw an error
       } catch (error) {
         if (error.name === 'ResizeObserver loop completed') {
@@ -75,7 +98,24 @@ const CreateRnd = () => {
 //stop
   const createNewRnd = async (values) => {
     try {
-       const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/rnd/create`, values);
+
+      const {
+        titleEn,
+        titleBn,
+        titleEs,
+        contentEn,
+        contentBn,
+        contentEs,
+        image,
+      } = values;
+
+      // Structure the data for multilingual support
+      const data = {
+        title: { en: titleEn, bn: titleBn, es: titleEs },
+        content: { en: contentEn, bn: contentBn, es: contentEs },
+        image: image,
+      };
+       const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/rnd/create`, data);
       
        if (result?.data?.success === true) {
         toast.success("Rnd created successfully");
@@ -109,44 +149,103 @@ const CreateRnd = () => {
         
         {/* noValidate */}
         <Box component="form"  onSubmit={handleSubmit}  sx={{ mt: 1 }}>
-          <TextField
-            sx={{ mb: 3}}
+        <TextField
             fullWidth
-            id="title"
-            label="Rnd title"
-            name="title"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            placeholder="Rnd title"
-            value={values.title}
+            sx={{ mb: 3 }}
+            id="titleEn"
+            label="Post Title (English)"
+            name="titleEn"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Post title in English"
+            value={values.titleEn}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.title && Boolean(errors.title)}
-            helperText={touched.title && errors.title}
-
+            error={touched.titleEn && Boolean(errors.titleEn)}
+            helperText={touched.titleEn && errors.titleEn}
           />
 
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              sx={{ mb: 3 }}
-              fullWidth
-              id="content"
-              label="Content"
-              name="content"
-              multiline
-              rows={4}
-              placeholder="Write the rnd post content..."
-              value={values.content}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.content && Boolean(errors.content)}
-              helperText={touched.content && errors.content}
-            />
+          {/* Title in Bengali */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="titleBn"
+            label="Post Title (Bengali)"
+            name="titleBn"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Post title in Bengali"
+            value={values.titleBn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.titleBn && Boolean(errors.titleBn)}
+            helperText={touched.titleBn && errors.titleBn}
+          />
 
-            
+          {/* Title in Danish */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="titleEs"
+            label="Post Title (Danish)"
+            name="titleEs"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Post title in Danish"
+            value={values.titleEs}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.titleEs && Boolean(errors.titleEs)}
+            helperText={touched.titleEs && errors.titleEs}
+          />
 
-          </Box>
+          {/* Content in English */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="contentEn"
+            label="Content (English)"
+            name="contentEn"
+            multiline
+            rows={4}
+            placeholder="Write the content in English..."
+            value={values.contentEn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.contentEn && Boolean(errors.contentEn)}
+            helperText={touched.contentEn && errors.contentEn}
+          />
+
+          {/* Content in Bengali */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="contentBn"
+            label="Content (Bengali)"
+            name="contentBn"
+            multiline
+            rows={4}
+            placeholder="Write the content in Bengali..."
+            value={values.contentBn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.contentBn && Boolean(errors.contentBn)}
+            helperText={touched.contentBn && errors.contentBn}
+          />
+
+          {/* Content in Danish */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="contentEs"
+            label="Content (Danish)"
+            name="contentEs"
+            multiline
+            rows={4}
+            placeholder="Write the content in Danish..."
+            value={values.contentEs}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.contentEs && Boolean(errors.contentEs)}
+            helperText={touched.contentEs && errors.contentEs}
+          />
 
           <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone

@@ -208,7 +208,7 @@ import { useTranslation } from 'react-i18next';
 const socket = io('/', { reconnection: true });
 
 const BlogHome = () => {
-    const { t, i18n } = useTranslation(); // Use i18n to get the current language
+    const { t, i18n } = useTranslation(); 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [postAddLike, setPostAddLike] = useState([]);
