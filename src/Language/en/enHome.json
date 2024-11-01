@@ -1,5 +1,10 @@
 {
     "projects": "Our Projects",
+    "ourTeam":"Our Team",
+    "meetTeam":"Meet the people powering our progress",
+    "ourProducts":"Our Products",
+    "viewProduct":"View Product",
+    "buyNow":"Buy Now",
     "ResearchDevelopment":"Research and Development",
     "allProjects":"All Projects",
     "schedule_meeting": "Schedule a Meeting",

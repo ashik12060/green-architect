@@ -87,7 +87,7 @@ const RnD = () => {
                     : "text-black border-b-4 border-black"
                 }`}
               >
-                Research and Development
+                {t('ResearchDevelopment')}
               </span>
             </span>
           </h3>

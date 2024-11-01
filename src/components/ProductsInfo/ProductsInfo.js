@@ -9,8 +9,8 @@ const ProductsInfo = () => {
 
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
-    const { t, i18n } = useTranslation(); 
-
+    const { i18n } = useTranslation(); 
+    const { t } = useTranslation('Home'); 
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -57,7 +57,7 @@ const ProductsInfo = () => {
   return (
     <>
       <div className="container mx-auto p-4">
-        <h2 className="text-2xl font-bold mb-6 text-center">Our Products</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">{t('ourProducts')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105">
@@ -70,7 +70,8 @@ const ProductsInfo = () => {
                   onClick={() => handleOpen(product)}
                   className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
                 >
-                  View Product
+                  
+                  {t('viewProduct')}
                 </button>
               </div>
             </div>
@@ -94,13 +95,14 @@ const ProductsInfo = () => {
                 onClick={handleClose}
                 className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition"
               >
-                Close
+                
+                {t('form.close')}
               </button>
               <button
                  onClick={handleBuyNow}
                 className="bg-green-700 text-white py-2 px-4 rounded  transition"
               >
-                Buy Now
+                {t('buyNow')}
               </button>
             </div>
           </div>

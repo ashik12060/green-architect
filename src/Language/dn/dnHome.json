@@ -1,6 +1,11 @@
 {
     "projects": "Vore projekter",
     "allProjects":"Alle projekter",
+    "ourTeam":"Vores team",
+    "ourProducts":"Vores produkter",
+    "viewProduct":"Se produkt",
+    "buyNow":"Køb nu",
+    "meetTeam":"Mød de mennesker, der driver vores fremskridt",
     "schedule_meeting": "Planlæg et møde",
     "popup_title": "Udfyld denne formular",
     "ResearchDevelopment":"Forskning og udvikling",

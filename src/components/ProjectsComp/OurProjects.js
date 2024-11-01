@@ -120,7 +120,7 @@ const SplitImageCarousel = () => {
                   onClick={() => openModal(project)}
                   className={`mt-2 px-4 py-2 rounded-md transition ${isDarkMode ? 'border-2 bg-gray-800 hover:bg-black text-white' : 'bg-green-700 text-white'}`}
                 >
-                  e{t('LearnMore')}
+                  {t('LearnMore')}
                 </button>
               </div>
             </div>

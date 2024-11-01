@@ -1,7 +1,13 @@
 {
     "projects": "আমাদের প্রকল্প",
+    "ourTeam":"আমাদের দল",
+    "meetTeam":"আমাদের উন্নয়নের মূল স্তম্ভ যাঁরা, তাঁদের সাথে পরিচিত হোন।",
     "schedule_meeting": "একটি সভার সময় নির্ধারণ করুন",
     "allProjects":"সমস্ত প্রকল্প",
+    "ourProducts":"আমাদের পণ্য",
+    "viewProduct":"পণ্য দেখুন",
+    "buyNow":"এখনই কিনুন",
+    
     "popup_title": "এই ফর্মটি পূরণ করুন",
     "ResearchDevelopment":"গবেষণা ও উন্নয়ন",
     "FindMore":"আরও খুঁজুন",

@@ -11,6 +11,7 @@ const SmallHeader = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("EN");
 
   const { i18n } = useTranslation();
+  const { t } = useTranslation('ProjectComplete'); 
 
   const handleLanguageChange = (event) => {
     i18n.changeLanguage(event.target.value); // Switch language
@@ -68,7 +69,8 @@ const SmallHeader = () => {
 
           {/* Sign Up Button */}
           <Link to='/contact' className={`px-4 py-1 rounded ${isDarkMode ? "bg-gray-700 text-white hover:bg-green-600" : "bg-green-700 text-white hover:bg-green-500 hover:text-white"} transition duration-300`}>
-            Buy Now
+            {t('buyNow')}
+          
           </Link>
         </div>
       </div>
