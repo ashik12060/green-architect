@@ -169,7 +169,7 @@ export const ServiceCard = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={`${isDarkMode ? "text-white" : "bg-gray-300"}`}>
+    <div className={`${isDarkMode ? "text-white" : "bg-gray-100"}`}>
       <div className="container mx-auto px-4 py-16">
         <h1 className={`text-4xl font-bold text-center mb-10 ${isDarkMode ? "text-white" : "text-black"}`}>
           <span className={`${isDarkMode ? "border-b-4 border-white" : "border-b-4 border-black"}`}>

@@ -46,7 +46,7 @@ const ProductsInfo = () => {
   const handleBuyNow = () => {
     if (selectedProduct) {
       // Navigate to the form with the product name as a query parameter
-      navigate(`/buy?productName=${encodeURIComponent(selectedProduct.name)}`);
+      navigate('/contact');
     }
   };
   

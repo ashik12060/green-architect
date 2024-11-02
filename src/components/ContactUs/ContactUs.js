@@ -1,14 +1,52 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import backgroundImage from "../../assets/architect2.jpg";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
-
+import { toast } from "react-toastify";
+import { send } from "@emailjs/browser";
 
 function ContactUs() {
-  const { t } = useTranslation('contact'); 
+  const { t } = useTranslation("contact");
   const { isDarkMode } = useTheme();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessages] = useState("");
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    send(
+      "service_zn8v5ha",
+      "template_1abfnbw",
+      {
+        user_name: name,
+        user_email: email,
+        user_phone: phone,
+        user_message: message,
+      },
+      "SV6akA8uF1spLD8Oj"
+    )
+      .then((result) => {
+        toast.success("Email sent successfully!");
+        console.log(result.text);
+        // Clear the form
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessages("");
+      })
+      .catch((error) => {
+        toast.error("Failed to send email.");
+        console.log(error.text);
+      });
+  };
+
   return (
-    <div className={`${isDarkMode ? ' text-white' : 'text-black'}`}>
+    <div className={`${isDarkMode ? " text-white" : "text-black"}`}>
       {/* Hero Section with Architectural Image */}
       <div
         className="relative h-96 bg-cover bg-center"
@@ -16,7 +54,7 @@ function ContactUs() {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-4xl font-bold text-white">{t('getInTouch')}</h1>
+          <h1 className="text-4xl font-bold text-white">{t("getInTouch")}</h1>
           {/* <h1 className="text-4xl font-bold text-white">Get In Touch</h1> */}
         </div>
       </div>
@@ -27,8 +65,14 @@ function ContactUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Details */}
           <div>
-            <h2 className={`text-3xl font-semibold mb-8  ${isDarkMode ? ' text-white' : 'text-black'}`}>{t('contactInfo')}</h2>
-           
+            <h2
+              className={`text-3xl font-semibold mb-8  ${
+                isDarkMode ? " text-white" : "text-black"
+              }`}
+            >
+              {t("contactInfo")}
+            </h2>
+
             <div className="space-y-8 p-6 rounded-lg shadow-lg">
               {/* Our Office */}
               <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -51,11 +95,9 @@ function ContactUs() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
-                    {t('ourOffice')}
+                    {t("ourOffice")}
                   </h3>
-                  <p className="text-gray-900">
-                     {t('officeAddress')}
-                  </p>
+                  <p className="text-gray-900">{t("officeAddress")}</p>
                 </div>
               </div>
 
@@ -79,8 +121,11 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900"> {t('callUs')}</h3>
-                  <p className="text-gray-900"> {t('phoneNumber')}</p>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {" "}
+                    {t("callUs")}
+                  </h3>
+                  <p className="text-gray-900"> {t("phoneNumber")}</p>
                 </div>
               </div>
 
@@ -104,13 +149,15 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{t('emailUs')}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {t("emailUs")}
+                  </h3>
                   <p>
                     <a
                       href="mailto:info@architectcompany.com"
                       className=" text-gray-900 hover:text-green-600 hover:underline transition duration-200"
                     >
-                      {t('emailAddress')}
+                      {t("emailAddress")}
                     </a>
                   </p>
                 </div>
@@ -137,12 +184,10 @@ function ContactUs() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
-                    {t('workingHours')}
+                    {t("workingHours")}
                   </h3>
-                  <p className="text-gray-900">
-                     {t('workingDays')}
-                  </p>
-                  <p className="text-gray-900"> {t('fridayClosed')}</p>
+                  <p className="text-gray-900">{t("workingDays")}</p>
+                  <p className="text-gray-900"> {t("fridayClosed")}</p>
                 </div>
               </div>
             </div>
@@ -150,50 +195,59 @@ function ContactUs() {
 
           {/* Contact Form */}
           <div>
-            <h2 className={`text-3xl font-semibold mb-8  ${isDarkMode ? ' text-white' : 'text-black'}`}>
-               {t('requestQuote')}
+            <h2
+              className={`text-3xl font-semibold mb-8  ${
+                isDarkMode ? " text-white" : "text-black"
+              }`}
+            >
+              {t("requestQuote")}
             </h2>
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium "
-                >
-                  {t('yourName')}
+                <label htmlFor="name" className="block text-sm font-medium ">
+                  {t("yourName")}
                 </label>
                 <input
-                  type="text"
                   id="name"
-                  placeholder={t('namePlaceholder')}
+                  type="text"
+                  name="user_name"
+                  onChange={(event) => setName(event.target.value)}
+                  value={name}
+                  required
+                  placeholder={t("namePlaceholder")}
                   className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium "
-                >
-                  {t('yourEmail')}
+                <label htmlFor="email" className="block text-sm font-medium ">
+                  {t("yourEmail")}
                 </label>
                 <input
-                  type="email"
                   id="email"
-                  placeholder={t('emailPlaceholder')}
+                  type="email"
+                  name="user_email"
+                  onChange={(event) => setEmail(event.target.value)}
+                  value={email}
+                  required
+                  placeholder={t("emailPlaceholder")}
                   className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none"
                 />
               </div>
               <div>
-                <label
-                  htmlFor="number"
-                  className="block text-sm font-medium "
-                >
-                  {t('yourPhoneNumber')}
+                <label htmlFor="number" className="block text-sm font-medium ">
+                  {t("yourPhoneNumber")}
                 </label>
                 <input
+                  id="phone"
                   type="number"
-                  placeholder={t('phonePlaceholder')}
-                  id="number"
+                  name="user_phone"
+                  onChange={(event) => setPhone(event.target.value)}
+                  value={phone}
+                  required
+                  // type="number"
+                  placeholder={t("phonePlaceholder")}
+                  // id="number"
                   className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none"
                 />
               </div>
@@ -203,12 +257,16 @@ function ContactUs() {
                   htmlFor="projectDetails"
                   className="block text-sm font-medium "
                 >
-                 {t('projectDetails')}
+                  {t("projectDetails")}
                 </label>
                 <textarea
-                  id="projectDetails"
+                  onChange={(event) => setMessages(event.target.value)}
+                  value={message}
+                  id="message"
+                  name="user_message"
                   rows="5"
-                  placeholder={t('detailsPlaceholder')}
+                  required
+                  placeholder={t("detailsPlaceholder")}
                   className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none"
                 ></textarea>
               </div>
@@ -217,7 +275,7 @@ function ContactUs() {
                 type="submit"
                 className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition duration-300 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
               >
-                {t('submitRequest')}
+                {t("submitRequest")}
               </button>
             </form>
           </div>
@@ -228,7 +286,7 @@ function ContactUs() {
       <div className=" py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-8">
-           {t('findUs')}
+            {t("findUs")}
           </h2>
           <div className="flex justify-center">
             <iframe
@@ -246,8 +304,3 @@ function ContactUs() {
 }
 
 export default ContactUs;
-
-
-
-
-

@@ -13,7 +13,7 @@ const SocialMediaButton = () => {
     <div className="fixed bottom-10 transform -translate-y-1/2 space-y-1 py-2 ">
       
       <a
-        href="https://www.instagram.com"
+        href="https://wa.me/+8801317424004"
         target="_blank"
         rel="noopener noreferrer"
         className="block  text-green-600  hover:text-green-500 rounded-full shadow-lg transition"
