@@ -1,22 +1,69 @@
 {
-    "title": "Ofte Stillede Spørgsmål",
-    "faqs": [
-      {
-        "question": "Hvad er jeres returpolitik?",
-        "answer": "Vores returpolitik varer i 30 dage. Hvis der er gået 30 dage siden dit køb, kan vi desværre ikke tilbyde dig en refusion eller ombytning."
-      },
-      {
-        "question": "Hvordan sporer jeg min ordre?",
-        "answer": "Når din ordre er blevet afsendt, modtager du et trackingnummer via e-mail eller SMS. Du kan bruge dette nummer til at spore din ordre på vores hjemmeside."
-      },
-      {
-        "question": "Tilbyder I international fragt?",
-        "answer": "Ja, vi tilbyder international fragt til udvalgte lande. Tjek venligst fragtsiden for flere detaljer."
-      },
-      {
-        "question": "Hvordan kontakter jeg kundeservice?",
-        "answer": "Du kan kontakte vores kundeserviceteam ved at sende en e-mail til support@yourcompany.com eller ringe til vores hotline på +123-456-789."
-      }
-    ]
-  }
-  
+  "title": "Ofte stillede spørgsmål",
+  "faqs": [
+    {
+      "question": "Hvad er definitionen af DAP?",
+      "answer": "Formålet med Detail Area Planning (DAP) er at implementere DMDP Structure Plan (SP) og Urban Area Plan (UAP) i deres grundlæggende former og anbefalinger. Den primære funktion er effektivt at anvende disse retningslinjer på lokalt niveau."
+    },
+    {
+      "question": "Hvad betyder FAR?",
+      "answer": "Floor Area Ratio (FAR) er en planlægningsmetrik, der beskriver forholdet mellem den samlede gulvplads (brutto-gulvareal) af en bygning og størrelsen på den grund, den er bygget på. Det bruges ofte i byplanlægning for at sammenligne bygningens størrelse med grundens størrelse, og det er ofte relateret til bygning-til-jord-ratio."
+    },
+    {
+      "question": "Hvad påvirker Floor Area Ratio (FAR) og hvordan beregnes den maksimale byggemængde for en bygning?",
+      "answer": "Den maksimale grunddækning (MGC) afhænger af grundens størrelse og vejbredde. Vejens bredde påvirker også FAR-værdien. Den samlede grundstørrelse (kvadratfod eller kvadratmeter) ganges med FAR-værdien for at få den maksimale byggeområde. For eksempel, for en 5 katha plot med 25 fod bred vej, er FAR normalt 3,75, hvilket resulterer i en maksimalt grunddækning på 62,50% og en samlet byggeområde på 13.837 kvadratfod."
+    },
+    {
+      "question": "Hvor mange parkeringspladser vil være tilgængelige for hver bygning?",
+      "answer": "Antallet af parkeringspladser afhænger af grundens størrelse, bygningens størrelse, bygningens højde, tilgængelighed af kælderen og tilstedeværelsen af bil- eller parkeringselevator. Dette fastlægges normalt på en case-by-case-basis. For eksempel kan der være 8-9 parkeringspladser på en 5 katha plot."
+    },
+    {
+      "question": "Hvad skal overvejes ved konstruktionen af en kælder?",
+      "answer": "Kælderkonstruktioner er generelt dyre, og hvis de ikke udføres korrekt, kan de medføre problemer som vandindtrængning og fugt. Kældre bør normalt ikke bygges på mindre grundstørrelser på under 8 katha. Større plots, der kræver flere parkeringspladser, bør dog have kældere."
+    },
+    {
+      "question": "Hvad er pladsdeling?",
+      "answer": "Pladsdeling refererer til deling af en bygning mellem grundejere og udviklere. I et fælles venture-projekt bestemmes pladsdelingen af gensidig aftale mellem ejendomsejere og udviklere, baseret på faktorer som grundværdi, ejendomsværdi og antallet af lejligheder."
+    },
+    {
+      "question": "Hvordan fordeles etager?",
+      "answer": "Etagefordelingen fastsættes af ejendomsejere og udviklere baseret på gensidig aftale og valg af etage baseret på faktorer som ejendomsværdi og lejeaftaler."
+    },
+    {
+      "question": "Hvordan måles størrelsen på en lejlighed?",
+      "answer": "Størrelsen på en lejlighed er den netto etageareal samt de fælles områder, som defineret af **Real Estate Management Act 2010**."
+    },
+    {
+      "question": "Hvilke områder betragtes som fælles?",
+      "answer": "Ifølge **Real Estate Management Act 2010** betragtes områder som elevatorlobbyer, trappeopgange, elevatormaskinerum, generatorrum, substationsrum og andre faciliteter som fællesområder."
+    },
+    {
+      "question": "Hvad bør overvejes ved godkendelsen af en byggetilladelse?",
+      "answer": "I Dhaka er den sidste myndighed for godkendelse af byggetilladelser **RAJUK** og **Cantonment Board**, og i Chittagong er det **CDA**. Byggetilladelsen afhænger af forskellige faktorer, som bygningens højde, om det er et regelmæssigt eller specialprojekt, antallet af lejligheder, vejens bredde og tilladelser fra relevante myndigheder (luftfart, trafik, DMP, miljø mv.)."
+    },
+    {
+      "question": "Hvordan sikrer man brandsikkerhed i bygninger?",
+      "answer": "Brandsikkerhed i en lejlighedsbygning sikres ved at sikre, at der er de nødvendige brandslukningsudstyr som brandslukkere, brandhaner, sprinklere og andre nødvendige redskaber. Derudover er det **BNBC**-krav at have en brandtrappe."
+    },
+    {
+      "question": "Hvad gør I for at modstå jordskælv?",
+      "answer": "Vi følger **BNBC**-standarderne for at modstå jordskælv. Desuden er vi den eneste udvikler, der introducerer den videnskabeligt dokumenterede **Jacketing System** for at skabe jordskælvsbeskyttelse."
+    },
+    {
+      "question": "Testes bygge-materialer eller betonens styrke?",
+      "answer": "Vi sikrer, at alle materialer gennemgår strenge tests for at sikre, at de er af højeste kvalitet. For eksempel testes stålstænger fra **BWT** og betonens styrke for at sikre, at de lever op til industristandarder."
+    },
+    {
+      "question": "Hvornår overdrages ejendom eller byggearbejde?",
+      "answer": "Overdragelse af ejendom eller byggeri bestemmes baseret på gensidig aftale mellem grundejere og udviklere. Generelt gives ejendomsretter når planen er godkendt af relevante myndigheder."
+    },
+    {
+      "question": "Hvordan sikrer I byggearbejdets kvalitet?",
+      "answer": "Vi følger alle regler og retningslinjer og bruger materialer af højeste kvalitet. Derudover anvender vi avanceret teknologi for at gøre vores bygninger mere jordskælvsresistente. Vi giver også kunderne mulighed for at besøge byggepladsen og selv se kvaliteten af arbejdet."
+    },
+    {
+      "question": "Hvordan opretter I en 'Ejerforening' ved overdragelse?",
+      "answer": "Efter færdiggørelse af projektet afholder vi et møde med alle ejerne, hvor vi etablerer en **Ejerforening** og et administrativt system til at håndtere fremtidige operationer."
+    }
+  ]
+}

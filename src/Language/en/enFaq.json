@@ -2,21 +2,74 @@
     "title": "Frequently Asked Questions",
     "faqs": [
       {
-        "question": "What is your return policy?",
-        "answer": "Our return policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately, we cannot offer you a refund or exchange."
+        "question": "What is the definition of DAP?",
+        "answer": "Detail Area Planning (DAP) aims to put into action the guidelines and recommendations set forth in the DMDP Structure Plan (SP) and Urban Area Plan (UAP). Its primary objectives are to ensure that these policies are effectively implemented at a detailed, localized level."
       },
       {
-        "question": "How do I track my order?",
-        "answer": "Once your order has been shipped, you will receive a tracking number via email or SMS. You can use this number to track your order on our website."
+        "question": "What is the meaning of FAR?",
+        "answer": "The **Floor Area Ratio (FAR)** is a planning metric that represents the ratio of a building's total floor area (gross floor area) to the size of the land on which it is constructed. FAR is commonly used in urban planning to regulate the scale of buildings in relation to the land area, often in conjunction with the building-to-land ratio. Zoning regulations may impose specific limits on this ratio to control building density.The formula for calculating FAR is as follows: FAR = Gross Floor Area (Building) ÷ Area of the Plot."
       },
       {
-        "question": "Do you offer international shipping?",
-        "answer": "Yes, we offer international shipping to selected countries. Please check the shipping page for more details."
+        "question": "What factors influence the Floor Area Ratio (FAR), and how is the maximum construction area of a building determined?",
+        "answer": "The **Maximum Ground Coverage (MGC)** is determined by factors such as land size and the width of the road at the entrance. The width of the front road also has an impact on the **Floor Area Ratio (FAR)** values. In essence, multiplying the land area (in square feet or square meters) by the FAR value results in the maximum construction area of a building. For example, with a **5 Katha plot** and a **25-foot wide front road**, the FAR is typically 3.75. This gives a maximum ground coverage of **62.50%**, resulting in a total construction area of **13,837 square feet**, including verandahs."
       },
       {
-        "question": "How do I contact customer service?",
-        "answer": "You can reach our customer service team by emailing us at support@yourcompany.com or calling our helpline at +123-456-789."
+        "question": "How many parking spaces will be available for each building?",
+        "answer": "The number of parking spaces is influenced by factors such as land size, land shape, building height, the availability of a basement, and the presence of car lifts or park lifts. This is typically determined on a case-by-case basis. For instance, a **5 Katha plot** may accommodate **8 to 9 parking spaces**, depending on these various factors."
+      },
+      {
+        "question": "What factors should be considered when constructing a basement floor?",
+        "answer": "The construction of a basement floor is typically costly, and if not built properly, it may lead to issues such as water leakage and dampness. For smaller plots of land, typically under **8 Katha**, basements are generally not considered feasible. However, for larger plots requiring a substantial number of parking spaces, basements become a necessary consideration."
+      },
+      {
+        "question": "What is the definition of space sharing?",
+        "answer": "Space sharing refers to the allocation of space within a building between the landowner and the developer. In a joint venture development, space sharing is based on a mutual agreement between the two parties. There is no standardized formula for this arrangement, as it depends on factors such as the land value, the selling price of the property, the number of apartment units, and the agreed-upon signing amount."
+      },
+      {
+        "question": "How are floors distributed?",
+        "answer": "Floor distribution is determined through mutual agreement between the landowner and the developer. Both parties select the floors based on the merit or value of the property."
+      },
+      {
+        "question": "How is the apartment measured?",
+        "answer": "The size of an apartment is determined by the net floor area of the apartment, along with the common areas, as outlined in the **Real Estate Management Act of 2010**."
+      },
+      {
+        "question": "Which areas are considered common space?",
+        "answer": "According to the **Real Estate Management Act 2010**, spaces such as the lift lobby, staircase room, lift machine room, generator room, sub-station room, caretaker’s room, guard room, and other shared facilities like the gym, prayer room, library, guest waiting area, reception area, etc., are categorized as common spaces."
+      },
+      {
+        "question": "What factors should be considered when getting the proposal approved?",
+        "answer": "In Dhaka, **RAJUK** and the **Cantonment Board** are the final authorities responsible for approving building plans, while in Chattogram, the **CDA** holds this authority. Plan approval is contingent upon various factors, including the building's height, whether the project is classified as regular or special, the number of apartments, road width, and permissions from relevant authorities such as Civil Aviation, Traffic, DMP, and the Environment Department. Additionally, conditions set by the Township Planning Department, the nature of the property (leasehold or freehold), and the land status are also critical considerations in the approval process."
+      },
+      {
+        "question": "How is fire safety ensured in buildings?",
+        "answer": "Fire protection in an apartment building is ensured by providing essential firefighting equipment, including fire extinguishers, fire hydrants, sprinklers, and other necessary tools. Additionally, the presence of a fire staircase is mandatory in accordance with the **BNBC** (Bangladesh National Building Code) regulations."
+      },
+      {
+        "question": "What steps do you take to make structures earthquake resistant?",
+        "answer": "We adheres to the **BNBC** code for earthquake protection. In addition to implementing the BNBC code, is the only developer to have introduced the **jacketing system**, a scientifically proven method for creating earthquake-resistant designs."
+      },
+      {
+        "question": "We Do you test the materials or concrete's strength?",
+        "answer": " conducts rigorous testing to ensure that all materials used are of the highest quality. For instance, materials such as steel bars and concrete strength are tested by **BUET** to guarantee their compliance with industry standards."
+      },
+      {
+        "question": "When will you take possession/hand over construction work?",
+        "answer": "Possession or handover is determined through mutual agreement between the Developer and the Landowner. Typically, possession for commencing construction is granted after the plan has been approved by the relevant authorities."
+      },
+      {
+        "question": "How does We ensure the quality of its construction?",
+        "answer": "We adheres to all regulations and guidelines, utilizing only the highest quality materials. Moreover, we go above and beyond by incorporating advanced technology to make our buildings more earthquake-resistant than others. These efforts ensure that your building offers exceptional construction quality. We also provide our customers with the opportunity to visit the construction site, allowing them to witness the superior craftsmanship firsthand. Our focus extends beyond just construction and material selection, placing significant importance on every detail to ensure the best possible outcome."
+      },
+      {
+        "question": "How would you establish the 'Owners' Association' upon handover?",
+        "answer": "Upon the completion of the project, we facilitate a meeting with all property owners to establish an Owners' Association and an ad hoc Committee. We provide them with a set of by-laws, and the Committee organizes an election to appoint the office bearers of the Association. The Owners' Association is then responsible for overseeing the maintenance of the building and managing its regular financial accounts."
+      },
+      {
+        "question": "What is the maintenance service policy?",
+        "answer": "We offers a 1-year complimentary after-sales service to apartment owners, covering maintenance and the upkeep of their apartments."
       }
+      
     ]
   }
   
