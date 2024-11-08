@@ -4,6 +4,8 @@ import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { send } from "@emailjs/browser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 function ContactUs() {
   const { t } = useTranslation("contact");
@@ -74,33 +76,6 @@ function ContactUs() {
             </h2>
 
             <div className="space-y-8 p-6 rounded-lg shadow-lg">
-              {/* Our Office */}
-              <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <div className="text-green-600">
-                  {/* Office Icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 2L2 7h20L12 2zM2 17h20v5H2v-5zM17 12h5v5h-5v-5zM2 12h5v5H2v-5zM7 7v5H2V7h5zm10 0v5h5V7h-5zm-5 0v5h-5V7h5z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {t("ourOffice")}
-                  </h3>
-                  <p className="text-gray-900">{t("officeAddress")}</p>
-                </div>
-              </div>
-
               {/* Call Us */}
               <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <div className="text-green-600">
@@ -190,6 +165,60 @@ function ContactUs() {
                   <p className="text-gray-900"> {t("fridayClosed")}</p>
                 </div>
               </div>
+
+              {/* Our Office */}
+              {/* <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 2L2 7h20L12 2zM2 17h20v5H2v-5zM17 12h5v5h-5v-5zM2 12h5v5H2v-5zM7 7v5H2V7h5zm10 0v5h5V7h-5zm-5 0v5h-5V7h5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {t("ourOffice")}
+                  </h3>
+                  <p className="text-gray-900">{t("officeAddress")}</p>
+
+                  <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
+                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <h6 className="text-lg font-semibold ">Dhaka Office</h6>
+                      <p className="mt-2 ">
+                        44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
+                        Opposite.
+                      </p>
+                    </div>
+
+                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <h6 className="text-lg font-semibold ">
+                        Lakshmipur Office
+                      </h6>
+                      <p className="mt-2 ">
+                        Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur
+                        Sadar
+                      </p>
+                    </div>
+
+                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <h6 className="text-lg font-semibold ">Denmark Office</h6>
+                      <p className="mt-2">Divelshul 1, st 3, 6000 Kolding</p>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
             </div>
           </div>
 
@@ -280,6 +309,45 @@ function ContactUs() {
             </form>
           </div>
         </div>
+
+        {/* Our Office */}
+        <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                
+                <div className="my-5">
+                  <h3 className="text-2xl text-center font-bold text-gray-900">
+                    {t("ourOffice")}
+                  </h3>
+                  {/* <p className="text-gray-900">{t("officeAddress")}</p> */}
+
+                  <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
+                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <h6 className="text-lg font-semibold ">Dhaka Office</h6>
+                      <p className="mt-2 ">
+                       <i> 44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
+                       Opposite.</i>
+                      </p>
+                    </div>
+
+                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <h6 className="text-lg font-semibold ">
+                        Lakshmipur Office
+                      </h6>
+                      <p className="mt-2 ">
+                        <i>Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur
+                        Sadar</i>
+                      </p>
+                    </div>
+
+                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <h6 className="text-lg font-semibold ">Denmark Office</h6>
+                      <p className="mt-2"><i>Divelshul 1, st 3, 6000 Kolding</i></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
       </div>
 
       {/* Map Section */}
