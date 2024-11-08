@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 const WhatDiff = () => {
   const { isDarkMode } = useTheme();
-  const { t } = useTranslation('AboutChoose'); 
+  const { t } = useTranslation('AboutDiff'); 
   return (
     <div>
         <div className={`flex flex-col items-center justify-center min-h-screen ${isDarkMode ? ' text-white  bg-black' : 'bg-white'}`}>

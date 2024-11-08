@@ -29,6 +29,14 @@ import dnAboutProcess from './Language/dn/dnAboutProcess.json'
 import enAboutChoose from './Language/en/enAboutChoose.json'
 import bnAboutChoose from './Language/bn/bnAboutChoose.json'
 import dnAboutChoose from './Language/dn/dnAboutChoose.json'
+ 
+
+import enAboutDiff from './Language/en/enAboutDiff.json'
+import bnAboutDiff from './Language/bn/bnAboutDiff.json'
+import dnAboutDiff from './Language/dn/dnAboutDiff.json'
+
+
+
 
 import enFooter from './Language/en/enFooter.json'
 import bnFooter from './Language/bn/bnFooter.json'
@@ -73,6 +81,7 @@ i18n
         AboutMain:enAboutMain,
         AboutProcess:enAboutProcess,
         AboutChoose:enAboutChoose,
+        AboutDiff:enAboutDiff,
         Footer:enFooter,
         Header:enHeader,
         Home:enHome,
@@ -90,6 +99,7 @@ i18n
         AboutMain:bnAboutMain,
         AboutProcess:bnAboutProcess,
         AboutChoose:bnAboutChoose,
+        AboutDiff:bnAboutDiff,
         Footer:bnFooter,
         Header:bnHeader,
         Home:bnHome,
@@ -107,6 +117,7 @@ i18n
         AboutMain:dnAboutMain,
         AboutProcess:dnAboutProcess,
         AboutChoose:dnAboutChoose,
+        AboutDiff:dnAboutDiff,
         Footer:dnFooter,
         Header:dnHeader,
         Home:dnHome,
