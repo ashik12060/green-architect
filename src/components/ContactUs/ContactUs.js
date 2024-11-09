@@ -312,42 +312,45 @@ function ContactUs() {
 
         {/* Our Office */}
         <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                
-                <div className="my-5">
-                  <h3 className="text-2xl text-center font-bold text-gray-900">
-                    {t("ourOffice")}
-                  </h3>
-                  {/* <p className="text-gray-900">{t("officeAddress")}</p> */}
+          <div className="my-5">
+            <h3 className="text-2xl text-center font-bold text-gray-900">
+              {t("ourOffice")}
+            </h3>
+            {/* <p className="text-gray-900">{t("officeAddress")}</p> */}
 
-                  <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
-                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <h6 className="text-lg font-semibold ">Dhaka Office</h6>
-                      <p className="mt-2 ">
-                       <i> 44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
-                       Opposite.</i>
-                      </p>
-                    </div>
-
-                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <h6 className="text-lg font-semibold ">
-                        Lakshmipur Office
-                      </h6>
-                      <p className="mt-2 ">
-                        <i>Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur
-                        Sadar</i>
-                      </p>
-                    </div>
-
-                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <h6 className="text-lg font-semibold ">Denmark Office</h6>
-                      <p className="mt-2"><i>Divelshul 1, st 3, 6000 Kolding</i></p>
-                    </div>
-                  </div>
-                </div>
+            <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
+              <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
+                <FontAwesomeIcon icon={faLocationDot} />
+                <h6 className="text-lg font-semibold ">Dhaka Office</h6>
+                <p className="mt-2 ">
+                  <i>
+                    {" "}
+                    44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
+                    Opposite.
+                  </i>
+                </p>
               </div>
+
+              <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
+                <FontAwesomeIcon icon={faLocationDot} />
+                <h6 className="text-lg font-semibold ">Lakshmipur Office</h6>
+                <p className="mt-2 ">
+                  <i>
+                    Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur Sadar
+                  </i>
+                </p>
+              </div>
+
+              <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
+                <FontAwesomeIcon icon={faLocationDot} />
+                <h6 className="text-lg font-semibold ">Denmark Office</h6>
+                <p className="mt-2">
+                  <i>Divelshul 1, st 3, 6000 Kolding</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Map Section */}

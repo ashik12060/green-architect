@@ -18,7 +18,7 @@ const Services = () => {
      <div
       className="relative h-56 bg-cover bg-center flex items-center justify-center text-white"
       style={{ 
-        backgroundImage: `url(${img})`, // Correctly set the background image
+        backgroundImage: `url(${img})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

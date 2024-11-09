@@ -56,6 +56,51 @@ import SmallHeader from "./components/Shared/Headers/SmallHeader";
 import CreateVideo from "./admin/CreateVideo";
 import EditVideo from "./admin/EditVideo";
 import Theader from "./components/Shared/Headers/Theader";
+import FeasibilityStudy from "./components/OurServices/FeasibilityStudy";
+import Feasibility from "./components/OurServices/ServicesCards/Feasibility";
+import DigitalSurvey from "./components/OurServices/ServicesCards/DigitalSurvey";
+import TrafficSurvey from "./components/OurServices/ServicesCards/TrafficSurvey";
+import SiteVisit from "./components/OurServices/ServicesCards/SiteVisit";
+import DroneSurvey from "./components/OurServices/ServicesCards/DroneSurvey";
+import SoilTest from "./components/OurServices/ServicesCards/SoilTest";
+import Integration from "./components/OurServices/ServicesCards/Integration";
+import Design from "./components/OurServices/Design/Design";
+import Architecture from "./components/OurServices/Design/Architecture";
+import Electrical from "./components/OurServices/Design/Electrical";
+import Infrastructure from "./components/OurServices/Design/Infrastructure";
+import LeedConsultancy from "./components/OurServices/Design/LeedConsultancy";
+import Lighting from "./components/OurServices/Design/Lighting";
+import MasterPlaning from "./components/OurServices/Design/MasterPlaning";
+import Mechanical from "./components/OurServices/Design/Mechanical";
+import Plumbing from "./components/OurServices/Design/Plumbing";
+import Structure from "./components/OurServices/Design/Structure";
+import Build from "./components/OurServices/Build/Build";
+import CivilConstruction from "./components/OurServices/Build/CivilConstruction";
+import CostEstimate from "./components/OurServices/Build/CostEstimate";
+import Facelifting from "./components/OurServices/Build/Facelifting";
+import PMC from "./components/OurServices/Build/PMC";
+import Retrofitting from "./components/OurServices/Build/Retrofitting";
+import SiteSupervision from "./components/OurServices/Build/SiteSupervision";
+import Interior from "./components/OurServices/Interior/Interior";
+import Accessories from "./components/OurServices/Interior/Accessories";
+import Furniture from "./components/OurServices/Interior/Furniture";
+import Industrial from "./components/OurServices/Interior/Industrial";
+import LightingInterior from "./components/OurServices/Interior/LightingInterior";
+import Office from "./components/OurServices/Interior/Office";
+import Residential from "./components/OurServices/Interior/Residential";
+import Retail from "./components/OurServices/Interior/Retail";
+import Sculpture from "./components/OurServices/Interior/Sculpture";
+import TdWorks from "./components/OurServices/TdWorks/TdWorks";
+import Furniture3d from "./components/OurServices/Interior/Furniture";
+import ArchBd from "./components/OurServices/TdWorks/ArchBd";
+import ArchGlobal from "./components/OurServices/TdWorks/ArchGlobal";
+import Construction3d from "./components/OurServices/TdWorks/Construction3d";
+import GameCinema from "./components/OurServices/TdWorks/GameCinema";
+import OilGas from "./components/OurServices/TdWorks/OilGas";
+import Products3d from "./components/OurServices/TdWorks/Products3d";
+import Solar3d from "./components/OurServices/TdWorks/Solar3d";
+import Technical from "./components/OurServices/TdWorks/Technical";
+import VsWorks from "./components/OurServices/TdWorks/VsWorks";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -103,6 +148,104 @@ function App() {
                 <Route path="/projects" element={<Projects />}></Route>
                 <Route path="/products" element={<Products />}></Route>
                 <Route path="/contact" element={<Contact />}></Route>
+
+                {/* services */}
+                <Route path="/pre-design" element={<Feasibility />}></Route>
+                <Route path="/design" element={<Design />}></Route>
+                <Route path="/build" element={<Build />}></Route>
+                <Route path="/interior" element={<Interior />}></Route>
+                <Route path="/3d-works" element={<TdWorks />}></Route>
+
+                {/* pre design */}
+
+                <Route
+                  path="/pre-design/feasibility-study"
+                  element={<FeasibilityStudy />}
+                ></Route>
+
+                <Route path="/pre-design/site-visit" element={<SiteVisit />} />
+                <Route
+                  path="/pre-design/digital-survey"
+                  element={<DigitalSurvey />}
+                />
+                <Route
+                  path="/pre-design/drone-survey"
+                  element={<DroneSurvey />}
+                />
+                <Route path="/pre-design/soil-test" element={<SoilTest />} />
+                <Route
+                  path="/pre-design/integration"
+                  element={<Integration />}
+                />
+                <Route
+                  path="/pre-design/traffic-survey"
+                  element={<TrafficSurvey />}
+                />
+
+                {/* design */}
+                <Route path="/design/architecture" element={<Architecture />} />
+                <Route path="/design/electrical" element={<Electrical />} />
+                <Route
+                  path="/design/infrastructure"
+                  element={<Infrastructure />}
+                />
+                <Route
+                  path="/design/leed-consultancy"
+                  element={<LeedConsultancy />}
+                />
+                <Route path="/design/lighting" element={<Lighting />} />
+                <Route
+                  path="/design/master-planing"
+                  element={<MasterPlaning />}
+                />
+                <Route path="/design/mechanical" element={<Mechanical />} />
+                <Route path="/design/plumbing" element={<Plumbing />} />
+                <Route path="/design/structure" element={<Structure />} />
+
+                {/* build */}
+                <Route path="/build/civilConstruction" element={<CivilConstruction />} />
+                <Route path="/build/cost-estimate" element={<CostEstimate />} />
+                <Route path="/build/face-lifting" element={<Facelifting />} />
+                <Route path="/build/pmc" element={<PMC />} />
+                <Route path="/build/retrofitting" element={<Retrofitting />} />
+                <Route path="/build/site-supervision" element={<SiteSupervision />} />
+
+
+                {/* Interior */}
+                <Route path="/interior/accessories" element={<Accessories />} />
+                <Route path="/interior/furniture" element={<Furniture />} />
+                <Route path="/interior/industrial" element={<Industrial />} />
+                <Route path="/interior/lighting-interior" element={<LightingInterior />} />
+                <Route path="/interior/office" element={<Office />} />
+                <Route path="/interior/residential" element={<Residential />} />
+                <Route path="/interior/retail" element={<Retail />} />
+                <Route path="/interior/sculpture" element={<Sculpture />} />
+
+
+{/* 3d works */}
+                <Route path="/3d-works/arch" element={<ArchBd />} />
+                <Route path="/3d-works/arch-global" element={<ArchGlobal />} />
+                <Route path="/3d-works/construction-3d" element={<Construction3d />} />
+                <Route path="/3d-works/game-cinema" element={<GameCinema />} />
+                <Route path="/3d-works/oil-gas" element={<OilGas />} />
+                <Route path="/3d-works/products-3d" element={<Products3d />} />
+                <Route path="/3d-works/solar-3d" element={<Solar3d />} />
+                <Route path="/3d-works/technical" element={<Technical />} />
+                <Route path="/3d-works/vs-works" element={<VsWorks />} />
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <Route path="/buy" element={<BuyForm />} />
 
