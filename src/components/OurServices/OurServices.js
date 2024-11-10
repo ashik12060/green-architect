@@ -3,6 +3,7 @@ import React from "react";
 import { ServiceCard } from "./ServiceCard";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
+import AdditionalServices from "./AdditionalServices";
 
 function OurServices() {
   const { isDarkMode } = useTheme();
@@ -10,8 +11,9 @@ function OurServices() {
   return (
     <>
     <ServiceCard />
+    <AdditionalServices />
 
-<div className="container mx-auto p-14">
+{/* <div className="container mx-auto p-14">
 <h2 className={`text-3xl font-bold text-center mb-10  ${isDarkMode ? ' text-white ' : 'text-black'}`}>
  {t('additionalServices')}
 </h2>
@@ -104,7 +106,7 @@ function OurServices() {
 <p className={`mt-4  text-center text-justify	 ${isDarkMode ? ' text-white' : 'text-black'}`}>
  {t('description')}
 </p>
-</div>
+</div> */}
     </>
   );
 }
