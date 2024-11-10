@@ -101,6 +101,8 @@ import Products3d from "./components/OurServices/TdWorks/Products3d";
 import Solar3d from "./components/OurServices/TdWorks/Solar3d";
 import Technical from "./components/OurServices/TdWorks/Technical";
 import VsWorks from "./components/OurServices/TdWorks/VsWorks";
+import CustomCursor from "./CustomCursor/CustomCursor";
+import TestCursor from "./CustomCursor/TestCursor";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -127,6 +129,8 @@ function App() {
   return (
     <>
       <ThemeProvider>
+        {/* <TestCursor /> */}
+      <CustomCursor />
         <ToastContainer />
 
         <Provider store={store}>

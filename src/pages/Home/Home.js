@@ -19,6 +19,10 @@ import { useTranslation } from "react-i18next";
 import { send } from "@emailjs/browser";
 import { toast } from "react-toastify";
 
+import { motion } from 'framer-motion';
+import Animation from "../../Animation";
+
+
 const Home = () => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
@@ -77,11 +81,18 @@ const Home = () => {
 
   const { isDarkMode } = useTheme();
 
+
+  // const blocks = Array.from({ length: 30 }, (_, index) => index);
+
+
   return (
     <>
+   
       <MiddleHeader />
       <Header />
+      {/* <Animation /> */}
       <Carousel />
+      {/* <Animation /> */}
       <ProjectCount />
 
       <div
@@ -337,6 +348,8 @@ const Home = () => {
         //   </div>
         // </div>
       )}
+
+
     </>
   );
 };
