@@ -102,7 +102,7 @@ import Solar3d from "./components/OurServices/TdWorks/Solar3d";
 import Technical from "./components/OurServices/TdWorks/Technical";
 import VsWorks from "./components/OurServices/TdWorks/VsWorks";
 import CustomCursor from "./CustomCursor/CustomCursor";
-import TestCursor from "./CustomCursor/TestCursor";
+import SingleMember from "./pages/SingleMember";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -129,7 +129,6 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        {/* <TestCursor /> */}
       <CustomCursor />
         <ToastContainer />
 
@@ -236,20 +235,6 @@ function App() {
                 <Route path="/3d-works/solar-3d" element={<Solar3d />} />
                 <Route path="/3d-works/technical" element={<Technical />} />
                 <Route path="/3d-works/vs-works" element={<VsWorks />} />
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 <Route path="/buy" element={<BuyForm />} />
 
@@ -267,6 +252,7 @@ function App() {
                 {/* show single */}
                 <Route path="/post/:id" element={<SinglePost />} />
                 <Route path="/rnd/:id" element={<SingleRnd />} />
+                <Route path="/member/:id" element={<SingleMember />} />
 
                 <Route path="/log" element={<SampleLogin />} />
 

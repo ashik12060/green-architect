@@ -668,61 +668,7 @@ const AdminDashboard = () => {
       ),
     },
   ];
-  // // member columns
-  //   const MembersColumns = [
-  //     {
-  //       field: "_id",
-  //       headerName: "Member ID",
-  //       width: 150,
-  //       editable: true,
-  //     },
-  //     {
-  //       field: "title",
-  //       headerName: "Member title",
-  //       width: 150,
-  //     },
-  //     {
-  //       field: "image",
-  //       headerName: "Image",
-  //       width: 12,
-  //       renderCell: (params) => (
-  //         <img width="40%" src={params.row.image.url} alt="img" />
-  //       ),
-  //     },
 
-  //     {
-  //       field: "postedBy",
-  //       headerName: "Posted by",
-  //       width: 150,
-  //       renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
-  //     },
-  //     {
-  //       field: "createdAt",
-  //       headerName: "Created At",
-  //       width: 150,
-  //       renderCell: (params) =>
-  //         moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
-  //     },
-  //     {
-  //       field: "Actions",
-  //       width: 100,
-  //       renderCell: (value) => (
-  //         <div className="flex justify-between">
-  //           <Link to={`/admin/member/edit/${value.row._id}`}>
-  //             <IconButton aria-label="edit">
-  //               <EditIcon sx={{ color: "#1976d2" }} />
-  //             </IconButton>
-  //           </Link>
-  //           <IconButton
-  //             aria-label="delete"
-  //             onClick={(e) => deleteMemberById(e, value.row._id)}
-  //           >
-  //             <DeleteIcon sx={{ color: "red" }} />
-  //           </IconButton>
-  //         </div>
-  //       ),
-  //     },
-  //   ];
 
   // Define member columns
   const MembersColumns = [
@@ -1163,6 +1109,83 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
+      // case "members":
+      //   return (
+      //     <div>
+      //       <h4 className="text-black text-4xl pb-3">Members</h4>
+      //       <div className="pb-2 flex justify-end">
+      //         <Link to="/admin/member/create">
+      //           <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+      //             <AddIcon className="mr-2" />
+      //             Add Member
+      //           </button>
+      //         </Link>
+      //       </div>
+      //       <div className="overflow-x-auto">
+      //         {/* Replace with your members table here */}
+      //         {/* Team members */}
+      //         <div>
+      //           <h4 className="text-black text-4xl pb-3">Members</h4>
+      //           <div className="pb-2 flex justify-end">
+      //             <Link to="/admin/member/create">
+      //               <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+      //                 <AddIcon className="mr-2" />
+      //                 Add Member
+      //               </button>
+      //             </Link>
+      //           </div>
+      //           <div className="overflow-x-auto">
+      //             <table className="min-w-full bg-white">
+      //               <thead>
+      //                 <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      //                   {MembersColumns.map((column) => (
+      //                     <th
+      //                       key={column.field}
+      //                       className="py-3 px-6 text-left"
+      //                     >
+      //                       {column.headerName}
+      //                     </th>
+      //                   ))}
+      //                 </tr>
+      //               </thead>
+      //               <tbody className="text-gray-600 text-sm font-light">
+      //                 {members.length > 0 ? (
+      //                   members.map((member) => (
+      //                     <tr
+      //                       key={member._id}
+      //                       className="border-b border-gray-200 hover:bg-gray-100"
+      //                     >
+      //                       {MembersColumns.map((column) => (
+      //                         <td
+      //                           key={column.field}
+      //                           className="py-3 px-6 text-left"
+      //                         >
+      //                           {column.renderCell
+      //                             ? column.renderCell({ row: member })
+      //                             : member[column.field]}
+      //                         </td>
+      //                       ))}
+      //                     </tr>
+      //                   ))
+      //                 ) : (
+      //                   <tr>
+      //                     <td
+      //                       colSpan={MembersColumns.length}
+      //                       className="text-center py-4"
+      //                     >
+      //                       No members found.
+      //                     </td>
+      //                   </tr>
+      //                 )}
+      //               </tbody>
+      //             </table>
+      //           </div>
+      //         </div>
+      //         <p>Your Members Table Here</p>
+      //       </div>
+      //     </div>
+      //   );
+
       case "members":
         return (
           <div>
@@ -1176,70 +1199,43 @@ const AdminDashboard = () => {
               </Link>
             </div>
             <div className="overflow-x-auto">
-              {/* Replace with your members table here */}
-              {/* Team members */}
-              <div>
-                <h4 className="text-black text-4xl pb-3">Members</h4>
-                <div className="pb-2 flex justify-end">
-                  <Link to="/admin/member/create">
-                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-                      <AddIcon className="mr-2" />
-                      Add Member
-                    </button>
-                  </Link>
-                </div>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full bg-white">
-                    <thead>
-                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+              <table className="min-w-full bg-white">
+                <thead>
+                  <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                    {MembersColumns.map((column) => (
+                      <th key={column.field} className="py-3 px-6 text-left">
+                        {column.headerName}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="text-gray-600 text-sm font-light">
+                  {members.length > 0 ? (
+                    members.map((member) => (
+                      <tr key={member._id} className="border-b border-gray-200 hover:bg-gray-100">
                         {MembersColumns.map((column) => (
-                          <th
-                            key={column.field}
-                            className="py-3 px-6 text-left"
-                          >
-                            {column.headerName}
-                          </th>
+                          <td key={column.field} className="py-3 px-6 text-left">
+                            {column.renderCell
+                              ? column.renderCell({ row: member })
+                              : member[column.field]}
+                          </td>
                         ))}
                       </tr>
-                    </thead>
-                    <tbody className="text-gray-600 text-sm font-light">
-                      {members.length > 0 ? (
-                        members.map((member) => (
-                          <tr
-                            key={member._id}
-                            className="border-b border-gray-200 hover:bg-gray-100"
-                          >
-                            {MembersColumns.map((column) => (
-                              <td
-                                key={column.field}
-                                className="py-3 px-6 text-left"
-                              >
-                                {column.renderCell
-                                  ? column.renderCell({ row: member })
-                                  : member[column.field]}
-                              </td>
-                            ))}
-                          </tr>
-                        ))
-                      ) : (
-                        <tr>
-                          <td
-                            colSpan={MembersColumns.length}
-                            className="text-center py-4"
-                          >
-                            No members found.
-                          </td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <p>Your Members Table Here</p>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={MembersColumns.length} className="text-center py-4">
+                        No members found.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </div>
           </div>
         );
-
+      
+     
       case "carousel":
         return (
           <div>

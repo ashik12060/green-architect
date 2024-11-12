@@ -20,6 +20,11 @@ const validationSchema = yup.object({
     bn: yup.string("Add a designation in Bengali").required("Designation is required"),
     es: yup.string("Add a designation in Danish").required("Designation is required"),
   }),
+  article: yup.object({
+    en: yup.string("Add an article in English").required("article is required"),
+    bn: yup.string("Add an article in Bengali").required("article is required"),
+    es: yup.string("Add an article in Danish").required("article is required"),
+  }),
 });
 
 const EditMember = () => {
@@ -38,8 +43,9 @@ const EditMember = () => {
     resetForm,
   } = useFormik({
     initialValues: {
-      title: { en: "",bn: "", es: "" }, // Initialize for multiple languages
-      designation: { en: "",bn: "", es: "" }, // Initialize for multiple languages
+      title: { en: "",bn: "", es: "" }, 
+      designation: { en: "",bn: "", es: "" }, 
+      article: { en: "",bn: "", es: "" }, 
       image: "",
     },
     validationSchema: validationSchema,
@@ -54,12 +60,15 @@ const EditMember = () => {
   const singleMemberById = async () => {
     try {
       const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/member/${id}`);
-      values.title.en = data.member.title.en; // Fetch English title
-      values.title.bn = data.member.title.bn; // Fetch Bengali title
-      values.title.es = data.member.title.es; // Fetch Danish title
-      values.designation.en = data.member.designation.en; // Fetch English designation
-      values.designation.bn = data.member.designation.bn; // Fetch Bengali designation
-      values.designation.es = data.member.designation.es; // Fetch Danish designation
+      values.title.en = data.member.title.en; 
+      values.title.bn = data.member.title.bn;
+      values.title.es = data.member.title.es;
+      values.designation.en = data.member.designation.en; 
+      values.designation.bn = data.member.designation.bn; 
+      values.designation.es = data.member.designation.es; 
+      values.article.en = data.member.article.en; 
+      values.article.bn = data.member.article.bn; 
+      values.article.es = data.member.article.es; 
       setImagePreview(data.member.image.url);
     } catch (error) {
       console.error(error);
@@ -174,6 +183,47 @@ const EditMember = () => {
           onBlur={handleBlur}
           error={touched.designation?.es && Boolean(errors.designation?.es)}
           helperText={touched.designation?.es && errors.designation?.es}
+        />
+        {/* article Inputs for Multiple Languages */}
+        <Typography variant="subtitle1">Designation</Typography>
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="article-en"
+          label="article (English)"
+          name="article.en"
+          placeholder="article in English"
+          value={values.article.en}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.article?.en && Boolean(errors.article?.en)}
+          helperText={touched.article?.en && errors.article?.en}
+        />
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="article-bn"
+          label="article (Bengali)"
+          name="article.bn"
+          placeholder="article in Bengali"
+          value={values.article.bn}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.article?.bn && Boolean(errors.article?.bn)}
+          helperText={touched.article?.bn && errors.article?.bn}
+        />
+        <TextField
+          sx={{ mb: 3 }}
+          fullWidth
+          id="article-es"
+          label="article (Danish)"
+          name="article.es"
+          placeholder="article in Danish"
+          value={values.article.es}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.article?.es && Boolean(errors.article?.es)}
+          helperText={touched.article?.es && errors.article?.es}
         />
 
         {/* Dropzone for Image Upload */}
