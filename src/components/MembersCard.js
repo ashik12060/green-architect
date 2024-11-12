@@ -24,21 +24,7 @@ const MembersCard = ({
   console.log(article);
 
   return (
-    //   <div>
-    //   <div className="rounded-lg shadow-md bg-white p-4 text-center  gap-20">
-    //     <div className="flex flex-col items-center "> {/* Added gap-4 for spacing */}
-    //       <div className="-mt-16">
-    //         <img src={image} alt={title} className="w-28 h-28 rounded-full" />
-    //       </div>
-    //       <h3 className="text-xl text-green-800 font-bold py-2">{title}</h3>
-    //       <p className=" font-bold">{designation}</p>
-    //     </div>
-    //   </div>
-    // </div>
-
-    
-
-    <div>
+         <div>
       <div className="max-w-sm rounded overflow-hidden shadow-lg relative group">
         {/* <img className="w-full h-56" src={image} alt="name" /> */}
 
@@ -76,7 +62,7 @@ const MembersCard = ({
         <div className="font-bold text-xl mb-2"></div>
         <p className="text-white text-base">{title}</p>
         <p className="text-white text-base">{designation}</p>
-        <p className="text-white text-base">{article}</p>
+        {/* <p className="text-white text-base">{article}</p> */}
       </div>
       
     </div>

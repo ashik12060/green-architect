@@ -1,34 +1,15 @@
-
-  
-
-  {
-    "title": "Our Services",
-    "readMore":"Read More",
-    "services": [
-      {
-        "title": "Pre-Design",
-        "description": "Green Architect provides top-notch architectural design services, combining creativity and expertise to bring your vision to life."
-      },
-      {
-        "title": "Design",
-        "description": "Transform your space into a masterpiece with our expert interior design services. Let us bring your vision to life."
-      },
-      {
-        "title": "Build",
-        "description": "Committed to delivering exceptional structural design services for a range of building projects, ensuring the stability and safety of each structure."
-      },
-      {
-        "title": "Interior",
-        "description": "Green Architect provides top-notch architectural design services, combining creativity and expertise to bring your vision to life."
-      },
-      {
-        "title": "3D Work",
-        "description": "Transform your space into a masterpiece with our expert interior design services. Let us bring your vision to life."
-      },
-      {
-        "title": "Real Estate",
-        "description": "Committed to delivering exceptional structural design services for a range of building projects, ensuring the stability and safety of each structure."
-      }
-    ]
-  }
-  
+{
+  "preDesign": "Pre-Design",
+  "preDesignDescription": "Green Architect provides top-notch architectural design services, combining creativity and expertise to bring your vision to life.",
+  "design": "Design",
+  "designDescription": "Transform your space into a masterpiece with our expert interior design services. Let us bring your vision to life.",
+  "build": "Build",
+  "buildDescription": "Committed to delivering exceptional structural design services for a range of building projects, ensuring the stability and safety of each structure.",
+  "interior": "Interior",
+  "interiorDescription": "Green Architect provides top-notch architectural design services, combining creativity and expertise to bring your vision to life.",
+  "3dWork": "3D Work",
+  "3dWorkDescription": "Transform your space into a masterpiece with our expert interior design services. Let us bring your vision to life.",
+  "realEstate": "Real Estate",
+  "realEstateDescription": "Committed to delivering exceptional structural design services for a range of building projects, ensuring the stability and safety of each structure.",
+  "seeMore": "See More"
+}

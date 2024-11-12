@@ -6,7 +6,7 @@ import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export const ServiceCard = () => {
-  // const { t } = useTranslation("Service");
+  const { t } = useTranslation("Service");
   const { isDarkMode } = useTheme();
 
   return (
@@ -27,84 +27,75 @@ export const ServiceCard = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className="mb-4">
-              <h2 className="ml-2 text-xl font-bold text-black">Pre-Design</h2>
+              <h2 className="ml-2 text-xl font-bold text-black"> {t("preDesign")}</h2>
             </div>
-            <p className="text-gray-700">Green Architect provides top-notch architectural design services, combining creativity and expertise to bring your vision to life</p>
+            <p className="text-gray-700">{t("preDesignDescription")}</p>
             <Link to='/pre-design' className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
              
               
-             See More
+             {t("seeMore")}
              <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
            </Link>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className="mb-4">
-              <h2 className="ml-2 text-xl font-bold text-black">Design</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">{t("design")}</h2>
             </div>
-            <p className="text-gray-700">Transform your space into a masterpiece with our expert interior design services. Let us bring your vision to life.</p>
+            <p className="text-gray-700">{t("designDescription")}</p>
             <Link to='/design' className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
              
               
-             See More
+             {t("seeMore")}
              <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
            </Link>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            {/* <div key={index} className="bg-white rounded-lg shadow-md p-6 text-center"> */}
             <div className="mb-4">
-              {/* <FontAwesomeIcon className="text-green-500 text-3xl" icon={service.icon} /> */}
-              {/* <h2 className="ml-2 text-xl font-bold text-black">{service.title} </h2> */}
-              <h2 className="ml-2 text-xl font-bold text-black">Build</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">{t("build")}</h2>
             </div>
-            <p className="text-gray-700">Committed to delivering exceptional structural design services for a range of building projects, ensuring the stability and safety of each structure.</p>
-            {/* <p className="text-gray-700">{service.description}</p> */}
+            <p className="text-gray-700"> {t("buildDescription")}</p>
             <Link to='/build' className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
              
               
-              See More
+             {t("seeMore")}
               <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
             </Link>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            {/* <div key={index} className="bg-white rounded-lg shadow-md p-6 text-center"> */}
             <div className="mb-4">
-              {/* <FontAwesomeIcon className="text-green-500 text-3xl" icon={service.icon} /> */}
-              {/* <h2 className="ml-2 text-xl font-bold text-black">{service.title} </h2> */}
-              <h2 className="ml-2 text-xl font-bold text-black">Interior</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">  {t("interior")}</h2>
             </div>
-            <p className="text-gray-700">Green Architect provides top-notch architectural design services, combining creativity and expertise to bring your vision to life.</p>
-            {/* <p className="text-gray-700">{service.description}</p> */}
+            <p className="text-gray-700">{t("interiorDescription")}</p>
             <Link to='/interior' className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
              
               
-              See More
+             {t("seeMore")}
               <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
             </Link>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className="mb-4">
             
-              <h2 className="ml-2 text-xl font-bold text-black">3D Work</h2>
+              <h2 className="ml-2 text-xl font-bold text-black">{t("3dWork")}</h2>
             </div>
-            <p className="text-gray-700">Transform your space into a masterpiece with our expert interior design services. Let us bring your vision to life.</p>
+            <p className="text-gray-700"> {t("3dWorkDescription")}</p>
             <Link to='/3d-works' className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
              
               
-             See More
+           {t("seeMore")}
              <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
            </Link>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className="mb-4">
              
-              <h2 className="ml-2 text-xl font-bold text-black">Real Estate</h2>
+              <h2 className="ml-2 text-xl font-bold text-black"> {t("realEstate")}</h2>
             </div>
-            <p className="text-gray-700">Committed to delivering exceptional structural design services for a range of building projects, ensuring the stability and safety of each structure.</p>
-            {/* <p className="text-gray-700">{service.description}</p> */}
+            <p className="text-gray-700">{t("realEstateDescription")}</p>
             <Link className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
              
               
-              See More
+             {t("seeMore")}
               <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
             </Link>
           </div>
