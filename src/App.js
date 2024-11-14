@@ -103,6 +103,7 @@ import Technical from "./components/OurServices/TdWorks/Technical";
 import VsWorks from "./components/OurServices/TdWorks/VsWorks";
 import CustomCursor from "./CustomCursor/CustomCursor";
 import SingleMember from "./pages/SingleMember";
+import SingleProject from "./pages/SingleProject";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -251,6 +252,7 @@ function App() {
 
                 {/* show single */}
                 <Route path="/post/:id" element={<SinglePost />} />
+                <Route path="/project/:id" element={<SingleProject />} />
                 <Route path="/rnd/:id" element={<SingleRnd />} />
                 <Route path="/member/:id" element={<SingleMember />} />
 
