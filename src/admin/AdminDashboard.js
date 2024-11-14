@@ -122,22 +122,7 @@ const AdminDashboard = () => {
     displayRnd();
   }, []);
 
-  // display members
-  // const displayMembers = async () => {
-  //   try {
-  //     const { data } = await axiosInstance.get(
-  //       `${process.env.REACT_APP_API_URL}/api/members/show`
-  //     );
-  //     setMembers(data.members);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   displayMembers();
-  // }, []);
-
+ 
   // Fetch members from the backend
   const displayMembers = async () => {
     try {
@@ -162,24 +147,7 @@ const AdminDashboard = () => {
     displayMembers();
   }, []);
 
-  // display carousel
-  // const displayCarousel = async () => {
-  //   try {
-  //     const { data } = await axiosInstance.get(
-  //       `${process.env.REACT_APP_API_URL}/api/carousels/show`
-  //     );
-  //     setCarousels(data.carousels);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   displayCarousel();
-  // }, []);
-
-  // ne
-
+  
   // Display carousel
   const displayCarousel = async () => {
     try {
@@ -294,24 +262,6 @@ const AdminDashboard = () => {
   };
 
   // Delete member by ID
-  // const deleteMemberById = async (e, id) => {
-  //   if (window.confirm("Are you sure you want to delete this member?")) {
-  //     try {
-  //       const result = await axiosInstance.delete(
-  //         `${process.env.REACT_APP_API_URL}/api/delete/member/${id}`
-  //       );
-  //       if (result?.data?.success === true) {
-  //         toast.success("Member deleted");
-  //         displayMembers();
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       toast.error(error);
-  //     }
-  //   }
-  // };
-
-  // Delete member by ID
   const deleteMemberById = async (e, id) => {
     if (window.confirm("Are you sure you want to delete this member?")) {
       try {
@@ -328,24 +278,6 @@ const AdminDashboard = () => {
       }
     }
   };
-
-  // Delete carousel by ID
-  // const deleteCarouselById = async (e, id) => {
-  //   if (window.confirm("Are you sure you want to delete this photo?")) {
-  //     try {
-  //       const result = await axiosInstance.delete(
-  //         `${process.env.REACT_APP_API_URL}/api/delete/carousel/${id}`
-  //       );
-  //       if (result?.data?.success === true) {
-  //         toast.success("carousel deleted");
-  //         displayCarousel();
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       toast.error(error);
-  //     }
-  //   }
-  // };
 
   // ne
   // Delete carousel by ID
@@ -491,6 +423,60 @@ const AdminDashboard = () => {
   ];
 
   // project column
+  // const ProjectColumns = [
+  //   {
+  //     field: "_id",
+  //     headerName: "Project ID",
+  //     width: 150,
+  //     editable: true,
+  //   },
+  //   {
+  //     field: "title",
+  //     headerName: "Project title",
+  //     width: 150,
+  //   },
+  //   {
+  //     field: "image",
+  //     headerName: "Image",
+  //     width: 150,
+  //     renderCell: (params) => (
+  //       <img width="40%" src={params.row.image.url} alt="img" />
+  //     ),
+  //   },
+
+  //   {
+  //     field: "postedBy",
+  //     headerName: "Posted by",
+  //     width: 150,
+  //     renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
+  //   },
+  //   {
+  //     field: "createdAt",
+  //     headerName: "Created At",
+  //     width: 150,
+  //     renderCell: (params) =>
+  //       moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
+  //   },
+  //   {
+  //     field: "Actions",
+  //     width: 100,
+  //     renderCell: (value) => (
+  //       <div className="flex justify-between">
+  //         <Link to={`/admin/project/edit/${value.row._id}`}>
+  //           <IconButton aria-label="edit">
+  //             <EditIcon sx={{ color: "#1976d2" }} />
+  //           </IconButton>
+  //         </Link>
+  //         <IconButton
+  //           aria-label="delete"
+  //           onClick={(e) => deleteProjectById(e, value.row._id)}
+  //         >
+  //           <DeleteIcon sx={{ color: "red" }} />
+  //         </IconButton>
+  //       </div>
+  //     ),
+  //   },
+  // ];
   const ProjectColumns = [
     {
       field: "_id",
@@ -507,11 +493,20 @@ const AdminDashboard = () => {
       field: "image",
       headerName: "Image",
       width: 150,
-      renderCell: (params) => (
-        <img width="40%" src={params.row.image.url} alt="img" />
-      ),
+      renderCell: (params) => {
+        const imageUrl = Array.isArray(params.row.image) && params.row.image.length > 0
+          ? params.row.image[0].url // Use the first image if it's an array
+          : params.row.image?.url;   // Use single image if it's an object
+  
+        return (
+          <img
+            width="40%"
+            src={imageUrl || "/path/to/placeholder.jpg"} // Fallback if no image
+            alt="img"
+          />
+        );
+      },
     },
-
     {
       field: "postedBy",
       headerName: "Posted by",
@@ -545,6 +540,7 @@ const AdminDashboard = () => {
       ),
     },
   ];
+  
 
   // video column
   const VideoColumns = [
@@ -935,6 +931,7 @@ const AdminDashboard = () => {
     
         
       case "projects":
+
         return (
           <div>
             <h4 className="text-black text-4xl pb-3">Projects</h4>
@@ -1011,6 +1008,8 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
+
+
       case "videos":
         return (
           <div>
