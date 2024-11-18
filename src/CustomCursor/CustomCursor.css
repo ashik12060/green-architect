@@ -12,8 +12,23 @@ body {
     transform: translate(-50%, -50%);
     z-index: 9999;
   }
+
+  /* .cursor-ring {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    pointer-events: none;  
+  } */
+/*   
+  .cursor-dot {
+    position: absolute;
+    pointer-events: none; 
+  } */
   
-  .cursor-ring {
+  
+  /* .cursor-ring {
     position: fixed;
     width: 30px;
     height: 30px;
@@ -24,4 +39,4 @@ body {
     transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
     z-index: 9998;
   }
-  
+   */

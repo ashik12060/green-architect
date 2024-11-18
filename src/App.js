@@ -104,6 +104,7 @@ import VsWorks from "./components/OurServices/TdWorks/VsWorks";
 import CustomCursor from "./CustomCursor/CustomCursor";
 import SingleMember from "./pages/SingleMember";
 import SingleProject from "./pages/SingleProject";
+import ModelMaking from "./components/OurServices/ModelMaking/ModelMaking";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -159,6 +160,7 @@ function App() {
                 <Route path="/build" element={<Build />}></Route>
                 <Route path="/interior" element={<Interior />}></Route>
                 <Route path="/3d-works" element={<TdWorks />}></Route>
+                <Route path="/model-making" element={<ModelMaking />}></Route>
 
                 {/* pre design */}
 

@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import { AiOutlineHome } from 'react-icons/ai';  // Import the home icon from React Icons
 import './CustomCursor.css';
 
 const CustomCursor = () => {
@@ -25,8 +27,8 @@ const CustomCursor = () => {
 
     const followCursor = () => {
       setRingPosition((prevPosition) => {
-        const nextX = prevPosition.x + (cursorPosition.x - prevPosition.x) * 0.1;
-        const nextY = prevPosition.y + (cursorPosition.y - prevPosition.y) * 0.1;
+        const nextX = prevPosition.x + (cursorPosition.x - prevPosition.x) * 0.5;
+        const nextY = prevPosition.y + (cursorPosition.y - prevPosition.y) * 0.5;
 
         // Calculate the distance between the ring and the cursor
         const distance = Math.sqrt(
@@ -34,7 +36,7 @@ const CustomCursor = () => {
         );
 
         // When the ring is very close to the cursor, set the dot at the center
-        if (distance < 5) {
+        if (distance < 2) {
           setIsDotCentered(true);
         }
 
@@ -53,14 +55,26 @@ const CustomCursor = () => {
 
   return (
     <div>
-      {/* Dot follows the cursor or centers within the ring when close enough */}
+      {/* Home icon positioned outside the dot at the top-left corner */}
       <div
         className="cursor-dot"
         style={{
           left: `${isDotCentered ? ringPosition.x : cursorPosition.x}px`,
           top: `${isDotCentered ? ringPosition.y : cursorPosition.y}px`,
         }}
-      />
+      >
+        {/* Home icon positioned at the top-left corner of the dot */}
+        <AiOutlineHome
+          size={30}  // Icon size
+          color="green"  // Icon color
+          style={{
+            position: 'absolute',
+            left: '-30px',  // Offset to the left (this places the icon to the left of the dot)
+            top: '-30px',   // Offset upwards (this places the icon above the dot)
+          }}
+        />
+      </div>
+
       {/* Ring lags behind the cursor */}
       <div
         className="cursor-ring"

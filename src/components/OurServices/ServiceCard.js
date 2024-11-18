@@ -88,6 +88,19 @@ export const ServiceCard = () => {
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
             <div className="mb-4">
+            
+              <h2 className="ml-2 text-xl font-bold text-black"> {t("modelMaking")}</h2>
+            </div>
+            <p className="text-gray-700"> {t("modelMakingDescription")}</p>
+            <Link to='/model-making' className="mt-4 inline-block px-4 py-2 text-green-500 font-bold rounded-lg">
+             
+              
+           {t("seeMore")}
+             <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
+           </Link>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <div className="mb-4">
              
               <h2 className="ml-2 text-xl font-bold text-black"> {t("realEstate")}</h2>
             </div>

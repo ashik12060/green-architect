@@ -45,8 +45,8 @@ function Footer() {
           <div className="flex flex-col ">
             <div>
               <div className="flex flex-col lg:flex-row justify-evenly items-start gap-8">
-                <div className="lg:w-1/3">
-                  <img src={logo} className="rounded-full w-24 h-24" />
+                <div className="">
+                  <img src={logo} className=" w-24 h-24" />
 
                   <div className="text-xl">
                     <nav className="space-x-6">
@@ -70,7 +70,9 @@ function Footer() {
                     </nav>
                   </div>
 
-                  <h5 className="text-xl">{t("footer.contact.designQuote")}</h5>
+                  <h6 className="text-l">
+                    Build Your Own World, Where Nature Meets Design
+                  </h6>
                 </div>
 
                 {/* middle Contact Section */}
@@ -103,41 +105,82 @@ function Footer() {
             </div>
 
             <div>
-              <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
-                <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
-                <FontAwesomeIcon icon={faLocationDot} />
-                  <h6 className="text-lg font-semibold ">
-                    Dhaka Office
-                  </h6>
+              {/* <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
+                <div className="p-6  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-50  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <h6 className="text-lg font-semibold ">Dhaka Office</h6>
                   <p className="mt-2 ">
-                    <i>44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
-                    Opposite.</i>
+                    <i>
+                      44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
+                      Opposite.
+                      <br />
+                      {t("footer.contact.cell")}
+                    </i>
                   </p>
-                </div>
-
-                <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
-                <FontAwesomeIcon icon={faLocationDot} />
-                  <h6 className="text-lg font-semibold ">
-                    Lakshmipur Office
-                  </h6>
-                  <p className="mt-2 ">
-                   <i> Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur Sadar</i>
-                  </p>
-                </div>
-
-                <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
-                <FontAwesomeIcon icon={faLocationDot} />
-                  <h6 className="text-lg font-semibold ">
+                 
                     
-                    Denmark Office
-                  </h6>
-                  <p className="mt-2">
-                   <i> Divelshul 1, st 3, 6000 Kolding</i>
+                  
+                </div>
+
+                <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-50">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <h6 className="text-lg font-semibold ">Lakshmipur Office</h6>
+                  <p className="mt-2 ">
+                    <i>
+                      {" "}
+                      Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur
+                      Sadar
+                    </i>
                   </p>
                 </div>
-              </div>
 
-             
+                <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-50">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <h6 className="text-lg font-semibold ">Denmark Office</h6>
+                  <p className="mt-2">
+                    <i> Divelshul 1, st 3, 6000 Kolding</i>
+                  </p>
+                </div>
+              </div> */}
+
+<div>
+  <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
+    <div className="p-6 bg-gray-800 shadow-lg rounded-lg lg:w-1/3 w-full h-full min-h-[200px] border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white flex flex-col">
+      <FontAwesomeIcon icon={faLocationDot} />
+      <h6 className="text-lg font-semibold mt-4">Dhaka Office</h6>
+      <p className="mt-2">
+        <i>
+          44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital Opposite.
+          <br />
+          Call Now: {t("footer.contact.cell")}
+        </i>
+      </p>
+    </div>
+
+    <div className="p-6 bg-gray-800 shadow-lg rounded-lg lg:w-1/3 w-full h-full min-h-[210px] border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white flex flex-col">
+      <FontAwesomeIcon icon={faLocationDot} />
+      <h6 className="text-lg font-semibold mt-4">Lakshmipur Office</h6>
+      <p className="mt-2">
+        <i>Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur Sadar
+        <br />
+        Call Now: {t("footer.contact.cell")}
+        </i>
+      </p>
+    </div>
+
+    <div className="p-6 bg-gray-800 shadow-lg rounded-lg lg:w-1/3 w-full h-full min-h-[210px] border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white flex flex-col">
+      <FontAwesomeIcon icon={faLocationDot} />
+      <h6 className="text-lg font-semibold mt-4">Denmark Office</h6>
+      <p className="mt-2">
+        <i>Divelshul 1, st 3, 6000 Kolding
+        <br />
+        Call Now: {t("footer.contact.cell")}
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+
             </div>
           </div>
 
