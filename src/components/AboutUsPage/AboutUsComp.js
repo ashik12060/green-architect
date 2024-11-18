@@ -17,7 +17,7 @@ function AboutUsComp() {
             <img src={img} alt="Building Image" className="w-full rounded-lg shadow-sm" />
           </div>
           <div className="md:w-1/2 p-4">
-            <p className=" mb-4">
+            <p className=" mb-4" >
             {t('paragraph1')}
               
             </p>

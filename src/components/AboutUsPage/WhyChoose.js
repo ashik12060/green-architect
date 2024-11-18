@@ -16,7 +16,7 @@ const WhyChoose = () => {
           </h1>
           <div className="flex flex-col md:flex-row">
             
-            <div className="md:w-1/2 p-4">
+            <div className="md:w-1/2 p-4"  >
               <p className=" mb-4">{t('paragraph1')}
               </p>
               <p className=" mb-4">{t('paragraph2')}

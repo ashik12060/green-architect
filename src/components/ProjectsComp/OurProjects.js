@@ -4,42 +4,42 @@ import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-const Modal = ({ showModal, closeModal, project, i18n }) => {
-  if (!showModal || !project) return null;
+// const Modal = ({ showModal, closeModal, project, i18n }) => {
+//   if (!showModal || !project) return null;
 
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-      <div className="bg-white text-black p-4 md:p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-1/2 max-h-[90vh] overflow-hidden">
-       
-        <img
-          src={
-            project.image?.url ? project.image.url : "/path/to/placeholder.jpg"
-          }
-          alt={project.title[i18n.language] || "Project Image"}
-          className="w-full h-full object-cover"
-        />
+//   return (
+//     <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+//       <div className="bg-white text-black p-4 md:p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-1/2 max-h-[90vh] overflow-hidden">
 
-        <h2 className="text-xl md:text-2xl font-bold text-center mb-2">
-          {project.title[i18n.language]}
-        </h2>
-        <p className="text-sm md:text-base text-center mb-4">
-          {project.content[i18n.language]}
-        </p>
-        <div className="max-h-[60vh] overflow-y-auto p-2">
-          {/* <p className="text-sm md:text-base">{project.description[i18n.language]}</p> */}
-        </div>
-        <div className="mt-4 flex justify-end">
-          <button
-            onClick={closeModal}
-            className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+//         <img
+//           src={
+//             project.image?.url ? project.image.url : "/path/to/placeholder.jpg"
+//           }
+//           alt={project.title[i18n.language] || "Project Image"}
+//           className="w-full h-full object-cover"
+//         />
+
+//         <h2 className="text-xl md:text-2xl font-bold text-center mb-2">
+//           {project.title[i18n.language]}
+//         </h2>
+//         <p className="text-sm md:text-base text-center mb-4">
+//           {project.content[i18n.language]}
+//         </p>
+//         <div className="max-h-[60vh] overflow-y-auto p-2">
+//           {/* <p className="text-sm md:text-base">{project.description[i18n.language]}</p> */}
+//         </div>
+//         <div className="mt-4 flex justify-end">
+//           <button
+//             onClick={closeModal}
+//             className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+//           >
+//             Close
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const SplitImageCarousel = () => {
   const [loading, setLoading] = useState(true);
@@ -62,7 +62,6 @@ const SplitImageCarousel = () => {
       setItemsToShow(3);
     }
   };
-
 
   const fetchProjects = async () => {
     try {
@@ -176,28 +175,29 @@ const SplitImageCarousel = () => {
                 {/* Display the first image as a preview */}
 
                 <Link to={`/project/${project._id}`}>
-                <img
-                  src={
-                    project.images && project.images.length > 0
-                      ? project.images[0].url // Show the first image
-                      : "/path/to/placeholder.jpg"
-                  }
-                  alt={project.title[i18n.language] || "Project Image"}
-                  className="w-full h-full object-cover"
-                />            </Link>
-               
+                  <img
+                    src={
+                      project.images && project.images.length > 0
+                        ? project.images[0].url // Show the first image
+                        : "/path/to/placeholder.jpg"
+                    }
+                    alt={project.title[i18n.language] || "Project Image"}
+                    className="w-full h-full object-cover"
+                  />{" "}
+                </Link>
+
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gray-800 bg-opacity-70 text-white text-center">
-                  <p className="font-bold">{project.title[i18n.language]}</p>
-                 
+                  <p className="font-bold pb-3">{project.title[i18n.language]}</p>
+
                   <Link
-                   to={`/project/${project._id}`}
-                   className={`mt-4 px-4 py-2 rounded-md transition ${
-                    isDarkMode
-                      ? "border-2 bg-gray-800 hover:bg-black text-white"
-                      : "bg-green-700 text-white"
-                  }`}
-                   >
-                  {t("LearnMore")}
+                    to={`/project/${project._id}`}
+                    className={` px-4 py-2  rounded-md transition ${
+                      isDarkMode
+                        ? "border-2 bg-gray-800 hover:bg-black text-white"
+                        : "bg-green-700 text-white"
+                    }`}
+                  >
+                    {t("LearnMore")}
                   </Link>
                 </div>
               </div>
@@ -227,13 +227,13 @@ const SplitImageCarousel = () => {
           )
         )}
       </div>
-
+      {/* 
       <Modal
         showModal={showModal}
         closeModal={closeModal}
         project={selectedProject}
         i18n={i18n}
-      />
+      /> */}
     </div>
   );
 };

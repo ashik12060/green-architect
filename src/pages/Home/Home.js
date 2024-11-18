@@ -18,9 +18,11 @@ import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { send } from "@emailjs/browser";
 import { toast } from "react-toastify";
+import 'aos/dist/aos.css';
 
 import { motion } from 'framer-motion';
 import Animation from "../../Animation";
+import Aos from "aos";
 
 
 const Home = () => {
@@ -83,7 +85,13 @@ const Home = () => {
 
 
   // const blocks = Array.from({ length: 30 }, (_, index) => index);
-
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Set duration of animation in milliseconds
+      easing: 'ease-in-out', // Easing function
+      once: true, // Whether animation should happen only once on scroll
+    });
+  }, []);
 
   return (
     <>
@@ -111,6 +119,7 @@ const Home = () => {
                 ? " text-white border-b-4 border-white"
                 : "text-black border-b-4 border-black"
             }`}
+          data-aos="fade-right"
           >
             {t("projects")}
           </span>
@@ -142,7 +151,7 @@ const Home = () => {
 
       <Faq />
       {/* meeting schedule */}
-      <div
+      <div data-aos="fade-right"
         className={`flex items-center justify-center py-10 ${
           isDarkMode ? "bg-black" : "bg-white"
         }`}
@@ -154,6 +163,7 @@ const Home = () => {
               : "bg-gradient-to-r from-green-500 to-emerald-700 text-white"
           }`}
           onClick={handleScheduleMeeting}
+           data-aos="fade-right"
         >
           <FontAwesomeIcon icon={faCalendarDays} className="pe-2 text-xl" />{" "}
           {t("schedule_meeting")}
