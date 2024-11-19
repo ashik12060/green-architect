@@ -56,7 +56,7 @@ import SmallHeader from "./components/Shared/Headers/SmallHeader";
 import CreateVideo from "./admin/CreateVideo";
 import EditVideo from "./admin/EditVideo";
 import Theader from "./components/Shared/Headers/Theader";
-import FeasibilityStudy from "./components/OurServices/FeasibilityStudy";
+import FeasibilityStudy from "./components/OurServices/ServicesCards/FeasibilityStudy";
 import Feasibility from "./components/OurServices/ServicesCards/Feasibility";
 import DigitalSurvey from "./components/OurServices/ServicesCards/DigitalSurvey";
 import TrafficSurvey from "./components/OurServices/ServicesCards/TrafficSurvey";

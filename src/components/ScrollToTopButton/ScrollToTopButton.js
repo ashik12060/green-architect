@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
 
     
 
-      className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 text-2xl   bg-green-700 text-white rounded-full w-12 h-12 shadow-lg hover:bg-green-600 transition-opacity ${
+      className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 text-2xl   bg-green-700 text-white  w-12 h-12 shadow-lg hover:bg-green-600 transition-opacity ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{ transition: 'opacity 0.5s' }}

@@ -3,39 +3,35 @@ import React from "react";
 const DroneSurvey = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Dhaka Designer
+      <h1 className="text-3xl font-bold mb-4 px-8 sm:px-32">
+        Drone Survey Services by Green Shelter Design and Development
       </h1>
-      <p className="text-lg mb-8">
-        At Dhaka Designer, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+      <p className="text-lg mb-8 text-justify px-8 sm:px-32">
+        Green Shelter Design and Development specializes in providing high-quality Drone Survey services that deliver precise aerial imagery and topographic data for your project. Using state-of-the-art drone technology, we ensure comprehensive and accurate surveys.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Drone Survey Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="High-Quality Aerial Imagery"
+          description="We capture sharp, detailed aerial photographs of your site, offering a comprehensive view from above."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Topographic Data Collection"
+          description="Our drones gather precise topographic data, allowing you to fully understand the terrain and natural features of your site."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="3D Mapping"
+          description="We generate intricate 3D maps of your site, offering an in-depth view to support your planning and design needs."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Construction Progress Monitoring"
+          description="Using drones, we track the progress of construction, providing regular updates and identifying potential challenges early in the process."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Environmental Monitoring"
+          description="Our drones assess environmental factors, ensuring that your project aligns with environmental guidelines and regulations."
         />
       </div>
     </div>
@@ -43,7 +39,7 @@ const DroneSurvey = () => {
 };
 
 const ServiceItem = ({ title, description }) => (
-  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
+  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4 text-justify">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
     <p className="text-gray-600 sm:w-2/3">{description}</p>
   </div>

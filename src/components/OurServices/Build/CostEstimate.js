@@ -4,10 +4,10 @@ const CostEstimate = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Dhaka Designer
+        Feasibility Study by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8">
-        At Dhaka Designer, our Feasibility Study service helps you ensure your
+        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
         project’s success from the start. We evaluate all critical aspects like
         economic, technical, legal, and scheduling factors.
       </p>
