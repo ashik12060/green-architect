@@ -3,39 +3,49 @@ import React from "react";
 const LightingInterior = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
+      <h1 className="text-3xl font-bold mb-4">Custom Lighting Design by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer offers bespoke Custom Lighting Design services to illuminate your spaces with style and precision. Our expert team creates innovative lighting solutions tailored to your specific needs and aesthetic preferences.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Custom Lighting Design Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Tailored Lighting Solutions"
+          description="We design custom lighting solutions that match your vision and enhance the ambiance of your space."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Architectural Lighting"
+          description="We create lighting designs that highlight architectural features and enhance the overall aesthetic appeal of your property."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Decorative Lighting"
+          description="We design decorative lighting fixtures that add a unique and artistic touch to your interiors."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Functional Lighting"
+          description="We ensure that our lighting designs provide optimal illumination for various activities, improving functionality and comfort."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Energy-Efficient Lighting"
+          description="We incorporate energy-efficient lighting technologies, such as LED and smart lighting systems, to reduce energy consumption and costs."
+        />
+        <ServiceItem
+          title="Outdoor Lighting"
+          description="We design custom outdoor lighting solutions that enhance the beauty and safety of your exterior spaces."
+        />
+        <ServiceItem
+          title="Material & Finish Selection"
+          description="We assist in selecting the best materials and finishes for your lighting fixtures, ensuring durability and style."
+        />
+        <ServiceItem
+          title="Installation Services"
+          description="We provide professional installation services to ensure your custom lighting fixtures are securely and correctly installed."
+        />
+        <ServiceItem
+          title="Sustainable Practices"
+          description="We integrate sustainable practices in our design and production processes, minimizing environmental impact."
         />
       </div>
     </div>
@@ -45,7 +55,7 @@ const LightingInterior = () => {
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 

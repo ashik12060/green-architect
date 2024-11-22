@@ -4,38 +4,55 @@ const Residential = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
+        Residential Interior Design by Dhaka Designer
       </h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer offers exceptional Residential Interior Design services
+        to create beautiful and functional living spaces. Our expert team
+        tailors each design to your unique style and needs, ensuring a home that
+        reflects your personality and lifestyle.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
+        Our Residential Interior Design Services:
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Space Planning"
+          description="We optimize the layout of your home to ensure efficient use of space and a comfortable flow between rooms."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Custom Furniture Design"
+          description="We create custom furniture pieces that fit perfectly in your space and meet your aesthetic preferences."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Color Consultation"
+          description="We provide expert color consultation to select the perfect palette that enhances the mood and style of your home."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Lighting Design"
+          description="We design effective and stylish lighting solutions that enhance the ambiance and functionality of each room."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Kitchen & Bathroom Design"
+          description="We specialize in designing kitchens and bathrooms that are both beautiful and highly functional, with attention to detail and quality."
+        />
+        <ServiceItem
+          title="Storage Solutions"
+          description="We design innovative storage solutions to keep your home organized and clutter-free."
+        />
+        <ServiceItem
+          title="Material & Finish Selection"
+          description="We help you choose the best materials and finishes for your home, ensuring durability and style."
+        />
+        <ServiceItem
+          title="3D Visualization"
+          description="We offer 3D visualization services to help you see how your finished space will look, making it easier to make design decisions."
+        />
+        <ServiceItem
+          title="Project Management"
+          description="We manage the entire interior design process, from initial concept to final installation, ensuring a seamless and stress-free experience."
         />
       </div>
     </div>

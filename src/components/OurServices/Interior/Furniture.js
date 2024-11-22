@@ -3,39 +3,53 @@ import React from "react";
 const Furniture = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
+      <h1 className="text-3xl font-bold mb-4">Custom Furniture Design by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer offers bespoke Custom Furniture Design services to create unique, high-quality furniture that perfectly complements your space. Our expert team designs furniture that combines functionality, style, and craftsmanship.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Custom Furniture Design Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Tailored Design"
+          description="We create custom furniture pieces tailored to your specific needs, preferences, and space requirements."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Material Selection"
+          description="We help you choose the best materials, ensuring durability, aesthetic appeal, and alignment with your design vision."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Ergonomic Design"
+          description="We incorporate ergonomic principles into our furniture designs to enhance comfort and usability."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Innovative Solutions"
+          description="We design innovative furniture solutions that maximize space and functionality, such as multi-purpose and modular pieces."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Aesthetic Integration"
+          description="We ensure that our custom furniture seamlessly integrates with your existing decor and enhances the overall aesthetic of your space."
+        />
+        <ServiceItem
+          title="Detailed Craftsmanship"
+          description="We focus on detailed craftsmanship, ensuring each piece is meticulously constructed and finished to the highest standards."
+        />
+        <ServiceItem
+          title="3D Visualization"
+          description="We provide 3D visualization services to help you see how the custom furniture will look in your space before production."
+        />
+        <ServiceItem
+          title="Sustainable Practices"
+          description="We use sustainable materials and eco-friendly practices in our furniture design and production to minimize environmental impact."
+        />
+        <ServiceItem
+          title="Installation Services"
+          description="We offer professional installation services to ensure that your custom furniture is perfectly placed and securely installed."
+        />
+        <ServiceItem
+          title="Personalized Consultation"
+          description="We provide personalized consultation to understand your vision and requirements, ensuring that the final product exceeds your expectations."
         />
       </div>
     </div>
@@ -45,7 +59,7 @@ const Furniture = () => {
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 

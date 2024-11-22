@@ -4,38 +4,59 @@ const Industrial = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
+        Industrial Interior Design by Dhaka Designer
       </h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer provides specialized Industrial Interior Design services
+        to create efficient, safe, and aesthetically pleasing industrial spaces. 
+        Our expert team designs environments that enhance productivity and reflect 
+        your brand's identity.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
+        Our Industrial Interior Design Services:
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Space Optimization"
+          description="We design layouts that maximize space utilization and improve workflow efficiency in your industrial facility."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Ergonomic Design"
+          description="We incorporate ergonomic principles to create comfortable and safe working environments for your employees."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Material Selection"
+          description="We select durable and high-quality materials that withstand the demands of industrial use and maintain a professional appearance."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Lighting Solutions"
+          description="We design effective lighting systems that ensure adequate illumination for safety and productivity, while also considering energy efficiency."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Storage Solutions"
+          description="We create customized storage solutions to keep your industrial space organized and optimize inventory management."
+        />
+        <ServiceItem
+          title="Safety Enhancements"
+          description="We integrate safety features into the design, including proper signage, safe walkways, and emergency exits, to ensure compliance with regulations."
+        />
+        <ServiceItem
+          title="Brand Integration"
+          description="We incorporate your brand's identity into the design, creating a cohesive look that reinforces your corporate image."
+        />
+        <ServiceItem
+          title="Sustainable Design"
+          description="We implement sustainable design practices, such as energy-efficient systems and environmentally friendly materials, to reduce operational costs and environmental impact."
+        />
+        <ServiceItem
+          title="3D Visualization"
+          description="We provide 3D visualization services to help you visualize the finished space and make informed design decisions."
+        />
+        <ServiceItem
+          title="Project Management"
+          description="We oversee the entire design process, from initial concept to final implementation, ensuring timely and successful completion."
         />
       </div>
     </div>

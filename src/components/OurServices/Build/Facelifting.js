@@ -3,39 +3,49 @@ import React from "react";
 const Facelifting = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
+      <h1 className="text-3xl font-bold mb-4">Facelifting / Addition by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer provides expert Facelifting and Addition services to rejuvenate and expand your existing spaces. Our skilled team ensures seamless integration and enhances the aesthetic and functional appeal of your property.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Facelifting / Addition Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Exterior Facelifting"
+          description="We refresh and modernize the exterior of your building, enhancing curb appeal and overall appearance."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Interior Upgrades"
+          description="We update interior spaces with new finishes, fixtures, and layouts to improve functionality and style."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Building Additions"
+          description="We design and construct additions, such as extra rooms or extensions, to increase your building’s usable space."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Structural Enhancements"
+          description="We reinforce and upgrade structural elements to support new additions and ensure the stability of the existing structure."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Facade Improvements"
+          description="We enhance the building facade with new materials, windows, and architectural details to give it a fresh look."
+        />
+        <ServiceItem
+          title="Energy Efficiency Upgrades"
+          description="We incorporate energy-efficient solutions, such as insulation, windows, and HVAC systems, to improve energy performance."
+        />
+        <ServiceItem
+          title="Custom Design Solutions"
+          description="We provide custom design solutions tailored to your specific needs, ensuring the new additions blend seamlessly with the existing structure."
+        />
+        <ServiceItem
+          title="Permitting and Compliance"
+          description="We handle all necessary permitting and ensure compliance with local building codes and regulations."
+        />
+        <ServiceItem
+          title="Project Management"
+          description="We manage the entire facelifting and addition process, from initial design to final inspection, ensuring quality and timely completion."
         />
       </div>
     </div>
@@ -45,7 +55,7 @@ const Facelifting = () => {
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 

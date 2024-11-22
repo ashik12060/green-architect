@@ -3,39 +3,43 @@ import React from "react";
 const Electrical = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
+      <h1 className="text-3xl font-bold mb-4">Electrical Design by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer offers expert Electrical Design services to ensure your project's electrical systems are safe, efficient, and reliable. Our team designs comprehensive electrical solutions tailored to your specific needs.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
+        Our Electrical Design Services:
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Power Distribution"
+          description="We design power distribution systems that ensure reliable and efficient electricity supply throughout your project."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Lighting Design"
+          description="We create efficient and aesthetically pleasing lighting solutions for both interior and exterior spaces."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Emergency Power Systems"
+          description="We design backup power systems, including generators and UPS systems, to ensure uninterrupted power during outages."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Renewable Energy Integration"
+          description="We incorporate renewable energy sources, such as solar, into your project to promote sustainability and reduce energy costs."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Electrical Safety Systems"
+          description="We design safety systems, including grounding, surge protection, and fire alarm systems, to protect your property and occupants."
+        />
+        <ServiceItem
+          title="Smart Building Systems"
+          description="We integrate smart building technologies, such as automated lighting, HVAC controls, and energy management systems, to enhance functionality and efficiency."
+        />
+        <ServiceItem
+          title="Regulatory Compliance"
+          description="We ensure all electrical designs comply with local codes, standards, and regulations, providing peace of mind and avoiding legal issues."
         />
       </div>
     </div>
@@ -45,7 +49,7 @@ const Electrical = () => {
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 

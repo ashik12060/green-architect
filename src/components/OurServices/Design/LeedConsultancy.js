@@ -1,41 +1,44 @@
 import React from "react";
 
-const LeedConsultancy = () => {
+const LEEDConsultancy = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
-      <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+      <h1 className="text-3xl font-bold mb-4">LEED Consultancy Services</h1>
+      <p className="text-lg mb-8 text-justify max-w-4xl">
+        At <span className="font-semibold">Dhaka Designer</span>, we offer expert LEED
+        Consultancy services to help you achieve sustainable building practices and gain
+        LEED certification. Our team guides you through the entire process, ensuring your
+        project meets the highest environmental standards.
       </p>
-
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Certification Strategy"
+          description="We develop a tailored strategy to achieve LEED certification, identifying the most suitable credits and prerequisites for your project."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Sustainable Design Integration"
+          description="We integrate sustainable design principles into your project, focusing on energy efficiency, water conservation, and material selection."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Energy Modeling"
+          description="We perform energy modeling to optimize building performance and identify opportunities for energy savings."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Documentation & Submission"
+          description="We manage all necessary documentation and submissions to the US Green Building Council (USGBC) to streamline the certification process."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Green Building Materials"
+          description="We recommend and source environmentally friendly materials that meet LEED standards, ensuring your project is both sustainable and cost-effective."
+        />
+        <ServiceItem
+          title="Construction Oversight"
+          description="We oversee the construction process to ensure that all sustainable practices and LEED requirements are implemented correctly."
+        />
+        <ServiceItem
+          title="Post-Occupancy Evaluation"
+          description="We conduct post-occupancy evaluations to assess building performance and ensure ongoing compliance with LEED standards."
         />
       </div>
     </div>
@@ -44,9 +47,9 @@ const LeedConsultancy = () => {
 
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
-    <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
+    <h3 className="text-lg font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
     <p className="text-gray-600 sm:w-2/3">{description}</p>
   </div>
 );
 
-export default LeedConsultancy;
+export default LEEDConsultancy;

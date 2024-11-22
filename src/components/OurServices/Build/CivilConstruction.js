@@ -3,39 +3,49 @@ import React from "react";
 const CivilConstruction = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
+      <h1 className="text-3xl font-bold mb-4">Civil Construction by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
+        Dhaka Designer provides top-quality Civil Construction services to bring your project from concept to reality. Our experienced team ensures that every aspect of construction is executed with precision and excellence.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Civil Construction Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title="Site Preparation"
+          description="We handle all site preparation activities, including clearing, grading, and excavation, to ready the site for construction."
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title="Foundation Work"
+          description="We construct strong and stable foundations, tailored to the specific soil conditions and structural requirements of your project."
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title="Structural Construction"
+          description="We build robust structural elements, including beams, columns, and frameworks, ensuring the integrity and durability of the building."
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title="Concrete Work"
+          description="We perform high-quality concrete work, from foundations to structural components, ensuring strength and longevity."
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title="Masonry Work"
+          description="We provide skilled masonry services, including brickwork, stonework, and blockwork, for both structural and aesthetic purposes."
+        />
+        <ServiceItem
+          title="Road & Pavement Construction"
+          description="We construct roads, pavements, and other infrastructure elements, ensuring durability and compliance with standards."
+        />
+        <ServiceItem
+          title="Utilities Installation"
+          description="We install essential utilities, such as water supply, drainage, and sewage systems, to ensure the functionality of the site."
+        />
+        <ServiceItem
+          title="Landscaping & Site Finishing"
+          description="We offer landscaping and site finishing services to enhance the appearance and usability of the completed project."
+        />
+        <ServiceItem
+          title="Project Management"
+          description="We provide comprehensive project management, overseeing every phase of construction to ensure timely and successful completion."
         />
       </div>
     </div>
@@ -45,7 +55,7 @@ const CivilConstruction = () => {
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 
