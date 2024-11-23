@@ -1,44 +1,44 @@
 import React from "react";
 
-const LEEDConsultancy = () => {
+const LeedConsultancy = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">LEED Consultancy Services</h1>
       <p className="text-lg mb-8 text-justify max-w-4xl">
-        At <span className="font-semibold">Dhaka Designer</span>, we offer expert LEED
-        Consultancy services to help you achieve sustainable building practices and gain
-        LEED certification. Our team guides you through the entire process, ensuring your
-        project meets the highest environmental standards.
+        At <span className="font-semibold">Dhaka Designer</span>, we provide expert LEED
+        Consultancy services to guide you in implementing sustainable building practices and achieving
+        LEED certification. Our experienced team will assist you throughout the entire process, ensuring
+        that your project aligns with the highest environmental standards.
       </p>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="Certification Strategy"
-          description="We develop a tailored strategy to achieve LEED certification, identifying the most suitable credits and prerequisites for your project."
+          description="We create a customized strategy for achieving LEED certification, focusing on the most relevant credits and prerequisites for your project."
         />
         <ServiceItem
           title="Sustainable Design Integration"
-          description="We integrate sustainable design principles into your project, focusing on energy efficiency, water conservation, and material selection."
+          description="We incorporate sustainable design principles into your project, with an emphasis on energy efficiency, water conservation, and sustainable material selection."
         />
         <ServiceItem
           title="Energy Modeling"
-          description="We perform energy modeling to optimize building performance and identify opportunities for energy savings."
+          description="We perform detailed energy modeling to optimize building performance and uncover opportunities for significant energy savings."
         />
         <ServiceItem
           title="Documentation & Submission"
-          description="We manage all necessary documentation and submissions to the US Green Building Council (USGBC) to streamline the certification process."
+          description="We handle all the necessary documentation and submission processes to the US Green Building Council (USGBC), simplifying the certification journey."
         />
         <ServiceItem
           title="Green Building Materials"
-          description="We recommend and source environmentally friendly materials that meet LEED standards, ensuring your project is both sustainable and cost-effective."
+          description="We source and recommend eco-friendly building materials that comply with LEED standards, ensuring sustainability without compromising cost-effectiveness."
         />
         <ServiceItem
           title="Construction Oversight"
-          description="We oversee the construction process to ensure that all sustainable practices and LEED requirements are implemented correctly."
+          description="We monitor the construction process to guarantee that all LEED requirements and sustainable practices are effectively implemented."
         />
         <ServiceItem
           title="Post-Occupancy Evaluation"
-          description="We conduct post-occupancy evaluations to assess building performance and ensure ongoing compliance with LEED standards."
+          description="We conduct post-occupancy evaluations to assess the ongoing performance of the building and ensure continuous compliance with LEED standards."
         />
       </div>
     </div>
@@ -52,4 +52,4 @@ const ServiceItem = ({ title, description }) => (
   </div>
 );
 
-export default LEEDConsultancy;
+export default LeedConsultancy;

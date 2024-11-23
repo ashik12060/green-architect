@@ -3,44 +3,44 @@ import React from "react";
 const SiteSupervision = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Site Supervision by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Site Supervision Services by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer provides professional Site Supervision services to ensure your construction project is executed to the highest standards. Our experienced supervisors oversee every aspect of the site, ensuring quality, safety, and efficiency.
+        At Dhaka Designer, we offer expert Site Supervision services to ensure your construction project meets the highest standards. Our experienced team of supervisors meticulously oversees every aspect of the site, ensuring quality, safety, and efficiency at all stages.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Site Supervision Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Site Supervision Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Daily Oversight"
-          description="We provide daily on-site supervision to monitor construction activities and ensure they align with the project plans and specifications."
+          title="Daily Supervision"
+          description="Our team provides on-site supervision every day, ensuring all activities align with project plans and specifications."
         />
         <ServiceItem
-          title="Quality Assurance"
-          description="We implement strict quality assurance measures to ensure all work meets the highest standards and adheres to design specifications."
+          title="Quality Control"
+          description="We enforce rigorous quality control measures to ensure that all work meets design specifications and high standards."
         />
         <ServiceItem
-          title="Safety Management"
-          description="We enforce safety protocols and regulations on-site, ensuring a safe working environment for all personnel."
+          title="Safety Oversight"
+          description="We enforce safety protocols and regulations to create a safe working environment for all personnel on-site."
         />
         <ServiceItem
-          title="Progress Reporting"
-          description="We provide regular progress reports, keeping you informed about the status of the project and any issues that arise."
+          title="Progress Tracking"
+          description="We provide regular progress updates, keeping you informed of the status of the project and highlighting any issues that arise."
         />
         <ServiceItem
           title="Coordination of Trades"
-          description="We coordinate the activities of various trades and subcontractors, ensuring smooth and efficient workflow."
+          description="We manage the coordination of various trades and subcontractors, ensuring smooth workflow and efficiency."
         />
         <ServiceItem
-          title="Issue Resolution"
-          description="We address and resolve any on-site issues promptly, minimizing delays and ensuring the project stays on track."
+          title="Problem Resolution"
+          description="We quickly address and resolve on-site issues, minimizing delays and keeping the project on schedule."
         />
         <ServiceItem
-          title="Compliance Monitoring"
-          description="We ensure all construction activities comply with local building codes, regulations, and environmental standards."
+          title="Regulatory Compliance"
+          description="We monitor construction activities to ensure strict adherence to local building codes, regulations, and environmental standards."
         />
         <ServiceItem
-          title="Final Inspection"
+          title="Final Project Inspection"
           description="We conduct thorough final inspections to ensure all work is completed to your satisfaction and ready for handover."
         />
       </div>

@@ -5,19 +5,17 @@ const Plumbing = () => {
     <div className="p-8 bg-gray-50 text-gray-900">
       <h1 className="text-3xl font-bold text-center mb-4">Plumbing Design by Dhaka Designer</h1>
       <p className="text-lg text-justify max-w-4xl mx-auto mb-8">
-        At <span className="font-semibold">Dhaka Designer</span>, we specialize in creating plumbing
-        systems that are efficient, dependable, and sustainable. Our team tailors each solution to
-        fit the specific needs of your project.
+        At <span className="font-semibold">Dhaka Designer</span>, we specialize in designing plumbing systems that prioritize efficiency, reliability, and sustainability. Each solution is customized to meet the unique requirements of your project.
       </p>
 
       <div className="space-y-6 max-w-4xl mx-auto">
         <ServiceItem
           title="Water Supply Systems"
-          description="We design streamlined water supply systems that guarantee a steady and reliable flow of clean water throughout your property."
+          description="We design efficient water supply systems that ensure a constant and dependable flow of clean water throughout your property."
         />
         <ServiceItem
           title="Drainage Systems"
-          description="Our drainage systems are crafted to ensure proper waste management and prevent blockages, keeping your spaces hygienic and functional."
+          description="Our drainage systems are designed to ensure proper waste management, preventing blockages and keeping your spaces clean and functional."
         />
       </div>
     </div>

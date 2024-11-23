@@ -3,49 +3,49 @@ import React from "react";
 const Facelifting = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Facelifting / Addition by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Facelifting & Additions by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer provides expert Facelifting and Addition services to rejuvenate and expand your existing spaces. Our skilled team ensures seamless integration and enhances the aesthetic and functional appeal of your property.
+        Dhaka Designer specializes in Facelifting and Addition services, transforming and expanding your existing spaces. Our expert team ensures smooth integration, enhancing both the visual and functional qualities of your property.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Facelifting / Addition Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Facelifting & Addition Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Exterior Facelifting"
-          description="We refresh and modernize the exterior of your building, enhancing curb appeal and overall appearance."
+          title="Exterior Refurbishment"
+          description="We revamp the exterior of your property, improving its curb appeal and overall visual impact."
         />
         <ServiceItem
-          title="Interior Upgrades"
-          description="We update interior spaces with new finishes, fixtures, and layouts to improve functionality and style."
+          title="Interior Enhancements"
+          description="We upgrade interior spaces with new finishes, fixtures, and layouts to enhance both function and style."
         />
         <ServiceItem
-          title="Building Additions"
-          description="We design and construct additions, such as extra rooms or extensions, to increase your building’s usable space."
+          title="Property Extensions"
+          description="We design and build extensions, such as additional rooms or spaces, to enhance your building’s functionality."
         />
         <ServiceItem
-          title="Structural Enhancements"
-          description="We reinforce and upgrade structural elements to support new additions and ensure the stability of the existing structure."
+          title="Structural Upgrades"
+          description="We strengthen and upgrade the structural components to accommodate new additions while ensuring the stability of the original structure."
         />
         <ServiceItem
-          title="Facade Improvements"
-          description="We enhance the building facade with new materials, windows, and architectural details to give it a fresh look."
+          title="Facade Renovation"
+          description="We refresh the building’s facade with new materials, windows, and design details for a modern, appealing look."
         />
         <ServiceItem
-          title="Energy Efficiency Upgrades"
-          description="We incorporate energy-efficient solutions, such as insulation, windows, and HVAC systems, to improve energy performance."
+          title="Sustainability Improvements"
+          description="We integrate energy-saving solutions, such as better insulation, windows, and efficient HVAC systems, to improve overall energy efficiency."
         />
         <ServiceItem
-          title="Custom Design Solutions"
-          description="We provide custom design solutions tailored to your specific needs, ensuring the new additions blend seamlessly with the existing structure."
+          title="Tailored Design Solutions"
+          description="We create custom designs to meet your specific needs, ensuring the new additions blend perfectly with your current building."
         />
         <ServiceItem
-          title="Permitting and Compliance"
-          description="We handle all necessary permitting and ensure compliance with local building codes and regulations."
+          title="Permits and Compliance"
+          description="We manage all required permits and ensure that all work is fully compliant with local building codes and regulations."
         />
         <ServiceItem
-          title="Project Management"
-          description="We manage the entire facelifting and addition process, from initial design to final inspection, ensuring quality and timely completion."
+          title="Project Oversight"
+          description="We handle the entire process from initial design to final inspection, ensuring quality work and timely completion."
         />
       </div>
     </div>

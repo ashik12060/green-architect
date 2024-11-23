@@ -5,41 +5,39 @@ const Mechanical = () => {
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Mechanical Design by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer provides premium Mechanical Design services to develop efficient, dependable, and cost-effective mechanical systems for your projects. Our solutions are tailored to your specific needs, ensuring top-notch performance and innovation.
+        At <span className="font-semibold">Dhaka Designer</span>, we offer high-quality Mechanical Design services that focus on creating efficient, reliable, and cost-effective mechanical systems for your projects. Our custom solutions are built to meet your unique requirements, ensuring outstanding performance and innovation.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Mechanical Design Services:
-      </h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Mechanical Design Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="HVAC Systems"
-          description="Expertly designed heating, ventilation, and air conditioning systems to deliver superior indoor climate control while maximizing energy efficiency."
+          description="We design top-tier heating, ventilation, and air conditioning systems to provide exceptional climate control indoors while optimizing energy usage."
         />
         <ServiceItem
           title="Plumbing Systems"
-          description="Comprehensive plumbing designs that ensure reliable water supply, drainage, and wastewater management for your project."
+          description="We provide reliable plumbing designs that ensure consistent water supply, drainage, and wastewater management for your project."
         />
         <ServiceItem
           title="Fire Protection Systems"
-          description="We design advanced fire protection systems, including sprinklers and alarms, to safeguard your property and occupants."
+          description="Our fire protection systems include cutting-edge sprinkler and alarm systems designed to protect your property and its occupants."
         />
         <ServiceItem
           title="Mechanical Equipment Layout"
-          description="We create detailed layouts for mechanical equipment, optimizing space utilization and maintenance accessibility."
+          description="We create precise layouts for mechanical equipment to maximize space efficiency and simplify maintenance."
         />
         <ServiceItem
           title="Energy Management"
-          description="We implement energy management solutions to minimize energy consumption and reduce operational costs."
+          description="We design energy management solutions aimed at reducing energy consumption and lowering operational expenses."
         />
         <ServiceItem
           title="Sustainable Design"
-          description="We integrate sustainable practices into mechanical designs, such as utilizing renewable energy sources and improving energy efficiency."
+          description="Our designs incorporate sustainable approaches, such as using renewable energy sources and enhancing energy efficiency."
         />
         <ServiceItem
           title="Regulatory Compliance"
-          description="We ensure all mechanical designs comply with local codes, standards, and regulations, ensuring safety and legal compliance."
+          description="We ensure that all mechanical designs comply with local codes and standards, ensuring safety and legal conformity."
         />
       </div>
     </div>

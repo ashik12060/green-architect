@@ -5,7 +5,7 @@ const Structure = () => {
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Structural Design by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers comprehensive Structural Design services to ensure the stability and safety of your projects. Our experienced team designs robust and innovative structures that stand the test of time.
+        Dhaka Designer specializes in providing complete Structural Design services to guarantee the safety and durability of your projects. Our skilled team crafts resilient and innovative structures built to last.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">
@@ -15,31 +15,31 @@ const Structure = () => {
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="Structural Analysis"
-          description="We conduct thorough structural analysis to determine the best design solutions for your project, ensuring safety and efficiency."
+          description="We perform comprehensive structural analyses to determine optimal design strategies, ensuring both safety and efficiency."
         />
         <ServiceItem
           title="Building Structures"
-          description="We design the structural framework for residential, commercial, and industrial buildings, ensuring they can withstand various loads and forces."
+          description="Our designs include robust structural frameworks for residential, commercial, and industrial buildings, capable of handling diverse loads and forces."
         />
         <ServiceItem
           title="Foundation Design"
-          description="We create strong and stable foundation designs tailored to the specific soil conditions and requirements of your site."
+          description="We develop secure and tailored foundation designs that match the specific soil characteristics and requirements of your site."
         />
         <ServiceItem
           title="Seismic Design"
-          description="We incorporate seismic design principles to protect buildings from earthquake damage, ensuring compliance with local regulations."
+          description="Our seismic design expertise ensures your buildings are protected from earthquake damage and comply with relevant regulations."
         />
         <ServiceItem
           title="Retrofitting & Strengthening"
-          description="We provide retrofitting and strengthening solutions for existing structures, enhancing their safety and extending their lifespan."
+          description="We offer retrofitting and strengthening solutions for older structures, enhancing their safety and extending their operational life."
         />
         <ServiceItem
           title="Materials Selection"
-          description="We select appropriate construction materials to ensure durability, cost-effectiveness, and sustainability."
+          description="We carefully choose construction materials that combine durability, cost-effectiveness, and environmental sustainability."
         />
         <ServiceItem
           title="Structural Inspections"
-          description="We conduct detailed structural inspections to assess the condition of existing structures and recommend necessary improvements."
+          description="We conduct thorough structural inspections to evaluate the condition of existing buildings and suggest necessary improvements."
         />
       </div>
     </div>

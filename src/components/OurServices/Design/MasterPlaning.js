@@ -1,43 +1,43 @@
 import React from "react";
 
-const MasterPlaning = () => {
+const MasterPlanning = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Master Planning by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers expert Master Planning services to create comprehensive and sustainable plans for your project. We focus on developing functional, aesthetically pleasing, and future-ready spaces.
+        At <span className="font-semibold">Dhaka Designer</span>, we provide expert Master Planning services to design well-rounded and sustainable plans for your project. Our focus is on creating spaces that are functional, visually appealing, and prepared for future growth.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Master Planning Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Master Planning Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Site Analysis"
-          description="We conduct a thorough analysis of the site, including topography, existing structures, and environmental conditions, to inform the planning process."
+          title="Site Evaluation"
+          description="We conduct a comprehensive site evaluation, examining topography, existing structures, and environmental factors to guide the planning process."
         />
         <ServiceItem
-          title="Concept Development"
-          description="We create initial concepts that reflect your vision, goals, and the unique characteristics of the site."
+          title="Concept Design"
+          description="We develop initial design concepts that align with your vision, objectives, and the distinctive features of the site."
         />
         <ServiceItem
-          title="Land Use Planning"
-          description="We develop land use plans that optimize space utilization, balancing residential, commercial, and recreational areas."
+          title="Land Planning"
+          description="We design land use plans that make the most efficient use of space, balancing residential, commercial, and recreational zones."
         />
         <ServiceItem
-          title="Infrastructure Planning"
-          description="We plan essential infrastructure, including roads, utilities, and public services, ensuring efficient and sustainable development."
+          title="Infrastructure Design"
+          description="We plan the core infrastructure, such as roads, utilities, and public services, ensuring a smooth and sustainable development."
         />
         <ServiceItem
-          title="Environmental Planning"
-          description="We integrate green spaces and sustainable practices into the plan, promoting environmental stewardship."
+          title="Eco-friendly Planning"
+          description="We incorporate green spaces and sustainable practices into the plan to promote environmental responsibility."
         />
         <ServiceItem
-          title="Community Engagement"
-          description="We engage with the community and stakeholders to gather input and ensure the plan meets local needs and expectations."
+          title="Community Collaboration"
+          description="We work closely with the community and stakeholders to collect feedback and ensure the plan aligns with local needs and expectations."
         />
         <ServiceItem
-          title="Implementation Strategy"
-          description="We develop a clear strategy for implementing the master plan, including phasing, timelines, and resource allocation."
+          title="Execution Plan"
+          description="We create a detailed execution plan for the master plan, including timelines, phases, and resource allocation."
         />
       </div>
     </div>
@@ -51,4 +51,4 @@ const ServiceItem = ({ title, description }) => (
   </div>
 );
 
-export default MasterPlaning;
+export default MasterPlanning;

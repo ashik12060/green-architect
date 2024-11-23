@@ -4,38 +4,38 @@ const ProjectIntegration = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4 px-8 sm:px-32">
-        Project Integration Services by Green Shelter Design and Development
+        Comprehensive Project Integration Services by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8 text-justify px-8 sm:px-32">
-        Green Shelter Design and Development offers comprehensive Project Integration services to ensure seamless coordination and execution of your project. We bring all project elements together, ensuring they work harmoniously for a successful outcome.
+        At Green Shelter Design and Development, we provide a complete range of Project Integration services to ensure every aspect of your project is seamlessly coordinated and executed. Our expertise lies in uniting all project components to work in perfect synergy for successful outcomes.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Project Integration Services Include:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Key Features of Our Project Integration Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Planning & Coordination"
-          description="We create a detailed project plan and coordinate all activities to ensure smooth execution throughout the project lifecycle."
+          title="Strategic Planning and Coordination"
+          description="We develop a comprehensive project strategy and oversee all related tasks, ensuring smooth operations and effective management throughout the project's duration."
         />
         <ServiceItem
-          title="Resource Management"
-          description="We efficiently manage resources, ensuring that all necessary materials, labor, and equipment are available on time."
+          title="Efficient Resource Allocation"
+          description="We optimize resource usage by ensuring timely availability of required materials, labor, and equipment, minimizing delays and inefficiencies."
         />
         <ServiceItem
-          title="Stakeholder Communication"
-          description="We ensure clear and consistent communication with all stakeholders, keeping everyone informed and aligned on project goals."
+          title="Effective Stakeholder Communication"
+          description="We prioritize clear and transparent communication, keeping all stakeholders informed and aligned with the project's vision and progress."
         />
         <ServiceItem
-          title="Risk Management"
-          description="We identify potential risks early on and develop strategies to mitigate them, ensuring project stability and success."
+          title="Comprehensive Risk Management"
+          description="We proactively identify potential risks and implement strategies to address them, ensuring uninterrupted project flow and success."
         />
         <ServiceItem
-          title="Quality Control"
-          description="We implement rigorous quality control measures to ensure that all aspects of the project meet high standards and specifications."
+          title="Enhanced Quality Assurance"
+          description="Our strict quality assurance processes guarantee that all project deliverables meet or exceed established standards and expectations."
         />
         <ServiceItem
-          title="Project Monitoring & Reporting"
-          description="We continuously monitor project progress and provide regular updates and reports to ensure transparency and timely completion."
+          title="Ongoing Monitoring and Reporting"
+          description="We provide continuous project tracking and regular updates, ensuring transparency, accountability, and adherence to timelines."
         />
       </div>
     </div>

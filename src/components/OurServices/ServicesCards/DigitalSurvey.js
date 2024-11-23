@@ -4,36 +4,36 @@ const SiteVisit = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4 px-4 sm:px-8 md:px-16">
-       Digital Survey & Reporting by Green Shelter Design and Development
+        Digital Survey & Reporting by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8 px-4 sm:px-8 md:px-16">
-        At Green Shelter Design and Development, we offer thorough Site Visit & Reporting services, gathering vital information for effective project planning and design. Our meticulous on-site evaluations ensure all critical site conditions are accurately captured and analyzed.
+        At Green Shelter Design and Development, we offer comprehensive Site Visit & Reporting services to gather essential information for effective project planning and design. Our thorough on-site assessments ensure that all key site conditions are accurately documented and analyzed.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6 px-4 sm:px-8 md:px-16">
-        A Glimpse Into Our Site Visit & Reporting Services:
+        Overview of Our Site Visit & Reporting Services:
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="3D Scanning"
-          description="We produce detailed 3D models of existing structures and landscapes, giving you a comprehensive view of your site."
+          description="We generate detailed 3D models of existing structures and landscapes, offering a clear understanding of your site."
         />
         <ServiceItem
           title="Drone Surveys"
-          description="Using drones, we collect high-quality aerial imagery and topographic data, providing you with a complete perspective of your site."
+          description="Utilizing drones, we capture high-resolution aerial images and topographical data, giving you a full view of your site."
         />
         <ServiceItem
           title="GIS Mapping"
-          description="We develop extensive Geographic Information System (GIS) maps for precise spatial analysis, helping you understand the full layout and features of your site."
+          description="We create detailed Geographic Information System (GIS) maps for precise spatial analysis, helping you understand the layout and features of your site."
         />
         <ServiceItem
           title="Data Integration"
-          description="We merge survey data with existing plans and models, offering a unified view that aids in informed decision-making."
+          description="We combine survey data with existing plans and models to provide a unified perspective for informed decision-making."
         />
         <ServiceItem
           title="Virtual Reality (VR) Integration"
-          description="We provide a virtual representation of the site and proposed modifications, allowing for seamless planning and adjustments."
+          description="We offer a virtual representation of the site and proposed modifications, facilitating smooth planning and adjustments."
         />
       </div>
     </div>

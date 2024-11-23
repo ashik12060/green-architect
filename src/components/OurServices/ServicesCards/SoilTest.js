@@ -4,34 +4,34 @@ const SoilTest = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4 px-8 sm:px-32">
-        Soil Test Services by Green Shelter Design and Development
+        Comprehensive Soil Testing by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8 text-justify px-8 sm:px-32">
-        Green Shelter Design and Development offers comprehensive Soil Test services to ensure your project's foundation is built on solid ground. Our in-depth testing allows you to understand the soil conditions, helping you make informed decisions for construction.
+        Green Shelter Design and Development provides expert Soil Testing services to ensure your construction project is based on a reliable foundation. Our thorough assessments provide insights into soil conditions, helping you make well-informed decisions for your building plans.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Soil Test Services Include:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Soil Testing Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="Soil Sampling"
-          description="We collect soil samples from various locations on your site to analyze its characteristics and properties."
+          description="We gather soil samples from different areas of your site to evaluate their characteristics and suitability."
         />
         <ServiceItem
-          title="Soil Analysis"
-          description="Our team performs comprehensive tests to determine the composition, strength, and suitability of the soil for construction."
+          title="Detailed Soil Analysis"
+          description="Our team conducts in-depth tests to assess the soil's composition, strength, and readiness for construction."
         />
         <ServiceItem
-          title="Moisture Content"
-          description="We assess the moisture content of the soil to gauge its stability and suitability for building purposes."
+          title="Moisture Content Evaluation"
+          description="We measure the moisture levels in the soil to determine its stability and feasibility for building purposes."
         />
         <ServiceItem
-          title="Bearing Capacity"
-          description="We analyze the soil's bearing capacity to ensure it can support the weight of the proposed structure."
+          title="Load-Bearing Capacity Assessment"
+          description="We evaluate the soil's ability to support the weight of your planned structure, ensuring safety and reliability."
         />
         <ServiceItem
           title="Soil Contamination Testing"
-          description="We conduct tests for contaminants to verify the soil's safety for construction and ensure compliance with environmental regulations."
+          description="We test for any contaminants in the soil to confirm its safety for construction and compliance with environmental standards."
         />
       </div>
     </div>

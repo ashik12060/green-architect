@@ -3,53 +3,53 @@ import React from "react";
 const Accessories = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Custom Kitchen Accessories by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Tailored Kitchen Accessories by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers bespoke Kitchen Accessories services to enhance the functionality and aesthetics of your kitchen. Our expert team designs and creates custom accessories tailored to your specific needs and style preferences.
+        Dhaka Designer specializes in creating personalized Kitchen Accessories that enhance both the style and practicality of your kitchen. Our skilled team crafts customized solutions designed to meet your unique needs and aesthetic preferences.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Custom Kitchen Accessories Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Kitchen Accessories Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Custom Cabinets"
-          description="We design and build custom cabinets that maximize storage space and complement your kitchen's design."
+          title="Custom Cabinetry"
+          description="We design and create cabinetry tailored to optimize storage while seamlessly blending with your kitchen's design."
         />
         <ServiceItem
-          title="Countertops & Backsplashes"
-          description="We offer a variety of custom countertop and backsplash options, using high-quality materials for durability and style."
+          title="Countertops and Backsplashes"
+          description="Our range of custom countertops and backsplashes, crafted with premium materials, combine durability with visual appeal."
         />
         <ServiceItem
-          title="Storage Solutions"
-          description="We create innovative storage solutions, such as pull-out shelves, spice racks, and utensil organizers, to keep your kitchen organized."
+          title="Organized Storage Solutions"
+          description="From pull-out shelves to spice racks and utensil organizers, we offer smart storage solutions to keep your kitchen tidy and functional."
         />
         <ServiceItem
-          title="Lighting Solutions"
-          description="We design custom lighting solutions, including under-cabinet and task lighting, to improve functionality and ambiance."
+          title="Customized Lighting"
+          description="We design task lighting and under-cabinet lighting to enhance the usability and atmosphere of your kitchen."
         />
         <ServiceItem
-          title="Hardware & Fixtures"
-          description="We provide a selection of custom hardware and fixtures, such as handles, knobs, and faucets, to add a unique touch to your kitchen."
+          title="Unique Hardware and Fixtures"
+          description="Our selection of custom handles, knobs, and faucets adds a personalized touch to your kitchen."
         />
         <ServiceItem
-          title="Custom Islands"
-          description="We design and build custom kitchen islands that provide additional workspace, storage, and seating options."
+          title="Custom Kitchen Islands"
+          description="We craft kitchen islands tailored to your needs, offering additional workspace, storage, and seating options."
         />
         <ServiceItem
-          title="Sustainable Materials"
-          description="We use eco-friendly and sustainable materials in our custom kitchen accessories to promote environmental responsibility."
+          title="Eco-Friendly Materials"
+          description="Our accessories use sustainable and environmentally friendly materials, combining style with responsibility."
         />
         <ServiceItem
-          title="3D Visualization"
-          description="We offer 3D visualization services to help you see how the custom accessories will look in your kitchen before installation."
+          title="3D Design Previews"
+          description="We provide 3D visualizations to help you preview how your customized accessories will look before installation."
         />
         <ServiceItem
-          title="Installation Services"
-          description="We provide professional installation services to ensure your custom kitchen accessories are securely and correctly installed."
+          title="Professional Installation"
+          description="Our expert team ensures precise installation, guaranteeing your kitchen accessories are securely and properly fitted."
         />
         <ServiceItem
-          title="Personalized Consultation"
-          description="We offer personalized consultation to understand your needs and preferences, ensuring the final product exceeds your expectations."
+          title="Tailored Consultations"
+          description="We offer one-on-one consultations to fully understand your requirements and preferences, delivering results that surpass expectations."
         />
       </div>
     </div>

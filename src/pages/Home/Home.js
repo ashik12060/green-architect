@@ -98,9 +98,7 @@ const Home = () => {
    
       <MiddleHeader />
       <Header />
-      {/* <Animation /> */}
       <Carousel />
-      {/* <Animation /> */}
       <ProjectCount />
 
       <div
@@ -175,17 +173,115 @@ const Home = () => {
       {/* Popup Form */}
 
       {showPopup && (
-  <div className="fixed inset-0 flex items-center justify-end p-4 sm:p-8 z-50">
-    <div className="bg-white p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto animate__animated animate__fadeInRight animate__faster">
-      <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center text-gray-800">
-        {t("popup_title")}
-      </h2>
+  // <div className="fixed inset-0 flex items-center justify-end p-4 sm:p-8 z-50">
+  //   <div className="bg-white p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto animate__animated animate__fadeInRight animate__faster">
+  //     <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center text-gray-800">
+  //       {t("popup_title")}
+  //     </h2>
 
-      <form ref={form} onSubmit={sendEmail} className="space-y-6 sm:space-y-8">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            {t("yourName")}
-          </label>
+  //     <form ref={form} onSubmit={sendEmail} className="space-y-6 sm:space-y-8">
+  //       <div>
+  //         <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+  //           {t("yourName")}
+  //         </label>
+  //         <input
+  //           id="name"
+  //           type="text"
+  //           name="user_name"
+  //           onChange={(event) => setName(event.target.value)}
+  //           value={name}
+  //           required
+  //           placeholder={t("namePlaceholder")}
+  //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+  //         />
+  //       </div>
+
+  //       <div>
+  //         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+  //           {t("yourEmail")}
+  //         </label>
+  //         <input
+  //           id="email"
+  //           type="email"
+  //           name="user_email"
+  //           onChange={(event) => setEmail(event.target.value)}
+  //           value={email}
+  //           required
+  //           placeholder={t("emailPlaceholder")}
+  //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+  //         />
+  //       </div>
+
+  //       <div>
+  //         <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+  //           {t("yourPhoneNumber")}
+  //         </label>
+  //         <input
+  //           id="phone"
+  //           type="tel"
+  //           name="user_phone"
+  //           onChange={(event) => setPhone(event.target.value)}
+  //           value={phone}
+  //           required
+  //           placeholder={t("phonePlaceholder")}
+  //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+  //         />
+  //       </div>
+
+  //       <div>
+  //         <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+  //           {t("projectDetails")}
+  //         </label>
+  //         <textarea
+  //           onChange={(event) => setMessages(event.target.value)}
+  //           value={message}
+  //           id="message"
+  //           name="user_message"
+  //           rows="4"
+  //           required
+  //           placeholder={t("detailsPlaceholder")}
+  //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+  //         ></textarea>
+  //       </div>
+
+  //       <div className="flex flex-col sm:flex-row justify-between items-center mt-6 sm:mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
+  //         <button
+  //           className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:bg-red-700 transition duration-300 w-full sm:w-auto"
+  //           onClick={() => setShowPopup(false)}
+  //         >
+  //           {t("form.close")}
+  //         </button>
+
+  //         <button
+  //           type="submit"
+  //           className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+  //         >
+  //           {t("submitRequest")}
+  //         </button>
+  //       </div>
+  //     </form>
+  //   </div>
+  // </div>
+
+  <div className="fixed inset-0 flex items-center justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
+  <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-6 sm:p-10 rounded-2xl shadow-2xl w-full max-w-md transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
+    <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 text-center text-green-800">
+      {t("popup_title")}
+    </h2>
+
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="space-y-6"
+    >
+      <div className="relative">
+        <label
+          htmlFor="name"
+          className="block text-sm font-medium text-green-700"
+        >
+          {t("yourName")}
+        </label>
+        <div className="relative mt-1">
           <input
             id="name"
             type="text"
@@ -194,14 +290,22 @@ const Home = () => {
             value={name}
             required
             placeholder={t("namePlaceholder")}
-            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
           />
+          <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
+            <i className="fas fa-user"></i>
+          </span>
         </div>
+      </div>
 
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            {t("yourEmail")}
-          </label>
+      <div className="relative">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-green-700"
+        >
+          {t("yourEmail")}
+        </label>
+        <div className="relative mt-1">
           <input
             id="email"
             type="email"
@@ -210,14 +314,22 @@ const Home = () => {
             value={email}
             required
             placeholder={t("emailPlaceholder")}
-            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
           />
+          <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
+            <i className="fas fa-envelope"></i>
+          </span>
         </div>
+      </div>
 
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-            {t("yourPhoneNumber")}
-          </label>
+      <div className="relative">
+        <label
+          htmlFor="phone"
+          className="block text-sm font-medium text-green-700"
+        >
+          {t("yourPhoneNumber")}
+        </label>
+        <div className="relative mt-1">
           <input
             id="phone"
             type="tel"
@@ -226,44 +338,52 @@ const Home = () => {
             value={phone}
             required
             placeholder={t("phonePlaceholder")}
-            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
+            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
           />
+          <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
+            <i className="fas fa-phone"></i>
+          </span>
         </div>
+      </div>
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-            {t("projectDetails")}
-          </label>
-          <textarea
-            onChange={(event) => setMessages(event.target.value)}
-            value={message}
-            id="message"
-            name="user_message"
-            rows="4"
-            required
-            placeholder={t("detailsPlaceholder")}
-            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
-          ></textarea>
-        </div>
+      <div>
+        <label
+          htmlFor="message"
+          className="block text-sm font-medium text-green-700"
+        >
+          {t("projectDetails")}
+        </label>
+        <textarea
+          onChange={(event) => setMessages(event.target.value)}
+          value={message}
+          id="message"
+          name="user_message"
+          rows="4"
+          required
+          placeholder={t("detailsPlaceholder")}
+          className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out shadow-sm"
+        ></textarea>
+      </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center mt-6 sm:mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
-          <button
-            className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:bg-red-700 transition duration-300 w-full sm:w-auto"
-            onClick={() => setShowPopup(false)}
-          >
-            {t("form.close")}
-          </button>
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+        <button
+          className="bg-red-600 text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:bg-red-700 transition duration-300"
+          onClick={() => setShowPopup(false)}
+        >
+          {t("form.close")}
+        </button>
 
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-auto"
-          >
-            {t("submitRequest")}
-          </button>
-        </div>
-      </form>
-    </div>
+        <button
+          type="submit"
+          className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+        >
+          {t("submitRequest")}
+        </button>
+      </div>
+    </form>
   </div>
+</div>
+
 )}
 
 

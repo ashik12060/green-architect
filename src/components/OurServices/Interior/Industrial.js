@@ -4,59 +4,56 @@ const Industrial = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Industrial Interior Design by Dhaka Designer
+        Dhaka Designer's Industrial Interior Design Services
       </h1>
       <p className="text-lg mb-8">
-        Dhaka Designer provides specialized Industrial Interior Design services
-        to create efficient, safe, and aesthetically pleasing industrial spaces. 
-        Our expert team designs environments that enhance productivity and reflect 
-        your brand's identity.
+        At Dhaka Designer, we specialize in crafting innovative and functional industrial spaces. Our designs prioritize efficiency, safety, and aesthetics, all while reflecting your brand’s unique identity.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">
-        Our Industrial Interior Design Services:
+        What We Offer in Industrial Interior Design:
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Space Optimization"
-          description="We design layouts that maximize space utilization and improve workflow efficiency in your industrial facility."
+          title="Maximized Space Utilization"
+          description="We design layouts to optimize workflow and ensure every square foot of your industrial facility is used effectively."
         />
         <ServiceItem
-          title="Ergonomic Design"
-          description="We incorporate ergonomic principles to create comfortable and safe working environments for your employees."
+          title="Employee-Friendly Environments"
+          description="Our ergonomic designs create safe and comfortable workplaces, boosting both employee well-being and productivity."
         />
         <ServiceItem
-          title="Material Selection"
-          description="We select durable and high-quality materials that withstand the demands of industrial use and maintain a professional appearance."
+          title="Durable Material Selection"
+          description="We choose high-quality, durable materials that stand up to industrial demands while maintaining a professional appearance."
         />
         <ServiceItem
-          title="Lighting Solutions"
-          description="We design effective lighting systems that ensure adequate illumination for safety and productivity, while also considering energy efficiency."
+          title="Customized Lighting Solutions"
+          description="Our lighting designs enhance visibility and safety while improving energy efficiency, ensuring a brighter and more cost-effective workspace."
         />
         <ServiceItem
-          title="Storage Solutions"
-          description="We create customized storage solutions to keep your industrial space organized and optimize inventory management."
+          title="Tailored Storage Systems"
+          description="We develop storage solutions that keep your space organized and streamline inventory management."
         />
         <ServiceItem
-          title="Safety Enhancements"
-          description="We integrate safety features into the design, including proper signage, safe walkways, and emergency exits, to ensure compliance with regulations."
+          title="Integrated Safety Features"
+          description="Safety is paramount. We incorporate clear signage, safe walkways, and proper emergency exits to ensure regulatory compliance."
         />
         <ServiceItem
-          title="Brand Integration"
-          description="We incorporate your brand's identity into the design, creating a cohesive look that reinforces your corporate image."
+          title="Brand Identity Integration"
+          description="Your brand matters. We weave your corporate identity into the design for a cohesive, professional industrial environment."
         />
         <ServiceItem
-          title="Sustainable Design"
-          description="We implement sustainable design practices, such as energy-efficient systems and environmentally friendly materials, to reduce operational costs and environmental impact."
+          title="Eco-Friendly Practices"
+          description="Our sustainable designs utilize energy-efficient systems and eco-friendly materials to minimize environmental impact and reduce costs."
         />
         <ServiceItem
-          title="3D Visualization"
-          description="We provide 3D visualization services to help you visualize the finished space and make informed design decisions."
+          title="Realistic 3D Visualizations"
+          description="We provide detailed 3D renders to help you visualize the final design and make well-informed decisions before implementation."
         />
         <ServiceItem
-          title="Project Management"
-          description="We oversee the entire design process, from initial concept to final implementation, ensuring timely and successful completion."
+          title="Comprehensive Project Management"
+          description="We manage the entire process, from conceptualization to completion, ensuring every detail is executed on time and to your satisfaction."
         />
       </div>
     </div>

@@ -5,39 +5,39 @@ const Lighting = () => {
     <div className="p-8 bg-white text-gray-800">
       <h1 className="text-3xl font-bold text-center mb-4">Lighting Design by Dhaka Designer</h1>
       <p className="text-lg text-justify max-w-4xl mx-auto mb-8">
-        <span className="font-semibold">Dhaka Designer</span> offers specialized Lighting Design
-        services to enhance the functionality and aesthetics of your spaces. Our team creates
-        innovative lighting solutions tailored to your specific needs.
+        At <span className="font-semibold">Dhaka Designer</span>, we specialize in providing 
+        customized lighting solutions that improve both the functionality and visual appeal of your spaces. 
+        Our team crafts unique lighting designs tailored specifically to meet the requirements of each project.
       </p>
 
       <div className="space-y-6 max-w-4xl mx-auto">
         <ServiceItem
-          title="Interior Lighting"
-          description="We design interior lighting systems that provide optimal illumination and enhance the ambiance of your indoor spaces."
+          title="Indoor Lighting"
+          description="We develop indoor lighting systems that ensure optimal brightness while enhancing the atmosphere of your interior spaces."
         />
         <ServiceItem
-          title="Exterior Lighting"
-          description="We create exterior lighting solutions that ensure safety, security, and aesthetic appeal for outdoor areas."
+          title="Outdoor Lighting"
+          description="We design exterior lighting that ensures safety, security, and visual beauty for your outdoor spaces."
         />
         <ServiceItem
           title="Architectural Lighting"
-          description="We highlight architectural features with creative lighting designs that add visual interest and elegance to your building."
+          description="We accentuate architectural features with sophisticated lighting designs that add elegance and visual appeal to your building."
         />
         <ServiceItem
-          title="Energy-Efficient Lighting"
-          description="We incorporate energy-efficient lighting technologies, such as LED and smart lighting systems, to reduce energy consumption and operational costs."
+          title="Energy-Saving Lighting"
+          description="We integrate energy-efficient lighting solutions, such as LED and smart systems, to minimize energy use and reduce costs."
         />
         <ServiceItem
-          title="Lighting Controls"
-          description="We design advanced lighting control systems, including dimmers, sensors, and automation, to provide flexibility and enhance user experience."
+          title="Lighting Control Systems"
+          description="We implement advanced lighting control systems with features like dimmers, sensors, and automation to offer convenience and enhance user experience."
         />
         <ServiceItem
           title="Emergency Lighting"
-          description="We ensure safety with well-designed emergency lighting systems that provide reliable illumination during power outages."
+          description="We provide reliable emergency lighting systems to ensure safety during power outages by offering consistent illumination."
         />
         <ServiceItem
-          title="Lighting Audits & Upgrades"
-          description="We conduct lighting audits to assess the current lighting setup and recommend upgrades to improve performance and efficiency."
+          title="Lighting Evaluation & Improvements"
+          description="We perform lighting assessments to evaluate your current system and suggest upgrades to enhance performance and efficiency."
         />
       </div>
     </div>

@@ -4,55 +4,52 @@ const Residential = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Residential Interior Design by Dhaka Designer
+        Residential Interior Design Services by Dhaka Designer
       </h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers exceptional Residential Interior Design services
-        to create beautiful and functional living spaces. Our expert team
-        tailors each design to your unique style and needs, ensuring a home that
-        reflects your personality and lifestyle.
+        At Dhaka Designer, we specialize in creating stunning and functional residential interiors. Our team works closely with you to craft designs that suit your personal style and meet your needs, ensuring your home reflects your individuality and lifestyle.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">
-        Our Residential Interior Design Services:
+        Our Expertise in Residential Interior Design:
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="Space Planning"
-          description="We optimize the layout of your home to ensure efficient use of space and a comfortable flow between rooms."
+          description="We carefully plan the layout of your home to maximize space utilization and create a seamless flow between rooms."
         />
         <ServiceItem
           title="Custom Furniture Design"
-          description="We create custom furniture pieces that fit perfectly in your space and meet your aesthetic preferences."
+          description="Our custom furniture designs are tailored to fit your space perfectly, complementing your aesthetic preferences."
         />
         <ServiceItem
           title="Color Consultation"
-          description="We provide expert color consultation to select the perfect palette that enhances the mood and style of your home."
+          description="Our experts provide color consultation services to help you select the perfect palette that enhances the ambiance of your home."
         />
         <ServiceItem
           title="Lighting Design"
-          description="We design effective and stylish lighting solutions that enhance the ambiance and functionality of each room."
+          description="We craft lighting solutions that are both stylish and functional, setting the right mood in each room."
         />
         <ServiceItem
           title="Kitchen & Bathroom Design"
-          description="We specialize in designing kitchens and bathrooms that are both beautiful and highly functional, with attention to detail and quality."
+          description="We design kitchens and bathrooms that combine beauty and functionality, focusing on every detail for a high-quality finish."
         />
         <ServiceItem
           title="Storage Solutions"
-          description="We design innovative storage solutions to keep your home organized and clutter-free."
+          description="Our innovative storage solutions keep your home organized and free from clutter."
         />
         <ServiceItem
           title="Material & Finish Selection"
-          description="We help you choose the best materials and finishes for your home, ensuring durability and style."
+          description="We assist you in selecting high-quality materials and finishes that not only look great but also ensure durability."
         />
         <ServiceItem
           title="3D Visualization"
-          description="We offer 3D visualization services to help you see how your finished space will look, making it easier to make design decisions."
+          description="We provide 3D visualizations to give you a clear idea of how your finished space will look, helping you make informed design decisions."
         />
         <ServiceItem
           title="Project Management"
-          description="We manage the entire interior design process, from initial concept to final installation, ensuring a seamless and stress-free experience."
+          description="From the initial concept to the final installation, we manage the entire design process, ensuring a smooth and hassle-free experience."
         />
       </div>
     </div>

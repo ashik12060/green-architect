@@ -5,55 +5,55 @@ const Retail = () => {
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Retail Interior Design by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers expert Retail Interior Design services to create engaging and functional retail spaces. Our designs aim to enhance customer experience, promote your brand, and drive sales.
+        Dhaka Designer specializes in creating dynamic and functional retail spaces through expert interior design services. Our goal is to enhance the customer experience, strengthen your brand presence, and increase sales.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Retail Interior Design Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Retail Interior Design Offerings:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="Space Planning"
-          description="We optimize store layouts to ensure smooth customer flow and maximize the use of retail space."
+          description="We optimize store layouts to ensure efficient customer flow while making the best use of the available retail space."
         />
         <ServiceItem
           title="Visual Merchandising"
-          description="We design eye-catching displays and merchandising solutions that highlight your products and attract customers."
+          description="We craft attention-grabbing displays and merchandising strategies that showcase your products and draw in customers."
         />
         <ServiceItem
           title="Brand Integration"
-          description="We incorporate your brand’s identity into the design, creating a cohesive and memorable shopping experience."
+          description="We seamlessly integrate your brand identity into the store design, ensuring a unified and memorable shopping experience."
         />
         <ServiceItem
           title="Lighting Design"
-          description="We provide effective lighting solutions that enhance the ambiance and highlight key products, creating an inviting atmosphere."
+          description="We provide lighting solutions that not only set the perfect ambiance but also highlight key products, enhancing the overall atmosphere."
         />
         <ServiceItem
           title="Fixture & Furniture Design"
-          description="We design custom fixtures and furniture that fit your space and meet your aesthetic and functional needs."
+          description="We design bespoke fixtures and furniture that are tailored to your space and meet both aesthetic and functional requirements."
         />
         <ServiceItem
           title="Color & Material Selection"
-          description="We assist in choosing the right colors and materials that reflect your brand and create a pleasant shopping environment."
+          description="We assist in selecting colors and materials that complement your brand and create a pleasant and engaging shopping environment."
         />
         <ServiceItem
           title="Technology Integration"
-          description="We integrate modern technologies, such as digital signage and interactive displays, to enhance customer engagement."
+          description="We incorporate modern technologies, such as interactive displays and digital signage, to boost customer interaction and engagement."
         />
         <ServiceItem
           title="Storage Solutions"
-          description="We design efficient storage solutions that keep your inventory organized and easily accessible."
+          description="We create efficient storage solutions that help keep your inventory organized and easily accessible to meet the demands of your retail space."
         />
         <ServiceItem
           title="Sustainable Design"
-          description="We incorporate sustainable practices and materials to reduce environmental impact and appeal to eco-conscious consumers."
+          description="We emphasize sustainable practices and materials to minimize environmental impact and appeal to environmentally conscious shoppers."
         />
         <ServiceItem
           title="3D Visualization"
-          description="We offer 3D visualization services to help you envision the final design and make informed decisions."
+          description="Our 3D visualization services allow you to see the final design before implementation, helping you make well-informed decisions."
         />
         <ServiceItem
           title="Project Management"
-          description="We manage the entire design process, from concept to completion, ensuring timely and successful project delivery."
+          description="We oversee the entire design process, from initial concept to final execution, ensuring the project is delivered on time and with great results."
         />
       </div>
     </div>

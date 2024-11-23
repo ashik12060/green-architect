@@ -7,31 +7,31 @@ const DroneSurvey = () => {
         Drone Survey Services by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8 text-justify px-8 sm:px-32">
-        Green Shelter Design and Development specializes in providing high-quality Drone Survey services that deliver precise aerial imagery and topographic data for your project. Using state-of-the-art drone technology, we ensure comprehensive and accurate surveys.
+        At Green Shelter Design and Development, we specialize in delivering top-tier Drone Survey services. Using cutting-edge drone technology, we provide accurate aerial imagery and topographic data, ensuring comprehensive and precise surveys for your project.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Drone Survey Services Include:</h2>
+      <h2 className="text-2xl font-semibold mb-6">What Our Drone Survey Services Offer:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="High-Quality Aerial Imagery"
-          description="We capture sharp, detailed aerial photographs of your site, offering a comprehensive view from above."
+          title="High-Resolution Aerial Photography"
+          description="We capture clear and detailed aerial photos of your site, providing a full perspective from above."
         />
         <ServiceItem
-          title="Topographic Data Collection"
-          description="Our drones gather precise topographic data, allowing you to fully understand the terrain and natural features of your site."
+          title="Topographic Surveying"
+          description="Our drones collect accurate topographic data, giving you a complete understanding of your site’s terrain and natural features."
         />
         <ServiceItem
-          title="3D Mapping"
-          description="We generate intricate 3D maps of your site, offering an in-depth view to support your planning and design needs."
+          title="3D Site Mapping"
+          description="We create detailed 3D maps of your site, offering a deeper perspective to aid in planning and design."
         />
         <ServiceItem
-          title="Construction Progress Monitoring"
-          description="Using drones, we track the progress of construction, providing regular updates and identifying potential challenges early in the process."
+          title="Construction Monitoring"
+          description="We use drones to track the progress of construction, providing ongoing updates and identifying potential issues early on."
         />
         <ServiceItem
-          title="Environmental Monitoring"
-          description="Our drones assess environmental factors, ensuring that your project aligns with environmental guidelines and regulations."
+          title="Environmental Assessments"
+          description="Our drones monitor environmental factors to ensure your project complies with all relevant environmental standards and regulations."
         />
       </div>
     </div>

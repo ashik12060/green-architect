@@ -4,37 +4,34 @@ const TrafficSurvey = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Traffic Survey Services by Green Shelter Design and Development
+        Traffic Analysis Services by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8">
-        Green Shelter Design and Development offers comprehensive Traffic Survey services to provide
-        a clear understanding of traffic patterns and support effective project
-        planning. Our surveys deliver valuable data for designing safe, efficient,
-        and sustainable transportation systems.
+        Green Shelter Design and Development provides detailed Traffic Analysis services to offer insights into traffic dynamics, supporting effective project planning. Our surveys supply essential data for creating safe, efficient, and sustainable transportation solutions.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Traffic Survey Services Include:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Traffic Analysis Services Cover:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Traffic Volume Measurement"
-          description="We record the volume of vehicles passing key locations to evaluate traffic flow and congestion levels."
+          title="Traffic Flow Monitoring"
+          description="We capture data on vehicle flow at critical points to assess traffic congestion and movement trends."
         />
         <ServiceItem
-          title="Speed Analysis"
-          description="We study vehicle speeds to identify areas where speed management solutions may be necessary to enhance safety."
+          title="Speed Pattern Evaluation"
+          description="We analyze vehicle speeds to identify areas requiring speed regulation measures for enhanced safety."
         />
         <ServiceItem
-          title="Origin-Destination Analysis"
-          description="We track vehicle movement to understand travel behaviors, enabling more effective route planning and infrastructure design."
+          title="Travel Behavior Study"
+          description="We track origin and destination patterns to gain insights into travel behaviors, aiding in strategic route and infrastructure planning."
         />
         <ServiceItem
-          title="Parking Demand Assessment"
-          description="We examine parking usage and demand to help optimize the design of parking facilities."
+          title="Parking Utilization Analysis"
+          description="We evaluate parking demands and usage trends to support the development of efficient parking solutions."
         />
         <ServiceItem
-          title="Traffic Impact Assessment"
-          description="We assess how your project may affect local traffic patterns and offer recommendations to minimize disruptions and improve traffic management."
+          title="Traffic Impact Evaluation"
+          description="We analyze how proposed projects could influence local traffic and recommend strategies to minimize disruptions and improve traffic flow."
         />
       </div>
     </div>

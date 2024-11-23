@@ -3,49 +3,49 @@ import React from "react";
 const Retrofitting = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Retrofitting by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Retrofitting Services by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers specialized Retrofitting services to enhance the safety, performance, and longevity of your existing structures. Our expert team ensures that your buildings meet modern standards and withstand future challenges.
+        At Dhaka Designer, we provide specialized Retrofitting services aimed at improving the safety, performance, and durability of your existing buildings. Our team ensures that your structures comply with modern standards and are well-equipped to face future challenges.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Retrofitting Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Retrofitting Solutions Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Structural Upgrades"
-          description="We reinforce and upgrade structural elements to improve the stability and strength of your building."
+          title="Structural Reinforcements"
+          description="We strengthen and enhance structural components to boost your building’s stability and resilience."
         />
         <ServiceItem
-          title="Seismic Retrofitting"
-          description="We implement seismic retrofitting measures to protect your building from earthquake damage, ensuring compliance with current codes."
+          title="Seismic Reinforcement"
+          description="We implement seismic retrofitting techniques to safeguard your building against earthquake damage while meeting current regulations."
         />
         <ServiceItem
-          title="Energy Efficiency Enhancements"
-          description="We enhance energy efficiency through insulation, window upgrades, and energy-efficient systems, reducing energy consumption and costs."
+          title="Energy Conservation Upgrades"
+          description="We improve energy efficiency by adding insulation, upgrading windows, and installing energy-efficient systems, reducing consumption and operational costs."
         />
         <ServiceItem
-          title="Fire Safety Improvements"
-          description="We upgrade fire safety systems, including alarms, sprinklers, and fire-resistant materials, to enhance occupant safety."
+          title="Fire Safety Enhancements"
+          description="We upgrade fire protection systems, including alarms, sprinklers, and fire-resistant materials, ensuring higher levels of safety for occupants."
         />
         <ServiceItem
-          title="Moisture & Water Damage Prevention"
-          description="We address moisture and water damage issues with waterproofing, drainage improvements, and moisture barriers."
+          title="Waterproofing and Damage Prevention"
+          description="We address water and moisture-related issues by improving drainage, adding waterproofing layers, and installing moisture barriers."
         />
         <ServiceItem
-          title="Accessibility Upgrades"
-          description="We improve accessibility with the addition of ramps, elevators, and other features to meet ADA standards and enhance usability."
+          title="Accessibility Improvements"
+          description="We install ramps, elevators, and other features to enhance accessibility and comply with ADA standards."
         />
         <ServiceItem
-          title="Mechanical & Electrical System Upgrades"
-          description="We update mechanical and electrical systems to ensure efficiency, reliability, and compliance with modern standards."
+          title="Mechanical & Electrical System Updates"
+          description="We modernize mechanical and electrical systems for better performance, reliability, and compliance with current standards."
         />
         <ServiceItem
-          title="Facade Improvements"
-          description="We upgrade building facades to improve aesthetics, energy efficiency, and weather resistance."
+          title="Facade Renovations"
+          description="We upgrade building facades to enhance their aesthetic appeal, energy efficiency, and weather resistance."
         />
         <ServiceItem
-          title="Project Management"
-          description="We oversee the entire retrofitting process, from assessment and design to implementation and final inspection, ensuring quality and timely completion."
+          title="Comprehensive Project Management"
+          description="We manage the entire retrofitting process, from assessment and design to execution and final inspection, ensuring the project is completed to the highest standards and on time."
         />
       </div>
     </div>

@@ -3,53 +3,53 @@ import React from "react";
 const Furniture = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Custom Furniture Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Dhaka Designer's Custom Furniture Services</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers bespoke Custom Furniture Design services to create unique, high-quality furniture that perfectly complements your space. Our expert team designs furniture that combines functionality, style, and craftsmanship.
+        At Dhaka Designer, we specialize in crafting unique, premium-quality furniture tailored to your needs. Our team combines creativity, functionality, and expert craftsmanship to bring your vision to life.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Custom Furniture Design Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">What We Offer in Custom Furniture Design:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Tailored Design"
-          description="We create custom furniture pieces tailored to your specific needs, preferences, and space requirements."
+          title="Bespoke Designs"
+          description="We create furniture uniquely designed to fit your space, style, and specific preferences."
         />
         <ServiceItem
-          title="Material Selection"
-          description="We help you choose the best materials, ensuring durability, aesthetic appeal, and alignment with your design vision."
+          title="Premium Material Selection"
+          description="We guide you in selecting the finest materials, ensuring durability and a polished finish that aligns with your design goals."
         />
         <ServiceItem
-          title="Ergonomic Design"
-          description="We incorporate ergonomic principles into our furniture designs to enhance comfort and usability."
+          title="Comfort-Focused Design"
+          description="Our furniture designs prioritize comfort and ergonomics, making each piece practical and enjoyable to use."
         />
         <ServiceItem
-          title="Innovative Solutions"
-          description="We design innovative furniture solutions that maximize space and functionality, such as multi-purpose and modular pieces."
+          title="Space-Saving Innovations"
+          description="We develop creative furniture solutions, including modular and multi-functional designs, to optimize your space."
         />
         <ServiceItem
-          title="Aesthetic Integration"
-          description="We ensure that our custom furniture seamlessly integrates with your existing decor and enhances the overall aesthetic of your space."
+          title="Seamless Style Integration"
+          description="Our custom furniture is crafted to complement your existing decor, elevating the overall aesthetic of your space."
         />
         <ServiceItem
-          title="Detailed Craftsmanship"
-          description="We focus on detailed craftsmanship, ensuring each piece is meticulously constructed and finished to the highest standards."
+          title="Attention to Craftsmanship"
+          description="Each piece is meticulously crafted with a focus on fine details and a high-quality finish."
         />
         <ServiceItem
-          title="3D Visualization"
-          description="We provide 3D visualization services to help you see how the custom furniture will look in your space before production."
+          title="3D Concept Previews"
+          description="We offer 3D visualizations so you can preview your custom furniture in your space before production begins."
         />
         <ServiceItem
-          title="Sustainable Practices"
-          description="We use sustainable materials and eco-friendly practices in our furniture design and production to minimize environmental impact."
+          title="Eco-Friendly Choices"
+          description="We use sustainable materials and environmentally friendly processes to design furniture that’s kind to the planet."
         />
         <ServiceItem
-          title="Installation Services"
-          description="We offer professional installation services to ensure that your custom furniture is perfectly placed and securely installed."
+          title="Expert Installation"
+          description="Our professional installation services ensure your custom furniture is securely and perfectly placed."
         />
         <ServiceItem
-          title="Personalized Consultation"
-          description="We provide personalized consultation to understand your vision and requirements, ensuring that the final product exceeds your expectations."
+          title="Tailored Consultations"
+          description="We provide one-on-one consultations to fully understand your requirements, delivering results that surpass expectations."
         />
       </div>
     </div>

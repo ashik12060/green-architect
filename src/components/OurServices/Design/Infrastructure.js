@@ -3,41 +3,41 @@ import React from "react";
 const Infrastructure = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Infrastructure Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Infrastructure Design Services by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer provides comprehensive Infrastructure Design services to ensure that your project has a solid foundation. We focus on creating efficient, sustainable, and resilient infrastructure systems.
+        Dhaka Designer offers comprehensive Infrastructure Design services aimed at ensuring a strong foundation for your project. Our focus is on creating efficient, sustainable, and resilient infrastructure solutions.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Infrastructure Design Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">Our Infrastructure Design Solutions:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
           title="Road & Transportation Design"
-          description="We design roads, highways, and transportation systems that optimize traffic flow and ensure safety."
+          description="We design roads, highways, and transportation systems to optimize traffic flow and ensure safety for all users."
         />
         <ServiceItem
           title="Utility Systems"
-          description="We plan and design utility systems, including water supply, sewage, and drainage, to meet the needs of your project."
+          description="We plan and design essential utility systems, such as water supply, sewage, and drainage, to meet the needs of your development."
         />
         <ServiceItem
           title="Power & Electrical Systems"
-          description="We design reliable and efficient power and electrical systems, ensuring uninterrupted service and energy efficiency."
+          description="We create efficient and reliable power and electrical systems to guarantee continuous service and optimal energy usage."
         />
         <ServiceItem
-          title="Telecommunications Networks"
-          description="We develop telecommunications infrastructure, including internet and phone networks, to keep your project connected."
+          title="Telecommunications Infrastructure"
+          description="We develop telecommunications networks, including internet and phone systems, to keep your project fully connected."
         />
         <ServiceItem
           title="Stormwater Management"
-          description="We create effective stormwater management systems to prevent flooding and protect the environment."
+          description="We design stormwater management solutions to mitigate flooding risks and protect the surrounding environment."
         />
         <ServiceItem
-          title="Sustainable Solutions"
-          description="We integrate sustainable practices into our designs, such as green infrastructure and renewable energy sources."
+          title="Sustainable Design Solutions"
+          description="We incorporate green infrastructure and renewable energy sources to ensure sustainability in every aspect of our design."
         />
         <ServiceItem
           title="Infrastructure Upgrades"
-          description="We assess and upgrade existing infrastructure to meet modern standards and improve performance."
+          description="We evaluate and modernize existing infrastructure to meet current standards and enhance performance."
         />
       </div>
     </div>

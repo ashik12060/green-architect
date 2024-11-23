@@ -5,39 +5,39 @@ const CostEstimate = () => {
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Cost Estimation by Dhaka Designer</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers precise Cost Estimation services to help you plan and budget your construction projects effectively. Our detailed cost analysis ensures you have a clear understanding of all financial aspects.
+        At <span className="font-semibold">Dhaka Designer</span>, we provide accurate and reliable Cost Estimation services, enabling you to effectively plan and manage your construction budgets. Our in-depth analysis ensures you have a comprehensive understanding of your project's financial requirements.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Cost Estimation Services:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Detailed Budgeting"
-          description="We create comprehensive budgets that cover all project expenses, ensuring you have a complete financial overview."
+          title="Comprehensive Budgeting"
+          description="We develop detailed budgets that encompass all project expenses, ensuring you have a complete financial picture."
         />
         <ServiceItem
-          title="Quantity Takeoffs"
-          description="We perform accurate quantity takeoffs to determine the materials and resources required for your project."
+          title="Material Quantity Takeoffs"
+          description="We carry out precise quantity takeoffs to identify the materials and resources needed for your project."
         />
         <ServiceItem
-          title="Cost Analysis"
-          description="We analyze current market prices and trends to provide accurate cost estimates for materials, labor, and equipment."
+          title="Cost Evaluation"
+          description="We assess current market conditions to provide accurate estimates for materials, labor, and equipment."
         />
         <ServiceItem
           title="Value Engineering"
-          description="We identify cost-saving opportunities without compromising on quality, helping you get the best value for your investment."
+          description="We uncover cost-reduction opportunities without compromising quality, ensuring you receive optimal value for your investment."
         />
         <ServiceItem
-          title="Bid Preparation"
-          description="We assist in preparing detailed bid documents to ensure competitive and fair pricing from contractors."
+          title="Bid Document Preparation"
+          description="We assist in preparing detailed bid documents, ensuring you receive competitive and fair pricing from contractors."
         />
         <ServiceItem
-          title="Cost Monitoring"
-          description="We continuously monitor costs throughout the project, providing updates and adjustments as needed to stay within budget."
+          title="Ongoing Cost Monitoring"
+          description="We track project costs throughout its duration, providing necessary updates and adjustments to stay within the approved budget."
         />
         <ServiceItem
-          title="Final Cost Reporting"
-          description="We provide a final cost report upon project completion, detailing all expenses and comparing them to the initial budget."
+          title="Final Cost Summary"
+          description="Upon completion, we deliver a final cost summary, detailing all expenditures and comparing them to the initial budget."
         />
       </div>
     </div>
