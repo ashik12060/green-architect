@@ -1,0 +1,30 @@
+/* External CSS for the scrolling effect */
+.our-clients-container {
+    background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
+    padding: 2.5rem 0; /* Tailwind's py-10 */
+    overflow: hidden;
+  }
+  
+  .our-clients-scroll {
+    display: flex;
+    animation: scroll-ltr 30s linear infinite; /* 30 seconds for smooth scrolling */
+  }
+  
+  .our-clients-scroll img {
+    height: 6rem; /* Tailwind's h-24 */
+    width: auto;
+    margin: 0 0.5rem; /* Tailwind's mx-2 */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-lg */
+  }
+  
+  /* Keyframes for left-to-right scrolling */
+  @keyframes scroll-ltr {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
