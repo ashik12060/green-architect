@@ -1,0 +1,71 @@
+.preloader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d0d0d;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  
+  .vertical-line {
+    position: absolute;
+    width: 2px; 
+    height: 100%;
+    background-color: #ffffff; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1;
+    opacity: 0.8;
+  }
+  
+
+  .percentage {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    letter-spacing: 2px;
+    animation: scaleUp 1.5s ease-in-out infinite;
+    z-index: 2; 
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  @keyframes scaleUp {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+   

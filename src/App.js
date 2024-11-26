@@ -105,6 +105,7 @@ import CustomCursor from "./CustomCursor/CustomCursor";
 import SingleMember from "./pages/SingleMember";
 import SingleProject from "./pages/SingleProject";
 import ModelMaking from "./components/OurServices/ModelMaking/ModelMaking";
+import Preloader from "./components/Preloader";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -127,287 +128,356 @@ const EditVideoHOC = Layout(EditVideo);
 const EditProductHOC = Layout(EditProduct);
 const UserDashboardHOC = Layout(UserDashboard);
 
+
+// Preloader Component
+// const Preloader = () => {
+//   const [percentage, setPercentage] = useState(0);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setPercentage((prev) => {
+//         if (prev < 100) {
+//           return prev + 1; // Increment percentage
+//         } else {
+//           clearInterval(interval); // Clear interval when 100% is reached
+//           return 100;
+//         }
+//       });
+//     }, 30); // Adjust speed of loading (30ms interval)
+
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <div style={styles.preloaderContainer}>
+//       <h1 style={styles.percentage}>{percentage}%</h1>
+//     </div>
+//   );
+// };
+
+// const styles = {
+//   preloaderContainer: {
+//     display: "flex",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     width: "100vw",
+//     height: "100vh",
+//     backgroundColor: "#0d0d0d",
+//     color: "#fff",
+//     position: "fixed",
+//     top: 0,
+//     left: 0,
+//     zIndex: 9999,
+//   },
+//   percentage: {
+//     fontSize: "3rem",
+//     fontWeight: "bold",
+//   },
+// };
+
+
+
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading completion
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3500); // Preloader lasts for 3.5 seconds
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
-      <ThemeProvider>
-      <CustomCursor />
-        <ToastContainer />
+    {
+      isLoading ? (
+        <Preloader />
+      ) : (
 
-        <Provider store={store}>
-          <ProSidebarProvider>
-            <BrowserRouter>
-              {/* <Theader /> */}
-              <SmallHeader />
-              <SocialMediaButton />
-              <ScrollToTopButton />
-              <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="/home" element={<Home />}></Route>
+        <ThemeProvider>
+        <CustomCursor />
+          <ToastContainer />
+  
+          <Provider store={store}>
+            <ProSidebarProvider>
+              <BrowserRouter>
+                {/* <Theader /> */}
+                <SmallHeader />
+                <SocialMediaButton />
+                <ScrollToTopButton />
+                <Routes>
+                  <Route path="/" element={<Home />}></Route>
+                  <Route path="/home" element={<Home />}></Route>
+  
+                  <Route path="/" element={<Home />}></Route>
+                  <Route path="/home" element={<Home />}></Route>
+                  <Route path="/about-us" element={<AboutUs />}></Route>
+                  <Route path="/team" element={<Team />}></Route>
+                  <Route path="/services" element={<Services />}></Route>
+                  <Route path="/projects" element={<Projects />}></Route>
+                  <Route path="/products" element={<Products />}></Route>
+                  <Route path="/contact" element={<Contact />}></Route>
+  
+                  {/* services */}
+                  <Route path="/pre-design" element={<Feasibility />}></Route>
+                  <Route path="/design" element={<Design />}></Route>
+                  <Route path="/build" element={<Build />}></Route>
+                  <Route path="/interior" element={<Interior />}></Route>
+                  <Route path="/3d-works" element={<TdWorks />}></Route>
+                  <Route path="/model-making" element={<ModelMaking />}></Route>
+  
+                  {/* pre design */}
+  
+                  <Route
+                    path="/pre-design/feasibility-study"
+                    element={<FeasibilityStudy />}
+                  ></Route>
+  
+                  <Route path="/pre-design/site-visit" element={<SiteVisit />} />
+                  <Route
+                    path="/pre-design/digital-survey"
+                    element={<DigitalSurvey />}
+                  />
+                  <Route
+                    path="/pre-design/drone-survey"
+                    element={<DroneSurvey />}
+                  />
+                  <Route path="/pre-design/soil-test" element={<SoilTest />} />
+                  <Route
+                    path="/pre-design/integration"
+                    element={<Integration />}
+                  />
+                  <Route
+                    path="/pre-design/traffic-survey"
+                    element={<TrafficSurvey />}
+                  />
+  
+                  {/* design */}
+                  <Route path="/design/architecture" element={<Architecture />} />
+                  <Route path="/design/electrical" element={<Electrical />} />
+                  <Route
+                    path="/design/infrastructure"
+                    element={<Infrastructure />}
+                  />
+                  <Route
+                    path="/design/leed-consultancy"
+                    element={<LeedConsultancy />}
+                  />
+                  <Route path="/design/lighting" element={<Lighting />} />
+                  <Route
+                    path="/design/master-planing"
+                    element={<MasterPlaning />}
+                  />
+                  <Route path="/design/mechanical" element={<Mechanical />} />
+                  <Route path="/design/plumbing" element={<Plumbing />} />
+                  <Route path="/design/structure" element={<Structure />} />
+  
+                  {/* build */}
+                  <Route path="/build/civilConstruction" element={<CivilConstruction />} />
+                  <Route path="/build/cost-estimate" element={<CostEstimate />} />
+                  <Route path="/build/face-lifting" element={<Facelifting />} />
+                  <Route path="/build/pmc" element={<PMC />} />
+                  <Route path="/build/retrofitting" element={<Retrofitting />} />
+                  <Route path="/build/site-supervision" element={<SiteSupervision />} />
+  
+  
+                  {/* Interior */}
+                  <Route path="/interior/accessories" element={<Accessories />} />
+                  <Route path="/interior/furniture" element={<Furniture />} />
+                  <Route path="/interior/industrial" element={<Industrial />} />
+                  <Route path="/interior/lighting-interior" element={<LightingInterior />} />
+                  <Route path="/interior/office" element={<Office />} />
+                  <Route path="/interior/residential" element={<Residential />} />
+                  <Route path="/interior/retail" element={<Retail />} />
+                  <Route path="/interior/sculpture" element={<Sculpture />} />
+  
+  
+  {/* 3d works */}
+                  <Route path="/3d-works/arch" element={<ArchBd />} />
+                  <Route path="/3d-works/arch-global" element={<ArchGlobal />} />
+                  <Route path="/3d-works/construction-3d" element={<Construction3d />} />
+                  <Route path="/3d-works/game-cinema" element={<GameCinema />} />
+                  <Route path="/3d-works/oil-gas" element={<OilGas />} />
+                  <Route path="/3d-works/products-3d" element={<Products3d />} />
+                  <Route path="/3d-works/solar-3d" element={<Solar3d />} />
+                  <Route path="/3d-works/technical" element={<Technical />} />
+                  <Route path="/3d-works/vs-works" element={<VsWorks />} />
+  
+                  <Route path="/buy" element={<BuyForm />} />
+  
+                  {/* blog */}
+                  <Route path="/" element={<BlogHome />} />
+                  <Route path="/blog" element={<BlogHome />} />
+  
+                  {/* research and analysis */}
+                  <Route path="/research-development" element={<RnD />} />
+                  <Route path="/team-members" element={<Members />} />
+  
+                  <Route path="/login" element={<LogIn />} />
+                  <Route path="/register" element={<Register />} />
+  
+                  {/* show single */}
+                  <Route path="/post/:id" element={<SinglePost />} />
+                  <Route path="/project/:id" element={<SingleProject />} />
+                  <Route path="/rnd/:id" element={<SingleRnd />} />
+                  <Route path="/member/:id" element={<SingleMember />} />
+  
+                  <Route path="/log" element={<SampleLogin />} />
+  
+                  <Route
+                    path="/admin/dashboard"
+                    element={
+                      <AdminRoute>
+                        <AdminDashboardHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  {/* create */}
+                  <Route
+                    path="/admin/post/create"
+                    element={
+                      <AdminRoute>
+                        <CreatePostHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/video/create"
+                    element={
+                      <AdminRoute>
+                        <CreateVideoHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/product/create"
+                    element={
+                      <AdminRoute>
+                        <CreateProductHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/project/create"
+                    element={
+                      <AdminRoute>
+                        <CreateProjectHOC />
+                      </AdminRoute>
+                    }
+                  />
+  
+                  <Route
+                    path="/admin/carousel/create"
+                    element={
+                      <AdminRoute>
+                        <CreateCarouselHOC />
+                      </AdminRoute>
+                    }
+                  />
+  
+                  <Route
+                    path="/admin/rnd/create"
+                    element={
+                      <AdminRoute>
+                        <CreateRndHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/member/create"
+                    element={
+                      <AdminRoute>
+                        <CreateMemberHOC />
+                      </AdminRoute>
+                    }
+                  />
+  
+                  {/* update */}
+                  <Route
+                    path="/admin/post/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditPostHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/post/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditVideoHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/video/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditVideoHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/product/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditProductHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/project/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditProjectHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/carousel/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditCarouselHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/rnd/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditRndHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/member/edit/:id"
+                    element={
+                      <AdminRoute>
+                        <EditMemberHOC />
+                      </AdminRoute>
+                    }
+                  />
+  
+                  <Route
+                    path="/user/dashboard"
+                    element={
+                      <UserRoute>
+                        <UserDashboardHOC />
+                      </UserRoute>
+                    }
+                  />
+                  {/* <Route path='*' element={<NotFound />}></Route> */}
+                </Routes>
+              </BrowserRouter>
+            </ProSidebarProvider>
+          </Provider>
+        </ThemeProvider>
+      )
+    }
 
-                <Route path="/" element={<Home />}></Route>
-                <Route path="/home" element={<Home />}></Route>
-                <Route path="/about-us" element={<AboutUs />}></Route>
-                <Route path="/team" element={<Team />}></Route>
-                <Route path="/services" element={<Services />}></Route>
-                <Route path="/projects" element={<Projects />}></Route>
-                <Route path="/products" element={<Products />}></Route>
-                <Route path="/contact" element={<Contact />}></Route>
 
-                {/* services */}
-                <Route path="/pre-design" element={<Feasibility />}></Route>
-                <Route path="/design" element={<Design />}></Route>
-                <Route path="/build" element={<Build />}></Route>
-                <Route path="/interior" element={<Interior />}></Route>
-                <Route path="/3d-works" element={<TdWorks />}></Route>
-                <Route path="/model-making" element={<ModelMaking />}></Route>
-
-                {/* pre design */}
-
-                <Route
-                  path="/pre-design/feasibility-study"
-                  element={<FeasibilityStudy />}
-                ></Route>
-
-                <Route path="/pre-design/site-visit" element={<SiteVisit />} />
-                <Route
-                  path="/pre-design/digital-survey"
-                  element={<DigitalSurvey />}
-                />
-                <Route
-                  path="/pre-design/drone-survey"
-                  element={<DroneSurvey />}
-                />
-                <Route path="/pre-design/soil-test" element={<SoilTest />} />
-                <Route
-                  path="/pre-design/integration"
-                  element={<Integration />}
-                />
-                <Route
-                  path="/pre-design/traffic-survey"
-                  element={<TrafficSurvey />}
-                />
-
-                {/* design */}
-                <Route path="/design/architecture" element={<Architecture />} />
-                <Route path="/design/electrical" element={<Electrical />} />
-                <Route
-                  path="/design/infrastructure"
-                  element={<Infrastructure />}
-                />
-                <Route
-                  path="/design/leed-consultancy"
-                  element={<LeedConsultancy />}
-                />
-                <Route path="/design/lighting" element={<Lighting />} />
-                <Route
-                  path="/design/master-planing"
-                  element={<MasterPlaning />}
-                />
-                <Route path="/design/mechanical" element={<Mechanical />} />
-                <Route path="/design/plumbing" element={<Plumbing />} />
-                <Route path="/design/structure" element={<Structure />} />
-
-                {/* build */}
-                <Route path="/build/civilConstruction" element={<CivilConstruction />} />
-                <Route path="/build/cost-estimate" element={<CostEstimate />} />
-                <Route path="/build/face-lifting" element={<Facelifting />} />
-                <Route path="/build/pmc" element={<PMC />} />
-                <Route path="/build/retrofitting" element={<Retrofitting />} />
-                <Route path="/build/site-supervision" element={<SiteSupervision />} />
-
-
-                {/* Interior */}
-                <Route path="/interior/accessories" element={<Accessories />} />
-                <Route path="/interior/furniture" element={<Furniture />} />
-                <Route path="/interior/industrial" element={<Industrial />} />
-                <Route path="/interior/lighting-interior" element={<LightingInterior />} />
-                <Route path="/interior/office" element={<Office />} />
-                <Route path="/interior/residential" element={<Residential />} />
-                <Route path="/interior/retail" element={<Retail />} />
-                <Route path="/interior/sculpture" element={<Sculpture />} />
-
-
-{/* 3d works */}
-                <Route path="/3d-works/arch" element={<ArchBd />} />
-                <Route path="/3d-works/arch-global" element={<ArchGlobal />} />
-                <Route path="/3d-works/construction-3d" element={<Construction3d />} />
-                <Route path="/3d-works/game-cinema" element={<GameCinema />} />
-                <Route path="/3d-works/oil-gas" element={<OilGas />} />
-                <Route path="/3d-works/products-3d" element={<Products3d />} />
-                <Route path="/3d-works/solar-3d" element={<Solar3d />} />
-                <Route path="/3d-works/technical" element={<Technical />} />
-                <Route path="/3d-works/vs-works" element={<VsWorks />} />
-
-                <Route path="/buy" element={<BuyForm />} />
-
-                {/* blog */}
-                <Route path="/" element={<BlogHome />} />
-                <Route path="/blog" element={<BlogHome />} />
-
-                {/* research and analysis */}
-                <Route path="/research-development" element={<RnD />} />
-                <Route path="/team-members" element={<Members />} />
-
-                <Route path="/login" element={<LogIn />} />
-                <Route path="/register" element={<Register />} />
-
-                {/* show single */}
-                <Route path="/post/:id" element={<SinglePost />} />
-                <Route path="/project/:id" element={<SingleProject />} />
-                <Route path="/rnd/:id" element={<SingleRnd />} />
-                <Route path="/member/:id" element={<SingleMember />} />
-
-                <Route path="/log" element={<SampleLogin />} />
-
-                <Route
-                  path="/admin/dashboard"
-                  element={
-                    <AdminRoute>
-                      <AdminDashboardHOC />
-                    </AdminRoute>
-                  }
-                />
-                {/* create */}
-                <Route
-                  path="/admin/post/create"
-                  element={
-                    <AdminRoute>
-                      <CreatePostHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/video/create"
-                  element={
-                    <AdminRoute>
-                      <CreateVideoHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/product/create"
-                  element={
-                    <AdminRoute>
-                      <CreateProductHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/project/create"
-                  element={
-                    <AdminRoute>
-                      <CreateProjectHOC />
-                    </AdminRoute>
-                  }
-                />
-
-                <Route
-                  path="/admin/carousel/create"
-                  element={
-                    <AdminRoute>
-                      <CreateCarouselHOC />
-                    </AdminRoute>
-                  }
-                />
-
-                <Route
-                  path="/admin/rnd/create"
-                  element={
-                    <AdminRoute>
-                      <CreateRndHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/member/create"
-                  element={
-                    <AdminRoute>
-                      <CreateMemberHOC />
-                    </AdminRoute>
-                  }
-                />
-
-                {/* update */}
-                <Route
-                  path="/admin/post/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditPostHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/post/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditVideoHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/video/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditVideoHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/product/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditProductHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/project/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditProjectHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/carousel/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditCarouselHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/rnd/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditRndHOC />
-                    </AdminRoute>
-                  }
-                />
-                <Route
-                  path="/admin/member/edit/:id"
-                  element={
-                    <AdminRoute>
-                      <EditMemberHOC />
-                    </AdminRoute>
-                  }
-                />
-
-                <Route
-                  path="/user/dashboard"
-                  element={
-                    <UserRoute>
-                      <UserDashboardHOC />
-                    </UserRoute>
-                  }
-                />
-                {/* <Route path='*' element={<NotFound />}></Route> */}
-              </Routes>
-            </BrowserRouter>
-          </ProSidebarProvider>
-        </Provider>
-      </ThemeProvider>
+     
     </>
   );
 }
