@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import { send } from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import Lottie from "lottie-react";
+import contactLotti from './contact-lottie.json'
 
 function ContactUs() {
   const { t } = useTranslation("contact");
@@ -60,12 +62,17 @@ function ContactUs() {
           {/* <h1 className="text-4xl font-bold text-white">Get In Touch</h1> */}
         </div>
       </div>
-      {/* {t('')} */}
+      
+      <div className="flex justify-center items-center text-xl mt-4">
+  <Lottie className="lottiContact text-xl w-1/4  border-2" animationData={contactLotti} />
+</div>
+
 
       {/* Contact Information Section */}
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Details */}
+          
           <div>
             <h2
               className={`text-3xl font-semibold mb-8  ${
