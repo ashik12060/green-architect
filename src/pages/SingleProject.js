@@ -16,6 +16,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Overview from "../components/Overview/Overview";
 import { LocalBenifits } from "../components/Overview/LocalBenifits";
 
+
+
 const SingleProject = () => {
   const { userInfo } = useSelector((state) => state.signIn);
   const { t, i18n } = useTranslation();
@@ -76,6 +78,8 @@ const SingleProject = () => {
     }
     return field || "N/A";
   };
+
+
 
   return (
     <>

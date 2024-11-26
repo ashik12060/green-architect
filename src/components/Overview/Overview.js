@@ -1,66 +1,171 @@
-import React from 'react';
-import Slider from 'react-slick';
 
-function Overview() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: (
-      <button className="custom-prev-arrow absolute top-0 left-0 bg-gray-600 text-white p-2 rounded-full">
-        &lt;
-      </button>
-    ),
-    nextArrow: (
-      <button className="custom-next-arrow absolute top-0 right-0 bg-gray-600 text-white p-2 rounded-full">
-        &gt;
-      </button>
-    ),
+
+// import React, { useState } from "react";
+// import img1 from '../../assets/architec1.jpg';
+// import img2 from '../../assets/architect1.jpg';
+// import img3 from '../../assets/architect2.jpg';
+// import img4 from '../../assets/carousel (2).jpg';
+// import img5 from '../../assets/architec1.jpg';
+// import img6 from '../../assets/architect1.jpg';
+// import img7 from '../../assets/architect2.jpg';
+// import img8 from '../../assets/carousel (2).jpg';
+// import { faGreaterThan, faLessThan } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { useTheme } from "../../context/ThemeContext";
+
+// const Overview = () => {
+//   const images = [img1, img2, img3, img4, img5, img6, img7, img8]; // Array of images
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const itemsPerPage = 3;
+
+//   // Navigate to the next set of images
+//   const next = () => {
+//     setCurrentIndex((prevIndex) =>
+//       prevIndex + itemsPerPage < images.length ? prevIndex + itemsPerPage : 0
+//     );
+//   };
+
+//   // Navigate to the previous set of images
+//   const prev = () => {
+//     setCurrentIndex((prevIndex) =>
+//       prevIndex - itemsPerPage >= 0
+//         ? prevIndex - itemsPerPage
+//         : Math.max(0, images.length - itemsPerPage)
+//     );
+//   };
+
+//   const { isDarkMode } = useTheme();
+
+//   // Handle empty images array
+//   if (images.length === 0) {
+//     return <div className="text-center text-gray-500">No images to display.</div>;
+//   }
+
+//   return (
+//     <div className="relative w-full max-w-7xl mx-auto my-20 px-4">
+//       <h1
+//         className={`text-4xl font-bold text-center mb-10 ${isDarkMode ? "text-white border-b-4 border-green-700" : "text-black"}`}
+//       >
+//         OVERVIEW
+//       </h1>
+
+//       {/* Navigation Buttons */}
+//       <div className="absolute top-4 right-4 flex space-x-4">
+//         <button
+//           onClick={prev}
+//           className="bg-gray-800 text-white px-6 py-4 rounded-full hover:bg-gray-700"
+//         >
+//           <FontAwesomeIcon icon={faLessThan} />
+//         </button>
+//         <button
+//           onClick={next}
+//           className="bg-gray-800 text-white px-6 py-4 rounded-full hover:bg-gray-700"
+//         >
+//           <FontAwesomeIcon icon={faGreaterThan} />
+//         </button>
+//       </div>
+
+//       {/* Carousel Images */}
+//       <div className="flex overflow-hidden  justify-center mt-10">
+//         {images
+//           .slice(currentIndex, currentIndex + itemsPerPage)
+//           .map((image, index) => (
+//             <img
+//               key={index}
+//               src={image}
+//               alt={`Slide ${index}`}
+//               className="w-80 h-80 object-cover mx-2 rounded-lg shadow-md" // Fixed size for images
+//             />
+//           ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Overview;
+
+
+
+import React, { useState } from "react";
+import img1 from '../../assets/architec1.jpg';
+import img2 from '../../assets/architect1.jpg';
+import img3 from '../../assets/architect2.jpg';
+import img4 from '../../assets/carousel (2).jpg';
+import img5 from '../../assets/architec1.jpg';
+import img6 from '../../assets/architect1.jpg';
+import img7 from '../../assets/architect2.jpg';
+import img8 from '../../assets/carousel (2).jpg';
+import { faGreaterThan, faLessThan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "../../context/ThemeContext";
+
+const Overview = () => {
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8]; // Array of images
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 3;
+
+  // Navigate to the next set of images
+  const next = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + itemsPerPage < images.length ? prevIndex + itemsPerPage : 0
+    );
   };
 
+  // Navigate to the previous set of images
+  const prev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - itemsPerPage >= 0
+        ? prevIndex - itemsPerPage
+        : Math.max(0, images.length - itemsPerPage)
+    );
+  };
+
+  const { isDarkMode } = useTheme();
+
+  // Handle empty images array
+  if (images.length === 0) {
+    return <div className="text-center text-gray-500">No images to display.</div>;
+  }
+
   return (
-    <div className="container mx-auto p-4 relative">
-      <h1 className="text-3xl font-bold text-center mb-8">OVERVIEW</h1>
-      <Slider {...settings}>
-        <div className="bg-white rounded-lg shadow-md p-4 text-center">
-          <svg className="w-16 h-16 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M17 14v5l-5 2 5 2v5l-2 5-2-5v-5l-5-2 5-2v-5l-2-5-2 5v-5l5-2 5 2v5l2-5 2 5z" />
-          </svg>
-          <p className="mt-4 font-medium text-gray-700">Verandah/Balcony</p>
-        </div>
-        <div className="bg-white rounded-lg shadow-md p-4 text-center">
-          <svg className="w-16 h-16 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4.25 12.75h15.5" />
-            <path d="M4.25 10.5h15.5" />
-            <path d="M6 18h12" />
-            <path d="M12 21v-9" />
-            <path d="M9 21v-9" />
-          </svg>
-          <p className="mt-4 font-medium text-gray-700">Bedrooms</p>
-        </div>
-        <div className="bg-white rounded-lg shadow-md p-4 text-center">
-          <svg className="w-16 h-16 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2l9 9-9 9-9-9 9-9z" />
-          </svg>
-          <p className="mt-4 font-medium text-gray-700">Living Room</p>
-        </div>
-        <div className="bg-white rounded-lg shadow-md p-4 text-center">
-          <svg className="w-16 h-16 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 12h18M3 6h18M3 18h18" />
-          </svg>
-          <p className="mt-4 font-medium text-gray-700">Kitchen</p>
-        </div>
-        <div className="bg-white rounded-lg shadow-md p-4 text-center">
-          <svg className="w-16 h-16 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2v20M2 12h20" />
-          </svg>
-          <p className="mt-4 font-medium text-gray-700">Bathroom</p>
-        </div>
-      </Slider>
+    <div className="relative w-full max-w-7xl mx-auto my-20 px-4">
+      <h1
+        className={`text-4xl font-bold text-center mb-10 ${isDarkMode ? "text-white border-b-4 border-green-700" : "text-black"}`}
+      >
+        OVERVIEW
+      </h1>
+
+      {/* Navigation Buttons */}
+      <div className="absolute top-4 right-4 flex space-x-4">
+        <button
+          onClick={prev}
+          className="bg-gray-800 text-white px-6 py-4 rounded-full hover:bg-gray-700"
+        >
+          <FontAwesomeIcon icon={faLessThan} />
+        </button>
+        <button
+          onClick={next}
+          className="bg-gray-800 text-white px-6 py-4 rounded-full hover:bg-gray-700"
+        >
+          <FontAwesomeIcon icon={faGreaterThan} />
+        </button>
+      </div>
+
+      {/* Carousel Images */}
+      <div className="flex overflow-hidden justify-center mt-10">
+        {images
+          .slice(currentIndex, currentIndex + itemsPerPage)
+          .map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Slide ${index}`}
+              className="w-full sm:w-64 md:w-80 lg:w-80 h-64 object-cover mx-2 rounded-lg shadow-md" // Responsive size for images
+            />
+          ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Overview;
