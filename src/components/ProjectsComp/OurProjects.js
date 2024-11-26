@@ -150,7 +150,7 @@ const SplitImageCarousel = () => {
           item.index = index;
         }
       },
-      drop: saveNewOrder, // Save order when the drag action is dropped
+      drop: saveNewOrder, 
     });
 
     return (
