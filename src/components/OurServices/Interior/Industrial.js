@@ -4,7 +4,7 @@ const Industrial = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Dhaka Designer's Industrial Interior Design Services
+        Green Shelter Design and Development Industrial Interior Design Services
       </h1>
       <p className="text-lg mb-8">
         At Dhaka Designer, we specialize in crafting innovative and functional industrial spaces. Our designs prioritize efficiency, safety, and aesthetics, all while reflecting your brand’s unique identity.

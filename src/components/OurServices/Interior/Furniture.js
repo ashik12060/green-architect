@@ -3,7 +3,7 @@ import React from "react";
 const Furniture = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Dhaka Designer's Custom Furniture Services</h1>
+      <h1 className="text-3xl font-bold mb-4">Green Shelter Design and Development Custom Furniture Services</h1>
       <p className="text-lg mb-8">
         At Dhaka Designer, we specialize in crafting unique, premium-quality furniture tailored to your needs. Our team combines creativity, functionality, and expert craftsmanship to bring your vision to life.
       </p>
