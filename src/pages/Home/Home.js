@@ -111,8 +111,8 @@ const Home = () => {
           <span
             className={`text-center my-10 font-bold  ${
               isDarkMode
-                ? " text-white border-b-4 border-white"
-                : "text-black border-b-4 border-black"
+                ? " text-white border-b-4 border-green-700"
+                : "text-black border-b-4 border-green-700"
             }`}
             data-aos="fade-right"
           >
@@ -135,7 +135,12 @@ const Home = () => {
             }`}
           >
             {t("allProjects")}
-            <FontAwesomeIcon className="ps-2" icon={faAnglesRight} />
+            <FontAwesomeIcon
+  className="ps-2 animate-pulse"
+  icon={faAnglesRight}
+/>
+
+            {/* <FontAwesomeIcon className="ps-2" icon={faAnglesRight} /> */}
           </Link>
         </div>
       </div>

@@ -107,17 +107,17 @@ const ProjectCount = () => {
             {
               count: t('projectsCompleted.count'),
               label: t('projectsCompleted.label'),
-              color: 'text-green-500',
+              color: 'text-green-700',
             },
             {
               count: t('satisfiedClients.count'),
               label: t('satisfiedClients.label'),
-              color: 'text-green-500',
+              color: 'text-green-700',
             },
             {
               count: t('yearsExperience.count'),
               label: t('yearsExperience.label'),
-              color: 'text-green-500',
+              color: 'text-green-700',
             },
             {
               count: t('awardsWon.count'),

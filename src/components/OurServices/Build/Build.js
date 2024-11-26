@@ -49,7 +49,7 @@ const Build = () => {
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 pb-32 pt-5">
+      <div className="container mx-auto px-4 mt-20 mb-56 pt-5 ">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
           <div className="rounded-md shadow-md bg-green-600 px-2 py-6 text-center hover:bg-green-700 transition-colors duration-300">
             <Link to='/build/pmc' className="text-white font-semibold hover:text-green-200">PMC</Link>

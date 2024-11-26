@@ -45,7 +45,7 @@ function Videos() {
     <div className={`flex flex-col items-center justify-center min-h-screen  pt-10  text-center my-10 font-bold  ${isDarkMode ? ' text-white bg-white' : 'text-black border border-gray-700'}`}>
       <div className="w-full">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-gray-800"> {t('pageTitle')}</h1>
+          <h1 className="text-3xl font-bold text-gray-800  border-b-4 border-green-700"> {t('pageTitle')}</h1>
           <p className="mt-2 text-gray-600">{t('location')}</p>
           
           {/* Iterate over the fetched videos array to generate video sections */}

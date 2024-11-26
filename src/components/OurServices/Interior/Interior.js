@@ -16,7 +16,7 @@ const Interior = () => {
   return (
     <>
       {/* <Header /> */}
-      <div className="container mx-auto px-4 pb-32 pt-5">
+      <div className="container mx-auto px-4  mt-20 mb-56 pt-5">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
           {sections.map((section, index) => (
             <div
