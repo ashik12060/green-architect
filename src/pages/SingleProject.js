@@ -95,13 +95,12 @@ const SingleProject = () => {
         ) : (
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2  gap-8">
-              {/* Image Carousel */}
               <div className="relative">
                 {images.length > 0 ? (
                   <>
                     <img
                       src={images[currentIndex]?.url}
-                      className=" w-full h-96 object-cover rounded-lg"
+                      className=" w-full h-50 object-cover rounded-lg"
                       alt={`Project Image ${currentIndex + 1}`}
                     />
                     <button
@@ -126,7 +125,7 @@ const SingleProject = () => {
                 )}
               </div>
 
-              {/* At a Glance Section */}
+             
               <div>
                 <h2 className="text-2xl font-bold mb-4">{t("At a Glance")}</h2>
                 <table className="w-full h-56 text-sm ">
@@ -258,6 +257,10 @@ const SingleProject = () => {
           </div>
         )}
       </div>
+
+
+   
+
 
       {/* overview */}
       <Overview />

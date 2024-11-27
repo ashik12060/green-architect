@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 const ItemType = "CARD";
 
+
 const SplitImageCarousel = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,30 +21,7 @@ const SplitImageCarousel = () => {
   const { isDarkMode } = useTheme();
   const { i18n } = useTranslation();
 
-  // useEffect(() => {
-  //   const fetchProjects = async () => {
-  //     try {
-  //       const { data } = await axiosInstance.get(
-  //         `${process.env.REACT_APP_API_URL}/api/projects/show`
-  //       );
-  //       const allProjects = data.projects || [];
-  //       setProjects(allProjects);
-  //       setFilteredProjects(allProjects);
-
-  //       const uniqueCategories = [
-  //         "All",
-  //         ...new Set(allProjects.map((project) => project.category)),
-  //       ];
-  //       setCategories(uniqueCategories);
-  //     } catch (err) {
-  //       setError("Failed to load projects. Please try again later.");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchProjects();
-  // }, []);
+  
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -94,35 +72,16 @@ const SplitImageCarousel = () => {
     setFilteredProjects(updatedProjects);
   };
 
-  // const saveNewOrder = async () => {
-  //   const reorderedIds = filteredProjects.map((project) => project._id);
-
-  //   try {
-  //     await axiosInstance.put(
-  //       `${process.env.REACT_APP_API_URL}/api/projects/reorder`,
-  //       { reorderedProjects: reorderedIds }
-  //     );
-  //     setProjects((prevProjects) =>
-  //       reorderedIds.map((id) => prevProjects.find((p) => p._id === id))
-  //     );
-  //     console.log("Order saved successfully!");
-  //   } catch (err) {
-  //     console.error("Failed to save new order", err);
-  //   }
-  // };
 
   const saveNewOrder = async () => {
-    // Get the list of project IDs in their new order
     const reorderedIds = filteredProjects.map((project) => project._id);
   
     try {
-      // Send the new order to the backend
       await axiosInstance.put(
         `${process.env.REACT_APP_API_URL}/api/projects/reorder`,
         { reorderedProjects: reorderedIds }
       );
   
-      // Optionally update local state after successfully saving the order
       setProjects((prevProjects) =>
         reorderedIds.map((id) => prevProjects.find((p) => p._id === id))
       );
@@ -237,3 +196,6 @@ const SplitImageCarousel = () => {
 };
 
 export default SplitImageCarousel;
+
+
+

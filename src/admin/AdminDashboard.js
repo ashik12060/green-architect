@@ -6,17 +6,146 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
+
+import { useDrag, useDrop } from "react-dnd";
 import axiosInstance from "../pages/axiosInstance";
+
+const ItemType = "PRODUCT";
+
 
 const AdminDashboard = () => {
   const [posts, setPosts] = useState([]);
   const [products, setProducts] = useState([]);
   const [projects, setProjects] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
   const [rnds, setRnd] = useState([]);
   const [members, setMembers] = useState([]);
   const [carousels, setCarousels] = useState([]);
   const [videos, setVideos] = useState([]);
   const [activeTab, setActiveTab] = useState("posts");
+
+
+  // product start
+  // Fetch products from the backend
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const { data } = await axiosInstance.get(
+          `${process.env.REACT_APP_API_URL}/api/products/show`
+        );
+
+        // Ensure products are sorted by order
+        const allProducts = data.products || [];
+        allProducts.sort((a, b) => a.order - b.order);
+
+        setProducts(allProducts);
+      } catch (err) {
+        // setError("Failed to load products. Please try again later.");
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Function to move a product within the array
+  const moveProduct = (fromIndex, toIndex) => {
+    const updatedProducts = [...products];
+    const [movedProduct] = updatedProducts.splice(fromIndex, 1);
+    updatedProducts.splice(toIndex, 0, movedProduct);
+    setProducts(updatedProducts);
+  };
+
+  // Save the new product order to the backend
+  const saveNewOrder = async () => {
+    const reorderedIds = products.map((product) => product._id);
+
+    try {
+      await axiosInstance.put(
+
+        `${process.env.REACT_APP_API_URL}/api/products/reorder`,
+        // console.log(`${process.env.REACT_APP_API_URL}/api/products/reorder`)
+
+        { reorderedProducts: reorderedIds }
+      );
+      console.log(`${process.env.REACT_APP_API_URL}/api/products/reorder`);
+
+      toast.success("Product order updated successfully!");
+    } catch (err) {
+      console.error("Failed to save new order:", err);
+      toast.error("Failed to save new order.");
+    }
+  };
+
+  // Draggable Product Row Component
+  const DraggableRow = ({ index, product }) => {
+    const [, drag] = useDrag({
+      type: ItemType,
+      item: { index },
+    });
+
+    const [, drop] = useDrop({
+      accept: ItemType,
+      hover: (item) => {
+        if (item.index !== index) {
+          moveProduct(item.index, index);
+          item.index = index;
+        }
+      },
+      drop: saveNewOrder, // Save order when dropped
+    });
+    
+    
+
+    return (
+      <motion.tr
+        ref={(node) => drag(drop(node))}
+        className="border-b border-gray-200 hover:bg-gray-100"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <td className="py-3 px-6 text-left">{product._id}</td>
+        <td className="py-3 px-6 text-left">{product.title?.en || "No Title"}</td>
+
+        <td className="py-3 px-6 text-left">
+          <img src={product.image.url} alt="Product" className="w-20 h-20" />
+        </td>
+        <td className="py-3 px-6 text-left">
+          {product.postedBy?.name || "Unknown"}
+        </td>
+        <td className="py-3 px-6 text-left">
+          {new Date(product.createdAt).toLocaleString()}
+        </td>
+        <td className="py-3 px-6 text-left">
+          <div className="flex items-center space-x-2">
+            <Link to={`/admin/product/edit/${product._id}`} className="text-blue-500">
+              Edit
+            </Link>
+            <button
+              className="text-red-500"
+              onClick={() => console.log("Delete product:", product._id)}
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </motion.tr>
+    );
+  };
+
+  // if (loading) return <div className="text-center py-10">Loading...</div>;
+  // if (error)
+  //   return <div className="text-center py-10 text-red-500">{error}</div>;
+
+
+
+  // end
+
+
 
   // Display posts
   const displayPost = async () => {
@@ -422,61 +551,6 @@ const AdminDashboard = () => {
     },
   ];
 
-  // project column
-  // const ProjectColumns = [
-  //   {
-  //     field: "_id",
-  //     headerName: "Project ID",
-  //     width: 150,
-  //     editable: true,
-  //   },
-  //   {
-  //     field: "title",
-  //     headerName: "Project title",
-  //     width: 150,
-  //   },
-  //   {
-  //     field: "image",
-  //     headerName: "Image",
-  //     width: 150,
-  //     renderCell: (params) => (
-  //       <img width="40%" src={params.row.image.url} alt="img" />
-  //     ),
-  //   },
-
-  //   {
-  //     field: "postedBy",
-  //     headerName: "Posted by",
-  //     width: 150,
-  //     renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
-  //   },
-  //   {
-  //     field: "createdAt",
-  //     headerName: "Created At",
-  //     width: 150,
-  //     renderCell: (params) =>
-  //       moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
-  //   },
-  //   {
-  //     field: "Actions",
-  //     width: 100,
-  //     renderCell: (value) => (
-  //       <div className="flex justify-between">
-  //         <Link to={`/admin/project/edit/${value.row._id}`}>
-  //           <IconButton aria-label="edit">
-  //             <EditIcon sx={{ color: "#1976d2" }} />
-  //           </IconButton>
-  //         </Link>
-  //         <IconButton
-  //           aria-label="delete"
-  //           onClick={(e) => deleteProjectById(e, value.row._id)}
-  //         >
-  //           <DeleteIcon sx={{ color: "red" }} />
-  //         </IconButton>
-  //       </div>
-  //     ),
-  //   },
-  // ];
   const ProjectColumns = [
     {
       field: "_id",
@@ -862,70 +936,101 @@ const AdminDashboard = () => {
         );
       case "products":
         return (
-          <div>
+
+          <div className="px-4 py-6">
+      <h4 className="text-black text-4xl pb-3">Products</h4>
+      <div className="pb-4 flex justify-end">
+        <Link to="/admin/product/create">
+          <button className="bg-green-500 text-white py-2 px-4 rounded">
+            Add Product
+          </button>
+        </Link>
+      </div>
+      <table className="min-w-full bg-white">
+        <thead>
+          <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th className="py-3 px-6 text-left">Product ID</th>
+            <th className="py-3 px-6 text-left">Title</th>
+            <th className="py-3 px-6 text-left">Image</th>
+            <th className="py-3 px-6 text-left">Posted By</th>
+            <th className="py-3 px-6 text-left">Created At</th>
+            <th className="py-3 px-6 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <DraggableRow key={product._id} index={index} product={product} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+
+
+          // <div>
                        
-            <div className="overflow-x-auto">
-              {/* Replace with your posts table here */}
-              <div>
-                <h4 className="text-black text-4xl pb-3">Products</h4>
-                <div className="pb-2 flex justify-end">
-                  <Link to="/admin/product/create">
-                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-                      <AddIcon className="mr-2" />
-                      Add Product
-                    </button>
-                  </Link>
-                </div>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full bg-white">
-                    <thead>
-                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                        {ProductColumns.map((column) => (
-                          <th
-                            key={column.field}
-                            className="py-3 px-6 text-left"
-                          >
-                            {column.headerName}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="text-gray-600 text-sm font-light">
-                      {products.length > 0 ? (
-                        products.map((product) => (
-                          <tr
-                            key={product._id}
-                            className="border-b border-gray-200 hover:bg-gray-100"
-                          >
-                            {ProductColumns.map((column) => (
-                              <td
-                                key={column.field}
-                                className="py-3 px-6 text-left"
-                              >
-                                {column.renderCell
-                                  ? column.renderCell({ row: product })
-                                  : product[column.field]}
-                              </td>
-                            ))}
-                          </tr>
-                        ))
-                      ) : (
-                        <tr>
-                          <td
-                            colSpan={PostColumns.length}
-                            className="text-center py-4"
-                          >
-                            No product found.
-                          </td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <p>Your product Table Here</p>
-            </div>
-          </div>
+          //   <div className="overflow-x-auto">
+          //     {/* Replace with your posts table here */}
+          //     <div>
+          //       <h4 className="text-black text-4xl pb-3">Products</h4>
+          //       <div className="pb-2 flex justify-end">
+          //         <Link to="/admin/product/create">
+          //           <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+          //             <AddIcon className="mr-2" />
+          //             Add Product
+          //           </button>
+          //         </Link>
+          //       </div>
+          //       <div className="overflow-x-auto">
+          //         <table className="min-w-full bg-white">
+          //           <thead>
+          //             <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+          //               {ProductColumns.map((column) => (
+          //                 <th
+          //                   key={column.field}
+          //                   className="py-3 px-6 text-left"
+          //                 >
+          //                   {column.headerName}
+          //                 </th>
+          //               ))}
+          //             </tr>
+          //           </thead>
+          //           <tbody className="text-gray-600 text-sm font-light">
+          //             {products.length > 0 ? (
+          //               products.map((product) => (
+          //                 <tr
+          //                   key={product._id}
+          //                   className="border-b border-gray-200 hover:bg-gray-100"
+          //                 >
+          //                   {ProductColumns.map((column) => (
+          //                     <td
+          //                       key={column.field}
+          //                       className="py-3 px-6 text-left"
+          //                     >
+          //                       {column.renderCell
+          //                         ? column.renderCell({ row: product })
+          //                         : product[column.field]}
+          //                     </td>
+          //                   ))}
+          //                 </tr>
+          //               ))
+          //             ) : (
+          //               <tr>
+          //                 <td
+          //                   colSpan={PostColumns.length}
+          //                   className="text-center py-4"
+          //                 >
+          //                   No product found.
+          //                 </td>
+          //               </tr>
+          //             )}
+          //           </tbody>
+          //         </table>
+          //       </div>
+          //     </div>
+          //     <p>Your product Table Here</p>
+          //   </div>
+          // </div>
         );
 
     
@@ -934,17 +1039,8 @@ const AdminDashboard = () => {
 
         return (
           <div>
-            <h4 className="text-black text-4xl pb-3">Projects</h4>
-            <div className="pb-2 flex justify-end">
-              <Link to="/admin/project/create">
-                <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-                  <AddIcon className="mr-2" />
-                  Create Project
-                </button>
-              </Link>
-            </div>
+            
             <div className="overflow-x-auto">
-              {/* Replace with your projects table here */}
               <div>
                 <h4 className="text-black text-4xl pb-3">Project</h4>
                 <div className="pb-2 flex justify-end">
@@ -1108,83 +1204,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
-      // case "members":
-      //   return (
-      //     <div>
-      //       <h4 className="text-black text-4xl pb-3">Members</h4>
-      //       <div className="pb-2 flex justify-end">
-      //         <Link to="/admin/member/create">
-      //           <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-      //             <AddIcon className="mr-2" />
-      //             Add Member
-      //           </button>
-      //         </Link>
-      //       </div>
-      //       <div className="overflow-x-auto">
-      //         {/* Replace with your members table here */}
-      //         {/* Team members */}
-      //         <div>
-      //           <h4 className="text-black text-4xl pb-3">Members</h4>
-      //           <div className="pb-2 flex justify-end">
-      //             <Link to="/admin/member/create">
-      //               <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-      //                 <AddIcon className="mr-2" />
-      //                 Add Member
-      //               </button>
-      //             </Link>
-      //           </div>
-      //           <div className="overflow-x-auto">
-      //             <table className="min-w-full bg-white">
-      //               <thead>
-      //                 <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-      //                   {MembersColumns.map((column) => (
-      //                     <th
-      //                       key={column.field}
-      //                       className="py-3 px-6 text-left"
-      //                     >
-      //                       {column.headerName}
-      //                     </th>
-      //                   ))}
-      //                 </tr>
-      //               </thead>
-      //               <tbody className="text-gray-600 text-sm font-light">
-      //                 {members.length > 0 ? (
-      //                   members.map((member) => (
-      //                     <tr
-      //                       key={member._id}
-      //                       className="border-b border-gray-200 hover:bg-gray-100"
-      //                     >
-      //                       {MembersColumns.map((column) => (
-      //                         <td
-      //                           key={column.field}
-      //                           className="py-3 px-6 text-left"
-      //                         >
-      //                           {column.renderCell
-      //                             ? column.renderCell({ row: member })
-      //                             : member[column.field]}
-      //                         </td>
-      //                       ))}
-      //                     </tr>
-      //                   ))
-      //                 ) : (
-      //                   <tr>
-      //                     <td
-      //                       colSpan={MembersColumns.length}
-      //                       className="text-center py-4"
-      //                     >
-      //                       No members found.
-      //                     </td>
-      //                   </tr>
-      //                 )}
-      //               </tbody>
-      //             </table>
-      //           </div>
-      //         </div>
-      //         <p>Your Members Table Here</p>
-      //       </div>
-      //     </div>
-      //   );
-
+      
       case "members":
         return (
           <div>
