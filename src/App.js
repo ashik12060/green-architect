@@ -106,6 +106,7 @@ import SingleMember from "./pages/SingleMember";
 import SingleProject from "./pages/SingleProject";
 import ModelMaking from "./components/OurServices/ModelMaking/ModelMaking";
 import Preloader from "./components/Preloader";
+import TopPage from "./components/TopPage/TopPage";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -127,61 +128,10 @@ const EditVideoHOC = Layout(EditVideo);
 
 const EditProductHOC = Layout(EditProduct);
 const UserDashboardHOC = Layout(UserDashboard);
-
-
-// Preloader Component
-// const Preloader = () => {
-//   const [percentage, setPercentage] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setPercentage((prev) => {
-//         if (prev < 100) {
-//           return prev + 1; // Increment percentage
-//         } else {
-//           clearInterval(interval); // Clear interval when 100% is reached
-//           return 100;
-//         }
-//       });
-//     }, 30); // Adjust speed of loading (30ms interval)
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <div style={styles.preloaderContainer}>
-//       <h1 style={styles.percentage}>{percentage}%</h1>
-//     </div>
-//   );
-// };
-
-// const styles = {
-//   preloaderContainer: {
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     width: "100vw",
-//     height: "100vh",
-//     backgroundColor: "#0d0d0d",
-//     color: "#fff",
-//     position: "fixed",
-//     top: 0,
-//     left: 0,
-//     zIndex: 9999,
-//   },
-//   percentage: {
-//     fontSize: "3rem",
-//     fontWeight: "bold",
-//   },
-// };
-
-
-
 function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate loading completion
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -202,6 +152,7 @@ function App() {
           <Provider store={store}>
             <ProSidebarProvider>
               <BrowserRouter>
+              <TopPage />
                 {/* <Theader /> */}
                 <SmallHeader />
                 <SocialMediaButton />

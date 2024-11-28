@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import Footer from "../../Shared/Footer/Footer";
 
@@ -46,11 +49,11 @@ const FeasibilityStudy = () => {
 
 const ServiceItem = ({ title, description }) => (
   <>
-    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4 text-justify">
-      <h3 className="text-lg sm:text-xl font-semibold flex-shrink-0 sm:w-1/3">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
+      <h3 className="text-lg sm:text-xl font-semibold flex-shrink-0 sm:w-1/3 text-left">
         {title}
       </h3>
-      <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
+      <p className="text-gray-600 sm:w-2/3 text-left">{description}</p>
     </div>
   </>
 );

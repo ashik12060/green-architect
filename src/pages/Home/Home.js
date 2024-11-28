@@ -82,12 +82,12 @@ const Home = () => {
 
   const { isDarkMode } = useTheme();
 
-  // const blocks = Array.from({ length: 30 }, (_, index) => index);
+
   useEffect(() => {
     Aos.init({
-      duration: 1000, // Set duration of animation in milliseconds
-      easing: "ease-in-out", // Easing function
-      once: true, // Whether animation should happen only once on scroll
+      duration: 1000, 
+      easing: "ease-in-out", 
+      once: true, 
     });
   }, []);
 
@@ -150,6 +150,7 @@ const Home = () => {
       <OurClients />
 
       <Faq />
+
       {/* meeting schedule */}
       <div
         data-aos="fade-right"
@@ -176,96 +177,6 @@ const Home = () => {
       {/* Popup Form */}
 
       {showPopup && (
-        // <div className="fixed inset-0 flex items-center justify-end p-4 sm:p-8 z-50">
-        //   <div className="bg-white p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto animate__animated animate__fadeInRight animate__faster">
-        //     <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center text-gray-800">
-        //       {t("popup_title")}
-        //     </h2>
-
-        //     <form ref={form} onSubmit={sendEmail} className="space-y-6 sm:space-y-8">
-        //       <div>
-        //         <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-        //           {t("yourName")}
-        //         </label>
-        //         <input
-        //           id="name"
-        //           type="text"
-        //           name="user_name"
-        //           onChange={(event) => setName(event.target.value)}
-        //           value={name}
-        //           required
-        //           placeholder={t("namePlaceholder")}
-        //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
-        //         />
-        //       </div>
-
-        //       <div>
-        //         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-        //           {t("yourEmail")}
-        //         </label>
-        //         <input
-        //           id="email"
-        //           type="email"
-        //           name="user_email"
-        //           onChange={(event) => setEmail(event.target.value)}
-        //           value={email}
-        //           required
-        //           placeholder={t("emailPlaceholder")}
-        //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
-        //         />
-        //       </div>
-
-        //       <div>
-        //         <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-        //           {t("yourPhoneNumber")}
-        //         </label>
-        //         <input
-        //           id="phone"
-        //           type="tel"
-        //           name="user_phone"
-        //           onChange={(event) => setPhone(event.target.value)}
-        //           value={phone}
-        //           required
-        //           placeholder={t("phonePlaceholder")}
-        //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
-        //         />
-        //       </div>
-
-        //       <div>
-        //         <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-        //           {t("projectDetails")}
-        //         </label>
-        //         <textarea
-        //           onChange={(event) => setMessages(event.target.value)}
-        //           value={message}
-        //           id="message"
-        //           name="user_message"
-        //           rows="4"
-        //           required
-        //           placeholder={t("detailsPlaceholder")}
-        //           className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out"
-        //         ></textarea>
-        //       </div>
-
-        //       <div className="flex flex-col sm:flex-row justify-between items-center mt-6 sm:mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
-        //         <button
-        //           className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:bg-red-700 transition duration-300 w-full sm:w-auto"
-        //           onClick={() => setShowPopup(false)}
-        //         >
-        //           {t("form.close")}
-        //         </button>
-
-        //         <button
-        //           type="submit"
-        //           className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-auto"
-        //         >
-        //           {t("submitRequest")}
-        //         </button>
-        //       </div>
-        //     </form>
-        //   </div>
-        // </div>
-
         <div className="fixed inset-0 flex items-center justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
           <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-6 sm:p-10 rounded-2xl shadow-2xl w-full max-w-md transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 text-center text-green-800">

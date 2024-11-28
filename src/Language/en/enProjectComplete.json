@@ -3,19 +3,19 @@
   "buyNow": "Buy Now",
     "projectsCompleted": {
       "label": "Project Completed",
-      "count": 2800
+      "count": 202
     },
     "satisfiedClients": {
       "label": "Satisfied Clients",
-      "count": 2500
+      "count": "98%"
     },
     "yearsExperience": {
       "label": "Years Experience",
-      "count": 18
+      "count": 7
     },
     "awardsWon": {
       "label": "Awards Won",
-      "count": 400
+      "count": 11
     }
   }
   

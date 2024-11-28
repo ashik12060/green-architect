@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 const AdditionalServices = () => {
   const [activeService, setActiveService] = useState(1); 
@@ -6,14 +7,17 @@ const AdditionalServices = () => {
     setActiveService(id);
   };
 
+  const { isDarkMode } = useTheme();
+
   const buttonStyles = (active) => ({
     padding: '1rem 2rem',
     borderRadius: '9999px',
-    color: 'white',
+    color: isDarkMode ? 'white' : 'white',
     fontWeight: '600',
     backgroundColor: active ? '#15803D' : '#15803D',
     transition: 'background-color 0.3s ease, transform 0.2s ease',
     cursor: 'pointer',
+    border: isDarkMode ? '1px solid #15803D' : '1px solid #15803D',
   });
 
   const buttonHoverStyles = {
@@ -28,18 +32,22 @@ const AdditionalServices = () => {
     maxWidth: '800px',
     marginLeft: 'auto',
     marginRight: 'auto',
-    fontSize: '0.9rem',
-    color: '#555',
+    fontSize: '1rem',
+    color: isDarkMode ? 'white' : 'black',
+    // color: isDarkMode ? '#E5E7EB' : '#555',
   };
 
   return (
-    <div className="text-center px-4 py-12">
-      <h2 className="text-2xl font-bold mb-6">Additional Services We Offer</h2>
+    <div className={`text-center px-4 py-12 ${isDarkMode ? '' : 'bg-white '}`}>
+      <h2 className={`${isDarkMode ? 'text-white' : 'text-black'} text-2xl font-bold mb-6`}>
+        Additional Services We Offer
+      </h2>
 
       <div className="flex flex-col md:flex-row justify-center gap-4 mb-4">
         <button
           onClick={() => handleCardClick(1)}
           style={buttonStyles(activeService === 1)}
+         
           onMouseEnter={(e) => e.target.style.backgroundColor = '#15803D'} // Hover effect
           onMouseLeave={(e) => e.target.style.backgroundColor = activeService === 1 ? '#15803D' : '#15803D'} // Remove hover effect
         >
@@ -55,7 +63,6 @@ const AdditionalServices = () => {
           Soil Test
         </button>
 
-        {/* Cost Estimate Card */}
         <button
           onClick={() => handleCardClick(3)}
           style={buttonStyles(activeService === 3)}
@@ -65,7 +72,6 @@ const AdditionalServices = () => {
           Cost Estimate
         </button>
 
-        {/* Digital Land Survey Card */}
         <button
           onClick={() => handleCardClick(4)}
           style={buttonStyles(activeService === 4)}
@@ -76,25 +82,24 @@ const AdditionalServices = () => {
         </button>
       </div>
 
-      {/* Conditionally Rendered Paragraphs */}
       <div>
         {activeService === 1 && (
-          <p style={{...fadeInStyles, animationDelay: '0.3s'}}>
-            Green Architect simplifies the process of obtaining RAJUK and City Corporation approvals for building plans. Our experienced team ensures fast, hassle-free, and compliant approvals, protecting clients from legal issues and delays.
+          <p style={{...fadeInStyles, animationDelay: '0.3s'}} className={`${isDarkMode ? "text-white" : "text-black"}`}>
+            Green Shelter Design and Development simplifies the process of obtaining RAJUK and City Corporation approvals for building plans. Our experienced team ensures fast, hassle-free, and compliant approvals, protecting clients from legal issues and delays.
           </p>
         )}
         {activeService === 2 && (
-          <p style={{...fadeInStyles, animationDelay: '0.3s'}}>
+          <p style={{...fadeInStyles, animationDelay: '0.3s'}} className={`${isDarkMode ? "text-white" : "text-black"}`}>
             Our soil test service ensures safe construction by assessing soil conditions for structural stability. This essential step helps prevent future issues with the building’s foundation.
           </p>
         )}
         {activeService === 3 && (
-          <p style={{...fadeInStyles, animationDelay: '0.3s'}}>
+          <p style={{...fadeInStyles, animationDelay: '0.3s'}} className={`${isDarkMode ? "text-white" : "text-black"}`}>
             Get accurate cost estimations for efficient budget planning. Our cost estimation service allows you to understand project expenses and manage resources effectively.
           </p>
         )}
         {activeService === 4 && (
-          <p style={{...fadeInStyles, animationDelay: '0.3s'}}>
+          <p style={{...fadeInStyles, animationDelay: '0.3s'}} className={`${isDarkMode ? "text-white" : "text-black"}`}>
             Our digital land survey provides precise data for land planning and development. Using advanced technology, we ensure accurate information for your project needs.
           </p>
         )}

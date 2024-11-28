@@ -104,7 +104,7 @@ const Architecture = () => {
       <p className="text-base sm:text-lg mt-4 text-justify max-w-4xl">
         Let’s make your vision come to life. Whether you’re planning a residential, commercial, or public space project, Dhaka Designer is ready to bring it to fruition. Reach out today at{" "}
         <a href="tel:+8801724747050" className="text-green-600 font-bold">
-          +880 1724-747050
+        +8801711-001726
         </a>{" "}
         or visit our appointment page to get started.
       </p>

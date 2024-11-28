@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../../assets/23338.jpg'; // Ensure this path is correct
+import img from '../../../assets/cover_team.png'; // Ensure this path is correct
 import { useTranslation } from 'react-i18next';
 
 const CoverPhoto = () => {
