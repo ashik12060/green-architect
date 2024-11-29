@@ -13,7 +13,6 @@ import axiosInstance from "../pages/axiosInstance";
 
 const ItemType = "PRODUCT";
 
-
 const AdminDashboard = () => {
   const [posts, setPosts] = useState([]);
   const [products, setProducts] = useState([]);
@@ -27,31 +26,83 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("posts");
 
 
-  // product start
-  // Fetch products from the backend
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const { data } = await axiosInstance.get(
+  //         `${process.env.REACT_APP_API_URL}/api/products/show`
+  //       );
+
+  //       const allProducts = data.products || [];
+  //       allProducts.sort((a, b) => a.order - b.order);
+
+  //       setProducts(allProducts);
+  //     } catch (err) {
+  //       toast.error("Failed to load products.");
+  //     }
+  //   };
+
+  //   fetchProducts();
+  // }, []);
+  
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const { data } = await axiosInstance.get(
+  //         `${process.env.REACT_APP_API_URL}/api/products/show`
+  //       );
+  
+  //       const allProducts = data.products || [];
+  //       // Ensure products are sorted by the `order` field
+  //       allProducts.sort((a, b) => a.order - b.order); 
+  
+  //       setProducts(allProducts);
+  //     } catch (err) {
+  //       toast.error("Failed to load products.");
+  //     }
+  //   };
+  
+  //   fetchProducts();
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const { data } = await axiosInstance.get(
+  //         `${process.env.REACT_APP_API_URL}/api/products/show`
+  //       );
+  
+  //       const allProducts = data.products || [];
+  //       allProducts.sort((a, b) => a.order - b.order); // Sort products by order
+  
+  //       setProducts(allProducts);
+  //     } catch (err) {
+  //       toast.error("Failed to load products.");
+  //     }
+  //   };
+  
+  //   fetchProducts();
+  // }, []);
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const { data } = await axiosInstance.get(
           `${process.env.REACT_APP_API_URL}/api/products/show`
         );
-
-        // Ensure products are sorted by order
+  
         const allProducts = data.products || [];
-        allProducts.sort((a, b) => a.order - b.order);
-
-        setProducts(allProducts);
+        allProducts.sort((a, b) => a.order - b.order); // Sort by order
+  
+        setProducts(allProducts);  // Update state with sorted products
       } catch (err) {
-        // setError("Failed to load products. Please try again later.");
-      } finally {
-        // setLoading(false);
+        toast.error("Failed to load products.");
       }
     };
-
+  
     fetchProducts();
   }, []);
-
-  // Function to move a product within the array
+  
   const moveProduct = (fromIndex, toIndex) => {
     const updatedProducts = [...products];
     const [movedProduct] = updatedProducts.splice(fromIndex, 1);
@@ -59,28 +110,86 @@ const AdminDashboard = () => {
     setProducts(updatedProducts);
   };
 
-  // Save the new product order to the backend
-  const saveNewOrder = async () => {
-    const reorderedIds = products.map((product) => product._id);
+  // Save the new order to the backend
+ 
+//   const saveNewOrder = async () => {
+//     const reorderedIds = products.map((product) => product._id);
+//     console.log("Reordered IDs:", reorderedIds); // Log the reordered product IDs
 
-    try {
-      await axiosInstance.put(
+//     try {
+//         await axiosInstance.put(
+//             `${process.env.REACT_APP_API_URL}/api/products/reorder`,
+//             { reorderedProducts: reorderedIds }
+//         );
+//         setProducts((prevProducts) =>
+//             reorderedIds.map((id) => prevProducts.find((p) => p._id === id))
+//         );
+//         toast.success("Product order updated successfully!");
+//     } catch (err) {
+//         console.error("Error saving new order:", err); // Log the error
+//         toast.error("Failed to save new order.");
+//     }
+// };
+// const saveNewOrder = async () => {
+//   const reorderedIds = products.map((product) => product._id);
 
-        `${process.env.REACT_APP_API_URL}/api/products/reorder`,
-        // console.log(`${process.env.REACT_APP_API_URL}/api/products/reorder`)
+//   try {
+//     // Send the reordered product IDs to the backend
+//     await axiosInstance.put(
+//       `${process.env.REACT_APP_API_URL}/api/products/reorder`,
+//       { reorderedProducts: reorderedIds }
+//     );
+    
+//     // Fetch the updated list of products and sort them by the 'order' field
+//     const { data } = await axiosInstance.get(
+//       `${process.env.REACT_APP_API_URL}/api/products/show`
+//     );
 
-        { reorderedProducts: reorderedIds }
-      );
-      console.log(`${process.env.REACT_APP_API_URL}/api/products/reorder`);
+//     // Sort products based on the 'order' field
+//     const allProducts = data.products || [];
+//     allProducts.sort((a, b) => a.order - b.order);
 
-      toast.success("Product order updated successfully!");
-    } catch (err) {
-      console.error("Failed to save new order:", err);
-      toast.error("Failed to save new order.");
-    }
-  };
+//     // Update the state with the sorted products
+//     setProducts(allProducts);
+    
+//     toast.success("Product order updated successfully!");
+//   } catch (err) {
+//     toast.error("Failed to save new order.");
+//   }
+// };
 
-  // Draggable Product Row Component
+const saveNewOrder = async () => {
+  const reorderedIds = products.map((product) => product._id);
+
+  try {
+    // Send the reordered product IDs to the backend
+    const response = await axiosInstance.put(
+      `${process.env.REACT_APP_API_URL}/api/products/reorder`,
+      { reorderedProducts: reorderedIds }
+    );
+    
+    // Check if response data is correct
+    console.log(response.data);  // Debugging log
+
+    // Refetch the updated products from the backend
+    const { data } = await axiosInstance.get(
+      `${process.env.REACT_APP_API_URL}/api/products/show`
+    );
+
+    // Sort the products based on the updated 'order' field
+    const allProducts = data.products || [];
+    allProducts.sort((a, b) => a.order - b.order);
+
+    // Update the state with the sorted products
+    setProducts(allProducts);
+
+    toast.success("Product order updated successfully!");
+  } catch (err) {
+    toast.error("Failed to save new order.");
+  }
+};
+
+  // Draggable Row Component
   const DraggableRow = ({ index, product }) => {
     const [, drag] = useDrag({
       type: ItemType,
@@ -95,10 +204,8 @@ const AdminDashboard = () => {
           item.index = index;
         }
       },
-      drop: saveNewOrder, // Save order when dropped
+      drop: saveNewOrder, // Save the new order after drop
     });
-    
-    
 
     return (
       <motion.tr
@@ -110,13 +217,10 @@ const AdminDashboard = () => {
       >
         <td className="py-3 px-6 text-left">{product._id}</td>
         <td className="py-3 px-6 text-left">{product.title?.en || "No Title"}</td>
-
         <td className="py-3 px-6 text-left">
           <img src={product.image.url} alt="Product" className="w-20 h-20" />
         </td>
-        <td className="py-3 px-6 text-left">
-          {product.postedBy?.name || "Unknown"}
-        </td>
+        <td className="py-3 px-6 text-left">{product.postedBy?.name || "Unknown"}</td>
         <td className="py-3 px-6 text-left">
           {new Date(product.createdAt).toLocaleString()}
         </td>
@@ -136,18 +240,8 @@ const AdminDashboard = () => {
       </motion.tr>
     );
   };
-
-  // if (loading) return <div className="text-center py-10">Loading...</div>;
-  // if (error)
-  //   return <div className="text-center py-10 text-red-500">{error}</div>;
-
-
-
-  // end
-
-
-
-  // Display posts
+  
+  
   const displayPost = async () => {
     try {
       const { data } = await axiosInstance.get(
@@ -251,7 +345,6 @@ const AdminDashboard = () => {
     displayRnd();
   }, []);
 
- 
   // Fetch members from the backend
   const displayMembers = async () => {
     try {
@@ -276,7 +369,6 @@ const AdminDashboard = () => {
     displayMembers();
   }, []);
 
-  
   // Display carousel
   const displayCarousel = async () => {
     try {
@@ -496,60 +588,60 @@ const AdminDashboard = () => {
   ];
 
   // products column
-  const ProductColumns = [
-    {
-      field: "_id",
-      headerName: "Product ID",
-      width: 150,
-      editable: true,
-    },
-    {
-      field: "title",
-      headerName: "Product title",
-      width: 150,
-    },
-    {
-      field: "image",
-      headerName: "Image",
-      width: 150,
-      renderCell: (params) => (
-        <img width="40%" src={params.row.image.url} alt="img" />
-      ),
-    },
+  // const ProductColumns = [
+  //   {
+  //     field: "_id",
+  //     headerName: "Product ID",
+  //     width: 150,
+  //     editable: true,
+  //   },
+  //   {
+  //     field: "title",
+  //     headerName: "Product title",
+  //     width: 150,
+  //   },
+  //   {
+  //     field: "image",
+  //     headerName: "Image",
+  //     width: 150,
+  //     renderCell: (params) => (
+  //       <img width="40%" src={params.row.image.url} alt="img" />
+  //     ),
+  //   },
 
-    {
-      field: "postedBy",
-      headerName: "Posted by",
-      width: 150,
-      renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
-    },
-    {
-      field: "createdAt",
-      headerName: "Created At",
-      width: 150,
-      renderCell: (params) =>
-        moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
-    },
-    {
-      field: "Actions",
-      width: 100,
-      renderCell: (value) => (
-        <div className="flex justify-between">
-          <Link to={`/admin/product/edit/${value.row._id}`}>
-            <IconButton aria-label="edit">
-              <EditIcon sx={{ color: "#1976d2" }} />
-            </IconButton>
-          </Link>
-          <IconButton
-            aria-label="delete"
-            onClick={(e) => deleteProductById(e, value.row._id)}
-          >
-            <DeleteIcon sx={{ color: "red" }} />
-          </IconButton>
-        </div>
-      ),
-    },
-  ];
+  //   {
+  //     field: "postedBy",
+  //     headerName: "Posted by",
+  //     width: 150,
+  //     renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
+  //   },
+  //   {
+  //     field: "createdAt",
+  //     headerName: "Created At",
+  //     width: 150,
+  //     renderCell: (params) =>
+  //       moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
+  //   },
+  //   {
+  //     field: "Actions",
+  //     width: 100,
+  //     renderCell: (value) => (
+  //       <div className="flex justify-between">
+  //         <Link to={`/admin/product/edit/${value.row._id}`}>
+  //           <IconButton aria-label="edit">
+  //             <EditIcon sx={{ color: "#1976d2" }} />
+  //           </IconButton>
+  //         </Link>
+  //         <IconButton
+  //           aria-label="delete"
+  //           onClick={(e) => deleteProductById(e, value.row._id)}
+  //         >
+  //           <DeleteIcon sx={{ color: "red" }} />
+  //         </IconButton>
+  //       </div>
+  //     ),
+  //   },
+  // ];
 
   const ProjectColumns = [
     {
@@ -568,10 +660,11 @@ const AdminDashboard = () => {
       headerName: "Image",
       width: 150,
       renderCell: (params) => {
-        const imageUrl = Array.isArray(params.row.image) && params.row.image.length > 0
-          ? params.row.image[0].url // Use the first image if it's an array
-          : params.row.image?.url;   // Use single image if it's an object
-  
+        const imageUrl =
+          Array.isArray(params.row.image) && params.row.image.length > 0
+            ? params.row.image[0].url // Use the first image if it's an array
+            : params.row.image?.url; // Use single image if it's an object
+
         return (
           <img
             width="40%"
@@ -614,7 +707,6 @@ const AdminDashboard = () => {
       ),
     },
   ];
-  
 
   // video column
   const VideoColumns = [
@@ -738,7 +830,6 @@ const AdminDashboard = () => {
       ),
     },
   ];
-
 
   // Define member columns
   const MembersColumns = [
@@ -870,7 +961,6 @@ const AdminDashboard = () => {
       case "posts":
         return (
           <div>
-                       
             <div className="overflow-x-auto">
               {/* Replace with your posts table here */}
               <div>
@@ -936,12 +1026,12 @@ const AdminDashboard = () => {
         );
       case "products":
         return (
-
           <div className="px-4 py-6">
       <h4 className="text-black text-4xl pb-3">Products</h4>
       <div className="pb-4 flex justify-end">
         <Link to="/admin/product/create">
           <button className="bg-green-500 text-white py-2 px-4 rounded">
+            <AddIcon className="mr-2" />
             Add Product
           </button>
         </Link>
@@ -965,10 +1055,8 @@ const AdminDashboard = () => {
       </table>
     </div>
 
-
-
           // <div>
-                       
+
           //   <div className="overflow-x-auto">
           //     {/* Replace with your posts table here */}
           //     <div>
@@ -1033,13 +1121,9 @@ const AdminDashboard = () => {
           // </div>
         );
 
-    
-        
       case "projects":
-
         return (
           <div>
-            
             <div className="overflow-x-auto">
               <div>
                 <h4 className="text-black text-4xl pb-3">Project</h4>
@@ -1099,12 +1183,10 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-
               <p>Your Projects Table Here</p>
             </div>
           </div>
         );
-
 
       case "videos":
         return (
@@ -1199,12 +1281,11 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-
               <p>Your R&D Table Here</p>
             </div>
           </div>
         );
-      
+
       case "members":
         return (
           <div>
@@ -1231,9 +1312,15 @@ const AdminDashboard = () => {
                 <tbody className="text-gray-600 text-sm font-light">
                   {members.length > 0 ? (
                     members.map((member) => (
-                      <tr key={member._id} className="border-b border-gray-200 hover:bg-gray-100">
+                      <tr
+                        key={member._id}
+                        className="border-b border-gray-200 hover:bg-gray-100"
+                      >
                         {MembersColumns.map((column) => (
-                          <td key={column.field} className="py-3 px-6 text-left">
+                          <td
+                            key={column.field}
+                            className="py-3 px-6 text-left"
+                          >
                             {column.renderCell
                               ? column.renderCell({ row: member })
                               : member[column.field]}
@@ -1243,7 +1330,10 @@ const AdminDashboard = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={MembersColumns.length} className="text-center py-4">
+                      <td
+                        colSpan={MembersColumns.length}
+                        className="text-center py-4"
+                      >
                         No members found.
                       </td>
                     </tr>
@@ -1253,8 +1343,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
-      
-     
+
       case "carousel":
         return (
           <div>

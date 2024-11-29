@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import axiosInstance from "../../pages/axiosInstance";
-import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const ItemType = "CARD";
+// ItemType for drag-and-drop
+const ItemType = "project";
 
-
-const SplitImageCarousel = () => {
+const OurProjects = ({ isAdmin }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [projects, setProjects] = useState([]);
@@ -18,10 +17,10 @@ const SplitImageCarousel = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const { t } = useTranslation("Home");
-  const { isDarkMode } = useTheme();
   const { i18n } = useTranslation();
 
-  
+  console.log("isAdmin in OurProjects:", isAdmin);  
+
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -29,17 +28,13 @@ const SplitImageCarousel = () => {
         const { data } = await axiosInstance.get(
           `${process.env.REACT_APP_API_URL}/api/projects/show`
         );
-  
-        // Ensure the projects are sorted based on the 'order' field.
+
         const allProjects = data.projects || [];
-  
-        // Sort the projects by 'order' field (if the 'order' field exists).
         allProjects.sort((a, b) => a.order - b.order);
-  
+
         setProjects(allProjects);
         setFilteredProjects(allProjects);
-  
-        // Extract unique categories for filtering (optional).
+
         const uniqueCategories = [
           "All",
           ...new Set(allProjects.map((project) => project.category)),
@@ -51,10 +46,9 @@ const SplitImageCarousel = () => {
         setLoading(false);
       }
     };
-  
+
     fetchProjects();
   }, []);
-  
 
   const filterProjectsByCategory = (category) => {
     setSelectedCategory(category);
@@ -72,49 +66,46 @@ const SplitImageCarousel = () => {
     setFilteredProjects(updatedProjects);
   };
 
-
   const saveNewOrder = async () => {
     const reorderedIds = filteredProjects.map((project) => project._id);
-  
+
     try {
       await axiosInstance.put(
         `${process.env.REACT_APP_API_URL}/api/projects/reorder`,
         { reorderedProjects: reorderedIds }
       );
-  
+
       setProjects((prevProjects) =>
         reorderedIds.map((id) => prevProjects.find((p) => p._id === id))
       );
-  
+
       console.log("Order saved successfully!");
     } catch (err) {
       console.error("Failed to save new order", err);
     }
   };
-  
-
-  
 
   const DraggableCard = ({ index, project }) => {
     const [, drag] = useDrag({
       type: ItemType,
       item: { index },
+      canDrag: isAdmin,  // Only allow drag if isAdmin is true
     });
 
     const [, drop] = useDrop({
       accept: ItemType,
       hover: (item) => {
-        if (item.index !== index) {
+        if (item.index !== index && isAdmin) {  // Only allow drop if isAdmin
           moveCard(item.index, index);
           item.index = index;
         }
       },
-      drop: saveNewOrder, 
+      drop: isAdmin ? saveNewOrder : undefined,  // Save order only if isAdmin
     });
 
     return (
       <motion.div
-        ref={(node) => drag(drop(node))}
+        ref={(node) => isAdmin && drag(drop(node))}  // Conditionally apply drag-and-drop
         className="relative w-full h-64 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -128,9 +119,7 @@ const SplitImageCarousel = () => {
                   key={idx}
                   src={image.url}
                   alt={project.title[i18n.language] || "Project Image"}
-                  className={`object-cover ${
-                    idx === 0 ? "w-full" : "w-1/3"
-                  } transition-all duration-300`}
+                  className={`object-cover ${idx === 0 ? "w-full" : "w-1/3"} transition-all duration-300`}
                 />
               ))
             ) : (
@@ -143,15 +132,11 @@ const SplitImageCarousel = () => {
           </div>
         </Link>
         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">
-          <p className="font-bold text-center truncate">
-            {project.title[i18n.language]}
-          </p>
+          <p className="font-bold text-center truncate">{project.title[i18n.language]}</p>
           <Link
             to={`/project/${project._id}`}
             className={`mt-2 block w-fit mx-auto px-4 py-2 rounded-md ${
-              isDarkMode
-                ? "bg-gray-800 hover:bg-black"
-                : "bg-green-700 hover:bg-green-800"
+              isAdmin ? "bg-gray-800" : "bg-green-700"
             } text-white`}
           >
             {t("LearnMore")}
@@ -162,13 +147,12 @@ const SplitImageCarousel = () => {
   };
 
   if (loading) return <div className="text-center py-10">Loading...</div>;
-  if (error)
-    return <div className="text-center py-10 text-red-500">{error}</div>;
+  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
 
   return (
     <div
       className={`flex flex-col items-center gap-6 px-4 sm:px-8 lg:px-32 mt-10 mb-16 ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+        isAdmin ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
       }`}
     >
       <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -195,7 +179,4 @@ const SplitImageCarousel = () => {
   );
 };
 
-export default SplitImageCarousel;
-
-
-
+export default OurProjects;
