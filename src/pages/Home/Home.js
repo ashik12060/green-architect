@@ -23,7 +23,9 @@ import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import Animation from "../../Animation";
 import Aos from "aos";
-
+// import Swiper from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import ProjectsCarousel from "../../components/ProjectsComp/ProjectsCarousel";
 const Home = () => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
@@ -82,12 +84,11 @@ const Home = () => {
 
   const { isDarkMode } = useTheme();
 
-
   useEffect(() => {
     Aos.init({
-      duration: 1000, 
-      easing: "ease-in-out", 
-      once: true, 
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
     });
   }, []);
 
@@ -119,7 +120,9 @@ const Home = () => {
             {t("projects")}
           </span>
         </h3>
-        <OurProjects />
+              <ProjectsCarousel />
+        
+     
 
         <div className="flex items-center justify-center gap-2 my-10">
           <a
@@ -131,19 +134,19 @@ const Home = () => {
           <Link
             to="/projects"
             className={`fw-bold px-4 py-2 rounded text-xl ${
-              isDarkMode ? " text-white bg-gray-800" : "bg-green-800 text-white"
+              isDarkMode ? " text-white bg-gray-800" : "border-2  border-green-700 text-green-700"
             }`}
           >
             {t("allProjects")}
             <FontAwesomeIcon
-  className="ps-2 animate-pulse"
-  icon={faAnglesRight}
-/>
+              className="ps-2 animate-pulse"
+              icon={faAnglesRight}
+            />
 
-            {/* <FontAwesomeIcon className="ps-2" icon={faAnglesRight} /> */}
           </Link>
         </div>
       </div>
+
       <Videos />
 
       <ServiceCard />
@@ -176,7 +179,7 @@ const Home = () => {
       {/* Popup Form */}
       {/* Popup Form */}
 
-      {showPopup && (
+      {/* {showPopup && (
         <div className="fixed inset-0 flex items-center justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
           <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-6 sm:p-10 rounded-2xl shadow-2xl w-full max-w-md transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 text-center text-green-800">
@@ -293,7 +296,129 @@ const Home = () => {
             </form>
           </div>
         </div>
-      )}
+      )} */}
+
+{showPopup && (
+  <div className="fixed inset-0 flex items-start justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
+    <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-4 sm:p-6 lg:p-10 rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-md md:max-w-lg transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
+      <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold mb-6 text-center text-green-800">
+        {t("popup_title")}
+      </h2>
+
+      <form ref={form} onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
+        <div className="relative">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("yourName")}
+          </label>
+          <div className="relative mt-1">
+            <input
+              id="name"
+              type="text"
+              name="user_name"
+              onChange={(event) => setName(event.target.value)}
+              value={name}
+              required
+              placeholder={t("namePlaceholder")}
+              className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
+            />
+            <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
+              <i className="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div className="relative">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("yourEmail")}
+          </label>
+          <div className="relative mt-1">
+            <input
+              id="email"
+              type="email"
+              name="user_email"
+              onChange={(event) => setEmail(event.target.value)}
+              value={email}
+              required
+              placeholder={t("emailPlaceholder")}
+              className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
+            />
+            <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
+              <i className="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div className="relative">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("yourPhoneNumber")}
+          </label>
+          <div className="relative mt-1">
+            <input
+              id="phone"
+              type="tel"
+              name="user_phone"
+              onChange={(event) => setPhone(event.target.value)}
+              value={phone}
+              required
+              placeholder={t("phonePlaceholder")}
+              className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
+            />
+            <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
+              <i className="fas fa-phone"></i>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("projectDetails")}
+          </label>
+          <textarea
+            onChange={(event) => setMessages(event.target.value)}
+            value={message}
+            id="message"
+            name="user_message"
+            rows="4"
+            required
+            placeholder={t("detailsPlaceholder")}
+            className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out shadow-sm"
+          ></textarea>
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+          
+
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            {t("submitRequest")}
+          </button>
+
+          <button
+            className="bg-red-600 text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:bg-red-700 transition duration-300"
+            onClick={() => setShowPopup(false)}
+          >
+            {t("form.close")}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+
     </>
   );
 };
