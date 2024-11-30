@@ -74,6 +74,44 @@ const validationSchema = yup.object({
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
 
+  frontRoadEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    frontRoadBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    frontRoadEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    unitsEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    unitsBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    unitsEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+
+    parkingEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    parkingBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    parkingEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+
   apartmentFloorEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
@@ -197,6 +235,15 @@ const CreateProject = () => {
       floorsEn: "",
       floorsBn: "",
       floorsEs: "",
+      frontRoadEn:"",
+      frontRoadBn:"",
+      frontRoadEs:"",
+      unitsEn:"",
+      unitsBn:"",
+      unitsEs:"",
+      parkingEn:"",
+      parkingBn:"",
+      parkingEs:"",
       apartmentFloorEn: "",
       apartmentFloorBn: "",
       apartmentFloorEs: "",
@@ -229,40 +276,7 @@ const CreateProject = () => {
     },
   });
 
-  // const createNewProject = async (values) => {
-  //   try {
-  //     const {
-  //       titleEn,
-  //       titleBn,
-  //       titleEs,
-  //       contentEn,
-  //       contentBn,
-  //       contentEs,
-  //       images,
-  //       category,
-  //     } = values;
-
-  //     const data = {
-  //       title: { en: titleEn, bn: titleBn, es: titleEs },
-  //       content: { en: contentEn, bn: contentBn, es: contentEs },
-  //       images: images,
-  //       category, // Include category in the payload
-  //     };
-
-  //     const result = await axiosInstance.post(
-  //       `${process.env.REACT_APP_API_URL}/api/project/create`,
-  //       data
-  //     );
-
-  //     if (result?.data?.success === true) {
-  //       toast.success("Project created");
-  //       navigate("/admin/dashboard");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     toast.error(error.response?.data?.message || "Something went wrong!");
-  //   }
-  // };
+ 
 
   const createNewProject = async (values) => {
     try {
@@ -282,6 +296,15 @@ const CreateProject = () => {
         floorsEn,
         floorsBn,
         floorsEs,
+        frontRoadEn,
+      frontRoadBn,
+      frontRoadEs,
+      unitsEn,
+      unitsBn,
+      unitsEs,
+      parkingEn,
+      parkingBn,
+      parkingEs,
         apartmentFloorEn,
         apartmentFloorBn,
         apartmentFloorEs,
@@ -314,6 +337,12 @@ const CreateProject = () => {
         address: { en: addressEn, bn: addressBn, es: addressEs },
         landArea: { en: landAreaEn, bn: landAreaBn, es: landAreaEs },
         floors: { en: floorsEn, bn: floorsBn, es: floorsEs },
+        frontRoad: { en: frontRoadEn, bn: frontRoadBn, es: frontRoadEs },
+        units: { en: unitsEn, bn: unitsBn, es: unitsEs },
+        parking: { en: parkingEn, bn: parkingBn, es: parkingEs },
+
+
+
         apartmentFloor: { en: apartmentFloorEn, bn: apartmentFloorBn, es: apartmentFloorEs },
         size: { en: sizeEn, bn: sizeBn, es: sizeEs },
         bedroom: { en: bedroomEn, bn: bedroomBn, es: bedroomEs },
@@ -489,6 +518,98 @@ const CreateProject = () => {
             />
             {touched[`floors${lang}`] && errors[`floors${lang}`] && (
               <p className="text-red-500 text-sm">{errors[`floors${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+
+        {/* Project Front road */}
+        {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`frontRoad${lang}`}>
+            <label
+              htmlFor={`frontRoad${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project Front Road ({lang})
+            </label>
+            <textarea
+              id={`frontRoad${lang}`}
+              name={`frontRoad${lang}`}
+              placeholder={`Write project frontRoad (${lang})...`}
+              rows={4}
+              value={values[`frontRoad${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`frontRoad${lang}`] && errors[`frontRoad${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`frontRoad${lang}`] && errors[`frontRoad${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`frontRoad${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+
+
+        {/* Project units*/}
+        {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`units${lang}`}>
+            <label
+              htmlFor={`units${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project Front Road ({lang})
+            </label>
+            <textarea
+              id={`units${lang}`}
+              name={`units${lang}`}
+              placeholder={`Write project units (${lang})...`}
+              rows={4}
+              value={values[`units${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`units${lang}`] && errors[`units${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`units${lang}`] && errors[`units${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`units${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+
+
+        {/* Project parking*/}
+        {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`parking${lang}`}>
+            <label
+              htmlFor={`parking${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project parking ({lang})
+            </label>
+            <textarea
+              id={`parking${lang}`}
+              name={`parking${lang}`}
+              placeholder={`Write project parking (${lang})...`}
+              rows={4}
+              value={values[`parking${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`parking${lang}`] && errors[`parking${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`parking${lang}`] && errors[`parking${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`parking${lang}`]}</p>
             )}
           </div>
         ))}

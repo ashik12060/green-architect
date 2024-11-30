@@ -19,10 +19,10 @@ const Projects = () => {
     } else {
       setIsAdmin(false);
     }
-  }, []); // Run only once on mount
+  }, []);
 
   useEffect(() => {
-    console.log('isAdmin state after effect:', isAdmin); // Log after state has been updated
+    console.log('isAdmin state after effect:', isAdmin); 
   }, [isAdmin]);
 
   return (

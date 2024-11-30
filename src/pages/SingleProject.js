@@ -176,9 +176,9 @@ const SingleProject = () => {
 
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        {/* <FontAwesomeIcon className="pe-1" text-lg icon={faRulerCombined} /> */}
                         <FontAwesomeIcon className="pe-1" icon={faRoad} />
-                        {/* {t(" Apartment Size")} */} Front Road
+                        {t("Front Road ")} 
+                        {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
                     </tr>
@@ -186,7 +186,8 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         <FontAwesomeIcon className="pe-1" icon={faBuildingUn} />
-                        {/* {t(" Apartment Size")} */} Number Of Units
+                        {t(" Number Of Units")} 
+                        {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
                     </tr>
@@ -195,7 +196,8 @@ const SingleProject = () => {
                       <td className=" pr-4 border-b border-gray-300">
                         {/* <FontAwesomeIcon className="pe-1" icon={faRulerCombined} /> */}
                         <FontAwesomeIcon className="pe-1"  icon={faCar} />
-                        {/* {t(" Apartment Size")} */}  Number Of Parking
+                        {t(" Number Of Parking")}  
+                        {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
                     </tr>

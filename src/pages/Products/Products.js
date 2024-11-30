@@ -4,8 +4,7 @@ import ProductsInfo from '../../components/ProductsInfo/ProductsInfo'
 import Footer from '../../components/Shared/Footer/Footer'
 
 const Products = () => {
-
-  const [isAdmin, setIsAdmin] = useState(false);  // Check if user is admin
+  const [isAdmin, setIsAdmin] = useState(false); 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('userInfo'));
     console.log('Stored user info:', user);

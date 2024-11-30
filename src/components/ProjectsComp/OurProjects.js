@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-// ItemType for drag-and-drop
 const ItemType = "project";
 
 const OurProjects = ({ isAdmin }) => {
@@ -89,23 +88,22 @@ const OurProjects = ({ isAdmin }) => {
     const [, drag] = useDrag({
       type: ItemType,
       item: { index },
-      canDrag: isAdmin,  // Only allow drag if isAdmin is true
+      canDrag: isAdmin, 
     });
 
     const [, drop] = useDrop({
       accept: ItemType,
       hover: (item) => {
-        if (item.index !== index && isAdmin) {  // Only allow drop if isAdmin
+        if (item.index !== index && isAdmin) { 
           moveCard(item.index, index);
           item.index = index;
         }
       },
-      drop: isAdmin ? saveNewOrder : undefined,  // Save order only if isAdmin
+      drop: isAdmin ? saveNewOrder : undefined,
     });
 
     return (
       <motion.div
-        ref={(node) => isAdmin && drag(drop(node))}  // Conditionally apply drag-and-drop
         className="relative w-full h-64 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -152,7 +150,7 @@ const OurProjects = ({ isAdmin }) => {
   return (
     <div
       className={`flex flex-col items-center gap-6 px-4 sm:px-8 lg:px-32 mt-10 mb-16 ${
-        isAdmin ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+        isAdmin ? " text-white" : "bg-gray-100 text-black"
       }`}
     >
       <div className="flex flex-wrap justify-center gap-4 mb-6">

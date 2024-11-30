@@ -39,6 +39,21 @@ const validationSchema = yup.object({
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
+  frontRoad: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  units: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  parking: yup.object({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
   apartmentFloor: yup.object({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
@@ -85,6 +100,9 @@ const EditProject = () => {
   const [address, setAddress] = useState("");
   const [landArea, setLandArea] = useState("");
   const [floors, setFloors] = useState("");
+  const [frontRoad, setFrontRoad] = useState("");
+  const [units, setUnits] = useState("");
+  const [parking, setParking] = useState("");
   const [apartmentFloor, setApartmentFloor] = useState("");
   const [size, setSize] = useState("");
   const [bedroom, setBedroom] = useState("");
@@ -113,6 +131,9 @@ const EditProject = () => {
       address: { en: "", bn: "", es: "" },
       landArea: { en: "", bn: "", es: "" },
       floors: { en: "", bn: "", es: "" },
+      frontRoad: { en: "", bn: "", es: "" },
+      units: { en: "", bn: "", es: "" },
+      parking: { en: "", bn: "", es: "" },
       apartmentFloor: { en: "", bn: "", es: "" },
       size: { en: "", bn: "", es: "" },
       bedroom: { en: "", bn: "", es: "" },
@@ -159,6 +180,18 @@ const EditProject = () => {
       values.floors.en = data.post.floors.en; 
       values.floors.bn = data.post.floors.bn; 
       values.floors.es = data.post.floors.es; 
+
+      values.frontRoad.en = data.post.frontRoad.en; 
+      values.frontRoad.bn = data.post.frontRoad.bn; 
+      values.frontRoad.es = data.post.frontRoad.es; 
+
+      values.units.en = data.post.units.en; 
+      values.units.bn = data.post.units.bn; 
+      values.units.es = data.post.units.es; 
+
+      values.parking.en = data.post.parking.en; 
+      values.parking.bn = data.post.parking.bn; 
+      values.parking.es = data.post.parking.es; 
 
       values.apartmentFloor.en = data.post.apartmentFloor.en; 
       values.apartmentFloor.bn = data.post.apartmentFloor.bn; 
@@ -476,6 +509,162 @@ const EditProject = () => {
             onBlur={handleBlur}
             error={touched.floors?.es && Boolean(errors.floors?.es)}
             helperText={touched.floors?.es && errors.floors?.es}
+          />
+
+
+          
+          {/* frontRoad Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">Front Road</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="frontRoad-en"
+            label="frontRoad (English)"
+            name="frontRoad.en"
+            multiline
+            rows={4}
+            placeholder="frontRoad in English"
+            value={values.frontRoad.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.frontRoad?.en && Boolean(errors.frontRoad?.en)}
+            helperText={touched.frontRoad?.en && errors.frontRoad?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="frontRoad-bn"
+            label="frontRoad (Bengali)"
+            name="frontRoad.bn"
+            multiline
+            rows={4}
+            placeholder="frontRoad in Bengali"
+            value={values.frontRoad.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.frontRoad?.bn && Boolean(errors.frontRoad?.bn)}
+            helperText={touched.frontRoad?.bn && errors.frontRoad?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="frontRoad-es"
+            label="frontRoad (Danish)"
+            name="frontRoad.es"
+            multiline
+            rows={4}
+            placeholder="frontRoad in Danish"
+            value={values.frontRoad.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.frontRoad?.es && Boolean(errors.frontRoad?.es)}
+            helperText={touched.frontRoad?.es && errors.frontRoad?.es}
+          />
+
+
+          
+          {/* units Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">Units</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="units-en"
+            label="units (English)"
+            name="units.en"
+            multiline
+            rows={4}
+            placeholder="units in English"
+            value={values.units.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.units?.en && Boolean(errors.units?.en)}
+            helperText={touched.units?.en && errors.units?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="units-bn"
+            label="units (Bengali)"
+            name="units.bn"
+            multiline
+            rows={4}
+            placeholder="units in Bengali"
+            value={values.units.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.units?.bn && Boolean(errors.units?.bn)}
+            helperText={touched.units?.bn && errors.units?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="units-es"
+            label="units (Danish)"
+            name="units.es"
+            multiline
+            rows={4}
+            placeholder="units in Danish"
+            value={values.units.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.units?.es && Boolean(errors.units?.es)}
+            helperText={touched.units?.es && errors.units?.es}
+          />
+
+
+          
+          {/* parking Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">parking</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="parking-en"
+            label="parking (English)"
+            name="parking.en"
+            multiline
+            rows={4}
+            placeholder="parking in English"
+            value={values.parking.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.parking?.en && Boolean(errors.parking?.en)}
+            helperText={touched.parking?.en && errors.parking?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="parking-bn"
+            label="parking (Bengali)"
+            name="parking.bn"
+            multiline
+            rows={4}
+            placeholder="parking in Bengali"
+            value={values.parking.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.parking?.bn && Boolean(errors.parking?.bn)}
+            helperText={touched.parking?.bn && errors.parking?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="parking-es"
+            label="parking (Danish)"
+            name="parking.es"
+            multiline
+            rows={4}
+            placeholder="parking in Danish"
+            value={values.parking.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.parking?.es && Boolean(errors.parking?.es)}
+            helperText={touched.parking?.es && errors.parking?.es}
           />
 
 
