@@ -95,7 +95,7 @@ const SingleProject = () => {
         ) : (
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2  gap-8">
-              <div className="relative">
+              {/* <div className="relative">
                 {images.length > 0 ? (
                   <>
                     <img
@@ -123,7 +123,36 @@ const SingleProject = () => {
                     alt="No Images Available"
                   />
                 )}
-              </div>
+              </div> */}
+              <div className="relative">
+          {images.length > 0 ? (
+            <>
+              <img
+                src={images[currentIndex]?.url}
+                className="w-full h-auto min-h-[550px] max-h-[800px] object-cover rounded-lg sm:h-64 md:h-80 lg:h-96"
+                alt={`Project Image ${currentIndex + 1}`}
+              />
+              <button
+                onClick={prevImage}
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-600 p-2 rounded-full"
+              >
+                &#10094;
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-600 p-2 rounded-full"
+              >
+                &#10095;
+              </button>
+            </>
+          ) : (
+            <img
+              src="/path/to/placeholder.jpg"
+              className="w-full h-auto max-h-[800px] object-cover rounded-lg sm:h-64 md:h-80 lg:h-96"
+              alt="No Images Available"
+            />
+          )}
+        </div>
 
              
               <div>
