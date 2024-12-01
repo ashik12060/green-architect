@@ -10,7 +10,7 @@ import { ServiceCard } from "../../components/OurServices/ServiceCard";
 import OurProjects from "../../components/ProjectsComp/OurProjects";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { faAnglesRight, faPhone } from "@fortawesome/free-solid-svg-icons";
 import Videos from "../../components/Videos/Videos";
 import OurClients from "../../components/OurClients/OurClients";
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
@@ -92,6 +92,45 @@ const Home = () => {
     });
   }, []);
 
+  const textVariants = {
+    offscreen: { y: 100, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: .5,
+        duration: 2.5,
+      },
+    },
+  };
+
+
+  const linkVariants = {
+    offscreen: { y: 50, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.5,
+        duration: 2.5,
+      },
+    },
+  };
+
+  const buttonVariants = {
+    offscreen: { y: 50, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.5,
+        duration: 1.8,
+      },
+    },
+  };
   return (
     <>
       <MiddleHeader />
@@ -109,7 +148,7 @@ const Home = () => {
             isDarkMode ? " text-white" : "text-black"
           }`}
         >
-          <span
+          {/* <span
             className={`text-center my-10 font-bold  ${
               isDarkMode
                 ? " text-white border-b-4 border-green-700"
@@ -118,13 +157,31 @@ const Home = () => {
             data-aos="fade-right"
           >
             {t("projects")}
-          </span>
+          </span> */}
+
+          <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.2 }} // Runs animation every time it scrolls into view
+      variants={textVariants}
+    >
+      <span
+        className={`text-center my-10 font-bold ${
+          isDarkMode
+            ? "text-white border-b-4 border-green-700"
+            : "text-black border-b-4 border-green-700"
+        }`}
+      >
+        {t("projects")}
+      </span>
+    </motion.div>
+
         </h3>
               <ProjectsCarousel />
         
      
 
-        <div className="flex items-center justify-center gap-2 my-10">
+        {/* <div className="flex items-center justify-center gap-2 my-10">
           <a
             href="tel:+8801711991792"
             className="text-green-500 hover:text-green-700"
@@ -144,7 +201,43 @@ const Home = () => {
             />
 
           </Link>
-        </div>
+        </div> */}
+<div className="flex items-center justify-center gap-2 my-10">
+      {/* Phone Icon */}
+      <motion.a
+        href="tel:+8801711991792"
+        className="text-green-500 hover:text-green-700"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={linkVariants}
+      >
+       
+      </motion.a>
+
+      {/* "All Projects" Link */}
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={linkVariants}
+      >
+        <Link
+          to="/projects"
+          className={`fw-bold px-4 py-2 rounded text-xl ${
+            isDarkMode
+              ? "text-white bg-gray-800"
+              : "border-2 border-green-700 text-green-700"
+          }`}
+        >
+          {t("allProjects")}
+          <FontAwesomeIcon className="ps-2 animate-pulse" icon={faAnglesRight} />
+        </Link>
+      </motion.div>
+    </div>
+
+
+
       </div>
 
       <Videos />
@@ -161,7 +254,7 @@ const Home = () => {
           isDarkMode ? "bg-black" : "bg-white"
         }`}
       >
-        <button
+        {/* <button
           className={` font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out  ${
             isDarkMode
               ? "bg-black bg-gradient-to-r from-green-700 to-emerald-900 text-white"
@@ -172,14 +265,30 @@ const Home = () => {
         >
           <FontAwesomeIcon icon={faCalendarDays} className="pe-2 text-xl" />{" "}
           {t("schedule_meeting")}
-        </button>
+        </button> */}
+        <motion.button
+      className={`font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out ${
+        isDarkMode
+          ? "bg-black bg-gradient-to-r from-green-700 to-emerald-900 text-white"
+          : "bg-gradient-to-r from-green-500 to-emerald-700 text-white"
+      }`}
+      onClick={handleScheduleMeeting}
+      data-aos="fade-right"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={buttonVariants}
+    >
+      <FontAwesomeIcon icon={faCalendarDays} className="pe-2 text-xl" />
+      {t("schedule_meeting")}
+    </motion.button>
       </div>
       <Footer />
 
  {/* popup form */}
 {showPopup && (
   <div className="fixed inset-0 flex items-start justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
-    <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-4 sm:p-6 lg:p-10 rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-md md:max-w-lg transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
+    <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-4 sm:p-6 lg:p-10 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-sm md:max-w-sm transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
       <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold mb-6 text-center text-green-800">
         {t("popup_title")}
       </h2>

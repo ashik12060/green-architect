@@ -1156,7 +1156,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              <p>Your VideoColumns Table Here</p>
+             
             </div>
           </div>
         );

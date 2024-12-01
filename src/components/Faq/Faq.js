@@ -145,12 +145,37 @@ const Faq = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const headerVariants = {
+    offscreen: { y: 50, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.6,
+        duration: 1.8,
+      },
+    },
+  };
+
   return (
     <div className={`py-10 px-4 ${isDarkMode ? 'text-black bg-black' : 'bg-gray-100'}`}>
       <div className="max-w-4xl mx-auto">
-        <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-          {t('title')} {/* Use translation for title */}
-        </h2>
+        {/* <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+          {t('title')} 
+        </h2> */}
+           <motion.h2
+      className={`text-3xl font-bold text-center mb-8 ${
+        isDarkMode ? "text-white" : "text-black"
+      }`}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={headerVariants}
+    >
+      {t("title")}
+    </motion.h2>
+  
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <motion.div

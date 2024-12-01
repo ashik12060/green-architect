@@ -7,6 +7,8 @@ import axios from "axios"; // Make sure you have axios installed
 import axiosInstance from "../../pages/axiosInstance";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
 
 function Videos() {
   const [videos, setVideos] = useState([]); // Store videos from the API
@@ -41,12 +43,50 @@ function Videos() {
   if (loading) return <p>{t('loading')}</p>;
   if (error) return <p>{t('errorLoading')} {error}</p>;
   
+
+  // Animation variants for both <h1> and <p> elements
+  const headerVariants = {
+    offscreen: { y: 50, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 2.5,
+      },
+    },
+  };
+
+
   return (
     <div className={`flex flex-col items-center justify-center min-h-screen  pt-10  text-center my-10 font-bold  ${isDarkMode ? ' text-white bg-white' : 'text-black border border-gray-700'}`}>
       <div className="w-full">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-gray-800  border-b-4 border-green-700"> {t('pageTitle')}</h1>
-          <p className="mt-2 text-gray-600">{t('location')}</p>
+          {/* <h1 className="text-3xl font-bold text-gray-800  border-b-4 border-green-700"> {t('pageTitle')}</h1>
+          <p className="mt-2 text-gray-600">{t('location')}</p> */}
+          <motion.h1
+        className="text-3xl font-bold text-gray-800 border-b-4 border-green-700"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={headerVariants}
+      >
+        {t('pageTitle')}
+      </motion.h1>
+
+      {/* Location Description */}
+      <motion.p
+        className="mt-2 text-gray-600"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={headerVariants}
+      >
+        {t('location')}
+      </motion.p>
+
+
           
           {/* Iterate over the fetched videos array to generate video sections */}
           {videos.map((video) => (

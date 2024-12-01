@@ -129,7 +129,7 @@ const ProductsInfo = ({ isAdmin }) => {
           <div className="bg-white rounded-lg p-6  justify-center  relative">
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-red-500 hover:text-gray-800 transition"
+              className="absolute top-1 right-1 text-red-500 font-bold text-xl hover:text-gray-800 transition"
             >
               ✕
             </button>

@@ -1,46 +1,8 @@
-// import React from 'react';
-// import img1 from "../../assets/architec1.jpg";
-// import img2 from "../../assets/architect1.jpg";
-// import img3 from "../../assets/architect2.jpg";
-// import img4 from "../../assets/carousel (2).jpg";
-// import img5 from "../../assets/team.jpg";
-// import img6 from "../../assets/architec1.jpg";
-// import img7 from "../../assets/architect1.jpg";
-// import img8 from "../../assets/architect2.jpg";
-// import img9 from "../../assets/architect2.jpg";
-// import img10 from "../../assets/team.jpg";
-// import './Ourclients.css'
-
-// const logos = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
-
-// const OurClients = () => {
-//   return (
-//     <div className="bg-gray-100 py-10 overflow-hidden">
-//       <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">PARTNERS</h2>
-//       <div className="relative">
-//         {/* Scrolling Wrapper */}
-//         <div className="flex animate-scroll space-x-4">
-//           {/* Render logos twice for seamless scrolling */}
-//           {[...logos, ...logos].map((logo, index) => (
-//             <img
-//               key={index}
-//               src={logo}
-//               alt={`Partner ${index + 1}`}
-//               className="h-24 w-auto mx-2 rounded-lg shadow-lg"
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default OurClients;
-
 import React from "react";
 import "./Ourclients.css";
+import { motion } from 'framer-motion'; // Import framer-motion
 
-// Images
+
 import img1 from "../../assets/partners logo/army.png";
 import img2 from "../../assets/partners logo/RFL.jpg";
 import img3 from "../../assets/partners logo/abul khair grp.jpg";
@@ -86,13 +48,31 @@ const logos = [
   img20,
   img21,
 ];
+const headerVariants = {
+  offscreen: { y: 50, opacity: 0 },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 const OurClients = () => {
   return (
     <div className="our-clients-container">
-      <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">
-        PARTNERS
-      </h2>
+       <motion.h2
+      className="text-center text-2xl font-bold text-gray-800 mb-8"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={headerVariants}
+    >
+      PARTNERS
+    </motion.h2>
       <div className="our-clients-scroll">
         {/* Render logos twice for seamless scrolling */}
         {[...logos, ...logos].map((logo, index) => (
