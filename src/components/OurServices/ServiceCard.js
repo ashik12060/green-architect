@@ -65,12 +65,7 @@ export const ServiceCard = () => {
       description: "3dWorkDescription",
       icon: faCube,
     },
-    {
-      title: "modelMaking",
-      link: "/model-making",
-      description: "modelMakingDescription",
-      icon: faBuilding,
-    },
+    
     {
       title: "realEstate",
       link: "/real-estate",

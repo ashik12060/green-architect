@@ -8,22 +8,7 @@ const Members = () => {
   const { i18n } = useTranslation();
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [visibleMembers, setVisibleMembers] = useState(members.length);
-
-  // const showMembers = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const { data } = await axiosInstance.get(
-  //       `${process.env.REACT_APP_API_URL}/api/members/show`
-  //     );
-  //     setMembers(data.members);
-  //     console.log(data.members);
-  //   } catch (error) {
-  //     console.error("Error fetching members:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  
 
   const showMembers = async () => {
     setLoading(true);
@@ -70,21 +55,9 @@ const Members = () => {
                   } // Fallback
                 />
 
-                {/* <MembersCard
-                  image={member.image ? member.image.url : ""}
-                  id={member._id}
-                  title={member.title[i18n.language]}
-                  designation={member.designation[i18n.language]}
-                /> */}
+               
               </div>
-              // <div className="px-2 my-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4" key={index}>
-              //   <MembersCard
-              //     image={member.image ? member.image.url : ""}
-              //     id={member._id}
-              //     title={member.title[i18n.language]} // Select title based on current language
-              //     designation={member.designation[i18n.language]} // Select designation based on current language
-              //     // article={member.article[i18n.language]} // Select designation based on current language
-              //   />
+             
               // </div>
             ))
           )}
