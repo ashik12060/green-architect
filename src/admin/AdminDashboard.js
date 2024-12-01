@@ -26,83 +26,25 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("posts");
 
 
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const { data } = await axiosInstance.get(
-  //         `${process.env.REACT_APP_API_URL}/api/products/show`
-  //       );
-
-  //       const allProducts = data.products || [];
-  //       allProducts.sort((a, b) => a.order - b.order);
-
-  //       setProducts(allProducts);
-  //     } catch (err) {
-  //       toast.error("Failed to load products.");
-  //     }
-  //   };
-
-  //   fetchProducts();
-  // }, []);
-  
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const { data } = await axiosInstance.get(
-  //         `${process.env.REACT_APP_API_URL}/api/products/show`
-  //       );
-  
-  //       const allProducts = data.products || [];
-  //       // Ensure products are sorted by the `order` field
-  //       allProducts.sort((a, b) => a.order - b.order); 
-  
-  //       setProducts(allProducts);
-  //     } catch (err) {
-  //       toast.error("Failed to load products.");
-  //     }
-  //   };
-  
-  //   fetchProducts();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const { data } = await axiosInstance.get(
-  //         `${process.env.REACT_APP_API_URL}/api/products/show`
-  //       );
-  
-  //       const allProducts = data.products || [];
-  //       allProducts.sort((a, b) => a.order - b.order); // Sort products by order
-  
-  //       setProducts(allProducts);
-  //     } catch (err) {
-  //       toast.error("Failed to load products.");
-  //     }
-  //   };
-  
-  //   fetchProducts();
-  // }, []);
-  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const { data } = await axiosInstance.get(
           `${process.env.REACT_APP_API_URL}/api/products/show`
         );
-  
+
         const allProducts = data.products || [];
         allProducts.sort((a, b) => a.order - b.order); // Sort by order
-  
-        setProducts(allProducts);  // Update state with sorted products
+
+        setProducts(allProducts); // Update state with sorted products
       } catch (err) {
         toast.error("Failed to load products.");
       }
     };
-  
+
     fetchProducts();
   }, []);
-  
+
   const moveProduct = (fromIndex, toIndex) => {
     const updatedProducts = [...products];
     const [movedProduct] = updatedProducts.splice(fromIndex, 1);
@@ -110,84 +52,38 @@ const AdminDashboard = () => {
     setProducts(updatedProducts);
   };
 
-  // Save the new order to the backend
  
-//   const saveNewOrder = async () => {
-//     const reorderedIds = products.map((product) => product._id);
-//     console.log("Reordered IDs:", reorderedIds); // Log the reordered product IDs
 
-//     try {
-//         await axiosInstance.put(
-//             `${process.env.REACT_APP_API_URL}/api/products/reorder`,
-//             { reorderedProducts: reorderedIds }
-//         );
-//         setProducts((prevProducts) =>
-//             reorderedIds.map((id) => prevProducts.find((p) => p._id === id))
-//         );
-//         toast.success("Product order updated successfully!");
-//     } catch (err) {
-//         console.error("Error saving new order:", err); // Log the error
-//         toast.error("Failed to save new order.");
-//     }
-// };
-// const saveNewOrder = async () => {
-//   const reorderedIds = products.map((product) => product._id);
+  const saveNewOrder = async () => {
+    const reorderedIds = products.map((product) => product._id);
 
-//   try {
-//     // Send the reordered product IDs to the backend
-//     await axiosInstance.put(
-//       `${process.env.REACT_APP_API_URL}/api/products/reorder`,
-//       { reorderedProducts: reorderedIds }
-//     );
-    
-//     // Fetch the updated list of products and sort them by the 'order' field
-//     const { data } = await axiosInstance.get(
-//       `${process.env.REACT_APP_API_URL}/api/products/show`
-//     );
+    try {
+      // Send the reordered product IDs to the backend
+      const response = await axiosInstance.put(
+        `${process.env.REACT_APP_API_URL}/api/products/reorder`,
+        { reorderedProducts: reorderedIds }
+      );
 
-//     // Sort products based on the 'order' field
-//     const allProducts = data.products || [];
-//     allProducts.sort((a, b) => a.order - b.order);
+      // Check if response data is correct
+      console.log(response.data); // Debugging log
 
-//     // Update the state with the sorted products
-//     setProducts(allProducts);
-    
-//     toast.success("Product order updated successfully!");
-//   } catch (err) {
-//     toast.error("Failed to save new order.");
-//   }
-// };
+      // Refetch the updated products from the backend
+      const { data } = await axiosInstance.get(
+        `${process.env.REACT_APP_API_URL}/api/products/show`
+      );
 
-const saveNewOrder = async () => {
-  const reorderedIds = products.map((product) => product._id);
+      // Sort the products based on the updated 'order' field
+      const allProducts = data.products || [];
+      allProducts.sort((a, b) => a.order - b.order);
 
-  try {
-    // Send the reordered product IDs to the backend
-    const response = await axiosInstance.put(
-      `${process.env.REACT_APP_API_URL}/api/products/reorder`,
-      { reorderedProducts: reorderedIds }
-    );
-    
-    // Check if response data is correct
-    console.log(response.data);  // Debugging log
+      // Update the state with the sorted products
+      setProducts(allProducts);
 
-    // Refetch the updated products from the backend
-    const { data } = await axiosInstance.get(
-      `${process.env.REACT_APP_API_URL}/api/products/show`
-    );
-
-    // Sort the products based on the updated 'order' field
-    const allProducts = data.products || [];
-    allProducts.sort((a, b) => a.order - b.order);
-
-    // Update the state with the sorted products
-    setProducts(allProducts);
-
-    toast.success("Product order updated successfully!");
-  } catch (err) {
-    toast.error("Failed to save new order.");
-  }
-};
+      toast.success("Product order updated successfully!");
+    } catch (err) {
+      toast.error("Failed to save new order.");
+    }
+  };
 
   // Draggable Row Component
   const DraggableRow = ({ index, product }) => {
@@ -216,17 +112,24 @@ const saveNewOrder = async () => {
         transition={{ duration: 0.3 }}
       >
         <td className="py-3 px-6 text-left">{product._id}</td>
-        <td className="py-3 px-6 text-left">{product.title?.en || "No Title"}</td>
+        <td className="py-3 px-6 text-left">
+          {product.title?.en || "No Title"}
+        </td>
         <td className="py-3 px-6 text-left">
           <img src={product.image.url} alt="Product" className="w-20 h-20" />
         </td>
-        <td className="py-3 px-6 text-left">{product.postedBy?.name || "Unknown"}</td>
+        <td className="py-3 px-6 text-left">
+          {product.postedBy?.name || "Unknown"}
+        </td>
         <td className="py-3 px-6 text-left">
           {new Date(product.createdAt).toLocaleString()}
         </td>
         <td className="py-3 px-6 text-left">
           <div className="flex items-center space-x-2">
-            <Link to={`/admin/product/edit/${product._id}`} className="text-blue-500">
+            <Link
+              to={`/admin/product/edit/${product._id}`}
+              className="text-blue-500"
+            >
               Edit
             </Link>
             <button
@@ -240,8 +143,7 @@ const saveNewOrder = async () => {
       </motion.tr>
     );
   };
-  
-  
+
   const displayPost = async () => {
     try {
       const { data } = await axiosInstance.get(
@@ -662,13 +564,13 @@ const saveNewOrder = async () => {
       renderCell: (params) => {
         const imageUrl =
           Array.isArray(params.row.image) && params.row.image.length > 0
-            ? params.row.image[0].url // Use the first image if it's an array
-            : params.row.image?.url; // Use single image if it's an object
+            ? params.row.image[0]?.url // Use the first image from the array
+            : params.row.image?.url || "/path/to/placeholder.jpg"; // Fallback to a single image or placeholder
 
         return (
           <img
             width="40%"
-            src={imageUrl || "/path/to/placeholder.jpg"} // Fallback if no image
+            src={imageUrl || "/path/to/placeholder.jpg"}
             alt="img"
           />
         );
@@ -851,7 +753,7 @@ const saveNewOrder = async () => {
     {
       field: "image",
       headerName: "Image",
-      width: 12,
+      width: 150,
       renderCell: (params) => (
         <img width="40%" src={params.row.image.url} alt="img" />
       ),
@@ -1027,33 +929,37 @@ const saveNewOrder = async () => {
       case "products":
         return (
           <div className="px-4 py-6">
-      <h4 className="text-black text-4xl pb-3">Products</h4>
-      <div className="pb-4 flex justify-end">
-        <Link to="/admin/product/create">
-          <button className="bg-green-500 text-white py-2 px-4 rounded">
-            <AddIcon className="mr-2" />
-            Add Product
-          </button>
-        </Link>
-      </div>
-      <table className="min-w-full bg-white">
-        <thead>
-          <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th className="py-3 px-6 text-left">Product ID</th>
-            <th className="py-3 px-6 text-left">Title</th>
-            <th className="py-3 px-6 text-left">Image</th>
-            <th className="py-3 px-6 text-left">Posted By</th>
-            <th className="py-3 px-6 text-left">Created At</th>
-            <th className="py-3 px-6 text-left">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product, index) => (
-            <DraggableRow key={product._id} index={index} product={product} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+            <h4 className="text-black text-4xl pb-3">Products</h4>
+            <div className="pb-4 flex justify-end">
+              <Link to="/admin/product/create">
+                <button className="bg-green-500 text-white py-2 px-4 rounded">
+                  <AddIcon className="mr-2" />
+                  Add Product
+                </button>
+              </Link>
+            </div>
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                  <th className="py-3 px-6 text-left">Product ID</th>
+                  <th className="py-3 px-6 text-left">Title</th>
+                  <th className="py-3 px-6 text-left">Image</th>
+                  <th className="py-3 px-6 text-left">Posted By</th>
+                  <th className="py-3 px-6 text-left">Created At</th>
+                  <th className="py-3 px-6 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((product, index) => (
+                  <DraggableRow
+                    key={product._id}
+                    index={index}
+                    product={product}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           // <div>
 
@@ -1191,18 +1097,66 @@ const saveNewOrder = async () => {
       case "videos":
         return (
           <div>
-            <h4 className="text-black text-4xl pb-3">Videos</h4>
-            <div className="pb-2 flex justify-end">
-              <Link to="/admin/video/create">
-                <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-                  <AddIcon className="mr-2" />
-                  Create Video
-                </button>
-              </Link>
-            </div>
-            <div className="overflow-x-auto">
-              {/* Replace with your videos table here */}
-              <p>Your Videos Table Here</p>
+           <div className="overflow-x-auto">
+              <div>
+                <h4 className="text-black text-4xl pb-3">Videos</h4>
+                <div className="pb-2 flex justify-end">
+                  <Link to="/admin/video/create">
+                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                      <AddIcon className="mr-2" />
+                      Add Project
+                    </button>
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        {VideoColumns.map((column) => (
+                          <th
+                            key={column.field}
+                            className="py-3 px-6 text-left"
+                          >
+                            {column.headerName}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                      {videos.length > 0 ? (
+                        videos.map((video) => (
+                          <tr
+                            key={video._id}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                          >
+                            {VideoColumns.map((column) => (
+                              <td
+                                key={column.field}
+                                className="py-3 px-6 text-left"
+                              >
+                                {column.renderCell
+                                  ? column.renderCell({ row: video })
+                                  : video[column.field]}
+                              </td>
+                            ))}
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td
+                            colSpan={VideoColumns.length}
+                            className="text-center py-4"
+                          >
+                            No Projects found.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <p>Your VideoColumns Table Here</p>
             </div>
           </div>
         );
