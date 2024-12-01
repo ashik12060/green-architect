@@ -3,9 +3,9 @@ import React from "react";
 const Facelifting = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Facelifting & Additions by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Facelifting & Additions by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer specializes in Facelifting and Addition services, transforming and expanding your existing spaces. Our expert team ensures smooth integration, enhancing both the visual and functional qualities of your property.
+        Green Shelter Design and Development specializes in Facelifting and Addition services, transforming and expanding your existing spaces. Our expert team ensures smooth integration, enhancing both the visual and functional qualities of your property.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Facelifting & Addition Services:</h2>

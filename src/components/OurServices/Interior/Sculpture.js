@@ -3,9 +3,9 @@ import React from "react";
 const Sculpture = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Terracotta and Sculpture Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Terracotta and Sculpture Design by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer specializes in creating unique Terracotta and Sculpture pieces that enhance your spaces with artistic and cultural significance. Our expert artisans craft bespoke artworks that reflect your personal style and elevate your surroundings.
+        Green Shelter Design and Development specializes in creating unique Terracotta and Sculpture pieces that enhance your spaces with artistic and cultural significance. Our expert artisans craft bespoke artworks that reflect your personal style and elevate your surroundings.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Terracotta and Sculpture Design Services:</h2>

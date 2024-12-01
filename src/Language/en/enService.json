@@ -1,4 +1,6 @@
 {
+  "additonalServiceOffer":"Additional Services We Offer",
+  "ourServices": "Our Services",
   "preDesign": "Pre-Design",
   "preDesignDescription": "Green Shelter Design and Development delivers exceptional architectural design services, blending innovation and expertise to transform your vision into reality.",
   "design": "Design",
@@ -13,6 +15,30 @@
   "modelMakingDescription": "Bring your ideas to life with our professional model-making services. We create precise, high-quality models that turn your vision into reality.",
   "realEstate": "Real Estate",
   "realEstateDescription": "Providing innovative architectural solutions for real estate projects, ensuring functional, aesthetic, and sustainable designs that meet client needs and enhance property value.",
-  "seeMore": "See More"
+  "seeMore": "See More",
+  "rajukApproval": "Rajuk Approval",
+  "soilTest": "Soil Test",
+  "costEstimate": "Cost Estimate",
+  "digitalLand": "Digital Land Survey",
+  "rajukApprovalContent": "Green Shelter Design and Development simplifies the process of obtaining RAJUK and City Corporation approvals for building plans. Our experienced team ensures fast, hassle-free, and compliant approvals, protecting clients from legal issues and delays.",
+  "soilContet":"Our soil test service ensures safe construction by assessing soil conditions for structural stability. This essential step helps prevent future issues with the building’s foundation.",
+  "costEstimateContent":"Get accurate cost estimations for efficient budget planning. Our cost estimation service allows you to understand project expenses and manage resources effectively.",
+  "digitalLandSurvey":"Our digital land survey provides precise data for land planning and development. Using advanced technology, we ensure accurate information for your project needs.",
+  
+   "titlefeasibility-study": "Comprehensive Feasibility Analysis by Green Shelter Design and Development",
+  "paragraph1feasibility-study": "At Green Shelter Design and Development, our Feasibility Study services are tailored to ensure your project's success from the very beginning. We conduct an in-depth evaluation of key aspects, including financial, technical, legal, and scheduling factors.",
+  "keyFeaturefeasibility-study": "Key Features of Our Feasibility Study Services",
+  "financialAnalysisfeasibility-study": "Financial Analysis",
+  "weEvaluatefeasibility-study": "We evaluate project expenses, revenue forecasts, and funding possibilities to determine financial feasibility, helping you make informed decisions and secure essential resources.",
+  "technicalFeasibilityfeasibility-study": "Technical Feasibility",
+  "weExaminefeasibility-study": "We examine the technical requirements and potential challenges of your project. By identifying suitable technologies, we ensure that your project is practical and optimized for efficiency.",
+  "legalCompliancefeasibility-study": "Legal Compliance",
+  "weVerifyfeasibility-study": "We verify that your project adheres to all applicable legal, zoning, and environmental regulations, safeguarding you from potential legal issues.",
+  "timelineFeasibilityfeasibility-study": "Timeline Feasibility",
+  "weCreatefeasibility-study": "We create detailed project schedules, highlighting key milestones and potential delays to ensure your project stays on time and within budget.",
+  "riskManagementfeasibility-study": "Risk Management",
+  "weProactivelyfeasibility-study": "We proactively assess potential risks and develop strategies to mitigate them, ensuring your project's stability and success."
+
+  
+
 }
- 

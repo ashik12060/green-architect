@@ -3,9 +3,9 @@ import React from "react";
 const Retail = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Retail Interior Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Retail Interior Design by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer specializes in creating dynamic and functional retail spaces through expert interior design services. Our goal is to enhance the customer experience, strengthen your brand presence, and increase sales.
+        Green Shelter Design and Development specializes in creating dynamic and functional retail spaces through expert interior design services. Our goal is to enhance the customer experience, strengthen your brand presence, and increase sales.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Retail Interior Design Offerings:</h2>

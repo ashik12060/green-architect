@@ -1,4 +1,6 @@
 {
+  "additonalServiceOffer":"Yderligere tjenester vi tilbyder",
+  "ourServices":"Vores tjenester",
   "preDesign": "For-design",
   "preDesignDescription": "Green Shelter Design and Development leverer førsteklasses arkitektoniske design tjenester, der kombinerer kreativitet og ekspertise for at bringe din vision til live.",
   "design": "Design",
@@ -13,5 +15,30 @@
 "modelMakingDescription": "Forvandl dine ideer til virkelighed med vores ekspert modelbygningstjenester. Vi laver detaljerede, høj kvalitet modeller, der bringer din vision til live.",
   "realEstate": "Ejendom",
   "realEstateDescription": "Forpligtet til at levere fremragende strukturelle designtjenester til en række byggeprojekter og sikre hver strukturs stabilitet og sikkerhed.",
-  "seeMore": "Se Mere"
+  "seeMore": "Se Mere",
+  "rajukApproval":"Rajuk godkendelse",
+  "soilTest": "Jordprøve",
+  "costEstimate": "Omkostningsestimat",
+  "digitalLand": "Digital Landmåling",
+  "rajukApprovalContent": "Green Shelter Design and Development forenkler processen med at få RAJUK- og bykorporationsgodkendelser til bygningsplaner. Vores erfarne team sikrer hurtige, problemfri og lovlige godkendelser, som beskytter kunderne mod juridiske problemer og forsinkelser.",
+  "soilContet":"Vores jordprøvetjeneste sikrer sikker konstruktion ved at vurdere jordens forhold for strukturel stabilitet. Dette vigtige skridt hjælper med at forhindre fremtidige problemer med bygningens fundament.",
+  "costEstimateContent":"Få nøjagtige omkostningsestimater til effektiv budgettering. Vores omkostningsestimeringstjeneste gør det muligt for dig at forstå projektudgifter og håndtere ressourcer effektivt.",
+  "digitalLandSurvey":"Vores digitale landmåling giver præcise data til landplanlægning og udvikling. Ved at bruge avanceret teknologi sikrer vi præcise oplysninger til dine projektbehov.",
+  
+  "titlefeasibility-study": "Omfattende gennemførlighedsanalyse af Green Shelter Design and Development",
+  "paragraph1feasibility-study": "Hos Green Shelter Design and Development er vores gennemførlighedsstudier skræddersyet til at sikre dit projekts succes fra starten. Vi gennemfører en grundig evaluering af centrale aspekter, herunder finansielle, tekniske, juridiske og tidsplanlægningsfaktorer.",
+  "keyFeaturefeasibility-study": "Vigtige funktioner i vores gennemførlighedsstudietjenester",
+  "financialAnalysisfeasibility-study": "Økonomisk analyse",
+  "weEvaluatefeasibility-study": "Vi vurderer projektudgifter, indtægtsprognoser og finansieringsmuligheder for at bestemme den økonomiske gennemførlighed og hjælpe dig med at træffe informerede beslutninger og sikre nødvendige ressourcer.",
+  "technicalFeasibilityfeasibility-study": "Teknisk gennemførlighed",
+  "weExaminefeasibility-study": "Vi undersøger de tekniske krav og potentielle udfordringer ved dit projekt. Ved at identificere passende teknologier sikrer vi, at dit projekt er praktisk og optimeret for effektivitet.",
+  "legalCompliancefeasibility-study": "Juridisk overholdelse",
+  "weVerifyfeasibility-study": "Vi bekræfter, at dit projekt overholder alle gældende lovgivningsmæssige, zonerings- og miljøbestemmelser, hvilket beskytter dig mod potentielle juridiske problemer.",
+  "timelineFeasibilityfeasibility-study": "Tidsplanens gennemførlighed",
+  "weCreatefeasibility-study": "Vi laver detaljerede projektplaner og fremhæver vigtige milepæle og potentielle forsinkelser for at sikre, at dit projekt holder sig til tiden og inden for budgettet.",
+  "riskManagementfeasibility-study": "Risikostyring",
+  "weProactivelyfeasibility-study": "Vi vurderer proaktivt potentielle risici og udvikler strategier for at afbøde dem, hvilket sikrer dit projekts stabilitet og succes."
+
+
+
 }

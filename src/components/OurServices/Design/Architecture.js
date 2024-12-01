@@ -4,10 +4,10 @@ const Architecture = () => {
   return (
     <div className="flex flex-col items-center px-4 sm:px-8 py-8 text-center bg-white text-gray-800">
       <h1 className="text-2xl sm:text-3xl font-bold mb-4">
-        Architecture Design Solutions in Bangladesh | Dhaka Designer
+        Architecture Design Solutions in Bangladesh | Green Shelter Design and Development
       </h1>
       <p className="text-base sm:text-lg mb-8 text-justify">
-        Dhaka Designer provides comprehensive architectural design solutions in Bangladesh, seamlessly integrating aesthetics, functionality, and sustainability. Our mission is to create spaces that align with your vision, whether it’s a cozy home, modern apartment, or a dynamic commercial property.
+        Green Shelter Design and Development provides comprehensive architectural design solutions in Bangladesh, seamlessly integrating aesthetics, functionality, and sustainability. Our mission is to create spaces that align with your vision, whether it’s a cozy home, modern apartment, or a dynamic commercial property.
       </p>
 
       <h2 className="text-xl sm:text-2xl font-semibold mb-6">
@@ -61,7 +61,7 @@ const Architecture = () => {
       </div>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6">
-        Why Choose Dhaka Designer for Your Architectural Needs in Bangladesh?
+        Why Choose Green Shelter Design and Development for Your Architectural Needs in Bangladesh?
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
@@ -102,7 +102,7 @@ const Architecture = () => {
         Ready to Transform Your Ideas into Reality?
       </h2>
       <p className="text-base sm:text-lg mt-4 text-justify max-w-4xl">
-        Let’s make your vision come to life. Whether you’re planning a residential, commercial, or public space project, Dhaka Designer is ready to bring it to fruition. Reach out today at{" "}
+        Let’s make your vision come to life. Whether you’re planning a residential, commercial, or public space project, Green Shelter Design and Development is ready to bring it to fruition. Reach out today at{" "}
         <a href="tel:+8801724747050" className="text-green-600 font-bold">
         +8801711-001726
         </a>{" "}

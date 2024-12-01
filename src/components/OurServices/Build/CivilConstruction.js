@@ -3,9 +3,9 @@ import React from "react";
 const CivilConstruction = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Civil Construction by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Civil Construction by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        At <span className="font-semibold">Dhaka Designer</span>, we specialize in delivering high-quality Civil Construction services, transforming your ideas into reality. Our skilled team guarantees that each step of the construction process is carried out with accuracy and excellence.
+        At <span className="font-semibold">Green Shelter Design and Development</span>, we specialize in delivering high-quality Civil Construction services, transforming your ideas into reality. Our skilled team guarantees that each step of the construction process is carried out with accuracy and excellence.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Civil Construction Services:</h2>

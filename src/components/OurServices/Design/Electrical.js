@@ -3,9 +3,9 @@ import React from "react";
 const Electrical = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Electrical Design Services by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Electrical Design Services by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        At Dhaka Designer, we provide expert Electrical Design solutions that prioritize safety, efficiency, and reliability. Our team creates custom electrical designs to meet the specific requirements of your project.
+        At Green Shelter Design and Development, we provide expert Electrical Design solutions that prioritize safety, efficiency, and reliability. Our team creates custom electrical designs to meet the specific requirements of your project.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">

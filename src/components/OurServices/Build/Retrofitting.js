@@ -3,9 +3,9 @@ import React from "react";
 const Retrofitting = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Retrofitting Services by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Retrofitting Services by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        At Dhaka Designer, we provide specialized Retrofitting services aimed at improving the safety, performance, and durability of your existing buildings. Our team ensures that your structures comply with modern standards and are well-equipped to face future challenges.
+        At Green Shelter Design and Development, we provide specialized Retrofitting services aimed at improving the safety, performance, and durability of your existing buildings. Our team ensures that your structures comply with modern standards and are well-equipped to face future challenges.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Retrofitting Solutions Include:</h2>

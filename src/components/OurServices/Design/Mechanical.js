@@ -3,9 +3,9 @@ import React from "react";
 const Mechanical = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Mechanical Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Mechanical Design by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        At <span className="font-semibold">Dhaka Designer</span>, we offer high-quality Mechanical Design services that focus on creating efficient, reliable, and cost-effective mechanical systems for your projects. Our custom solutions are built to meet your unique requirements, ensuring outstanding performance and innovation.
+        At <span className="font-semibold">Green Shelter Design and Development</span>, we offer high-quality Mechanical Design services that focus on creating efficient, reliable, and cost-effective mechanical systems for your projects. Our custom solutions are built to meet your unique requirements, ensuring outstanding performance and innovation.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Mechanical Design Services Include:</h2>

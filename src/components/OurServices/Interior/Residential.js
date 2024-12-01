@@ -4,10 +4,10 @@ const Residential = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
-        Residential Interior Design Services by Dhaka Designer
+        Residential Interior Design Services by Green Shelter Design and Development
       </h1>
       <p className="text-lg mb-8">
-        At Dhaka Designer, we specialize in creating stunning and functional residential interiors. Our team works closely with you to craft designs that suit your personal style and meet your needs, ensuring your home reflects your individuality and lifestyle.
+        At Green Shelter Design and Development, we specialize in creating stunning and functional residential interiors. Our team works closely with you to craft designs that suit your personal style and meet your needs, ensuring your home reflects your individuality and lifestyle.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">

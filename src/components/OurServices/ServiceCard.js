@@ -95,13 +95,7 @@ export const ServiceCard = () => {
   return (
     <div className={`${isDarkMode ? "text-white" : "bg-gray-100"}`}>
       <div className="container mx-auto px-4 py-16">
-        {/* <h1
-          className={`text-4xl font-bold text-center mb-10 ${
-            isDarkMode ? "text-white  " : "text-black"
-          }`}
-        >
-          {t("OurServices")}
-        </h1> */}
+       
         <motion.h1
       className={`text-4xl font-bold text-center mb-10 ${
         isDarkMode ? "text-white" : "text-black"
@@ -111,7 +105,7 @@ export const ServiceCard = () => {
       viewport={{ once: false, amount: 0.2 }}
       variants={headerVariants}
     >
-      {t("OurServices")}
+      {t("ourServices")}
     </motion.h1>
 
         <motion.div

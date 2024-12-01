@@ -3,9 +3,9 @@ import React from "react";
 const Structure = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Structural Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Structural Design by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer specializes in providing complete Structural Design services to guarantee the safety and durability of your projects. Our skilled team crafts resilient and innovative structures built to last.
+        Green Shelter Design and Development specializes in providing complete Structural Design services to guarantee the safety and durability of your projects. Our skilled team crafts resilient and innovative structures built to last.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">

@@ -4,6 +4,7 @@ import { useTheme } from "../../../context/ThemeContext";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
 import { AppBar, Toolbar, Typography, IconButton, MenuItem, Select } from "@mui/material";
+import logo from '../../../assets/Green Shelter Design and Development.jpeg'
 
 const SmallHeader = () => {
   const { isDarkMode, setIsDarkMode } = useTheme(); // Use context
@@ -34,12 +35,13 @@ const SmallHeader = () => {
 
   return (
     <header className={`shadow-md py-2 ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center px-10">
         {/* Logo Section */}
-        <div className="text-2xl font-bold">
-          <a href="/" className={`hover:${isDarkMode ? "text-green-300" : "text-green-500"}`}>
-            Logo
-          </a>
+        <div className="text-2xl font-bold ps-">
+          
+          <Link to='/'>
+          <img src={logo} className="w-20" alt="Green Shelter Design and Development logo" />
+          </Link>
         </div>
 
         {/* Header Content */}

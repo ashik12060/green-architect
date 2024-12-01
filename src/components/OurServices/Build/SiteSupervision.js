@@ -3,9 +3,9 @@ import React from "react";
 const SiteSupervision = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Site Supervision Services by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Site Supervision Services by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        At Dhaka Designer, we offer expert Site Supervision services to ensure your construction project meets the highest standards. Our experienced team of supervisors meticulously oversees every aspect of the site, ensuring quality, safety, and efficiency at all stages.
+        At Green Shelter Design and Development, we offer expert Site Supervision services to ensure your construction project meets the highest standards. Our experienced team of supervisors meticulously oversees every aspect of the site, ensuring quality, safety, and efficiency at all stages.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Site Supervision Services Include:</h2>

@@ -3,9 +3,9 @@ import React from "react";
 const Lighting = () => {
   return (
     <div className="p-8 bg-white text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-4">Lighting Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold text-center mb-4">Lighting Design by Green Shelter Design and Development</h1>
       <p className="text-lg text-justify max-w-4xl mx-auto mb-8">
-        At <span className="font-semibold">Dhaka Designer</span>, we specialize in providing 
+        At <span className="font-semibold">Green Shelter Design and Development</span>, we specialize in providing 
         customized lighting solutions that improve both the functionality and visual appeal of your spaces. 
         Our team crafts unique lighting designs tailored specifically to meet the requirements of each project.
       </p>

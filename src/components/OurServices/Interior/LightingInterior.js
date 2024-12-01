@@ -3,9 +3,9 @@ import React from "react";
 const LightingInterior = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Custom Lighting Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Custom Lighting Design by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers bespoke lighting design services, illuminating your spaces with style and precision. Our expert team crafts innovative lighting solutions tailored to your specific needs and aesthetic preferences.
+        Green Shelter Design and Development offers bespoke lighting design services, illuminating your spaces with style and precision. Our expert team crafts innovative lighting solutions tailored to your specific needs and aesthetic preferences.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Custom Lighting Design Services:</h2>

@@ -5,7 +5,7 @@ const LeedConsultancy = () => {
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
       <h1 className="text-3xl font-bold mb-4">LEED Consultancy Services</h1>
       <p className="text-lg mb-8 text-justify max-w-4xl">
-        At <span className="font-semibold">Dhaka Designer</span>, we provide expert LEED
+        At <span className="font-semibold">Green Shelter Design and Development</span>, we provide expert LEED
         Consultancy services to guide you in implementing sustainable building practices and achieving
         LEED certification. Our experienced team will assist you throughout the entire process, ensuring
         that your project aligns with the highest environmental standards.

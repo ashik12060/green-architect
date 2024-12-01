@@ -3,9 +3,9 @@ import React from "react";
 const Office = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Office Interior Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Office Interior Design by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer provides professional Office Interior Design services to create productive, efficient, and inspiring workspaces. Our designs focus on enhancing functionality, employee well-being, and brand identity.
+        Green Shelter Design and Development provides professional Office Interior Design services to create productive, efficient, and inspiring workspaces. Our designs focus on enhancing functionality, employee well-being, and brand identity.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Office Interior Design Services:</h2>

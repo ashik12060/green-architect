@@ -3,9 +3,9 @@ import React from "react";
 const Plumbing = () => {
   return (
     <div className="p-8 bg-gray-50 text-gray-900">
-      <h1 className="text-3xl font-bold text-center mb-4">Plumbing Design by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold text-center mb-4">Plumbing Design by Green Shelter Design and Development</h1>
       <p className="text-lg text-justify max-w-4xl mx-auto mb-8">
-        At <span className="font-semibold">Dhaka Designer</span>, we specialize in designing plumbing systems that prioritize efficiency, reliability, and sustainability. Each solution is customized to meet the unique requirements of your project.
+        At <span className="font-semibold">Green Shelter Design and Development</span>, we specialize in designing plumbing systems that prioritize efficiency, reliability, and sustainability. Each solution is customized to meet the unique requirements of your project.
       </p>
 
       <div className="space-y-6 max-w-4xl mx-auto">

@@ -7,7 +7,7 @@ const Industrial = () => {
         Green Shelter Design and Development Industrial Interior Design Services
       </h1>
       <p className="text-lg mb-8">
-        At Dhaka Designer, we specialize in crafting innovative and functional industrial spaces. Our designs prioritize efficiency, safety, and aesthetics, all while reflecting your brand’s unique identity.
+        At Green Shelter Design and Development, we specialize in crafting innovative and functional industrial spaces. Our designs prioritize efficiency, safety, and aesthetics, all while reflecting your brand’s unique identity.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">

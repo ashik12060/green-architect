@@ -3,9 +3,9 @@ import React from "react";
 const CostEstimate = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Cost Estimation by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Cost Estimation by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        At <span className="font-semibold">Dhaka Designer</span>, we provide accurate and reliable Cost Estimation services, enabling you to effectively plan and manage your construction budgets. Our in-depth analysis ensures you have a comprehensive understanding of your project's financial requirements.
+        At <span className="font-semibold">Green Shelter Design and Development</span>, we provide accurate and reliable Cost Estimation services, enabling you to effectively plan and manage your construction budgets. Our in-depth analysis ensures you have a comprehensive understanding of your project's financial requirements.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Cost Estimation Services:</h2>

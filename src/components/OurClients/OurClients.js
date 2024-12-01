@@ -1,6 +1,6 @@
 import React from "react";
 import "./Ourclients.css";
-import { motion } from 'framer-motion'; // Import framer-motion
+import { motion } from 'framer-motion';
 
 
 import img1 from "../../assets/partners logo/army.png";
@@ -24,6 +24,10 @@ import img18 from "../../assets/partners logo/partext.png";
 import img19 from "../../assets/partners logo/police.jpg";
 import img20 from "../../assets/partners logo/square grp.png";
 import img21 from "../../assets/partners logo/us bangla.png";
+import img22 from "../../assets/partners logo/sky bath.jpeg";
+import img23 from "../../assets/partners logo/pratinidhi.jpeg";
+import img24 from "../../assets/partners logo/inbuild.png";
+import img25 from "../../assets/partners logo/jcx.png";
 
 const logos = [
   img1,
@@ -31,6 +35,10 @@ const logos = [
   img3,
   img4,
   img5,
+  img22,
+  img23,
+  img24,
+  img25,
   img6,
   img7,
   img8,
@@ -47,6 +55,7 @@ const logos = [
   img19,
   img20,
   img21,
+  
 ];
 const headerVariants = {
   offscreen: { y: 50, opacity: 0 },

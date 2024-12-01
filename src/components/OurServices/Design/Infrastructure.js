@@ -3,9 +3,9 @@ import React from "react";
 const Infrastructure = () => {
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Infrastructure Design Services by Dhaka Designer</h1>
+      <h1 className="text-3xl font-bold mb-4">Infrastructure Design Services by Green Shelter Design and Development</h1>
       <p className="text-lg mb-8">
-        Dhaka Designer offers comprehensive Infrastructure Design services aimed at ensuring a strong foundation for your project. Our focus is on creating efficient, sustainable, and resilient infrastructure solutions.
+        Green Shelter Design and Development offers comprehensive Infrastructure Design services aimed at ensuring a strong foundation for your project. Our focus is on creating efficient, sustainable, and resilient infrastructure solutions.
       </p>
 
       <h2 className="text-2xl font-semibold mb-6">Our Infrastructure Design Solutions:</h2>

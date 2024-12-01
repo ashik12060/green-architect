@@ -3,24 +3,33 @@
 
 import React from "react";
 import Footer from "../../Shared/Footer/Footer";
+import { useTranslation } from "react-i18next";
+
+
 
 const FeasibilityStudy = () => {
+
+  const { t } = useTranslation('Service');
   return (
     <>
       <div className="flex flex-col items-center p-6 sm:p-8 text-center bg-white text-gray-800">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 px-4 sm:px-32">
-          Comprehensive Feasibility Analysis by Green Shelter Design and Development
+        {t('titlefeasibility-study')}
+
+        
+        {/* Comprehensive Feasibility Analysis by Green Shelter Design and Development */}
+        
         </h1>
         <p className="text-base sm:text-lg mb-8 text-justify px-4 sm:px-32">
-          At Green Shelter Design and Development, our Feasibility Study services are tailored to ensure your project's success from the very beginning. We conduct an in-depth evaluation of key aspects, including financial, technical, legal, and scheduling factors.
-        </p>
+        {t('paragraph1feasibility-study')}        </p>
 
         <h2 className="text-xl sm:text-2xl font-semibold mb-6">
-          Key Features of Our Feasibility Study Services:
+        {t('keyFeaturefeasibility-study')}  
         </h2>
 
         <div className="space-y-6 max-w-full sm:max-w-4xl w-full">
           <ServiceItem
+            
             title="Financial Analysis"
             description="We evaluate project expenses, revenue forecasts, and funding possibilities to determine financial feasibility, helping you make informed decisions and secure essential resources."
           />
