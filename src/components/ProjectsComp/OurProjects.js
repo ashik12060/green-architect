@@ -1,5 +1,8 @@
+
+
 import React, { useState, useEffect } from "react";
-import { useDrag, useDrop } from "react-dnd";
+import { useDrag, useDrop, DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import axiosInstance from "../../pages/axiosInstance";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -18,8 +21,7 @@ const OurProjects = ({ isAdmin }) => {
   const { t } = useTranslation("Home");
   const { i18n } = useTranslation();
 
-  console.log("isAdmin in OurProjects:", isAdmin);  
-
+  console.log("isAdmin in OurProjects:", isAdmin);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -59,6 +61,7 @@ const OurProjects = ({ isAdmin }) => {
   };
 
   const moveCard = (fromIndex, toIndex) => {
+    console.log(`Moving item from ${fromIndex} to ${toIndex}`);
     const updatedProjects = [...filteredProjects];
     const [movedItem] = updatedProjects.splice(fromIndex, 1);
     updatedProjects.splice(toIndex, 0, movedItem);
@@ -88,13 +91,14 @@ const OurProjects = ({ isAdmin }) => {
     const [, drag] = useDrag({
       type: ItemType,
       item: { index },
-      canDrag: isAdmin, 
+      canDrag: isAdmin,
     });
 
     const [, drop] = useDrop({
       accept: ItemType,
       hover: (item) => {
-        if (item.index !== index && isAdmin) { 
+        console.log(`Hovering: Dragged item ${item.index} over ${index}`);
+        if (item.index !== index && isAdmin) {
           moveCard(item.index, index);
           item.index = index;
         }
@@ -104,6 +108,7 @@ const OurProjects = ({ isAdmin }) => {
 
     return (
       <motion.div
+        ref={(node) => drag(drop(node))}
         className="relative w-full h-64 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -117,7 +122,9 @@ const OurProjects = ({ isAdmin }) => {
                   key={idx}
                   src={image.url}
                   alt={project.title[i18n.language] || "Project Image"}
-                  className={`object-cover ${idx === 0 ? "w-full" : "w-1/3"} transition-all duration-300`}
+                  className={`object-cover ${
+                    idx === 0 ? "w-full" : "w-1/3"
+                  } transition-all duration-300`}
                 />
               ))
             ) : (
@@ -130,7 +137,9 @@ const OurProjects = ({ isAdmin }) => {
           </div>
         </Link>
         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">
-          <p className="font-bold text-center truncate">{project.title[i18n.language]}</p>
+          <p className="font-bold text-center truncate">
+            {project.title[i18n.language]}
+          </p>
           <Link
             to={`/project/${project._id}`}
             className={`mt-2 block w-fit mx-auto px-4 py-2 rounded-md ${
@@ -177,4 +186,10 @@ const OurProjects = ({ isAdmin }) => {
   );
 };
 
-export default OurProjects;
+export default function WrappedOurProjects(props) {
+  return (
+    <DndProvider backend={HTML5Backend}>
+      <OurProjects {...props} />
+    </DndProvider>
+  );
+}

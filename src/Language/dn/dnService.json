@@ -37,7 +37,120 @@
   "timelineFeasibilityfeasibility-study": "Tidsplanens gennemførlighed",
   "weCreatefeasibility-study": "Vi laver detaljerede projektplaner og fremhæver vigtige milepæle og potentielle forsinkelser for at sikre, at dit projekt holder sig til tiden og inden for budgettet.",
   "riskManagementfeasibility-study": "Risikostyring",
-  "weProactivelyfeasibility-study": "Vi vurderer proaktivt potentielle risici og udvikler strategier for at afbøde dem, hvilket sikrer dit projekts stabilitet og succes."
+  "weProactivelyfeasibility-study": "Vi vurderer proaktivt potentielle risici og udvikler strategier for at afbøde dem, hvilket sikrer dit projekts stabilitet og succes.",
+  "siteAssessmentTitle": "Detaljerede vurderinger og rapportering af Green Shelter Design and Development",
+  "siteAssessmentIntro": "Green Shelter Design and Development leverer grundige vurderings- og rapporteringstjenester for at indsamle essentielle data til informeret projektplanlægning og design. Vores on-site vurderinger sikrer, at alle specifikke forhold dokumenteres og analyseres omhyggeligt.",
+  "siteAssessmentHighlights": "Højdepunkter i vores vurderings- og rapporteringstjenester",
+  "accurateMeasurements": "Nøjagtige målinger",
+  "accurateMeasurementsDescription": "Vi leverer præcise målinger af stedet for at sikre oprettelse af detaljerede og nøjagtige layout og planer.",
+  "environmentalImpact": "Miljøpåvirkningsanalyse",
+  "environmentalImpactDescription": "Vi vurderer miljømæssige faktorer og potentielle påvirkninger for at sikre overholdelse af alle relevante miljøbestemmelser og standarder.",
+  "conditionAssessment": "Tilstandsvurderinger",
+  "conditionAssessmentDescription": "Vi dokumenterer omfattende den nuværende tilstand af eksisterende strukturer og infrastruktur og fremhæver områder, der kan have brug for reparationer eller opdateringer.",
+  "highQualityImagery": "Højkvalitets billeder",
+  "highQualityImageryDescription": "Vi tager professionelle billeder af stedet for at understøtte dybdegående analyser og rapportering.",
+  "stakeholderMeetings": "Samarbejdsmøder med interessenter",
+  "stakeholderMeetingsDescription": "Vi faciliterer diskussioner med relevante interessenter, herunder lokale myndigheder og samfundsmedlemmer, for at adressere feedback og eventuelle bekymringer.",
+
+
+  "digitalSurveyTitle": "Digital Survey & Reporting af Green Shelter Design and Development",
+  "digitalSurveyIntro": "Hos Green Shelter Design and Development tilbyder vi omfattende Site Visit & Reporting-tjenester for at indsamle essentielle oplysninger til effektiv projektplanlægning og design. Vores grundige on-site vurderinger sikrer, at alle nøgleforhold på stedet bliver nøjagtigt dokumenteret og analyseret.",
+  "digitalSurveyOverview": "Oversigt over vores Site Visit & Reporting-tjenester:",
+  "threeDScanning": "3D Scanning",
+  "threeDScanningDesc": "Vi genererer detaljerede 3D-modeller af eksisterende strukturer og landskaber, hvilket giver et klart indblik i din grund.",
+  "droneSurveys": "Drone Surveys",
+  "droneSurveysDesc": "Ved hjælp af droner fanger vi højopløselige luftbilleder og topografiske data, hvilket giver dig et fuldt billede af dit område.",
+  "gisMapping": "GIS Kortlægning",
+  "gisMappingDesc": "Vi laver detaljerede Geographic Information System (GIS) kort til præcis rumlig analyse, som hjælper dig med at forstå layoutet og funktionerne på dit område.",
+  "dataIntegration": "Data Integration",
+  "dataIntegrationDesc": "Vi kombinerer undersøgelsesdata med eksisterende planer og modeller for at give et samlet perspektiv til informeret beslutningstagning.",
+  "virtualRealityIntegration": "Virtual Reality (VR) Integration",
+  "virtualRealityIntegrationDesc": "Vi tilbyder en virtuel repræsentation af området og foreslåede ændringer, hvilket letter en glat planlægning og justering.",
+
+
+
+
+  "droneSurveyTitle": "Drone Survey Tjenester fra Green Shelter Design og Development",
+  "droneSurveyIntro": "Hos Green Shelter Design og Development er vi specialiseret i at levere topkvalitets Drone Survey-tjenester. Ved at bruge banebrydende drone-teknologi leverer vi præcise luftfotos og topografiske data, hvilket sikrer omfattende og præcise undersøgelser til dit projekt.",
+  "droneSurveyServices": "Hvad Vores Drone Survey Tjenester Tilbyder:",
+  "highResolutionAerialPhotography": "Højopløselig Luftfotografi",
+  "highResolutionAerialPhotographyDesc": "Vi tager klare og detaljerede luftfotos af dit område, hvilket giver dig et komplet perspektiv fra oven.",
+  "topographicSurveying": "Topografisk Undersøgelse",
+  "topographicSurveyingDesc": "Vore droner indsamler præcise topografiske data, hvilket giver dig en fuld forståelse af dit områdes terræn og naturlige funktioner.",
+  "threeDSiteMapping": "3D Kortlægning af Site",
+  "threeDSiteMappingDesc": "Vi laver detaljerede 3D-kort af dit område, hvilket giver et dybere perspektiv for at hjælpe med planlægning og design.",
+  "constructionMonitoring": "Konstruktionsovervågning",
+  "constructionMonitoringDesc": "Vi bruger droner til at følge op på byggefremskridt, levere løbende opdateringer og identificere potentielle problemer tidligt.",
+  "environmentalAssessments": "Miljøvurdering",
+  "environmentalAssessmentsDesc": "Vore droner overvåger miljøfaktorer for at sikre, at dit projekt overholder alle relevante miljøstandarder og -bestemmelser.",
+
+
+
+  "soilTestingTitle": "Omfattende Jordprøvning fra Green Shelter Design and Development",
+  "soilTestingIntro": "Green Shelter Design and Development tilbyder ekspert Jordprøvningstjenester for at sikre, at dit byggeprojekt er baseret på et pålideligt fundament. Vores grundige vurderinger giver indsigt i jordforholdene, hvilket hjælper dig med at træffe velinformerede beslutninger for dine byggeplaner.",
+  "soilTestingServices": "Vores Jordprøvningstjenester inkluderer:",
+  "soilSampling": "Jordprøveudtagning",
+  "soilSamplingDesc": "Vi indsamler jordprøver fra forskellige områder af din grund for at vurdere deres egenskaber og egnethed.",
+  "soilAnalysis": "Detaljeret Jordanalyse",
+  "soilAnalysisDesc": "Vores team udfører dybdegående tests for at vurdere jordens sammensætning, styrke og egnethed til byggeri.",
+  "moistureContent": "Vurdering af fugtindhold",
+  "moistureContentDesc": "Vi måler fugtindholdet i jorden for at vurdere dens stabilitet og egnethed til byggeri.",
+  "loadBearingCapacity": "Bærende kapacitet vurdering",
+  "loadBearingCapacityDesc": "Vi vurderer jordens evne til at bære vægten af den planlagte struktur og sikrer sikkerhed og pålidelighed.",
+  "soilContamination": "Jordforureningstest",
+  "soilContaminationDesc": "Vi tester for forurening i jorden for at bekræfte dens sikkerhed for byggeri og overholdelse af miljøstandarder.",
+
+  
+    "projectIntegrationTitle": "Omfattende Projekt Integrations Tjenester af Green Shelter Design and Development",
+    "projectIntegrationIntro": "Hos Green Shelter Design and Development tilbyder vi et komplet udvalg af Projekt Integrations tjenester for at sikre, at alle aspekter af dit projekt er problemfrit koordineret og udført. Vores ekspertise ligger i at forene alle projektkomponenter til at arbejde i perfekt symbiose for vellykkede resultater.",
+    "projectIntegrationFeatures": "Vigtige funktioner i vores Projekt Integrations Tjenester:",
+    "strategicPlanning": "Strategisk Planlægning og Koordinering",
+    "strategicPlanningDesc": "Vi udvikler en omfattende projektstrategi og overvåger alle relaterede opgaver, hvilket sikrer smidige operationer og effektiv ledelse gennem projektets varighed.",
+    "efficientResourceAllocation": "Effektiv Ressourceallokering",
+    "efficientResourceAllocationDesc": "Vi optimerer ressourcebrug ved at sikre rettidig tilgængelighed af nødvendige materialer, arbejdskraft og udstyr, hvilket minimerer forsinkelser og ineffektivitet.",
+    "effectiveStakeholderCommunication": "Effektiv Kommunikation med Interessenter",
+    "effectiveStakeholderCommunicationDesc": "Vi prioriterer klar og gennemsigtig kommunikation, og holder alle interessenter informerede og i overensstemmelse med projektets vision og fremdrift.",
+    "comprehensiveRiskManagement": "Omfattende Risikostyring",
+    "comprehensiveRiskManagementDesc": "Vi identificerer proaktivt potentielle risici og implementerer strategier for at adressere dem, hvilket sikrer en uafbrudt projektforløb og succes.",
+    "enhancedQualityAssurance": "Forbedret Kvalitetssikring",
+    "enhancedQualityAssuranceDesc": "Vores strenge kvalitetssikringsprocesser garanterer, at alle projektleverancer opfylder eller overgår etablerede standarder og forventninger.",
+    "ongoingMonitoringAndReporting": "Løbende Overvågning og Rapportering",
+    "ongoingMonitoringAndReportingDesc": "Vi leverer kontinuerlig projektsporing og regelmæssige opdateringer, hvilket sikrer gennemsigtighed, ansvarlighed og overholdelse af tidsplaner.",
+
+
+
+    
+      "trafficAnalysisTitle": "Traffic Analysis Services by Green Shelter Design and Development",
+      "trafficAnalysisIntro": "Green Shelter Design and Development tilbyder detaljerede trafik analyse tjenester for at give indsigt i trafik dynamik, der understøtter effektiv projektplanlægning. Vore undersøgelser leverer essentiel data for at skabe sikre, effektive og bæredygtige transport løsninger.",
+      "trafficAnalysisCover": "Vore Trafik Analyse Tjenester Dækker:",
+      "trafficFlowMonitoring": "Trafik Flow Overvågning",
+      "trafficFlowMonitoringDesc": "Vi indsamler data om køretøjsflow ved kritiske punkter for at vurdere trafikbelastning og bevægelsesmønstre.",
+      "speedPatternEvaluation": "Hastigheds Mønster Evaluering",
+      "speedPatternEvaluationDesc": "Vi analyserer køretøjs hastigheder for at identificere områder, der kræver hastighedsregulering for at forbedre sikkerheden.",
+      "travelBehaviorStudy": "Rejseadfærd Studie",
+      "travelBehaviorStudyDesc": "Vi sporer oprindelse og destinations mønstre for at få indsigt i rejseadfærd, som hjælper med strategisk rute og infrastruktur planlægning.",
+      "parkingUtilizationAnalysis": "Parkering Anvendelse Analyse",
+      "parkingUtilizationAnalysisDesc": "Vi vurderer parkeringsbehov og anvendelsestrends for at støtte udviklingen af effektive parkeringsløsninger.",
+      "trafficImpactEvaluation": "Trafikpåvirkning Evaluering",
+      "trafficImpactEvaluationDesc": "Vi analyserer hvordan foreslåede projekter kan påvirke lokal trafik og anbefaler strategier for at minimere forstyrrelser og forbedre trafikflow.",
+
+      
+        "feasibility": "Gennemførlighedsstudie",
+        "siteVisit": "Stedbesøg",
+        "digitalSurvey": "Digitalt Survey",
+        "droneSurvey": "Drone Survey",
+        "integration": "Integration",
+        "trafficSurvey": "Trafikundersøgelse"
+      
+      
+    
+    
+  
+  
+
+
+
+
 
 
 

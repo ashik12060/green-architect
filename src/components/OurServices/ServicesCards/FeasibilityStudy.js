@@ -16,9 +16,7 @@ const FeasibilityStudy = () => {
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 px-4 sm:px-32">
         {t('titlefeasibility-study')}
 
-        
-        {/* Comprehensive Feasibility Analysis by Green Shelter Design and Development */}
-        
+                
         </h1>
         <p className="text-base sm:text-lg mb-8 text-justify px-4 sm:px-32">
         {t('paragraph1feasibility-study')}        </p>
@@ -29,25 +27,24 @@ const FeasibilityStudy = () => {
 
         <div className="space-y-6 max-w-full sm:max-w-4xl w-full">
           <ServiceItem
-            
-            title="Financial Analysis"
-            description="We evaluate project expenses, revenue forecasts, and funding possibilities to determine financial feasibility, helping you make informed decisions and secure essential resources."
+            title={t("financialAnalysisfeasibility-study")}
+            description={t("weEvaluatefeasibility-study")}
           />
           <ServiceItem
-            title="Technical Feasibility"
-            description="We examine the technical requirements and potential challenges of your project. By identifying suitable technologies, we ensure that your project is practical and optimized for efficiency."
+            title={t("technicalFeasibilityfeasibility-study")}
+            description={t("weExaminefeasibility-study")}
           />
           <ServiceItem
-            title="Legal and Regulatory Compliance"
-            description="We verify that your project adheres to all applicable legal, zoning, and environmental regulations, safeguarding you from potential legal issues."
+            title={t("legalCompliancefeasibility-study")}
+            description={t("weVerifyfeasibility-study")}
           />
           <ServiceItem
-            title="Timeline Feasibility"
-            description="We create detailed project schedules, highlighting key milestones and potential delays to ensure your project stays on time and within budget."
+            title={t("timelineFeasibilityfeasibility-study")}
+            description={t("weCreatefeasibility-study")}
           />
           <ServiceItem
-            title="Risk Management"
-            description="We proactively assess potential risks and develop strategies to mitigate them, ensuring your project's stability and success."
+            title={t("riskManagementfeasibility-study")}
+            description={t("weProactivelyfeasibility-study")}
           />
         </div>
       </div>
