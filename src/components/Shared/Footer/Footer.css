@@ -1,0 +1,42 @@
+.moving-border {
+    position: relative;
+    overflow: visible; /* Allow the dot to move outside the card */
+  }
+  
+  .moving-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: move-along-border 7s linear infinite;
+    z-index: 10; /* Ensure it appears above the card content */
+  }
+  
+  /* Animation for moving the dot along the border */
+  @keyframes move-along-border {
+    0% {
+      top: -5px; /* Slightly above the top border */
+      left: -5px; /* Slightly left of the left border */
+    }
+    25% {
+      top: -5px; /* Move along the top border */
+      left: 100%; /* Reach the right border */
+      transform: translateX(-50%);
+    }
+    50% {
+      top: 100%; /* Move along the right border */
+      left: 100%; /* At the bottom-right corner */
+      transform: translate(-50%, -50%);
+    }
+    75% {
+      top: 100%; /* Move along the bottom border */
+      left: -5px; /* Reach the bottom-left corner */
+      transform: translateY(-50%);
+    }
+    100% {
+      top: -5px; /* Return to the starting position */
+      left: -5px;
+    }
+  }
+  

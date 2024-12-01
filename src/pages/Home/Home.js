@@ -176,7 +176,7 @@ const Home = () => {
       </div>
       <Footer />
 
- 
+ {/* popup form */}
 {showPopup && (
   <div className="fixed inset-0 flex items-start justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
     <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-4 sm:p-6 lg:p-10 rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-md md:max-w-lg transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
