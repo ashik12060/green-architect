@@ -137,9 +137,9 @@ const OurProjects = ({ isAdmin }) => {
           </div>
         </Link>
         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">
-          <p className="font-bold text-center truncate">
+          {/* <p className="font-bold text-center truncate">
             {project.title[i18n.language]}
-          </p>
+          </p> */}
           <Link
             to={`/project/${project._id}`}
             className={`mt-2 block w-fit mx-auto px-4 py-2 rounded-md ${
