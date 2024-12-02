@@ -1,22 +1,19 @@
-
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { motion } from "framer-motion";
 import {
+  faBuildingColumns,
   faMosque,
   faSchool,
   faUniversity,
   faStore,
-  faBuildingColumns,
   faCreditCard,
   faBus,
   faBank,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const LocalBenifits = () => {
-  const { t } = useTranslation("Service");
+export const LocalBenifits = ({ services }) => {
   const { isDarkMode } = useTheme();
 
   const cardVariants = {
@@ -31,16 +28,16 @@ export const LocalBenifits = () => {
     },
   };
 
-  const services = [
-    { title: "Baitun Nur Mosjid", description: ".2km", icon: faMosque },
-    { title: "College", description: ".2km", icon: faUniversity },
-    { title: "School", description: ".2km", icon: faSchool },
-    { title: "Market", description: ".2km", icon: faStore },
-    { title: "BRAC Bank", description: ".2km", icon: faBuildingColumns },
-    { title: "ATM Booth", description: ".2km", icon: faCreditCard },
-    { title: "Bus Stop", description: ".2km", icon: faBus },
-    { title: "Islami Bank", description: ".2km", icon: faBank },
-  ];
+  const icons = {
+    mosque: faMosque,
+    school: faSchool,
+    university: faUniversity,
+    store: faStore,
+    creditCard: faCreditCard,
+    bus: faBus,
+    bank: faBank,
+    buildingColumns: faBuildingColumns, // Default icon if not matched
+  };
 
   return (
     <div className={`${isDarkMode ? "text-white" : "bg-white"}`}>
@@ -64,28 +61,38 @@ export const LocalBenifits = () => {
             },
           }}
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className={`relative bg-white rounded-lg shadow-md p-6 text-center overflow-hidden group ${
-                isDarkMode ? "bg-gray-800 text-white" : "text-black"
-              }`}
-              variants={cardVariants}
-              whileHover={hoverEffect.hover}
-            >
-              <div className="absolute inset-0 border-2  border-t-green-800 rounded-lg animate-border group-hover:animate-border-hover"></div>
-              <div className="mb-4 relative z-10 py-16">
-                <FontAwesomeIcon
-                  icon={service.icon}
-                  className="text-gray-500 text-4xl mb-4"
-                />
-                <p className="text-gray-700 relative text-green-700 font-bold z-10">
-                  {t(service.description)}
-                </p>
-                <h2 className="ml-2 text-xl font-bold">{t(service.title)}</h2>
-              </div>
-            </motion.div>
-          ))}
+          {services.map((service, index) => {
+            // Debugging: Log the service and iconKey
+            console.log("Service:", service);
+            console.log("IconKey:", service.iconKey);
+
+            const IconComponent = icons[service.iconKey]  // Get the correct icon or fallback
+            return (
+              <motion.div
+                key={index}
+                className={`relative bg-white rounded-lg shadow-md p-6 text-center overflow-hidden group ${
+                  isDarkMode ? "bg-gray-800 text-white" : "text-black"
+                }`}
+                variants={cardVariants}
+                whileHover={hoverEffect.hover}
+              >
+                <div className="absolute inset-0 border-2 border-t-green-800 rounded-lg animate-border group-hover:animate-border-hover"></div>
+                <div className="mb-4 relative z-10 py-16">
+                  {/* Use the dynamically selected icon */}
+                  <FontAwesomeIcon
+                    icon={IconComponent}
+                    className="text-gray-500 text-4xl mb-4"
+                  />
+                  <p className="relative text-green-700 font-bold z-10">
+                    {service.distance?.en || "Distance not available"}
+                  </p>
+                  <h2 className="ml-2 text-xl font-bold">
+                    {service.titleName?.en}
+                  </h2>
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </div>

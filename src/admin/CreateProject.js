@@ -1,5 +1,4 @@
 
-// new code
 import { useFormik } from "formik";
 import * as yup from "yup";
 import Dropzone from "react-dropzone";
@@ -202,7 +201,222 @@ const validationSchema = yup.object({
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
+// next
 
+mosqueEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    mosqueBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    mosqueEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+// mosque, college, 
+collegeEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    collegeBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    collegeEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // school, 
+    schoolEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    schoolBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    schoolEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // market, 
+    marketEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    marketBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    marketEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // bank1, bank2, atm, busStop
+  bank1En: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    bank1Bn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    bank1Es: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // bank2, 
+    bank2En: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    bank2Bn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    bank2Es: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // atm,
+    atmEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    atmBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    atmEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // busStop
+    busStopEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    busStopBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    busStopEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+
+// start
+// next
+
+mosqueNameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    mosqueNameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    mosqueNameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+// mosque, college, 
+collegeNameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    collegeNameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    collegeNameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // school, 
+    schoolNameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    schoolNameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    schoolNameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // market, 
+    marketNameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    marketNameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    marketNameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // bank1, bank2, atm, busStop
+  bank1NameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    bank1NameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    bank1NameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // bank2, 
+    bank2NameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    bank2NameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    bank2NameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // atm,
+    atmNameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    atmNameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    atmNameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+    // busStop
+    busStopNameEn: yup
+    .string("Add a title in English")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in English is required"),
+    busStopNameBn: yup
+    .string("Add a title in Bengali")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Bengali is required"),
+    busStopNameEs: yup
+    .string("Add a title in Danish")
+    .min(1, "Title must have at least 1 character")
+    .required("Title in Danish is required"),
+
+
+// end
+    
   // end
   category: yup.string("Select a category").required("Category is required"),
 });
@@ -262,9 +476,78 @@ const CreateProject = () => {
       collectionNameEn: "",
       collectionNameBn: "",
       collectionNameEs: "",
+
       buildingTypeEn: "",
       buildingTypeBn: "",
       buildingTypeEs: "",
+
+      mosqueEn: "",
+      mosqueBn: "",
+      mosqueEs: "",
+
+      collegeEn: "",
+      collegeBn: "",
+      collegeEs: "",
+
+      schoolEn: "",
+      schoolBn: "",
+      schoolEs: "",
+
+      marketEn: "",
+      marketBn: "",
+      marketEs: "",
+
+      bank1En: "",
+      bank1Bn: "",
+      bank1Es: "",
+      
+      bank2En: "",
+      bank2Bn: "",
+      bank2Es: "",
+
+      atmEn: "",
+      atmBn: "",
+      atmEs: "",
+
+      busStopEn: "",
+      busStopBn: "",
+      busStopEs: "",
+
+      // start
+      
+      mosqueNameEn: "",
+      mosqueNameBn: "",
+      mosqueNameEs: "",
+
+      collegeNameEn: "",
+      collegeNameBn: "",
+      collegeNameEs: "",
+
+      schoolNameEn: "",
+      schoolNameBn: "",
+      schoolNameEs: "",
+
+      marketNameEn: "",
+      marketNameBn: "",
+      marketNameEs: "",
+
+      bank1NameEn: "",
+      bank1NameBn: "",
+      bank1NameEs: "",
+      
+      bank2NameEn: "",
+      bank2NameBn: "",
+      bank2NameEs: "",
+
+      atmNameEn: "",
+      atmNameBn: "",
+      atmNameEs: "",
+
+      busStopNameEn: "",
+      busStopNameBn: "",
+      busStopNameEs: "",
+
+      // end
 
       images: [],
       category: "", // New field for category selection
@@ -327,6 +610,75 @@ const CreateProject = () => {
         buildingTypeBn,
         buildingTypeEs,
 
+        mosqueEn,
+        mosqueBn,
+        mosqueEs,
+
+        collegeEn,
+        collegeBn,
+        collegeEs,
+  
+        schoolEn,
+        schoolBn,
+        schoolEs,
+  
+        marketEn,
+        marketBn,
+        marketEs,
+  
+        bank1En,
+        bank1Bn,
+        bank1Es,
+
+        bank2En,
+        bank2Bn,
+        bank2Es,
+  
+        atmEn,
+        atmBn,
+        atmEs,
+  
+        busStopEn,
+        busStopBn,
+        busStopEs,
+
+
+        // start
+        
+        mosqueNameEn,
+        mosqueNameBn,
+        mosqueNameEs,
+
+        collegeNameEn,
+        collegeNameBn,
+        collegeNameEs,
+  
+        schoolNameEn,
+        schoolNameBn,
+        schoolNameEs,
+  
+        marketNameEn,
+        marketNameBn,
+        marketNameEs,
+  
+        bank1NameEn,
+        bank1NameBn,
+        bank1NameEs,
+
+        bank2NameEn,
+        bank2NameBn,
+        bank2NameEs,
+  
+        atmNameEn,
+        atmNameBn,
+        atmNameEs,
+  
+        busStopNameEn,
+        busStopNameBn,
+        busStopNameEs,
+
+        // end
+
         category,
         images,
       } = values;
@@ -340,9 +692,6 @@ const CreateProject = () => {
         frontRoad: { en: frontRoadEn, bn: frontRoadBn, es: frontRoadEs },
         units: { en: unitsEn, bn: unitsBn, es: unitsEs },
         parking: { en: parkingEn, bn: parkingBn, es: parkingEs },
-
-
-
         apartmentFloor: { en: apartmentFloorEn, bn: apartmentFloorBn, es: apartmentFloorEs },
         size: { en: sizeEn, bn: sizeBn, es: sizeEs },
         bedroom: { en: bedroomEn, bn: bedroomBn, es: bedroomEs },
@@ -350,6 +699,28 @@ const CreateProject = () => {
         launchDate: { en: launchDateEn, bn: launchDateBn, es: launchDateEs },
         collectionName: { en: collectionNameEn, bn: collectionNameBn, es: collectionNameEs },
         buildingType: { en: buildingTypeEn, bn: buildingTypeBn, es: buildingTypeEs },
+
+        mosque: { en: mosqueEn, bn: mosqueBn, es: mosqueEs },
+        college: { en: collegeEn, bn: collegeBn, es: collegeEs },
+        school: { en: schoolEn, bn: schoolBn, es: schoolEs },
+        market: { en: marketEn, bn:marketBn, es: marketEs },
+        bank1: { en: bank1En, bn: bank1Bn, es: bank1Es },
+        bank2: { en: bank2En, bn: bank2Bn, es: bank2Es },
+        atm: { en: atmEn, bn: atmBn, es: atmEs },
+        busStop: { en: busStopEn, bn: busStopBn, es: busStopEs },
+
+
+        mosqueName: { en: mosqueNameEn, bn: mosqueNameBn, es: mosqueNameEs },
+        collegeName: { en: collegeNameEn, bn: collegeNameBn, es: collegeNameEs },
+        schoolName: { en: schoolNameEn, bn: schoolNameBn, es: schoolNameEs },
+        marketName: { en: marketNameEn, bn:marketNameBn, es: marketNameEs },
+        bank1Name: { en: bank1NameEn, bn: bank1NameBn, es: bank1NameEs },
+        bank2Name: { en: bank2NameEn, bn: bank2NameBn, es: bank2NameEs },
+        atmName: { en: atmNameEn, bn: atmNameBn, es: atmNameEs },
+        busStopName: { en: busStopNameEn, bn: busStopNameBn, es: busStopNameEs },
+
+
+
         category, // Include category
         images,
       };
@@ -416,7 +787,7 @@ const CreateProject = () => {
               id={`content${lang}`}
               name={`content${lang}`}
               placeholder={`Write project content (${lang})...`}
-              rows={4}
+             
               value={values[`content${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -447,7 +818,7 @@ const CreateProject = () => {
               id={`address${lang}`}
               name={`address${lang}`}
               placeholder={`Write project address (${lang})...`}
-              rows={4}
+             
               value={values[`address${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -476,7 +847,7 @@ const CreateProject = () => {
               id={`landArea${lang}`}
               name={`landArea${lang}`}
               placeholder={`Write project landArea (${lang})...`}
-              rows={4}
+              
               value={values[`landArea${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -506,7 +877,7 @@ const CreateProject = () => {
               id={`floors${lang}`}
               name={`floors${lang}`}
               placeholder={`Write project floors (${lang})...`}
-              rows={4}
+              
               value={values[`floors${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -536,7 +907,7 @@ const CreateProject = () => {
               id={`frontRoad${lang}`}
               name={`frontRoad${lang}`}
               placeholder={`Write project frontRoad (${lang})...`}
-              rows={4}
+              
               value={values[`frontRoad${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -567,7 +938,7 @@ const CreateProject = () => {
               id={`units${lang}`}
               name={`units${lang}`}
               placeholder={`Write project units (${lang})...`}
-              rows={4}
+              
               value={values[`units${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -598,7 +969,7 @@ const CreateProject = () => {
               id={`parking${lang}`}
               name={`parking${lang}`}
               placeholder={`Write project parking (${lang})...`}
-              rows={4}
+              
               value={values[`parking${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -629,7 +1000,7 @@ const CreateProject = () => {
               id={`apartmentFloor${lang}`}
               name={`apartmentFloor${lang}`}
               placeholder={`Write project apartmentFloor (${lang})...`}
-              rows={4}
+              
               value={values[`apartmentFloor${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -660,7 +1031,7 @@ const CreateProject = () => {
               id={`size${lang}`}
               name={`size${lang}`}
               placeholder={`Write project size (${lang})...`}
-              rows={4}
+              
               value={values[`size${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -691,7 +1062,7 @@ const CreateProject = () => {
               id={`bedroom${lang}`}
               name={`bedroom${lang}`}
               placeholder={`Write project bedroom (${lang})...`}
-              rows={4}
+              
               value={values[`bedroom${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -721,7 +1092,7 @@ const CreateProject = () => {
               id={`bathroom${lang}`}
               name={`bathroom${lang}`}
               placeholder={`Write project bathroom (${lang})...`}
-              rows={4}
+              
               value={values[`bathroom${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -751,7 +1122,7 @@ const CreateProject = () => {
               id={`launchDate${lang}`}
               name={`launchDate${lang}`}
               placeholder={`Write project launchDate (${lang})...`}
-              rows={4}
+              
               value={values[`launchDate${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -782,7 +1153,7 @@ const CreateProject = () => {
               id={`collectionName${lang}`}
               name={`collectionName${lang}`}
               placeholder={`Write project collectionName (${lang})...`}
-              rows={4}
+              
               value={values[`collectionName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -813,7 +1184,7 @@ const CreateProject = () => {
               id={`buildingType${lang}`}
               name={`buildingType${lang}`}
               placeholder={`Write project buildingType (${lang})...`}
-              rows={4}
+              
               value={values[`buildingType${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -827,6 +1198,486 @@ const CreateProject = () => {
               <p className="text-red-500 text-sm">{errors[`buildingType${lang}`]}</p>
             )}
           </div>
+        ))}
+
+        {/* new starts */}
+         {/* Project mosque */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`mosque${lang}`}>
+            <label
+              htmlFor={`mosque${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project mosque ({lang})
+            </label>
+            <textarea
+              id={`mosque${lang}`}
+              name={`mosque${lang}`}
+              placeholder={`Write project mosque (${lang})...`}
+              
+              value={values[`mosque${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`mosque${lang}`] && errors[`mosque${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`mosque${lang}`] && errors[`mosque${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`mosque${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+         {/* Project college */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`college${lang}`}>
+            <label
+              htmlFor={`college${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project college ({lang})
+            </label>
+            <textarea
+              id={`college${lang}`}
+              name={`college${lang}`}
+              placeholder={`Write project college (${lang})...`}
+              
+              value={values[`college${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`college${lang}`] && errors[`college${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`college${lang}`] && errors[`college${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`college${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+         {/* Project school */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`school${lang}`}>
+            <label
+              htmlFor={`school${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project school ({lang})
+            </label>
+            <textarea
+              id={`school${lang}`}
+              name={`school${lang}`}
+              placeholder={`Write project school (${lang})...`}
+              
+              value={values[`school${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`school${lang}`] && errors[`school${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`school${lang}`] && errors[`school${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`school${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+
+         {/* Project market */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`market${lang}`}>
+            <label
+              htmlFor={`market${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project market ({lang})
+            </label>
+            <textarea
+              id={`market${lang}`}
+              name={`market${lang}`}
+              placeholder={`Write project market (${lang})...`}
+              
+              value={values[`market${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`market${lang}`] && errors[`market${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`market${lang}`] && errors[`market${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`market${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+        
+
+         {/* Project bank1 */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`bank1${lang}`}>
+            <label
+              htmlFor={`bank1${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project bank1 ({lang})
+            </label>
+            <textarea
+              id={`bank1${lang}`}
+              name={`bank1${lang}`}
+              placeholder={`Write project bank1 (${lang})...`}
+              
+              value={values[`bank1${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`bank1${lang}`] && errors[`bank1${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`bank1${lang}`] && errors[`bank1${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`bank1${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+         {/* Project bank2 */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`bank2${lang}`}>
+            <label
+              htmlFor={`bank2${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project bank2 ({lang})
+            </label>
+            <textarea
+              id={`bank2${lang}`}
+              name={`bank2${lang}`}
+              placeholder={`Write project bank2 (${lang})...`}
+              
+              value={values[`bank2${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`bank2${lang}`] && errors[`bank2${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`bank2${lang}`] && errors[`bank2${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`bank2${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+         {/* Project atm */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`atm${lang}`}>
+            <label
+              htmlFor={`atm${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project atm ({lang})
+            </label>
+            <textarea
+              id={`atm${lang}`}
+              name={`atm${lang}`}
+              placeholder={`Write project atm (${lang})...`}
+              
+              value={values[`atm${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`atm${lang}`] && errors[`atm${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`atm${lang}`] && errors[`atm${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`atm${lang}`]}</p>
+            )}
+          </div>
+        ))}
+
+         {/* Project busStop */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`busStop${lang}`}>
+            <label
+              htmlFor={`busStop${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project busStop ({lang})
+            </label>
+            <textarea
+              id={`busStop${lang}`}
+              name={`busStop${lang}`}
+              placeholder={`Write project busStop (${lang})...`}
+              
+              value={values[`busStop${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`busStop${lang}`] && errors[`busStop${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`busStop${lang}`] && errors[`busStop${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`busStop${lang}`]}</p>
+            )}
+          </div>
+           ))}
+
+          // start 
+
+
+          {/* Project mosqueName */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`mosqueName${lang}`}>
+            <label
+              htmlFor={`mosqueName${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project mosqueName ({lang})
+            </label>
+            <textarea
+              id={`mosqueName${lang}`}
+              name={`mosqueName${lang}`}
+              placeholder={`Write project mosqueNameEs (${lang})...`}
+              
+              value={values[`mosqueName${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`mosqueName${lang}`] && errors[`mosqueName${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`mosqueName${lang}`] && errors[`mosqueName${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`mosqueName${lang}`]}</p>
+            )}
+          </div>
+           ))}
+
+
+          {/* Project collegeNameEs */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`collegeName${lang}`}>
+            <label
+              htmlFor={`collegeName${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project collegeName ({lang})
+            </label>
+            <textarea
+              id={`collegeName${lang}`}
+              name={`collegeName${lang}`}
+              placeholder={`Write project collegeName (${lang})...`}
+              
+              value={values[`collegeName${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`collegeName${lang}`] && errors[`collegeName${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`collegeName${lang}`] && errors[`collegeName${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`collegeName${lang}`]}</p>
+            )}
+          </div>
+           ))}
+
+
+          {/* Project schoolNameEs */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`schoolName${lang}`}>
+            <label
+              htmlFor={`schoolName${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project schoolName ({lang})
+            </label>
+            <textarea
+              id={`schoolName${lang}`}
+              name={`schoolName${lang}`}
+              placeholder={`Write project schoolName (${lang})...`}
+              
+              value={values[`schoolName${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`schoolName${lang}`] && errors[`schoolName${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`schoolName${lang}`] && errors[`schoolName${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`schoolName${lang}`]}</p>
+            )}
+          </div>
+          ))}
+
+
+          {/* Project marketNameEs */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`marketName${lang}`}>
+            <label
+              htmlFor={`marketName${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project marketName ({lang})
+            </label>
+            <textarea
+              id={`marketName${lang}`}
+              name={`marketName${lang}`}
+              placeholder={`Write project marketName (${lang})...`}
+              
+              value={values[`marketName${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`marketName${lang}`] && errors[`marketName${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`marketName${lang}`] && errors[`marketName${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`marketName${lang}`]}</p>
+            )}
+          </div>
+            ))}
+
+
+          {/* Project bank1NameEs */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`bank1Name${lang}`}>
+            <label
+              htmlFor={`bank1Name${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project bank1Name ({lang})
+            </label>
+            <textarea
+              id={`bank1Name${lang}`}
+              name={`bank1Name${lang}`}
+              placeholder={`Write project bank1Name(${lang})...`}
+              
+              value={values[`bank1Name${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`bank1Name${lang}`] && errors[`bank1Name${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`bank1Name${lang}`] && errors[`bank1Name${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`bank1Name${lang}`]}</p>
+            )}
+          </div>
+          ))}
+
+
+          {/* Project bank2NameEs */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`bank2Name${lang}`}>
+            <label
+              htmlFor={`bank2Name${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project bank2Name ({lang})
+            </label>
+            <textarea
+              id={`bank2Name${lang}`}
+              name={`bank2Name${lang}`}
+              placeholder={`Write project bank2Name (${lang})...`}
+              
+              value={values[`bank2Name${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`bank2Name${lang}`] && errors[`bank2Name${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`bank2Name${lang}`] && errors[`bank2Name${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`bank2Name${lang}`]}</p>
+            )}
+          </div>
+          ))}
+
+
+          {/* Project atmName */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`atmName${lang}`}>
+            <label
+              htmlFor={`atmName${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project atmName ({lang})
+            </label>
+            <textarea
+              id={`atmName${lang}`}
+              name={`atmName${lang}`}
+              placeholder={`Write project atmName(${lang})...`}
+              
+              value={values[`atmName${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`atmName${lang}`] && errors[`atmName${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`atmName${lang}`] && errors[`atmName${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`atmName${lang}`]}</p>
+            )}
+          </div>
+          ))}
+
+
+          {/* Project busStopName */}
+         {["En", "Bn", "Es"].map((lang) => (
+          <div className="mb-3" key={`busStopName${lang}`}>
+            <label
+              htmlFor={`busStopName${lang}`}
+              className="block mb-1 text-sm font-medium"
+            >
+              Project busStopName ({lang})
+            </label>
+            <textarea
+              id={`busStopName${lang}`}
+              name={`busStopName${lang}`}
+              placeholder={`Write project busStopName (${lang})...`}
+              
+              value={values[`busStopName${lang}`]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                touched[`busStopName${lang}`] && errors[`busStopName${lang}`]
+                  ? "border-red-500"
+                  : ""
+              }`}
+            />
+            {touched[`busStopName${lang}`] && errors[`busStopName${lang}`] && (
+              <p className="text-red-500 text-sm">{errors[`busStopName${lang}`]}</p>
+            )}
+          </div>
+
+          // end lastest
         ))}
 
 
@@ -849,9 +1700,12 @@ const CreateProject = () => {
             }`}
           >
             <option value="">Select a category</option>
-            <option value="web-development">Web Development</option>
-            <option value="design">Design</option>
-            <option value="marketing">Marketing</option>
+            <option value="commercial">COMMERCIAL 
+            </option>
+            <option value="healthcare">HEALTHCARE</option>
+            <option value="residential">RESIDENTIAL</option>
+            <option value="religious">RELIGIOUS</option>
+            <option value="landscape">LANDSCAPE</option>
             {/* Add more categories as needed */}
           </select>
           {touched.category && errors.category && (

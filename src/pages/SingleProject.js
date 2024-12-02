@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -11,12 +8,33 @@ import axiosInstance from "./axiosInstance";
 import Loader from "../components/Loader";
 import Header from "../components/Shared/Headers/Header";
 import Footer from "../components/Shared/Footer/Footer";
-import { faBath, faBed, faBraille, faBuilding, faBuildingUn, faCalendarDays, faCar, faLocationDot, faPenRuler, faRoad, faRulerCombined, faShareNodes, faWrench } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBath,
+  faBed,
+  faBraille,
+  faBuilding,
+  faBuildingUn,
+  faCalendarDays,
+  faCar,
+  faLocationDot,
+  faPenRuler,
+  faRoad,
+  faRulerCombined,
+  faShareNodes,
+  faWrench,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Overview from "../components/Overview/Overview";
 import { LocalBenifits } from "../components/Overview/LocalBenifits";
-
-
+import {
+  faMosque,
+  faSchool,
+  faUniversity,
+  faStore,
+  faCreditCard,
+  faBus,
+  faBank,
+} from "@fortawesome/free-solid-svg-icons";
 
 const SingleProject = () => {
   const { userInfo } = useSelector((state) => state.signIn);
@@ -79,7 +97,16 @@ const SingleProject = () => {
     return field || "N/A";
   };
 
-
+  // Define your icons mapping
+  const icons = {
+    mosque: faMosque,
+    school: faSchool,
+    university: faUniversity,
+    store: faStore,
+    creditCard: faCreditCard,
+    bus: faBus,
+    bank: faBank,
+  };
 
   return (
     <>
@@ -95,12 +122,12 @@ const SingleProject = () => {
         ) : (
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2  gap-8">
-              {/* <div className="relative">
+              <div className="relative">
                 {images.length > 0 ? (
                   <>
                     <img
                       src={images[currentIndex]?.url}
-                      className=" w-full h-50 object-cover rounded-lg"
+                      className="w-full h-auto min-h-[550px] max-h-[800px] object-cover rounded-lg sm:h-64 md:h-80 lg:h-96"
                       alt={`Project Image ${currentIndex + 1}`}
                     />
                     <button
@@ -119,49 +146,22 @@ const SingleProject = () => {
                 ) : (
                   <img
                     src="/path/to/placeholder.jpg"
-                    className="w-full h-96 object-cover rounded-lg"
+                    className="w-full h-auto max-h-[800px] object-cover rounded-lg sm:h-64 md:h-80 lg:h-96"
                     alt="No Images Available"
                   />
                 )}
-              </div> */}
-              <div className="relative">
-          {images.length > 0 ? (
-            <>
-              <img
-                src={images[currentIndex]?.url}
-                className="w-full h-auto min-h-[550px] max-h-[800px] object-cover rounded-lg sm:h-64 md:h-80 lg:h-96"
-                alt={`Project Image ${currentIndex + 1}`}
-              />
-              <button
-                onClick={prevImage}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-600 p-2 rounded-full"
-              >
-                &#10094;
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-600 p-2 rounded-full"
-              >
-                &#10095;
-              </button>
-            </>
-          ) : (
-            <img
-              src="/path/to/placeholder.jpg"
-              className="w-full h-auto max-h-[800px] object-cover rounded-lg sm:h-64 md:h-80 lg:h-96"
-              alt="No Images Available"
-            />
-          )}
-        </div>
+              </div>
 
-             
               <div>
                 <h2 className="text-2xl font-bold mb-4">{t("At a Glance")}</h2>
                 <table className="w-full h-56 text-sm ">
                   <tbody>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" icon={faLocationDot} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          icon={faLocationDot}
+                        />
                         {t("Address")}
                       </td>
                       <td className="py-2">
@@ -179,7 +179,11 @@ const SingleProject = () => {
                     </tr>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faBuilding} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faBuilding}
+                        />
                         {t(" No. of Floors")}
                       </td>
                       <td className="py-2">
@@ -188,7 +192,11 @@ const SingleProject = () => {
                     </tr>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faBraille} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faBraille}
+                        />
                         {t(" Apartment/Floor")}
                       </td>
                       <td className="py-2">
@@ -197,7 +205,11 @@ const SingleProject = () => {
                     </tr>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faRulerCombined} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faRulerCombined}
+                        />
                         {t(" Apartment Size")}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
@@ -206,7 +218,7 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         <FontAwesomeIcon className="pe-1" icon={faRoad} />
-                        {t("Front Road ")} 
+                        {t("Front Road ")}
                         {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
@@ -215,7 +227,7 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         <FontAwesomeIcon className="pe-1" icon={faBuildingUn} />
-                        {t(" Number Of Units")} 
+                        {t(" Number Of Units")}
                         {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
@@ -224,18 +236,20 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         {/* <FontAwesomeIcon className="pe-1" icon={faRulerCombined} /> */}
-                        <FontAwesomeIcon className="pe-1"  icon={faCar} />
-                        {t(" Number Of Parking")}  
+                        <FontAwesomeIcon className="pe-1" icon={faCar} />
+                        {t(" Number Of Parking")}
                         {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
                     </tr>
 
-
-
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faBed} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faBed}
+                        />
                         {t(" Bedroom")}
                       </td>
                       <td className="py-2">
@@ -244,7 +258,11 @@ const SingleProject = () => {
                     </tr>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faBath} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faBath}
+                        />
                         {t("Bathroom")}
                       </td>
                       <td className="py-2">
@@ -253,7 +271,11 @@ const SingleProject = () => {
                     </tr>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faCalendarDays} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faCalendarDays}
+                        />
                         {t(" Launch Date")}
                       </td>
                       <td className="py-2">
@@ -262,7 +284,11 @@ const SingleProject = () => {
                     </tr>
                     <tr>
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faShareNodes} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faShareNodes}
+                        />
                         {t("Collection")}
                       </td>
                       <td className="py-2">
@@ -271,7 +297,11 @@ const SingleProject = () => {
                     </tr>
                     <tr>
                       <td className=" pr-4 border-b border-gray-300">
-                        <FontAwesomeIcon className="pe-1" text-lg icon={faWrench} />
+                        <FontAwesomeIcon
+                          className="pe-1"
+                          text-lg
+                          icon={faWrench}
+                        />
                         {t("Building Type")}
                       </td>
                       <td className="py-2">
@@ -289,13 +319,23 @@ const SingleProject = () => {
         )}
       </div>
 
-
-   
-
-
       {/* overview */}
       <Overview />
-      <LocalBenifits />
+      
+      <LocalBenifits
+  services={[
+    { title: "Mosque", distance: projectData.mosque, titleName: projectData.mosqueName, iconKey: "mosque" },
+    { title: "College", distance: projectData.college, titleName: projectData.collegeName, iconKey: "school" },
+    { title: "School", distance: projectData.school, titleName: projectData.schoolName, iconKey: "school" },
+    { title: "Market", distance: projectData.market, titleName: projectData.marketName, iconKey: "store" },
+    { title: "Bank 1", distance: projectData.bank1, titleName: projectData.bank1Name, iconKey: "bank" },
+    { title: "Bank 2", distance: projectData.bank2, titleName: projectData.bank2Name, iconKey: "bank" },
+    { title: "ATM", distance: projectData.atm, titleName: projectData.atmName, iconKey: "creditCard" },
+    { title: "Bus Stop", distance: projectData.busStop, titleName: projectData.busStopName, iconKey: "bus" },
+  ]}
+  icons={icons}
+/>
+
 
       <Footer />
     </>
