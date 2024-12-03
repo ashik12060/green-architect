@@ -140,7 +140,48 @@
         "digitalSurvey": "Digitalt Survey",
         "droneSurvey": "Drone Survey",
         "integration": "Integration",
-        "trafficSurvey": "Trafikundersøgelse"
+        "trafficSurvey": "Trafikundersøgelse",
+        
+          "masterPlanningTitle": "Masterplanlægning af Green Shelter Design and Development",
+          "masterPlanningIntro": "Hos Green Shelter Design and Development tilbyder vi ekspertise inden for masterplanlægning for at designe velafbalancerede og bæredygtige planer til dit projekt. Vores fokus er på at skabe rum, der er funktionelle, visuelt tiltalende og forberedt på fremtidig vækst.",
+          "masterPlanningCover": "Vores Masterplanlægningstjenester Omfatter:",
+          "siteEvaluation": "Stedsevaluering",
+          "siteEvaluationDesc": "Vi gennemfører en omfattende stedsevaluering, der undersøger topografi, eksisterende strukturer og miljømæssige faktorer for at guide planlægningsprocessen.",
+          "conceptDesign": "Konceptdesign",
+          "conceptDesignDesc": "Vi udvikler indledende designkoncepter, der stemmer overens med din vision, målsætninger og stedets særlige egenskaber.",
+          "landPlanning": "Jordplanlægning",
+          "landPlanningDesc": "Vi designer arealanvendelsesplaner, der gør den mest effektive brug af pladsen, og balancerer bolig-, erhvervs- og rekreative områder.",
+          "infrastructureDesign": "Infrastrukturdesign",
+          "infrastructureDesignDesc": "Vi planlægger kernens infrastruktur, såsom veje, forsyningstjenester og offentlige tjenester, for at sikre en smidig og bæredygtig udvikling.",
+          "ecoFriendlyPlanning": "Miljøvenlig Planlægning",
+          "ecoFriendlyPlanningDesc": "Vi integrerer grønne områder og bæredygtige praksisser i planen for at fremme miljøansvar.",
+          "communityCollaboration": "Samarbejde med Lokalsamfundet",
+          "communityCollaborationDesc": "Vi arbejder tæt sammen med lokalsamfundet og interessenter for at indsamle feedback og sikre, at planen stemmer overens med lokale behov og forventninger.",
+          "executionPlan": "Udførelsesplan",
+          "executionPlanDesc": "Vi udarbejder en detaljeret udførelsesplan for masterplanen, der inkluderer tidslinjer, faser og ressourceallokering.",
+
+          
+            "infrastructureDesignTitle": "Infrastrukture Design-tjenester fra Green Shelter Design og Development",
+            "infrastructureDesignIntro": "Green Shelter Design og Development tilbyder omfattende infrastrukturdesign-tjenester med det mål at sikre et stærkt fundament for dit projekt. Vores fokus er på at skabe effektive, bæredygtige og robuste infrastrukturløsninger.",
+            "infrastructureDesignCover": "Vores Infrastruktur Design-løsninger:",
+            "roadTransportationDesign": "Vej- og Transportdesign",
+            "roadTransportationDesignDesc": "Vi designer veje, motorveje og transportsystemer for at optimere trafikflowet og sikre sikkerhed for alle brugere.",
+            "utilitySystems": "Forsyningssystemer",
+            "utilitySystemsDesc": "Vi planlægger og designer nødvendige forsyningssystemer, såsom vandforsyning, kloak og dræning, for at imødekomme behovene i dit udviklingsprojekt.",
+            "powerElectricalSystems": "Strøm- og Elektriske Systemer",
+            "powerElectricalSystemsDesc": "Vi skaber effektive og pålidelige strøm- og elektriske systemer for at sikre kontinuerlig service og optimal energianvendelse.",
+            "telecommunicationsInfrastructure": "Telekommunikationsinfrastruktur",
+            "telecommunicationsInfrastructureDesc": "Vi udvikler telekommunikationsnetværk, herunder internet- og telefonsystemer, for at holde dit projekt fuldt forbundet.",
+            "stormwaterManagement": "Stormvandshåndtering",
+            "stormwaterManagementDesc": "Vi designer løsninger til stormvandshåndtering for at mindske oversvømmelsesrisici og beskytte det omkringliggende miljø.",
+            "sustainableDesignSolutions": "Bæredygtige Designløsninger",
+            "sustainableDesignSolutionsDesc": "Vi inkorporerer grøn infrastruktur og vedvarende energikilder for at sikre bæredygtighed i alle aspekter af vores design.",
+            "infrastructureUpgrades": "Opgraderinger af Infrastruktur",
+            "infrastructureUpgradesDesc": "Vi evaluerer og moderniserer eksisterende infrastruktur for at opfylde aktuelle standarder og forbedre ydeevnen."
+          
+          
+      
+        
       
       
     

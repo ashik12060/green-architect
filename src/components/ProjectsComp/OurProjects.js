@@ -114,7 +114,7 @@ const OurProjects = ({ isAdmin }) => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
       >
-        <Link to={`/project/${project._id}`} className="block h-full">
+        {/* <Link to={`/project/${project._id}`} className="block h-full">
           <div className="w-full h-full flex overflow-hidden">
             {project.images && project.images.length > 0 ? (
               project.images.map((image, idx) => (
@@ -135,7 +135,34 @@ const OurProjects = ({ isAdmin }) => {
               />
             )}
           </div>
-        </Link>
+        </Link> */}
+
+<Link to={`/project/${project._id}`} className="block h-full">
+  <div className="w-full h-full flex overflow-hidden">
+    {project.images && project.images.length > 0 ? (
+      project.images.map((image, idx) => (
+        <img
+          key={idx}
+          src={image.url}
+          alt={project.title[i18n.language] || "Project Image"}
+          className={`object-cover h-full ${
+            idx === 0 ? "w-full" : "w-1/3"
+          } transition-all duration-300`}
+        />
+      ))
+    ) : (
+      <img
+        src="/path/to/placeholder.jpg"
+        alt="Placeholder"
+        className="w-full h-full object-cover"
+      />
+    )}
+  </div>
+</Link>
+
+
+
+
         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">
           {/* <p className="font-bold text-center truncate">
             {project.title[i18n.language]}

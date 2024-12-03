@@ -142,7 +142,50 @@
         "digitalSurvey": "Digital Survey",
         "droneSurvey": "Drone Survey",
         "integration": "Integration",
-        "trafficSurvey": "Traffic Survey"
+        "trafficSurvey": "Traffic Survey",
+
+   
+          "masterPlanningTitle": "Master Planning by Green Shelter Design and Development",
+          "masterPlanningIntro": "At Green Shelter Design and Development, we provide expert Master Planning services to design well-rounded and sustainable plans for your project. Our focus is on creating spaces that are functional, visually appealing, and prepared for future growth.",
+          "masterPlanningCover": "Our Master Planning Services Include:",
+          "siteEvaluation": "Site Evaluation",
+          "siteEvaluationDesc": "We conduct a comprehensive site evaluation, examining topography, existing structures, and environmental factors to guide the planning process.",
+          "conceptDesign": "Concept Design",
+          "conceptDesignDesc": "We develop initial design concepts that align with your vision, objectives, and the distinctive features of the site.",
+          "landPlanning": "Land Planning",
+          "landPlanningDesc": "We design land use plans that make the most efficient use of space, balancing residential, commercial, and recreational zones.",
+          "infrastructureDesign": "Infrastructure Design",
+          "infrastructureDesignDesc": "We plan the core infrastructure, such as roads, utilities, and public services, ensuring a smooth and sustainable development.",
+          "ecoFriendlyPlanning": "Eco-friendly Planning",
+          "ecoFriendlyPlanningDesc": "We incorporate green spaces and sustainable practices into the plan to promote environmental responsibility.",
+          "communityCollaboration": "Community Collaboration",
+          "communityCollaborationDesc": "We work closely with the community and stakeholders to collect feedback and ensure the plan aligns with local needs and expectations.",
+          "executionPlan": "Execution Plan",
+          "executionPlanDesc": "We create a detailed execution plan for the master plan, including timelines, phases, and resource allocation.",
+          
+
+        
+            "infrastructureDesignTitle": "Infrastructure Design Services by Green Shelter Design and Development",
+            "infrastructureDesignIntro": "Green Shelter Design and Development offers comprehensive Infrastructure Design services aimed at ensuring a strong foundation for your project. Our focus is on creating efficient, sustainable, and resilient infrastructure solutions.",
+            "infrastructureDesignCover": "Our Infrastructure Design Solutions:",
+            "roadTransportationDesign": "Road & Transportation Design",
+            "roadTransportationDesignDesc": "We design roads, highways, and transportation systems to optimize traffic flow and ensure safety for all users.",
+            "utilitySystems": "Utility Systems",
+            "utilitySystemsDesc": "We plan and design essential utility systems, such as water supply, sewage, and drainage, to meet the needs of your development.",
+            "powerElectricalSystems": "Power & Electrical Systems",
+            "powerElectricalSystemsDesc": "We create efficient and reliable power and electrical systems to guarantee continuous service and optimal energy usage.",
+            "telecommunicationsInfrastructure": "Telecommunications Infrastructure",
+            "telecommunicationsInfrastructureDesc": "We develop telecommunications networks, including internet and phone systems, to keep your project fully connected.",
+            "stormwaterManagement": "Stormwater Management",
+            "stormwaterManagementDesc": "We design stormwater management solutions to mitigate flooding risks and protect the surrounding environment.",
+            "sustainableDesignSolutions": "Sustainable Design Solutions",
+            "sustainableDesignSolutionsDesc": "We incorporate green infrastructure and renewable energy sources to ensure sustainability in every aspect of our design.",
+            "infrastructureUpgrades": "Infrastructure Upgrades",
+            "infrastructureUpgradesDesc": "We evaluate and modernize existing infrastructure to meet current standards and enhance performance."
+          
+          
+        
+        
       
       
     
