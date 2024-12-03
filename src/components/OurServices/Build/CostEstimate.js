@@ -1,43 +1,46 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const CostEstimate = () => {
+  const { t } = useTranslation('Service'); // Use the 'Service' namespace for translations
+
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Cost Estimation by Green Shelter Design and Development</h1>
+      <h1 className="text-3xl font-bold mb-4">{t('costEstimationTitle')}</h1>
       <p className="text-lg mb-8">
-        At <span className="font-semibold">Green Shelter Design and Development</span>, we provide accurate and reliable Cost Estimation services, enabling you to effectively plan and manage your construction budgets. Our in-depth analysis ensures you have a comprehensive understanding of your project's financial requirements.
+        {t('costEstimationIntro')}
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Cost Estimation Services:</h2>
+      <h2 className="text-2xl font-semibold mb-6">{t('costEstimationServices')}</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Comprehensive Budgeting"
-          description="We develop detailed budgets that encompass all project expenses, ensuring you have a complete financial picture."
+          title={t('comprehensiveBudgeting')}
+          description={t('comprehensiveBudgetingDesc')}
         />
         <ServiceItem
-          title="Material Quantity Takeoffs"
-          description="We carry out precise quantity takeoffs to identify the materials and resources needed for your project."
+          title={t('materialQuantityTakeoffs')}
+          description={t('materialQuantityTakeoffsDesc')}
         />
         <ServiceItem
-          title="Cost Evaluation"
-          description="We assess current market conditions to provide accurate estimates for materials, labor, and equipment."
+          title={t('costEvaluation')}
+          description={t('costEvaluationDesc')}
         />
         <ServiceItem
-          title="Value Engineering"
-          description="We uncover cost-reduction opportunities without compromising quality, ensuring you receive optimal value for your investment."
+          title={t('valueEngineering')}
+          description={t('valueEngineeringDesc')}
         />
         <ServiceItem
-          title="Bid Document Preparation"
-          description="We assist in preparing detailed bid documents, ensuring you receive competitive and fair pricing from contractors."
+          title={t('bidDocumentPreparation')}
+          description={t('bidDocumentPreparationDesc')}
         />
         <ServiceItem
-          title="Ongoing Cost Monitoring"
-          description="We track project costs throughout its duration, providing necessary updates and adjustments to stay within the approved budget."
+          title={t('ongoingCostMonitoring')}
+          description={t('ongoingCostMonitoringDesc')}
         />
         <ServiceItem
-          title="Final Cost Summary"
-          description="Upon completion, we deliver a final cost summary, detailing all expenditures and comparing them to the initial budget."
+          title={t('finalCostSummary')}
+          description={t('finalCostSummaryDesc')}
         />
       </div>
     </div>

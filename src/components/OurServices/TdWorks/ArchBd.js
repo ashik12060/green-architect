@@ -1,22 +1,27 @@
+
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ArchBd = () => {
+  const { t } = useTranslation('Service');  // Using 'archBd' namespace for translations
+
   const categories = [
-    "Skyscrapers",
-    "Swimming Pools",
-    "Retail Shops",
-    "Hospitals",
-    "Resorts",
-    "Banks",
+    t("skyscrapers"),
+    t("swimmingPools"),
+    t("retailShops"),
+    t("hospitals"),
+    t("resorts"),
+    t("banks"),
   ];
 
   return (
     <div className="bg-gray-100 py-12 px-4 sm:px-8 text-gray-800">
       <h1 className="text-3xl font-bold text-center mb-4">
-        Architectural Visualizations - Bangladesh
+        {t('architecturalVisualizations')}
       </h1>
       <p className="text-lg text-center text-gray-600 mb-8">
-        Shaping Bangladesh: Creative Architectural Visualizations
+        {t('shapingBangladesh')}
       </p>
 
       <div className="max-w-3xl mx-auto space-y-4">

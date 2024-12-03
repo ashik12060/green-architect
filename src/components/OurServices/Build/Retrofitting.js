@@ -1,51 +1,55 @@
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Retrofitting = () => {
+  const { t } = useTranslation('Service');
+
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Retrofitting Services by Green Shelter Design and Development</h1>
+      <h1 className="text-3xl font-bold mb-4">{t("retrofittingTitle")}</h1>
       <p className="text-lg mb-8">
-        At Green Shelter Design and Development, we provide specialized Retrofitting services aimed at improving the safety, performance, and durability of your existing buildings. Our team ensures that your structures comply with modern standards and are well-equipped to face future challenges.
+        {t("retrofittingIntro")}
       </p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Retrofitting Solutions Include:</h2>
+      <h2 className="text-2xl font-semibold mb-6">{t("retrofittingSolutions")}</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Structural Reinforcements"
-          description="We strengthen and enhance structural components to boost your building’s stability and resilience."
+          title={t("structuralReinforcements")}
+          description={t("structuralReinforcementsDesc")}
         />
         <ServiceItem
-          title="Seismic Reinforcement"
-          description="We implement seismic retrofitting techniques to safeguard your building against earthquake damage while meeting current regulations."
+          title={t("seismicReinforcement")}
+          description={t("seismicReinforcementDesc")}
         />
         <ServiceItem
-          title="Energy Conservation Upgrades"
-          description="We improve energy efficiency by adding insulation, upgrading windows, and installing energy-efficient systems, reducing consumption and operational costs."
+          title={t("energyConservationUpgrades")}
+          description={t("energyConservationUpgradesDesc")}
         />
         <ServiceItem
-          title="Fire Safety Enhancements"
-          description="We upgrade fire protection systems, including alarms, sprinklers, and fire-resistant materials, ensuring higher levels of safety for occupants."
+          title={t("fireSafetyEnhancements")}
+          description={t("fireSafetyEnhancementsDesc")}
         />
         <ServiceItem
-          title="Waterproofing and Damage Prevention"
-          description="We address water and moisture-related issues by improving drainage, adding waterproofing layers, and installing moisture barriers."
+          title={t("waterproofingAndDamagePrevention")}
+          description={t("waterproofingAndDamagePreventionDesc")}
         />
         <ServiceItem
-          title="Accessibility Improvements"
-          description="We install ramps, elevators, and other features to enhance accessibility and comply with ADA standards."
+          title={t("accessibilityImprovements")}
+          description={t("accessibilityImprovementsDesc")}
         />
         <ServiceItem
-          title="Mechanical & Electrical System Updates"
-          description="We modernize mechanical and electrical systems for better performance, reliability, and compliance with current standards."
+          title={t("mechanicalElectricalSystemUpdates")}
+          description={t("mechanicalElectricalSystemUpdatesDesc")}
         />
         <ServiceItem
-          title="Facade Renovations"
-          description="We upgrade building facades to enhance their aesthetic appeal, energy efficiency, and weather resistance."
+          title={t("facadeRenovations")}
+          description={t("facadeRenovationsDesc")}
         />
         <ServiceItem
-          title="Comprehensive Project Management"
-          description="We manage the entire retrofitting process, from assessment and design to execution and final inspection, ensuring the project is completed to the highest standards and on time."
+          title={t("comprehensiveProjectManagement")}
+          description={t("comprehensiveProjectManagementDesc")}
         />
       </div>
     </div>

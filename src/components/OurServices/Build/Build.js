@@ -38,29 +38,31 @@
 
 
 
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../Shared/Headers/Header';
 import Footer from '../../Shared/Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 import {
-  faProjectDiagram,
-  faHardHat,
-  faCalculator,
-  faBuilding,
-  faTools,
-  faPaintRoller,
+  faHardHat,    // Icon for PMC
+  faBuilding,   // Icon for Site Supervision
+  faCalculator, // Icon for Cost Estimation
+  faHammer,     // Icon for Civil Construction
+  faWrench,     // Icon for Retrofitting
+  faSmile,      // Icon for Facelifting
 } from '@fortawesome/free-solid-svg-icons';
 
 const Build = () => {
+  const { t } = useTranslation('Service');  // Using the 'build' namespace for translations
+
   const buildItems = [
-    { path: '/build/pmc', label: 'PMC', icon: faProjectDiagram },
-    { path: '/build/site-supervision', label: 'Site Supervision', icon: faHardHat },
-    { path: '/build/cost-estimate', label: 'Cost Estimation', icon: faCalculator },
-    { path: '/build/civilConstruction', label: 'Civil Construction', icon: faBuilding },
-    { path: '/build/retrofitting', label: 'Retrofitting', icon: faTools },
-    { path: '/build/face-lifting', label: 'Facelifting', icon: faPaintRoller },
+    { path: '/build/pmc', label: t('pmc'), icon: faHardHat },
+    { path: '/build/site-supervision', label: t('siteSupervision'), icon: faBuilding },
+    { path: '/build/cost-estimate', label: t('costEstimation'), icon: faCalculator },
+    { path: '/build/civilConstruction', label: t('civilConstruction'), icon: faHammer },
+    { path: '/build/retrofitting', label: t('retrofitting'), icon: faWrench },
+    { path: '/build/face-lifting', label: t('facelifting'), icon: faSmile },
   ];
 
   return (
@@ -71,7 +73,7 @@ const Build = () => {
           {buildItems.map((item, index) => (
             <div
               key={index}
-              className="rounded-md shadow-md bg-green-700 px-2 py-6 text-center hover:bg-green-700 transition-colors duration-300"
+              className="rounded-md shadow-md bg-green-600 px-2 py-6 text-center hover:bg-green-700 transition-colors duration-300"
             >
               <Link
                 to={item.path}

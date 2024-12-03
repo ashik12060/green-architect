@@ -1,23 +1,24 @@
+
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const OilGas = () => {
+  const { t } = useTranslation('Service'); // Use 'oilGas' namespace for translations
+
   const animationCategories = [
-    "Delayed Coker Unit (DCU)",
-    "Asphalt Production Plant",
-    "LNG Plant Insulation Systems",
-    "LNG Safety Protocols",
-    "LNG Facilities",
-    "LNG Transport Safety Measures",
+    t("delayedCokerUnit"),
+    t("asphaltProductionPlant"),
+    t("lngPlantInsulationSystems"),
+    t("lngSafetyProtocols"),
+    t("lngFacilities"),
+    t("lngTransportSafetyMeasures"),
   ];
 
   return (
     <div className="bg-gray-100 py-12 px-4 sm:px-8 text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-4">
-        Oil & Gas Animation Solutions
-      </h1>
-      <p className="text-lg text-center text-gray-600 mb-8">
-        We design custom digital content and animations tailored to your business needs.
-      </p>
+      <h1 className="text-3xl font-bold text-center mb-4">{t('oilGasHeader')}</h1>
+      <p className="text-lg text-center text-gray-600 mb-8">{t('oilGasIntro')}</p>
 
       <div className="max-w-3xl mx-auto space-y-4">
         {animationCategories.map((category, index) => (

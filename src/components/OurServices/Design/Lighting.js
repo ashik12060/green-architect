@@ -1,43 +1,46 @@
+
+
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const Lighting = () => {
+const LightingDesign = () => {
+  const { t } = useTranslation('Service');
+
   return (
-    <div className="p-8 bg-white text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-4">Lighting Design by Green Shelter Design and Development</h1>
-      <p className="text-lg text-justify max-w-4xl mx-auto mb-8">
-        At <span className="font-semibold">Green Shelter Design and Development</span>, we specialize in providing 
-        customized lighting solutions that improve both the functionality and visual appeal of your spaces. 
-        Our team crafts unique lighting designs tailored specifically to meet the requirements of each project.
-      </p>
+    <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
+      <h1 className="text-3xl font-bold mb-4">{t('lightingDesignTitle')}</h1>
+      <p className="text-lg mb-8">{t('lightingDesignIntro')}</p>
 
-      <div className="space-y-6 max-w-4xl mx-auto">
+
+      <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Indoor Lighting"
-          description="We develop indoor lighting systems that ensure optimal brightness while enhancing the atmosphere of your interior spaces."
+          title={t('indoorLighting')}
+          description={t('indoorLightingDesc')}
         />
         <ServiceItem
-          title="Outdoor Lighting"
-          description="We design exterior lighting that ensures safety, security, and visual beauty for your outdoor spaces."
+          title={t('outdoorLighting')}
+          description={t('outdoorLightingDesc')}
         />
         <ServiceItem
-          title="Architectural Lighting"
-          description="We accentuate architectural features with sophisticated lighting designs that add elegance and visual appeal to your building."
+          title={t('architecturalLighting')}
+          description={t('architecturalLightingDesc')}
         />
         <ServiceItem
-          title="Energy-Saving Lighting"
-          description="We integrate energy-efficient lighting solutions, such as LED and smart systems, to minimize energy use and reduce costs."
+          title={t('energySavingLighting')}
+          description={t('energySavingLightingDesc')}
         />
         <ServiceItem
-          title="Lighting Control Systems"
-          description="We implement advanced lighting control systems with features like dimmers, sensors, and automation to offer convenience and enhance user experience."
+          title={t('lightingControlSystems')}
+          description={t('lightingControlSystemsDesc')}
         />
         <ServiceItem
-          title="Emergency Lighting"
-          description="We provide reliable emergency lighting systems to ensure safety during power outages by offering consistent illumination."
+          title={t('emergencyLighting')}
+          description={t('emergencyLightingDesc')}
         />
         <ServiceItem
-          title="Lighting Evaluation & Improvements"
-          description="We perform lighting assessments to evaluate your current system and suggest upgrades to enhance performance and efficiency."
+          title={t('lightingEvaluationImprovements')}
+          description={t('lightingEvaluationImprovementsDesc')}
         />
       </div>
     </div>
@@ -46,9 +49,9 @@ const Lighting = () => {
 
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
-    <h3 className="text-lg font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 
-export default Lighting;
+export default LightingDesign;

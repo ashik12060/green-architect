@@ -1,43 +1,45 @@
-import React from "react";
 
-const Mechanical = () => {
+
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+const MechanicalDesign = () => {
+  const { t } = useTranslation('Service');
+
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Mechanical Design by Green Shelter Design and Development</h1>
-      <p className="text-lg mb-8">
-        At <span className="font-semibold">Green Shelter Design and Development</span>, we offer high-quality Mechanical Design services that focus on creating efficient, reliable, and cost-effective mechanical systems for your projects. Our custom solutions are built to meet your unique requirements, ensuring outstanding performance and innovation.
-      </p>
+      <h1 className="text-3xl font-bold mb-4">{t('mechanicalDesignTitle')}</h1>
+      <p className="text-lg mb-8">{t('mechanicalDesignIntro')}</p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Mechanical Design Services Include:</h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="HVAC Systems"
-          description="We design top-tier heating, ventilation, and air conditioning systems to provide exceptional climate control indoors while optimizing energy usage."
+          title={t('hvacSystems')}
+          description={t('hvacSystemsDesc')}
         />
         <ServiceItem
-          title="Plumbing Systems"
-          description="We provide reliable plumbing designs that ensure consistent water supply, drainage, and wastewater management for your project."
+          title={t('plumbingSystems')}
+          description={t('plumbingSystemsDesc')}
         />
         <ServiceItem
-          title="Fire Protection Systems"
-          description="Our fire protection systems include cutting-edge sprinkler and alarm systems designed to protect your property and its occupants."
+          title={t('fireProtectionSystems')}
+          description={t('fireProtectionSystemsDesc')}
         />
         <ServiceItem
-          title="Mechanical Equipment Layout"
-          description="We create precise layouts for mechanical equipment to maximize space efficiency and simplify maintenance."
+          title={t('mechanicalEquipmentLayout')}
+          description={t('mechanicalEquipmentLayoutDesc')}
         />
         <ServiceItem
-          title="Energy Management"
-          description="We design energy management solutions aimed at reducing energy consumption and lowering operational expenses."
+          title={t('energyManagement')}
+          description={t('energyManagementDesc')}
         />
         <ServiceItem
-          title="Sustainable Design"
-          description="Our designs incorporate sustainable approaches, such as using renewable energy sources and enhancing energy efficiency."
+          title={t('sustainableDesign')}
+          description={t('sustainableDesignDesc')}
         />
         <ServiceItem
-          title="Regulatory Compliance"
-          description="We ensure that all mechanical designs comply with local codes and standards, ensuring safety and legal conformity."
+          title={t('regulatoryCompliance')}
+          description={t('regulatoryComplianceDesc')}
         />
       </div>
     </div>
@@ -51,4 +53,4 @@ const ServiceItem = ({ title, description }) => (
   </div>
 );
 
-export default Mechanical;
+export default MechanicalDesign;

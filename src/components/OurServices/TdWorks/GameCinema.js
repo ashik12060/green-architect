@@ -1,18 +1,23 @@
+
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const GameCinema = () => {
+  const { t } = useTranslation('Service');  
+
   const categories = [
-    "2D Worlds",
-    "3D Worlds",
+    t("world2d"),
+    t("world3d"),
   ];
 
   return (
     <div className="bg-gray-100 py-12 px-4 sm:px-8 text-gray-800">
       <h1 className="text-3xl font-bold text-center mb-4">
-        Gaming and Cinematic Visuals
+        {t('gamingCinematicVisuals')}
       </h1>
       <p className="text-lg text-center text-gray-600 mb-8">
-        Craft digital content and animations for your business.
+        {t('digitalContentAnimations')}
       </p>
 
       <div className="max-w-3xl mx-auto space-y-4">

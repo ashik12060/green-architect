@@ -1,61 +1,65 @@
-import React from "react";
 
-const Accessories = () => {
+
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+const TailoredKitchenAccessories = () => {
+  const { t } = useTranslation('Service');  // Fetch translations for 'Service' namespace
+
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">Tailored Kitchen Accessories by Green Shelter Design and Development</h1>
-      <p className="text-lg mb-8">
-        Green Shelter Design and Development specializes in creating personalized Kitchen Accessories that enhance both the style and practicality of your kitchen. Our skilled team crafts customized solutions designed to meet your unique needs and aesthetic preferences.
-      </p>
+      {/* Header Section */}
+      <h1 className="text-3xl font-bold mb-4">{t('kitchenAccessoriesHeader')}</h1>
+      <p className="text-lg mb-8">{t('kitchenAccessoriesIntroText')}</p>
 
-      <h2 className="text-2xl font-semibold mb-6">Our Kitchen Accessories Services Include:</h2>
-
+      {/* Service Items */}
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Custom Cabinetry"
-          description="We design and create cabinetry tailored to optimize storage while seamlessly blending with your kitchen's design."
+          title={t("customCabinetryTitle")}
+          description={t("customCabinetryDesc")}
         />
         <ServiceItem
-          title="Countertops and Backsplashes"
-          description="Our range of custom countertops and backsplashes, crafted with premium materials, combine durability with visual appeal."
+          title={t("countertopsBacksplashesTitle")}
+          description={t("countertopsBacksplashesDesc")}
         />
         <ServiceItem
-          title="Organized Storage Solutions"
-          description="From pull-out shelves to spice racks and utensil organizers, we offer smart storage solutions to keep your kitchen tidy and functional."
+          title={t("organizedStorageTitle")}
+          description={t("organizedStorageDesc")}
         />
         <ServiceItem
-          title="Customized Lighting"
-          description="We design task lighting and under-cabinet lighting to enhance the usability and atmosphere of your kitchen."
+          title={t("customizedLightingTitle")}
+          description={t("customizedLightingDesc")}
         />
         <ServiceItem
-          title="Unique Hardware and Fixtures"
-          description="Our selection of custom handles, knobs, and faucets adds a personalized touch to your kitchen."
+          title={t("uniqueHardwareTitle")}
+          description={t("uniqueHardwareDesc")}
         />
         <ServiceItem
-          title="Custom Kitchen Islands"
-          description="We craft kitchen islands tailored to your needs, offering additional workspace, storage, and seating options."
+          title={t("customKitchenIslandsTitle")}
+          description={t("customKitchenIslandsDesc")}
         />
         <ServiceItem
-          title="Eco-Friendly Materials"
-          description="Our accessories use sustainable and environmentally friendly materials, combining style with responsibility."
+          title={t("ecoFriendlyMaterialsTitle")}
+          description={t("ecoFriendlyMaterialsDesc")}
         />
         <ServiceItem
-          title="3D Design Previews"
-          description="We provide 3D visualizations to help you preview how your customized accessories will look before installation."
+          title={t("threeDDesignPreviewsTitle")}
+          description={t("threeDDesignPreviewsDesc")}
         />
         <ServiceItem
-          title="Professional Installation"
-          description="Our expert team ensures precise installation, guaranteeing your kitchen accessories are securely and properly fitted."
+          title={t("professionalInstallationTitle")}
+          description={t("professionalInstallationDesc")}
         />
         <ServiceItem
-          title="Tailored Consultations"
-          description="We offer one-on-one consultations to fully understand your requirements and preferences, delivering results that surpass expectations."
+          title={t("tailoredConsultationsTitlee")}
+          description={t("tailoredConsultationsDescc")}
         />
       </div>
     </div>
   );
 };
 
+// Individual Service Item
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
@@ -63,4 +67,4 @@ const ServiceItem = ({ title, description }) => (
   </div>
 );
 
-export default Accessories;
+export default TailoredKitchenAccessories;

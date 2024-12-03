@@ -1,29 +1,34 @@
+
+
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const VsWorks = () => {
+  const { t } = useTranslation('Service');  // Using the 'vsWorks' namespace for translations
+
   const vrItems = [
     {
-      title: "360° Interior Visualization",
-      description: "Immerse yourself in detailed 360° interior visuals, ideal for online demos and interactive walkthroughs.",
+      title: t("interiorVisualization"),
+      description: t("interiorDescriptionn"),
     },
     {
-      title: "360° Exterior Visualization",
-      description: "Discover the exterior of your project with high-definition 360° visuals. Easily shareable with clients online.",
+      title: t("exteriorVisualization"),
+      description: t("exteriorDescription"),
     },
     {
-      title: "Virtual Reality Animation",
-      description: "Engage your audience with interactive VR animations that highlight your projects in a unique and innovative manner.",
+      title: t("virtualRealityAnimation"),
+      description: t("vrAnimationDescription"),
     },
   ];
 
   return (
     <div className="bg-gray-100 py-12 px-4 sm:px-8 text-gray-800">
       <h1 className="text-3xl font-bold text-center mb-8">
-        Virtual Reality Projects
+        {t('virtualRealityProjects')}
       </h1>
       <p className="text-lg text-center mb-12">
-        VR visuals and walkthroughs are a highly efficient method to present your spaces. 
-        They are budget-friendly and can be easily hosted online. Below are some examples of our 360° visualizations and animations.
+        {t('vrIntro')}
       </p>
 
       <div className="space-y-8 max-w-4xl mx-auto">

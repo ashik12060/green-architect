@@ -14,7 +14,7 @@ const MiddleHeader = () => {
       <div className="container mx-2 flex flex-row md:flex-row justify-between items-center space-y-4 md:space-y-0">
         {/* Location Section */}
         <div className="text-center md:text-left">
-          <a href="tel:+8801711-001726" className="hover:text-blue-300">
+          <a href="tel:+8801706046312" className="hover:text-blue-300">
             <FontAwesomeIcon icon={faLocationDot} className="mr-2" />{t('footer.contact.address')} 
           </a>
         </div>

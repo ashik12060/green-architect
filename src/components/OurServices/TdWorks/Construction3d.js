@@ -1,24 +1,25 @@
+
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Construction3d = () => {
+  const { t } = useTranslation('Service'); // Use 'construction' namespace for translations
+
   const categories = [
-    "Modular Home #1",
-    "Shipping Container Home",
-    "Storage Racking System",
-    "Railway Bridge",
-    "Prefab Parking Garage",
-    "Excavation Work",
-    "Water Treatment System",
+    t("modularHome1"),
+    t("shippingContainerHome"),
+    t("storageRackingSystem"),
+    t("railwayBridge"),
+    t("prefabParkingGarage"),
+    t("excavationWork"),
+    t("waterTreatmentSystem"),
   ];
 
   return (
     <div className="bg-gray-100 py-12 px-4 sm:px-8 text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-4">
-        Construction and Fabrication
-      </h1>
-      <p className="text-lg text-center text-gray-600 mb-8">
-        Develop digital content and animations for your business.
-      </p>
+      <h1 className="text-3xl font-bold text-center mb-4">{t('constructionHeader')}</h1>
+      <p className="text-lg text-center text-gray-600 mb-8">{t('constructionIntro')}</p>
 
       <div className="max-w-3xl mx-auto space-y-4">
         {categories.map((category, index) => (

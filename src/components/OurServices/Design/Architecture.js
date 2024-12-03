@@ -1,112 +1,126 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Architecture = () => {
+  const { t } = useTranslation('Service');
   return (
     <div className="flex flex-col items-center px-4 sm:px-8 py-8 text-center bg-white text-gray-800">
       <h1 className="text-2xl sm:text-3xl font-bold mb-4">
-        Architecture Design Solutions in Bangladesh | Green Shelter Design and Development
+        {t('architectureDesignTitle')}
       </h1>
       <p className="text-base sm:text-lg mb-8 text-justify">
-        Green Shelter Design and Development provides comprehensive architectural design solutions in Bangladesh, seamlessly integrating aesthetics, functionality, and sustainability. Our mission is to create spaces that align with your vision, whether it’s a cozy home, modern apartment, or a dynamic commercial property.
+        {t('architectureDesignIntro')}
       </p>
 
       <h2 className="text-xl sm:text-2xl font-semibold mb-6">
-        Our Approach to Architectural Design in Bangladesh
+        {t('ourApproach')}
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Client-Centered Approach"
-          description="Exceptional architecture begins with understanding you. We listen carefully to your ideas and aspirations, ensuring we create designs that truly reflect your needs and lifestyle."
+          title={t('clientCenteredApproach')}
+          description={t('clientCenteredApproachDesc')}
         />
         <ServiceItem
-          title="Sustainability Matters"
-          description="Sustainability is a core principle in all our projects. We emphasize energy-efficient solutions and eco-friendly materials to design spaces that are both pleasant and environmentally responsible."
+          title={t('sustainabilityMatters')}
+          description={t('sustainabilityMattersDesc')}
         />
         <ServiceItem
-          title="Fusing Tradition, Modernity, and Aesthetics"
-          description="Our designs combine contemporary architectural elements with traditional Bangladeshi influences. We aim to create structures that not only perform well but also offer stunning aesthetics, enhancing every space with beauty and elegance."
+          title={t('fusingTraditionModernityAesthetics')}
+          description={t('fusingTraditionModernityAestheticsDesc')}
         />
       </div>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6">
-        Architectural Services We Offer in Bangladesh
+        {t('architecturalServices')}
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Residential Architecture"
-          description="Our residential services focus on designing homes that reflect your personality and offer comfort. Whether it’s a small two-bedroom house or a large family duplex, we ensure that each design is practical, beautiful, and meets your standards for charm and elegance."
+          title={t('residentialArchitecture')}
+          description={t('residentialArchitectureDesc')}
         />
         <ServiceItem
-          title="Commercial Architecture in Bangladesh"
-          description="We create commercial spaces that inspire productivity. From office buildings to retail shops, we design environments that make a lasting impression with an emphasis on both aesthetics and professional functionality."
+          title={t('commercialArchitecture')}
+          description={t('commercialArchitectureDesc')}
         />
         <ServiceItem
-          title="Community and Public Spaces"
-          description="We’re passionate about designing spaces that serve the public good. From mosques to public gathering areas, we design accessible, durable, and visually impressive spaces that welcome everyone."
+          title={t('communityPublicSpaces')}
+          description={t('communityPublicSpacesDesc')}
         />
       </div>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6">
-        Our Design Process
+        {t('ourDesignProcess')}
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
-        <ProcessStep step="Initial Consultation" description="We begin by discussing your ideas and gaining an understanding of the project’s scope." />
-        <ProcessStep step="Concept Development" description="Our team drafts initial design ideas based on your vision." />
-        <ProcessStep step="Design Refinement" description="We work closely with you to refine the design and perfect every detail." />
-        <ProcessStep step="Detailed Planning" description="We prepare comprehensive plans and technical drawings to guide construction." />
-        <ProcessStep step="Support During Construction" description="We remain involved throughout the process, offering guidance and conducting site visits to ensure smooth execution." />
-      </div>
-
-      <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6">
-        Why Choose Green Shelter Design and Development for Your Architectural Needs in Bangladesh?
-      </h2>
-
-      <div className="space-y-6 max-w-4xl w-full">
-        <ServiceItem
-          title="Expertise and Local Insight"
-          description="With years of experience in the architectural field in Bangladesh, we have a deep understanding of local regulations, climate, and culture, ensuring our designs fit perfectly within their environment and comply with all standards."
+        <ProcessStep
+          step={t('initialConsultation')}
+          description={t('initialConsultationDesc')}
         />
-        <ServiceItem
-          title="Focus on Quality"
-          description="Quality is our top priority. We ensure each project stands the test of time by paying close attention to design, materials, and functionality."
+        <ProcessStep
+          step={t('conceptDevelopment')}
+          description={t('conceptDevelopmentDesc')}
         />
-        <ServiceItem
-          title="Comprehensive Service"
-          description="From concept to completion, we provide end-to-end services, ensuring the process is seamless and stress-free for you."
+        <ProcessStep
+          step={t('designRefinement')}
+          description={t('designRefinementDesc')}
+        />
+        <ProcessStep
+          step={t('detailedPlanning')}
+          description={t('detailedPlanningDesc')}
+        />
+        <ProcessStep
+          step={t('supportDuringConstruction')}
+          description={t('supportDuringConstructionDesc')}
         />
       </div>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6">
-        Frequently Asked Questions
+        {t('whyChooseUs')}
       </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="What’s the typical timeline for design?"
-          description="Project timelines vary depending on complexity, but we aim for steady progress while ensuring high-quality results."
+          title={t('expertiseAndLocalInsight')}
+          description={t('expertiseAndLocalInsightDesc')}
         />
         <ServiceItem
-          title="Can designs be customized?"
-          description="Yes, every design is tailored to your specific needs, preferences, and site conditions."
+          title={t('focusOnQuality')}
+          description={t('focusOnQualityDesc')}
         />
         <ServiceItem
-          title="What sustainability measures do you implement?"
-          description="We prioritize energy-efficient designs, use sustainable materials, and ensure natural light and ventilation are integral to the space."
+          title={t('comprehensiveService')}
+          description={t('comprehensiveServiceDesc')}
+        />
+      </div>
+
+      <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6">
+        {t('frequentlyAskedQuestions')}
+      </h2>
+
+      <div className="space-y-6 max-w-4xl w-full">
+        <ServiceItem
+          title={t('faqTimeline')}
+          description={t('faqTimelineDesc')}
+        />
+        <ServiceItem
+          title={t('faqCustomization')}
+          description={t('faqCustomizationDesc')}
+        />
+        <ServiceItem
+          title={t('faqSustainability')}
+          description={t('faqSustainabilityDesc')}
         />
       </div>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-10">
-        Ready to Transform Your Ideas into Reality?
+        {t('readyToTransform')}
       </h2>
       <p className="text-base sm:text-lg mt-4 text-justify max-w-4xl">
-        Let’s make your vision come to life. Whether you’re planning a residential, commercial, or public space project, Green Shelter Design and Development is ready to bring it to fruition. Reach out today at{" "}
-        <a href="tel:+8801724747050" className="text-green-600 font-bold">
-        +8801711-001726
-        </a>{" "}
-        or visit our appointment page to get started.
+        {t('readyToTransformDesc')}{" "}
+       
       </p>
     </div>
   );

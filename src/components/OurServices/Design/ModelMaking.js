@@ -1,41 +1,37 @@
-import React from "react";
 
-const ModelMaking = () => {
+
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+const FeasibilityStudy = () => {
+  const { t } = useTranslation('Service');
+
   return (
     <div className="flex flex-col items-center p-8 text-center bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-4">
-        Feasibility Study by Green Shelter Design and Development
-      </h1>
-      <p className="text-lg mb-8">
-        At Green Shelter Design and Development, our Feasibility Study service helps you ensure your
-        project’s success from the start. We evaluate all critical aspects like
-        economic, technical, legal, and scheduling factors.
-      </p>
+      <h1 className="text-3xl font-bold mb-4">{t('feasibilityStudyTitle')}</h1>
+      <p className="text-lg mb-8">{t('feasibilityStudyIntro')}</p>
 
-      <h2 className="text-2xl font-semibold mb-6">
-        Our Feasibility Study Services:
-      </h2>
 
       <div className="space-y-6 max-w-4xl w-full">
         <ServiceItem
-          title="Economic Analysis"
-          description="We review project costs, revenue projections, and funding options to check financial viability. This helps you make informed decisions and secure funding."
+          title={t('economicAnalysis')}
+          description={t('economicAnalysisDesc')}
         />
         <ServiceItem
-          title="Technical Feasibility"
-          description="We look at the technical requirements and challenges of your project. By identifying needed technologies, we ensure your project is feasible and efficient."
+          title={t('technicalFeasibility')}
+          description={t('technicalFeasibilityDesc')}
         />
         <ServiceItem
-          title="Legal & Regulatory Compliance"
-          description="We ensure your project meets all legal, zoning, and environmental regulations, protecting you from legal issues."
+          title={t('legalCompliance')}
+          description={t('legalComplianceDesc')}
         />
         <ServiceItem
-          title="Schedule Feasibility"
-          description="We create detailed project timelines, identifying key milestones and potential delays, keeping your project on track and within budget."
+          title={t('scheduleFeasibility')}
+          description={t('scheduleFeasibilityDesc')}
         />
         <ServiceItem
-          title="Risk Assessment"
-          description="We identify potential risks early and develop strategies to manage them, ensuring project stability and success."
+          title={t('riskAssessment')}
+          description={t('riskAssessmentDesc')}
         />
       </div>
     </div>
@@ -45,8 +41,8 @@ const ModelMaking = () => {
 const ServiceItem = ({ title, description }) => (
   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-300 pb-4">
     <h3 className="text-xl font-semibold flex-shrink-0 sm:w-1/3">{title}</h3>
-    <p className="text-gray-600 sm:w-2/3">{description}</p>
+    <p className="text-gray-600 sm:w-2/3 text-justify">{description}</p>
   </div>
 );
 
-export default ModelMaking;
+export default FeasibilityStudy;
