@@ -86,12 +86,69 @@ const AdminDashboard = () => {
   };
 
   // Draggable Row Component
+  // const DraggableRow = ({ index, product }) => {
+  //   const [, drag] = useDrag({
+  //     type: ItemType,
+  //     item: { index },
+  //   });
+
+  //   const [, drop] = useDrop({
+  //     accept: ItemType,
+  //     hover: (item) => {
+  //       if (item.index !== index) {
+  //         moveProduct(item.index, index);
+  //         item.index = index;
+  //       }
+  //     },
+  //     drop: saveNewOrder, // Save the new order after drop
+  //   });
+
+  //   return (
+  //     <motion.tr
+  //       ref={(node) => drag(drop(node))}
+  //       className="border-b border-gray-200 hover:bg-gray-100"
+  //       initial={{ opacity: 0, scale: 0.95 }}
+  //       animate={{ opacity: 1, scale: 1 }}
+  //       transition={{ duration: 0.3 }}
+  //     >
+  //       <td className="py-3 px-6 text-left">{product._id}</td>
+  //       <td className="py-3 px-6 text-left">
+  //         {product.title?.en || "No Title"}
+  //       </td>
+  //       <td className="py-3 px-6 text-left">
+  //         <img src={product.image.url} alt="Product" className="w-20 h-20" />
+  //       </td>
+  //       <td className="py-3 px-6 text-left">
+  //         {product.postedBy?.name || "Unknown"}
+  //       </td>
+  //       <td className="py-3 px-6 text-left">
+  //         {new Date(product.createdAt).toLocaleString()}
+  //       </td>
+  //       <td className="py-3 px-6 text-left">
+  //         <div className="flex items-center space-x-2">
+  //           <Link
+  //             to={`/admin/product/edit/${product._id}`}
+  //             className="text-blue-500"
+  //           >
+  //             Edit
+  //           </Link>
+  //           <button
+  //             className="text-red-500"
+  //             onClick={() => console.log("Delete product:", product._id)}
+  //           >
+  //             Delete
+  //           </button>
+  //         </div>
+  //       </td>
+  //     </motion.tr>
+  //   );
+  // };
   const DraggableRow = ({ index, product }) => {
     const [, drag] = useDrag({
       type: ItemType,
       item: { index },
     });
-
+  
     const [, drop] = useDrop({
       accept: ItemType,
       hover: (item) => {
@@ -102,7 +159,7 @@ const AdminDashboard = () => {
       },
       drop: saveNewOrder, // Save the new order after drop
     });
-
+  
     return (
       <motion.tr
         ref={(node) => drag(drop(node))}
@@ -134,7 +191,7 @@ const AdminDashboard = () => {
             </Link>
             <button
               className="text-red-500"
-              onClick={() => console.log("Delete product:", product._id)}
+              onClick={(e) => deleteProductById(e, product._id)}
             >
               Delete
             </button>
@@ -143,6 +200,7 @@ const AdminDashboard = () => {
       </motion.tr>
     );
   };
+  
 
   const displayPost = async () => {
     try {
@@ -488,62 +546,6 @@ const AdminDashboard = () => {
       ),
     },
   ];
-
-  // products column
-  // const ProductColumns = [
-  //   {
-  //     field: "_id",
-  //     headerName: "Product ID",
-  //     width: 150,
-  //     editable: true,
-  //   },
-  //   {
-  //     field: "title",
-  //     headerName: "Product title",
-  //     width: 150,
-  //   },
-  //   {
-  //     field: "image",
-  //     headerName: "Image",
-  //     width: 150,
-  //     renderCell: (params) => (
-  //       <img width="40%" src={params.row.image.url} alt="img" />
-  //     ),
-  //   },
-
-  //   {
-  //     field: "postedBy",
-  //     headerName: "Posted by",
-  //     width: 150,
-  //     renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
-  //   },
-  //   {
-  //     field: "createdAt",
-  //     headerName: "Created At",
-  //     width: 150,
-  //     renderCell: (params) =>
-  //       moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
-  //   },
-  //   {
-  //     field: "Actions",
-  //     width: 100,
-  //     renderCell: (value) => (
-  //       <div className="flex justify-between">
-  //         <Link to={`/admin/product/edit/${value.row._id}`}>
-  //           <IconButton aria-label="edit">
-  //             <EditIcon sx={{ color: "#1976d2" }} />
-  //           </IconButton>
-  //         </Link>
-  //         <IconButton
-  //           aria-label="delete"
-  //           onClick={(e) => deleteProductById(e, value.row._id)}
-  //         >
-  //           <DeleteIcon sx={{ color: "red" }} />
-  //         </IconButton>
-  //       </div>
-  //     ),
-  //   },
-  // ];
 
   const ProjectColumns = [
     {
