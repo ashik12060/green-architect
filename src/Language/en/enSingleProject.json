@@ -1,0 +1,16 @@
+{
+    "address": "Address",
+    "landArea": "Land Area",
+    "noOfFloors": "No. of Floors",
+    "apartmentFloor": "Apartment/Floor",
+    "apartmentSize": "Apartment Size",
+    "frontRoad": "Front Road",
+    "noOfUnits": "Number Of Units",
+    "noOfParking": "Number Of Parking",
+    "bedroom": "Bedroom",
+    "bathroom": "Bathroom",
+    "launchDate": "Launch Date",
+    "collection": "Collection",
+    "buildingType": "Building Type"
+
+}

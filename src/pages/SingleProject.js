@@ -38,8 +38,9 @@ import {
 
 const SingleProject = () => {
   const { userInfo } = useSelector((state) => state.signIn);
-  const { t, i18n } = useTranslation();
+  const {  i18n } = useTranslation();
   const { id } = useParams();
+  const { t } = useTranslation('SingleProject');
 
   const [projectData, setProjectData] = useState({});
   const [images, setImages] = useState([]); // State for storing multiple images
@@ -162,7 +163,7 @@ const SingleProject = () => {
                           className="pe-1"
                           icon={faLocationDot}
                         />
-                        {t("Address")}
+                        {t("address")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.address)}
@@ -171,7 +172,7 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         <FontAwesomeIcon className="pe-1" icon={faPenRuler} />
-                        {t("Land Area")}
+                        {t("landArea")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.landArea)}
@@ -184,7 +185,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faBuilding}
                         />
-                        {t(" No. of Floors")}
+                        {t("noOfFloors")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.floors)}
@@ -197,7 +198,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faBraille}
                         />
-                        {t(" Apartment/Floor")}
+                        {t("apartmentFloor")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.apartmentFloor)}
@@ -210,7 +211,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faRulerCombined}
                         />
-                        {t(" Apartment Size")}
+                        {t("apartmentSize")}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
                     </tr>
@@ -218,7 +219,7 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         <FontAwesomeIcon className="pe-1" icon={faRoad} />
-                        {t("Front Road ")}
+                        {t("frontRoad")}
                         {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
@@ -227,7 +228,7 @@ const SingleProject = () => {
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
                         <FontAwesomeIcon className="pe-1" icon={faBuildingUn} />
-                        {t(" Number Of Units")}
+                        {t("noOfUnits")}
                         {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
@@ -237,7 +238,7 @@ const SingleProject = () => {
                       <td className=" pr-4 border-b border-gray-300">
                         {/* <FontAwesomeIcon className="pe-1" icon={faRulerCombined} /> */}
                         <FontAwesomeIcon className="pe-1" icon={faCar} />
-                        {t(" Number Of Parking")}
+                        {t("noOfParking")}
                         {/* one */}
                       </td>
                       <td className="py-2">{renderField(projectData.size)}</td>
@@ -250,7 +251,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faBed}
                         />
-                        {t(" Bedroom")}
+                        {t("bedroom")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.bedroom)}
@@ -263,7 +264,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faBath}
                         />
-                        {t("Bathroom")}
+                        {t("bathroom")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.bathroom)}
@@ -276,7 +277,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faCalendarDays}
                         />
-                        {t(" Launch Date")}
+                        {t("launchDate")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.launchDate)}
@@ -289,7 +290,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faShareNodes}
                         />
-                        {t("Collection")}
+                        {t("collection")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.collectionName)}
@@ -302,7 +303,7 @@ const SingleProject = () => {
                           text-lg
                           icon={faWrench}
                         />
-                        {t("Building Type")}
+                        {t("buildingType")}
                       </td>
                       <td className="py-2">
                         {renderField(projectData.buildingType)}

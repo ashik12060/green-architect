@@ -67,6 +67,10 @@ import bnFaq from './Language/bn/bnFaq.json'
 import dnFaq from './Language/dn/dnFaq.json'
 
 
+import enSingleProject from './Language/en/enSingleProject.json'
+import bnSingleProject from './Language/bn/bnSingleProject.json'
+import dnSingleProject from './Language/dn/dnSingleProject.json'
+
 
 
 i18n
@@ -89,6 +93,7 @@ i18n
         Video:enVideo,
         Client:enClient,
         Faq:enFaq,
+        SingleProject:enSingleProject,
      
       },
       bn: {
@@ -107,6 +112,7 @@ i18n
         Video:bnVideo,
         Client:bnClient,
         Faq:bnFaq,
+        SingleProject:bnSingleProject,
       
       },
       es: {
@@ -125,6 +131,7 @@ i18n
         Video:dnVideo,
         Client:dnClient,
         Faq:dnFaq,
+        SingleProject:dnSingleProject,
         
       },
     },

@@ -1,0 +1,15 @@
+{
+    "address": "Adresse",
+    "landArea": "Landområde",
+    "noOfFloors": "Antal Etager",
+    "apartmentFloor": "Lejlighed/Etag",
+    "apartmentSize": "Lejlighedsstørrelse",
+    "frontRoad": "Forreste Vej",
+    "noOfUnits": "Antal Enheder",
+    "noOfParking": "Antal Parkeringer",
+    "bedroom": "Soveværelse",
+    "bathroom": "Badeværelse",
+    "launchDate": "Lancering Dato",
+    "collection": "Samling",
+    "buildingType": "Bygningstype"
+}

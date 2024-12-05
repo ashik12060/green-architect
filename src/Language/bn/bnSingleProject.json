@@ -1,0 +1,15 @@
+{
+    "address": "ঠিকানা",
+    "landArea": "ভূমির আয়তন",
+    "noOfFloors": "মঞ্জিলের সংখ্যা",
+    "apartmentFloor": "অ্যাপার্টমেন্ট/মঞ্জিল",
+    "apartmentSize": "অ্যাপার্টমেন্টের আয়তন",
+    "frontRoad": "সামনের রাস্তা",
+    "noOfUnits": "ইউনিটের সংখ্যা",
+    "noOfParking": "পার্কিং এর সংখ্যা",
+    "bedroom": "শয্যা কক্ষ",
+    "bathroom": "স্নান কক্ষ",
+    "launchDate": "লঞ্চের তারিখ",
+    "collection": "সংগ্রহ",
+    "buildingType": "ভবনের প্রকার"
+}
