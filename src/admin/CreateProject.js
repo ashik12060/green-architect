@@ -786,7 +786,7 @@ const CreateProject = () => {
             <textarea
               id={`content${lang}`}
               name={`content${lang}`}
-              placeholder={`Write project content (${lang})...`}
+              placeholder={`Write project content  (${lang})...`}
              
               value={values[`content${lang}`]}
               onChange={handleChange}
@@ -932,7 +932,7 @@ const CreateProject = () => {
               htmlFor={`units${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project Front Road ({lang})
+              Number of Units ({lang})
             </label>
             <textarea
               id={`units${lang}`}
@@ -1208,7 +1208,7 @@ const CreateProject = () => {
               htmlFor={`mosque${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project mosque ({lang})
+              Project mosque distance ({lang})
             </label>
             <textarea
               id={`mosque${lang}`}
@@ -1237,7 +1237,7 @@ const CreateProject = () => {
               htmlFor={`college${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project college ({lang})
+              Project college distance ({lang})
             </label>
             <textarea
               id={`college${lang}`}
@@ -1266,7 +1266,7 @@ const CreateProject = () => {
               htmlFor={`school${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project school ({lang})
+              Project school distance({lang})
             </label>
             <textarea
               id={`school${lang}`}
@@ -1296,7 +1296,7 @@ const CreateProject = () => {
               htmlFor={`market${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project market ({lang})
+              Project market distance({lang})
             </label>
             <textarea
               id={`market${lang}`}
@@ -1327,7 +1327,7 @@ const CreateProject = () => {
               htmlFor={`bank1${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project bank1 ({lang})
+              First Bank distance({lang})
             </label>
             <textarea
               id={`bank1${lang}`}
@@ -1356,7 +1356,7 @@ const CreateProject = () => {
               htmlFor={`bank2${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project bank2 ({lang})
+              Second Bank distance ({lang})
             </label>
             <textarea
               id={`bank2${lang}`}
@@ -1385,7 +1385,7 @@ const CreateProject = () => {
               htmlFor={`atm${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project atm ({lang})
+              ATM booth distance ({lang})
             </label>
             <textarea
               id={`atm${lang}`}
@@ -1414,7 +1414,7 @@ const CreateProject = () => {
               htmlFor={`busStop${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project busStop ({lang})
+              Bus Stop distance ({lang})
             </label>
             <textarea
               id={`busStop${lang}`}
@@ -1446,7 +1446,7 @@ const CreateProject = () => {
               htmlFor={`mosqueName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project mosqueName ({lang})
+              Mosque Name ({lang})
             </label>
             <textarea
               id={`mosqueName${lang}`}
@@ -1476,7 +1476,7 @@ const CreateProject = () => {
               htmlFor={`collegeName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project collegeName ({lang})
+               College Name ({lang})
             </label>
             <textarea
               id={`collegeName${lang}`}
@@ -1506,7 +1506,7 @@ const CreateProject = () => {
               htmlFor={`schoolName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project schoolName ({lang})
+               School Name ({lang})
             </label>
             <textarea
               id={`schoolName${lang}`}
@@ -1536,7 +1536,7 @@ const CreateProject = () => {
               htmlFor={`marketName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project marketName ({lang})
+               Market Name ({lang})
             </label>
             <textarea
               id={`marketName${lang}`}
@@ -1566,7 +1566,7 @@ const CreateProject = () => {
               htmlFor={`bank1Name${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project bank1Name ({lang})
+               First Bank Name ({lang})
             </label>
             <textarea
               id={`bank1Name${lang}`}
@@ -1596,7 +1596,7 @@ const CreateProject = () => {
               htmlFor={`bank2Name${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project bank2Name ({lang})
+              Second Bank Name ({lang})
             </label>
             <textarea
               id={`bank2Name${lang}`}
@@ -1626,7 +1626,7 @@ const CreateProject = () => {
               htmlFor={`atmName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project atmName ({lang})
+              ATM Booth Name ({lang})
             </label>
             <textarea
               id={`atmName${lang}`}
@@ -1656,7 +1656,7 @@ const CreateProject = () => {
               htmlFor={`busStopName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-              Project busStopName ({lang})
+               Bus Stop Name ({lang})
             </label>
             <textarea
               id={`busStopName${lang}`}

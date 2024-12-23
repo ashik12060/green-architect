@@ -28,6 +28,7 @@ import img22 from "../../assets/partners logo/sky bath.jpeg";
 import img23 from "../../assets/partners logo/pratinidhi.jpeg";
 import img24 from "../../assets/partners logo/inbuild.png";
 import img25 from "../../assets/partners logo/jcx.png";
+import { useTranslation } from "react-i18next";
 
 const logos = [
   img1,
@@ -71,6 +72,7 @@ const headerVariants = {
 };
 
 const OurClients = () => {
+  const { t } = useTranslation('ServiceMain');
   return (
     <div className="our-clients-container">
        <motion.h2
@@ -80,7 +82,8 @@ const OurClients = () => {
       viewport={{ once: false, amount: 0.2 }}
       variants={headerVariants}
     >
-      PARTNERS
+      {/* PARTNERS */}
+      {t('partners')}
     </motion.h2>
       <div className="our-clients-scroll">
         {/* Render logos twice for seamless scrolling */}

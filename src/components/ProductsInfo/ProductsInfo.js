@@ -11,7 +11,7 @@ const ProductsInfo = ({ isAdmin }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null); 
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const { t } = useTranslation("Home");
   const { i18n } = useTranslation();
 
@@ -70,7 +70,7 @@ const ProductsInfo = ({ isAdmin }) => {
     const [, drag] = useDrag({
       type: ItemType,
       item: { index },
-      canDrag: isAdmin, 
+      canDrag: isAdmin,
     });
 
     const [, drop] = useDrop({
@@ -81,62 +81,36 @@ const ProductsInfo = ({ isAdmin }) => {
           item.index = index;
         }
       },
-      drop: isAdmin ? saveNewOrder : undefined, 
+      drop: isAdmin ? saveNewOrder : undefined,
     });
 
     return (
-
       <motion.div
-  ref={(node) => isAdmin && drag(drop(node))}
-  className="relative w-full border border-gray-300 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.3 }}
->
-  <div className="w-full h-40 overflow-hidden">
-    <img
-      src={product.image?.url || "/path/to/placeholder.jpg"}
-      alt={product.title[i18n.language] || "Product Image"}
-      className="w-full h-full object-cover"
-    />
-  </div>
-  <div className="p-4">
-    <h3 className="font-bold text-black truncate">
-      {product.title[i18n.language]}
-    </h3>
-    <button
-      onClick={() => openModal(product)}
-      className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
-    >
-      {t("viewProduct")}
-    </button>
-  </div>
-</motion.div>
-
-      // <motion.div
-      //   ref={(node) => isAdmin && drag(drop(node))} 
-      //   className="relative w-full border border-gray-300 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
-      //   initial={{ opacity: 0, scale: 0.95 }}
-      //   animate={{ opacity: 1, scale: 1 }}
-      //   transition={{ duration: 0.3 }}
-      // >
-      //   <img
-      //     src={product.image?.url || "/path/to/placeholder.jpg"}
-      //     alt={product.title[i18n.language] || "Product Image"}
-      //     className="w-full h-40 object-cover"
-      //   />
-      //   <div className="p-4">
-      //     <h3 className="font-bold text-black truncate">
-      //       {product.title[i18n.language]}
-      //     </h3>
-      //     <button
-      //       onClick={() => openModal(product)}
-      //       className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
-      //     >
-      //       {t("viewProduct")}
-      //     </button>
-      //   </div>
-      // </motion.div>
+        ref={(node) => isAdmin && drag(drop(node))}
+        className="relative w-full border border-gray-300 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="w-full h-60 overflow-hidden">
+          <img
+            src={product.image?.url || "/path/to/placeholder.jpg"}
+            alt={product.title[i18n.language] || "Product Image"}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="font-bold text-black text-xl truncate">
+            {product.title[i18n.language]}
+          </h3>
+          <button
+            onClick={() => openModal(product)}
+            className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
+          >
+            {t("viewProduct")}
+          </button>
+        </div>
+      </motion.div>
     );
   };
 
@@ -152,77 +126,80 @@ const ProductsInfo = ({ isAdmin }) => {
         ))}
       </div>
 
-      {selectedProduct && (
+      {/* {selectedProduct && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 relative w-[90%] max-w-2xl">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-red-500 font-bold text-xl hover:text-gray-800 transition"
+            >
+              ✕
+            </button>
+            <div className="w-full h-96 overflow-hidden rounded">
+              <img
+                src={selectedProduct.image?.url || "/path/to/placeholder.jpg"}
+                alt={selectedProduct.title[i18n.language] || "Product Image"}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex justify-between mt-4">
+              <div>
+                <h2 className="text-xl font-bold">
+                  {selectedProduct.title[i18n.language]}
+                </h2>
+                <p className="text-gray-700 mt-2">
+                  {selectedProduct.content[i18n.language]}
+                </p>
+              </div>
+              <div className="mt-4">
+                <Link
+                  to="/contact"
+                  className="bg-green-700 px-4 py-2 font-bold text-white rounded hover:bg-green-600 transition"
+                >
+                  Buy Now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )} */}
 
-<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-<div className="bg-white rounded-lg p-6 relative w-[90%] max-w-2xl">
-  <button
-    onClick={closeModal}
-    className="absolute top-2 right-2 text-red-500 font-bold text-xl hover:text-gray-800 transition"
-  >
-    ✕
-  </button>
-  <div className="w-full h-96 overflow-hidden rounded">
-    <img
-      src={selectedProduct.image?.url || "/path/to/placeholder.jpg"}
-      alt={selectedProduct.title[i18n.language] || "Product Image"}
-      className="w-full h-full object-cover"
-    />
-  </div>
-  <div className="flex justify-between mt-4">
-    <div>
-      <h2 className="text-xl font-bold">
-        {selectedProduct.title[i18n.language]}
-      </h2>
-      <p className="text-gray-700 mt-2">
-        {selectedProduct.content[i18n.language]}
-      </p>
-    </div>
-    <div className="mt-4">
-      <Link
-        to="/contact"
-        className="bg-green-700 px-4 py-2 font-bold text-white rounded hover:bg-green-600 transition"
+{selectedProduct && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white rounded-lg p-4 sm:p-6 relative w-[90%] max-w-4xl h-auto max-h-[90%] overflow-y-auto">
+      <button
+        onClick={closeModal}
+        className="absolute top-[-2] right-0 bg-red-600 px-2 text-white font-bold text-xl  transition"
       >
-        Buy Now
-      </Link>
+        ✕
+      </button>
+      <div className="w-full h-60 sm:h-80 overflow-hidden rounded">
+        <img
+          src={selectedProduct.image?.url || "/path/to/placeholder.jpg"}
+          alt={selectedProduct.title[i18n.language] || "Product Image"}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="flex flex-col mt-4 gap-4">
+        <h2 className="text-xl font-bold text-center sm:text-left">
+          {selectedProduct.title[i18n.language]}
+        </h2>
+        <p className="text-gray-700 text-justify">
+          {selectedProduct.content[i18n.language]}
+        </p>
+        <div className="flex justify-center sm:justify-end mt-4">
+          <Link
+            to="/contact"
+            className="bg-green-700 px-6 py-2 font-bold text-white rounded hover:bg-green-600 transition"
+          >
+            Buy Now
+          </Link>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
+)}
 
-
-
-        // <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        //   <div className="bg-white rounded-lg p-6  justify-center  relative">
-        //     <button
-        //       onClick={closeModal}
-        //       className="absolute top-1 right-1 text-red-500 font-bold text-xl hover:text-gray-800 transition"
-        //     >
-        //       ✕
-        //     </button>
-        //     <img
-        //       src={selectedProduct.image?.url || "/path/to/placeholder.jpg"}
-        //       alt={selectedProduct.title[i18n.language] || "Product Image"}
-        //       className="w-full h-96 object-cover rounded"
-        //     />
-
-        //     <div className="flex justify-between">
-        //       <div>
-        //         <h2 className="text-xl font-bold mt-4">
-        //           {selectedProduct.title[i18n.language]}
-        //         </h2>
-        //         <p className="text-gray-700 mt-2">
-        //           {selectedProduct.content[i18n.language]}
-        //         </p>
-        //       </div>
-        //       <div className="mt-8 ">
-              
-        //         <Link to='/contact' className="bg-green-700 p-2 font-bold text-white rounded" >Buy Now</Link>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
-      )}
     </div>
   );
 };

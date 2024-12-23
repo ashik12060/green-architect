@@ -123,7 +123,7 @@ const CreateProduct = () => {
           <input
             id="titleEn"
             name="titleEn"
-            placeholder="Product title"
+            placeholder="Product title En"
             value={values.titleEn}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -136,7 +136,7 @@ const CreateProduct = () => {
           <input
             id="titleBn"
             name="titleBn"
-            placeholder="Product title"
+            placeholder="Product title Bn"
             value={values.titleBn}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -149,7 +149,7 @@ const CreateProduct = () => {
           <input
             id="titleEs"
             name="titleEs"
-            placeholder="Product title"
+            placeholder="Product title Dn"
             value={values.titleEs}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -163,7 +163,7 @@ const CreateProduct = () => {
           <textarea
             id="contentEn"
             name="contentEn"
-            placeholder="Write the Product content..."
+            placeholder="Write the Product content Eb"
             rows={4}
             value={values.contentEn}
             onChange={handleChange}
@@ -177,7 +177,7 @@ const CreateProduct = () => {
           <textarea
             id="contentBn"
             name="contentBn"
-            placeholder="Write the Product content..."
+            placeholder="Write the Product content Bn"
             rows={4}
             value={values.contentBn}
             onChange={handleChange}
@@ -191,7 +191,7 @@ const CreateProduct = () => {
           <textarea
             id="contentEs"
             name="contentEs"
-            placeholder="Write the Product content..."
+            placeholder="Write the Product content Dn"
             rows={4}
             value={values.contentEs}
             onChange={handleChange}
