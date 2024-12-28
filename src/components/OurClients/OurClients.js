@@ -76,13 +76,13 @@ const OurClients = () => {
   return (
     <div className="our-clients-container">
        <motion.h2
-      className="text-center text-2xl font-bold text-gray-800 mb-8"
+      className="text-center lg:text-2xl text-xl font-bold text-gray-800 mb-8"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: false, amount: 0.2 }}
       variants={headerVariants}
     >
-      {/* PARTNERS */}
+     
       {t('partners')}
     </motion.h2>
       <div className="our-clients-scroll">

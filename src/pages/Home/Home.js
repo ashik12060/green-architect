@@ -270,127 +270,122 @@ const Home = () => {
 
       {/* popup form */}
       {showPopup && (
-        <div className="fixed inset-0 flex items-start justify-end p-4 sm:p-8 z-50 animate__animated animate__fadeIn animate__faster">
-          <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-4 sm:p-6 lg:p-10 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-sm md:max-w-sm transition-all transform scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold mb-6 text-center text-green-800">
-              {t("popup_title")}
-            </h2>
+  <div className="fixed inset-0 flex items-center justify-end p-4 z-50 animate__animated animate__fadeIn animate__faster">
+    <div className="bg-gradient-to-b from-green-100 to-emerald-50 p-4 sm:p-6 lg:p-10 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm transition-all transform scale-95 hover:scale-100 max-h-[90vh] sm:max-h-[80vh] md:max-h-[80vh] overflow-y-auto">
+      <h2 className="text-lg font-bold sm:mb-1 text-center text-green-800">
+        {t("popup_title")}
+      </h2>
 
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              className="space-y-4 sm:space-y-6"
-            >
-              <div className="relative">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-green-700"
-                >
-                  {t("yourName")}
-                </label>
-                <div className="relative mt-1">
-                  <input
-                    id="name"
-                    type="text"
-                    name="user_name"
-                    onChange={(event) => setName(event.target.value)}
-                    value={name}
-                    required
-                    placeholder={t("namePlaceholder")}
-                    className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
-                  />
-                  <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
-                    <i className="fas fa-user"></i>
-                  </span>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-green-700"
-                >
-                  {t("yourEmail")}
-                </label>
-                <div className="relative mt-1">
-                  <input
-                    id="email"
-                    type="email"
-                    name="user_email"
-                    onChange={(event) => setEmail(event.target.value)}
-                    value={email}
-                    required
-                    placeholder={t("emailPlaceholder")}
-                    className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
-                  />
-                  <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
-                    <i className="fas fa-envelope"></i>
-                  </span>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-green-700"
-                >
-                  {t("yourPhoneNumber")}
-                </label>
-                <div className="relative mt-1">
-                  <input
-                    id="phone"
-                    type="tel"
-                    name="user_phone"
-                    onChange={(event) => setPhone(event.target.value)}
-                    value={phone}
-                    required
-                    placeholder={t("phonePlaceholder")}
-                    className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300 ease-in-out shadow-sm"
-                  />
-                  <span className="absolute inset-y-0 right-3 flex items-center text-green-500">
-                    <i className="fas fa-phone"></i>
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-green-700"
-                >
-                  {t("projectDetails")}
-                </label>
-                <textarea
-                  onChange={(event) => setMessages(event.target.value)}
-                  value={message}
-                  id="message"
-                  name="user_message"
-                  rows="4"
-                  required
-                  placeholder={t("detailsPlaceholder")}
-                  className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200 ease-in-out shadow-sm"
-                ></textarea>
-              </div>
-
-              <div className="flex flex-col sm:flex-row justify-between items-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
-                <button
-                  type="submit"
-                  className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  {t("submitRequest")}
-                </button>
-
-                <button
-                  className="bg-red-600 text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:bg-red-700 transition duration-300"
-                  onClick={() => setShowPopup(false)}
-                >
-                  {t("form.close")}
-                </button>
-              </div>
-            </form>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="space-y-2"
+      >
+        {/* Name Input */}
+        <div className="relative">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("yourName")}
+          </label>
+          <div className="relative">
+            <input
+              id="name"
+              type="text"
+              name="user_name"
+              onChange={(event) => setName(event.target.value)}
+              value={name}
+              required
+              placeholder={t("namePlaceholder")}
+              className="border border-gray-300 rounded-lg py-1 px-3 w-full focus:ring-2 focus:ring-green-500 focus:outline-none shadow-sm"
+            />
           </div>
         </div>
-      )}
+
+        {/* Email Input */}
+        <div className="relative">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("yourEmail")}
+          </label>
+          <div className="relative">
+            <input
+              id="email"
+              type="email"
+              name="user_email"
+              onChange={(event) => setEmail(event.target.value)}
+              value={email}
+              required
+              placeholder={t("emailPlaceholder")}
+              className="border border-gray-300 rounded-lg py-1 px-3 w-full focus:ring-2 focus:ring-green-500 focus:outline-none shadow-sm"
+            />
+          </div>
+        </div>
+
+        {/* Phone Input */}
+        <div className="relative">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("yourPhoneNumber")}
+          </label>
+          <div className="relative">
+            <input
+              id="phone"
+              type="tel"
+              name="user_phone"
+              onChange={(event) => setPhone(event.target.value)}
+              value={phone}
+              required
+              placeholder={t("phonePlaceholder")}
+              className="border border-gray-300 rounded-lg py-1 px-3 w-full focus:ring-2 focus:ring-green-500 focus:outline-none shadow-sm"
+            />
+          </div>
+        </div>
+
+        {/* Message Input */}
+        <div>
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-green-700"
+          >
+            {t("projectDetails")}
+          </label>
+          <textarea
+            onChange={(event) => setMessages(event.target.value)}
+            value={message}
+            id="message"
+            name="user_message"
+            rows="3"
+            required
+            placeholder={t("detailsPlaceholder")}
+            className="border border-gray-300 rounded-lg py-1 px-3 w-full focus:ring-2 focus:ring-green-500 focus:outline-none shadow-sm"
+          ></textarea>
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-4 space-y-3 sm:space-y-0 sm:space-x-4">
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-green-700 to-emerald-900 text-white py-1 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+          >
+            {t("submitRequest")}
+          </button>
+          <button
+            className="bg-red-600 text-white py-1 px-4 rounded-lg shadow-md hover:shadow-lg hover:bg-red-700 transition duration-300 w-full sm:w-auto"
+            onClick={() => setShowPopup(false)}
+          >
+            {t("form.close")}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
     </>
   );
 };

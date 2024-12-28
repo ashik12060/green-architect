@@ -66,7 +66,7 @@ function Videos() {
           {/* <h1 className="text-3xl font-bold text-gray-800  border-b-4 border-green-700"> {t('pageTitle')}</h1>
           <p className="mt-2 text-gray-600">{t('location')}</p> */}
           <motion.h1
-        className="text-3xl font-bold text-gray-800 border-b-4 border-green-700"
+        className="lg:text-3xl sm:text-xl font-bold text-gray-800 border-b-4 border-green-700"
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: false, amount: 0.2 }}

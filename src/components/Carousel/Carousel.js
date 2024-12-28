@@ -32,53 +32,38 @@ function ImageCarousel() {
   };
 
   if (loading) return <div>{t("loading")}</div>; // Use i18n for loading text if needed
-  if (error) return <div>{t("error")}: {error}</div>;
+  if (error)
+    return (
+      <div>
+        {t("error")}: {error}
+      </div>
+    );
 
   return (
-
-    <div className="relative w-full h-[500px] flex overflow-hidden">
-  {images.map((image, index) => (
-    <div
-      key={image._id}
-      className={`relative transition-all duration-500 ease-in-out ${
-        activeImage === index ? "flex-[7]" : "flex-[1]"
-      } flex-shrink-0`}
-      onMouseEnter={() => handleHover(index)}
-      onMouseLeave={() => handleHover(null)} // Reset hover effect
-    >
-      <img
-        src={image.image.url}
-        alt={image.title[i18n.language]} // Alt text in the selected language
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-0 left-0 w-full p-2 text-sm text-white bg-black bg-opacity-50">
-        {image.title[i18n.language]} {/* Display title based on current language */}
-      </div>
+    <div className="relative w-full lg:h-[500px] sm:h-[200] flex overflow-hidden">
+      {images.map((image, index) => (
+        <div
+          key={image._id}
+          className={`relative transition-all duration-500 ease-in-out ${
+            activeImage === index ? "flex-[7]" : "flex-[1]"
+          } flex-shrink-0`}
+          onMouseEnter={() => handleHover(index)}
+          onMouseLeave={() => handleHover(null)} // Reset hover effect
+        >
+          <img
+            src={image.image.url}
+            alt={image.title[i18n.language]} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-0 left-0 w-full p-2 text-sm text-white bg-black bg-opacity-50">
+            {image.title[i18n.language]}{" "}
+          </div>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-
-    // <div className="relative w-full h-[500px] flex overflow-hidden">
-    //   {images.map((image, index) => (
-    //     <div
-    //       key={image._id}
-    //       className={`relative flex-shrink-0 transition-all duration-500 ease-in-out ${
-    //         activeImage === index ? "w-[70%]" : "w-[10%]"
-    //       }`}
-    //       onMouseEnter={() => handleHover(index)}
-    //     >
-    //       <img
-    //         src={image.image.url}
-    //         alt={image.title[i18n.language]} // Alt text in the selected language
-    //         className="w-full h-full object-cover"
-    //       />
-    //       <div className="absolute bottom-0 left-0 p-2 text-white bg-black bg-opacity-50">
-    //         {image.title[i18n.language]} {/* Display title based on current language */}
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
   );
 }
 
 export default ImageCarousel;
+
+

@@ -89,10 +89,10 @@ export const ServiceCard = () => {
 
   return (
     <div className={`${isDarkMode ? "text-white" : "bg-gray-100"}`}>
-      <div className="container mx-auto px-4 py-16">
+      <div className="container lg:mx-auto lg:px-4 px-20 lg:py-16 py-20">
        
         <motion.h1
-      className={`text-4xl font-bold text-center mb-10 ${
+      className={`lg:text-4xl sm:text-xl font-bold text-center mb-10 ${
         isDarkMode ? "text-white" : "text-black"
       }`}
       initial="offscreen"
@@ -104,7 +104,7 @@ export const ServiceCard = () => {
     </motion.h1>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:p-1 sm:p-10 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
           animate="visible"
           variants={{
@@ -120,7 +120,7 @@ export const ServiceCard = () => {
               {/* Make the whole card clickable */}
               <Link
                 to={service.link}
-                className={`relative bg-white rounded-lg shadow-md p-6 text-center overflow-hidden group block min-h-[350px] ${
+                className={`relative  bg-white rounded-lg shadow-md p-10 text-center overflow-hidden group block min-h-[350px] ${
                   isDarkMode ? "bg-gray-800 text-white" : "text-black"
                 }`}
               >
@@ -128,13 +128,13 @@ export const ServiceCard = () => {
                 <div className="mb-4 relative z-10">
                   <FontAwesomeIcon
                     icon={service.icon}
-                    size="3x"
-                    className="text-gray-500 mb-4"
+                    
+                    className="text-gray-500 mb-4 lg:text-4xl text-xl"
                   />
-                  <h2 className="ml-2 text-black text-xl font-bold">{t(service.title)}</h2>
+                  <h2 className="ml-2 text-black  lg:text-xl text-lg font-bold">{t(service.title)}</h2>
                 </div>
-                <p className="text-gray-700 relative z-10">{t(service.description)}</p>
-                <div className="mt-4 inline-block px-4 py-2 text-green-700 font-bold rounded-lg relative z-10 hover:border-2 hover:border-green-800">
+                <p className="text-gray-700 relative lg:text-lg text-sm z-10">{t(service.description)}</p>
+                <div className="mt-4 inline-block px-4 py-2 text-green-700 font-bold rounded-lg relative z-10 hover:border-2 hover:border-green-800 lg:text-xl text-sm">
                   {t("seeMore")}
                   <FontAwesomeIcon
                     className="ps-2 animate-pulse text-green-700"

@@ -75,7 +75,7 @@ function ContactUs() {
           
           <div>
             <h2
-              className={`text-3xl font-semibold mb-8  ${
+              className={`lg:text-3xl text-xl font-semibold mb-8  ${
                 isDarkMode ? " text-white" : "text-black"
               }`}
             >
@@ -103,7 +103,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <h3 className="lg:text-2xl text-xl font-bold text-gray-900">
                     {" "}
                     {t("callUs")}
                   </h3>
@@ -131,7 +131,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <h3 className="lg:text-2xl text-xl font-bold text-gray-900">
                     {t("emailUs")}
                   </h3>
                   <p>
@@ -165,7 +165,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <h3 className="lg:text-2xl text-xlfont-bold text-gray-900">
                     {t("workingHours")}
                   </h3>
                   <p className="text-gray-900">{t("workingDays")}</p>
@@ -173,66 +173,14 @@ function ContactUs() {
                 </div>
               </div>
 
-              {/* Our Office */}
-              {/* <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <div className="text-green-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 2L2 7h20L12 2zM2 17h20v5H2v-5zM17 12h5v5h-5v-5zM2 12h5v5H2v-5zM7 7v5H2V7h5zm10 0v5h5V7h-5zm-5 0v5h-5V7h5z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {t("ourOffice")}
-                  </h3>
-                  <p className="text-gray-900">{t("officeAddress")}</p>
-
-                  <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
-                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <h6 className="text-lg font-semibold ">Dhaka Office</h6>
-                      <p className="mt-2 ">
-                        44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
-                        Opposite.
-                      </p>
-                    </div>
-
-                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <h6 className="text-lg font-semibold ">
-                        Lakshmipur Office
-                      </h6>
-                      <p className="mt-2 ">
-                        Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur
-                        Sadar
-                      </p>
-                    </div>
-
-                    <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <h6 className="text-lg font-semibold ">Denmark Office</h6>
-                      <p className="mt-2">Divelshul 1, st 3, 6000 Kolding</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
+              
             </div>
           </div>
 
           {/* Contact Form */}
           <div>
             <h2
-              className={`text-3xl font-semibold mb-8  ${
+              className={`lg:text-3xl text-xl font-semibold mb-8  ${
                 isDarkMode ? " text-white" : "text-black"
               }`}
             >
@@ -363,7 +311,7 @@ function ContactUs() {
       {/* Map Section */}
       <div className=" py-16">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold text-center mb-8">
+          <h2 className="lg:text-3xl text-xl font-semibold text-center mb-8">
             {t("findUs")}
           </h2>
           <div className="flex justify-center">
