@@ -1,12 +1,18 @@
 {
   "footer": {
     "contact": {
+      "dhakaOffice": "Dhaka Office",
+      "officeLocation": "44/28, Lift 3B, Meraj Tower, Panthapath, Somorita Hospital Opposite.",
+      "lakshmipurOffice": "Lakshmipur Office",
+      "lakshmipurLocation": "Jonota Automobiles, 2nd Floor, Uttar Temuhoni, Lakshmipur Sadar",
+      "denmarkOffice": "Denmark Office",
+      "denmarkLocation": "Divelshul 1, st 3, 6000 Kolding",
       "address": "Panthapath, Kalabagan, Dhaka-1205",
-      "designQuote": "Design Your Own World",
-      
+      "designQuote": "Build Your Own World, Where Nature Meets Design",
+      "callNow":" Call Now:",
       "quickLinks": "Quick Links",
       "getInTouch": "Get in Touch",
-     "cell":"+8801706046312",
+      "cell": "+8801706046312",
       "aboutUs": "About Us",
       "contact": "Contact",
       "blog": "Blog",

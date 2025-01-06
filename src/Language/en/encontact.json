@@ -21,7 +21,13 @@
     "detailsPlaceholder": "Write your query",
     "submitRequest": "Submit Request",
     "findUs": "Find Us on Google Maps",
-    "googleMap": "Google Map"
+    "googleMap": "Google Map",
+    "dhakaOffice":"Dhaka Office",
+    "officeLocation":"44/28, Lift 3B, Meraj Tower, Panthapath, Somorita Hospital Opposite.",
+    "lakshmipurOffice":"Lakshmipur Office",
+    "lakshmipurLocation":"Jonota Automobiles, 2nd Floor, Uttar Temuhoni, Lakshmipur Sadar",
+    "denmarkOffice":"Denmark Office",
+    "denmarkLocation":"Divelshul 1, st 3, 6000 Kolding"
     
   }
   

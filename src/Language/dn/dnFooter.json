@@ -1,43 +1,49 @@
 {
-    "footer": {
-      "contact": {
-        "address": "Panthapath, Kalabagan, Dhaka-1205",
-        "designQuote": "Design Din Egen Verden",
-        "cell":"+8801706046312",
-        "quickLinks": "Hurtige Links",
-        "getInTouch": "Kom i Kontakt",
-        "aboutUs": "Om Os",
+  "footer": {
+    "contact": {
+      "dhakaOffice": "Dhaka Kontor",
+      "officeLocation": "44/28, Elevator 3B, Meraj Tower, Panthapath, overfor Somorita Hospital.",
+      "lakshmipurOffice": "Lakshmipur Kontor",
+      "lakshmipurLocation": "Jonota Automobiles, 2. sal, Uttar Temuhoni, Lakshmipur Sadar.",
+      "denmarkOffice": "Danmark Kontor",
+      "denmarkLocation": "Divelshul 1, st. 3, 6000 Kolding.",
+      "callNow":"Ring nu:",
+      "address": "Panthapath, Kalabagan, Dhaka-1205",
+      "designQuote": "Byg din egen verden, hvor naturen møder design.",
+      "cell": "+8801706046312",
+      "quickLinks": "Hurtige Links",
+      "getInTouch": "Kom i Kontakt",
+      "aboutUs": "Om Os",
       "contact": "Kontakt",
       "blog": "Blog",
       "services": "Services",
       "products": "Produkter",
       "scheduleMeeting": "Planlæg et Møde",
-        "subscribeNewsletter": "TILMELD DIG VORES NYHEDSBREV",
-        "newsletterDescription": "Få alle de seneste opdateringer nemt"
-      },
-      "form": {
-        "getInTouch":"Tag kontakt",
-        "name": "NAVN *",
-        "email": "E-MAIL *",
-        "phone": "KONTAKTNUMMER *",
-        "message": "BESKED *",
-        "submit": "Indsend"
-      },
-      "newsletter": {
-        "subscribe": "TILMELD DIG VORES NYHEDSBREV",
-        "description": "Få alle de seneste opdateringer nemt",
-        "namePlaceholder": "Dit Navn",
-        "emailPlaceholder": "Din E-mail",
-        "connectButton": "Forbind"
-      },
-      "socialMedia": {
-        "facebook": "Facebook",
-        "youtube": "YouTube",
-        "instagram": "Instagram",
-        "linkedin": "LinkedIn",
-        "email": "E-mail"
-      },
-      "footerMessage": "&copy; {{year}} Green Shelter Design & Development. Alle rettigheder forbeholdes."
-    }
+      "subscribeNewsletter": "TILMELD DIG VORES NYHEDSBREV",
+      "newsletterDescription": "Få alle de seneste opdateringer nemt"
+    },
+    "form": {
+      "getInTouch": "Tag kontakt",
+      "name": "NAVN *",
+      "email": "E-MAIL *",
+      "phone": "KONTAKTNUMMER *",
+      "message": "BESKED *",
+      "submit": "Indsend"
+    },
+    "newsletter": {
+      "subscribe": "TILMELD DIG VORES NYHEDSBREV",
+      "description": "Få alle de seneste opdateringer nemt",
+      "namePlaceholder": "Dit Navn",
+      "emailPlaceholder": "Din E-mail",
+      "connectButton": "Forbind"
+    },
+    "socialMedia": {
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "email": "E-mail"
+    },
+    "footerMessage": "&copy; {{year}} Green Shelter Design & Development. Alle rettigheder forbeholdes."
   }
-  
+}

@@ -276,31 +276,30 @@ function ContactUs() {
             <div className="py-8 text-center flex flex-col lg:flex-row justify-evenly items-start gap-8">
               <div className="p-4  bg-gray-800 shadow-lg rounded-lg lg:w-1/3 border border-gray-200 w-full h-40  hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white">
                 <FontAwesomeIcon icon={faLocationDot} />
-                <h6 className="text-lg font-semibold ">Dhaka Office</h6>
+                <h6 className="text-lg font-semibold ">{t("dhakaOffice")}</h6>
                 <p className="mt-2 ">
                   <i>
                     {" "}
-                    44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
-                    Opposite.
+                    {t("officeLocation")}
                   </i>
                 </p>
               </div>
 
               <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
                 <FontAwesomeIcon icon={faLocationDot} />
-                <h6 className="text-lg font-semibold ">Lakshmipur Office</h6>
+                <h6 className="text-lg font-semibold ">{t("lakshmipurOffice")}</h6>
                 <p className="mt-2 ">
                   <i>
-                    Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur Sadar
+                    {t("lakshmipurLocation")}
                   </i>
                 </p>
               </div>
 
               <div className="p-4  bg-gray-800 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white lg:w-1/3 w-full h-40">
                 <FontAwesomeIcon icon={faLocationDot} />
-                <h6 className="text-lg font-semibold ">Denmark Office</h6>
+                <h6 className="text-lg font-semibold ">{t("denmarkOffice")}</h6>
                 <p className="mt-2">
-                  <i>Divelshul 1, st 3, 6000 Kolding</i>
+                  <i>{t("denmarkLocation")}</i>
                 </p>
               </div>
             </div>

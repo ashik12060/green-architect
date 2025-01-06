@@ -24,7 +24,8 @@ function Footer() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
-  const { t } = useTranslation("Footer");
+  const { t } = useTranslation("Footer", "contact");
+  // const { t } = useTranslation("contact");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -72,7 +73,7 @@ function Footer() {
                   </div>
 
                   <h6 className="text-l">
-                    Build Your Own World, Where Nature Meets Design
+                    {t("footer.contact.designQuote")}
                   </h6>
                 </div>
 
@@ -111,13 +112,13 @@ function Footer() {
                   <div className="relative p-6 bg-gray-800 shadow-lg rounded-lg lg:w-1/3 w-full h-full min-h-[210px] border border-gray-200 hover:shadow-2xl transition-shadow duration-300 ease-in-out text-white flex flex-col moving-border">
                     <span className="moving-dot"></span>
                     <FontAwesomeIcon icon={faLocationDot} />
-                    <h6 className="text-lg font-semibold mt-4">Dhaka Office</h6>
+                    <h6 className="text-lg font-semibold mt-4">{t("footer.contact.dhakaOffice")}</h6>
                     <p className="mt-2">
                       <i>
-                        44/28 Lift 3B Meraj Tower Panthapath Somorita Hospital
-                        Opposite.
+                       
+                        {t("footer.contact.officeLocation")}
                         <br />
-                        Call Now: {t("footer.contact.cell")}
+                        {t("footer.contact.callNow")} {t("footer.contact.cell")}
                       </i>
                     </p>
                   </div>
@@ -125,14 +126,13 @@ function Footer() {
                     <span className="moving-dot"></span>
                     <FontAwesomeIcon icon={faLocationDot} />
                     <h6 className="text-lg font-semibold mt-4">
-                      Lakshmipur Office
+                      {t("footer.contact.lakshmipurOffice")}
                     </h6>
                     <p className="mt-2">
                       <i>
-                        Jonota Automobiles 2nd Floor Uttar Temuhoni Lakshmipur
-                        Sadar
+                        {t("footer.contact.lakshmipurLocation")}
                         <br />
-                        Call Now: {t("footer.contact.cell")}
+                        {t("footer.contact.callNow")} {t("footer.contact.cell")}
                       </i>
                     </p>
                   </div>
@@ -140,13 +140,13 @@ function Footer() {
                     <span className="moving-dot"></span>
                     <FontAwesomeIcon icon={faLocationDot} />
                     <h6 className="text-lg font-semibold mt-4">
-                      Denmark Office
+                     {t("footer.contact.denmarkOffice")}
                     </h6>
                     <p className="mt-2">
                       <i>
-                        Divelshul 1, st 3, 6000 Kolding
+                      {t("footer.contact.denmarkLocation")}
                         <br />
-                        Call Now: {t("footer.contact.cell")}
+                        {t("footer.contact.callNow")} {t("footer.contact.cell")}
                       </i>
                     </p>
                   </div>
