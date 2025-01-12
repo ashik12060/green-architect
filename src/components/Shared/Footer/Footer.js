@@ -48,7 +48,7 @@ function Footer() {
             <div>
               <div className="flex flex-col lg:flex-row justify-evenly items-start gap-8">
                 <div className="">
-                  <img src={logo} className=" w-80 rounded h-28 " />
+                  <img src={logo} className=" w-40  h-28 " />
 
                   <div className="text-xl py-2">
                     <nav className="space-x-6">
