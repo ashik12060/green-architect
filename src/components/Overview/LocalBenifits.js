@@ -121,7 +121,8 @@ import { useTranslation } from "react-i18next";
 
 export const LocalBenifits = ({ services }) => {
   const { isDarkMode } = useTheme();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
+   const { t } = useTranslation('SingleProject');
 
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -154,7 +155,7 @@ export const LocalBenifits = ({ services }) => {
             isDarkMode ? "text-white border-b-4 border-green-700" : "text-black"
           }`}
         >
-          {t("local_benefits")}
+          {t("LocalBenefits")}
         </h1>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"

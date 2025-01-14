@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DOMPurify from "dompurify";
 import { useTheme } from "../context/ThemeContext";
@@ -154,8 +154,8 @@ const SingleProject = () => {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold mb-4">{t("At a Glance")}</h2>
-                <table className="w-full h-56 text-sm ">
+                <h2 className="text-2xl font-bold mb-4">{t("atAGlance")}</h2>
+                <table className="w-full h-56 text-sm mb-4">
                   <tbody>
                     <tr className="border-b border-gray-300">
                       <td className=" pr-4 border-b border-gray-300">
@@ -311,9 +311,9 @@ const SingleProject = () => {
                     </tr>
                   </tbody>
                 </table>
-                <button className="mt-6 px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
-                  {t("construction_status")}
-                </button>
+                <Link to='/contact' className="mt-6 px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+                  {t("contactUs")}
+                </Link>
               </div>
             </div>
           </div>

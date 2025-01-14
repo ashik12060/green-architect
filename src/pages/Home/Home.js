@@ -166,27 +166,7 @@ const Home = () => {
         </h3>
         <ProjectsCarousel />
 
-        {/* <div className="flex items-center justify-center gap-2 my-10">
-          <a
-            href="tel:+8801711991792"
-            className="text-green-500 hover:text-green-700"
-          >
-            <i className="fa-solid fa-phone"></i>
-          </a>
-          <Link
-            to="/projects"
-            className={`fw-bold px-4 py-2 rounded text-xl ${
-              isDarkMode ? " text-white bg-gray-800" : "border-2  border-green-700 text-green-700"
-            }`}
-          >
-            {t("allProjects")}
-            <FontAwesomeIcon
-              className="ps-2 animate-pulse"
-              icon={faAnglesRight}
-            />
-
-          </Link>
-        </div> */}
+       
         <div className="flex items-center justify-center gap-2 my-10">
           {/* Phone Icon */}
           <motion.a
@@ -237,18 +217,7 @@ const Home = () => {
           isDarkMode ? "bg-black" : "bg-white"
         }`}
       >
-        {/* <button
-          className={` font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out  ${
-            isDarkMode
-              ? "bg-black bg-gradient-to-r from-green-700 to-emerald-900 text-white"
-              : "bg-gradient-to-r from-green-500 to-emerald-700 text-white"
-          }`}
-          onClick={handleScheduleMeeting}
-          data-aos="fade-right"
-        >
-          <FontAwesomeIcon icon={faCalendarDays} className="pe-2 text-xl" />{" "}
-          {t("schedule_meeting")}
-        </button> */}
+        
         <motion.button
           className={`font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out ${
             isDarkMode

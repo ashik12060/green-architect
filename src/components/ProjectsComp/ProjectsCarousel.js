@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules"; // Import only required modules
@@ -31,7 +30,8 @@ const ProjectsCarousel = () => {
   }, []);
 
   if (loading) return <div className="text-center py-10">Loading...</div>;
-  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
+  if (error)
+    return <div className="text-center py-10 text-red-500">{error}</div>;
 
   return (
     <div className="projects-carousel">
@@ -56,7 +56,7 @@ const ProjectsCarousel = () => {
         {projects.map((project) => (
           <SwiperSlide key={project._id}>
             <motion.div
-              className="relative w-full h-64 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
+              className="relative w-full h-80 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
@@ -82,19 +82,19 @@ const ProjectsCarousel = () => {
                     />
                   )}
                    */}
-                   {project.images && project.images.length > 0 ? (
-  <img
-    src={project.images[0].url} // Display only the first image
-    alt={project.title.en || "Project Image"}
-    className="w-full h-full object-cover"
-  />
-) : (
-  <img
-    src="/path/to/placeholder.jpg"
-    alt="Placeholder"
-    className="w-full h-full object-cover"
-  />
-)}
+                  {project.images && project.images.length > 0 ? (
+                    <img
+                      src={project.images[0].url} // Display only the first image
+                      alt={project.title.en || "Project Image"}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src="/path/to/placeholder.jpg"
+                      alt="Placeholder"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
               </Link>
               <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">

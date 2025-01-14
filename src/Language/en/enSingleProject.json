@@ -11,6 +11,11 @@
     "bathroom": "Bathroom",
     "launchDate": "Launch Date",
     "collection": "Collection",
-    "buildingType": "Building Type"
+    "buildingType": "Building Type",
+    "contactUs": "Contact Us",
+    "atAGlance": "At a Glance",
+    "LocalBenefits": "Local Benefits",
+    "OVERVIEW": "OVERVIEW"
+
 
 }

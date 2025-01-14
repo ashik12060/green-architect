@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useDrag, useDrop, DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -87,13 +85,80 @@ const OurProjects = ({ isAdmin }) => {
     }
   };
 
+  // const DraggableCard = ({ index, project }) => {
+  //   const [, drag] = useDrag({
+  //     type: ItemType,
+  //     item: { index },
+  //     canDrag: isAdmin,
+  //   });
+
+  //   const [, drop] = useDrop({
+  //     accept: ItemType,
+  //     hover: (item) => {
+  //       console.log(`Hovering: Dragged item ${item.index} over ${index}`);
+  //       if (item.index !== index && isAdmin) {
+  //         moveCard(item.index, index);
+  //         item.index = index;
+  //       }
+  //     },
+  //     drop: isAdmin ? saveNewOrder : undefined,
+  //   });
+
+  //   return (
+  //     <motion.div
+  //       ref={(node) => drag(drop(node))}
+  //       className="relative w-full h-64 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
+  //       initial={{ opacity: 0, scale: 0.95 }}
+  //       animate={{ opacity: 1, scale: 1 }}
+  //       transition={{ duration: 0.3 }}
+  //     >
+  //       <Link to={`/project/${project._id}`} className="block h-full">
+  //         <div className="w-full h-full flex overflow-hidden">
+  //           {project.images && project.images.length > 0 ? (
+  //             project.images.map((image, idx) => (
+  //               <img
+  //                 key={idx}
+  //                 src={image.url}
+  //                 alt={project.title[i18n.language] || "Project Image"}
+  //                 className={`object-cover h-full ${
+  //                   idx === 0 ? "w-full" : "w-1/3"
+  //                 } transition-all duration-300`}
+  //               />
+  //             ))
+  //           ) : (
+  //             <img
+  //               src="/path/to/placeholder.jpg"
+  //               alt="Placeholder"
+  //               className="w-full h-full object-cover"
+  //             />
+  //           )}
+  //         </div>
+  //       </Link>
+
+  //       <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">
+  //         {/* <p className="font-bold text-center truncate">
+  //           {project.title[i18n.language]}
+  //         </p> */}
+  //         <Link
+  //           to={`/project/${project._id}`}
+  //           className={`mt-2 block w-fit mx-auto px-4 py-2 rounded-md ${
+  //             isAdmin ? "bg-gray-800" : "bg-green-700"
+  //           } text-white`}
+  //         >
+  //           {t("LearnMore")}
+  //         </Link>
+  //       </div>
+  //     </motion.div>
+  //   );
+  // };
+
   const DraggableCard = ({ index, project }) => {
     const [, drag] = useDrag({
       type: ItemType,
       item: { index },
       canDrag: isAdmin,
     });
-
+  
     const [, drop] = useDrop({
       accept: ItemType,
       hover: (item) => {
@@ -105,28 +170,24 @@ const OurProjects = ({ isAdmin }) => {
       },
       drop: isAdmin ? saveNewOrder : undefined,
     });
-
+  
     return (
       <motion.div
         ref={(node) => drag(drop(node))}
-        className="relative w-full h-64 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
+        className="relative w-full h-80 sm:h-80 border border-gray-300 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
       >
-        {/* <Link to={`/project/${project._id}`} className="block h-full">
+        <Link to={`/project/${project._id}`} className="block h-full">
           <div className="w-full h-full flex overflow-hidden">
             {project.images && project.images.length > 0 ? (
-              project.images.map((image, idx) => (
-                <img
-                  key={idx}
-                  src={image.url}
-                  alt={project.title[i18n.language] || "Project Image"}
-                  className={`object-cover ${
-                    idx === 0 ? "w-full" : "w-1/3"
-                  } transition-all duration-300`}
-                />
-              ))
+              // Show only the first image
+              <img
+                src={project.images[0].url}
+                alt={project.title[i18n.language] || "Project Image"}
+                className="object-cover w-full h-full transition-all duration-300"
+              />
             ) : (
               <img
                 src="/path/to/placeholder.jpg"
@@ -135,38 +196,9 @@ const OurProjects = ({ isAdmin }) => {
               />
             )}
           </div>
-        </Link> */}
-
-<Link to={`/project/${project._id}`} className="block h-full">
-  <div className="w-full h-full flex overflow-hidden">
-    {project.images && project.images.length > 0 ? (
-      project.images.map((image, idx) => (
-        <img
-          key={idx}
-          src={image.url}
-          alt={project.title[i18n.language] || "Project Image"}
-          className={`object-cover h-full ${
-            idx === 0 ? "w-full" : "w-1/3"
-          } transition-all duration-300`}
-        />
-      ))
-    ) : (
-      <img
-        src="/path/to/placeholder.jpg"
-        alt="Placeholder"
-        className="w-full h-full object-cover"
-      />
-    )}
-  </div>
-</Link>
-
-
-
-
+        </Link>
+  
         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white">
-          {/* <p className="font-bold text-center truncate">
-            {project.title[i18n.language]}
-          </p> */}
           <Link
             to={`/project/${project._id}`}
             className={`mt-2 block w-fit mx-auto px-4 py-2 rounded-md ${
@@ -179,9 +211,11 @@ const OurProjects = ({ isAdmin }) => {
       </motion.div>
     );
   };
+  
 
   if (loading) return <div className="text-center py-10">Loading...</div>;
-  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
+  if (error)
+    return <div className="text-center py-10 text-red-500">{error}</div>;
 
   return (
     <div
@@ -204,7 +238,7 @@ const OurProjects = ({ isAdmin }) => {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
         {filteredProjects.map((project, index) => (
           <DraggableCard key={project._id} index={index} project={project} />
         ))}

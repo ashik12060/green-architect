@@ -414,10 +414,6 @@ collegeNameEn: yup
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
 
-
-// end
-    
-  // end
   category: yup.string("Select a category").required("Category is required"),
 });
 
@@ -547,9 +543,8 @@ const CreateProject = () => {
       busStopNameBn: "",
       busStopNameEs: "",
 
-      // end
-
       images: [],
+      overviewImages: [],
       category: "", // New field for category selection
     },
     validationSchema: validationSchema,
@@ -681,6 +676,7 @@ const CreateProject = () => {
 
         category,
         images,
+        overviewImages,
       } = values;
 
       const data = {
@@ -723,6 +719,7 @@ const CreateProject = () => {
 
         category, // Include category
         images,
+        overviewImages,
       };
 
       console.log("Payload:", data); // Debugging: Check the payload
@@ -741,6 +738,61 @@ const CreateProject = () => {
       toast.error("An error occurred. Please try again.");
     }
   };
+
+  const handleFileUpload = (acceptedFiles, callback) => {
+    const filePromises = acceptedFiles.map((file) => {
+      const reader = new FileReader();
+      return new Promise((resolve) => {
+        reader.onload = () => resolve(reader.result);
+        reader.readAsDataURL(file);
+      });
+    });
+  
+    Promise.all(filePromises).then(callback);
+  };
+  
+  const ImageDropzone = ({ name, setFieldValue, values }) => (
+    <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
+      <Dropzone
+        acceptedFiles=".jpg,.jpeg,.png"
+        multiple
+        onDrop={(acceptedFiles) => {
+          handleFileUpload(acceptedFiles, (images) => {
+            setFieldValue(name, images);
+          });
+        }}
+      >
+        {({ getRootProps, getInputProps, isDragActive }) => (
+          <div
+            {...getRootProps()}
+            className={`p-4 ${
+              isDragActive ? "bg-blue-100" : "bg-gray-100"
+            } hover:cursor-pointer`}
+          >
+            <input name={name} {...getInputProps()} />
+            {isDragActive ? (
+              <p className="text-center text-sm">Drop your files here!</p>
+            ) : (
+              <p className="text-center text-sm">
+                Drag and drop or click to select images
+              </p>
+            )}
+          </div>
+        )}
+      </Dropzone>
+      <div className="flex mt-2 gap-2">
+        {values[name].map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Preview ${index + 1}`}
+            className="w-20 h-20 object-cover"
+          />
+        ))}
+      </div>
+    </div>
+  );
+  
 
   return (
     <div className="bg-white p-5 w-full max-w-3xl mx-auto">
@@ -1714,7 +1766,7 @@ const CreateProject = () => {
         </div>
 
         {/* Dropzone for Multiple Images */}
-        <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
+        {/* <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
           <Dropzone
             acceptedFiles=".jpg,.jpeg,.png"
             multiple
@@ -1759,7 +1811,73 @@ const CreateProject = () => {
               />
             ))}
           </div>
+        </div> */}
+
+<ImageDropzone
+    name="images"
+    setFieldValue={setFieldValue}
+    values={values}
+  />
+  <ImageDropzone
+    name="overviewImages"
+    setFieldValue={setFieldValue}
+    values={values}
+  />
+
+
+
+
+
+
+        {/* Dropzone for Multiple overviewImages */}
+        {/* <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
+          <Dropzone
+            acceptedFiles=".jpg,.jpeg,.png"
+            multiple
+            onDrop={(acceptedFiles) => {
+              const imageOverviewPromises = acceptedFiles.map((file) => {
+                const reader = new FileReader();
+                return new Promise((resolve) => {
+                  reader.onload = () => resolve(reader.result);
+                  reader.readAsDataURL(file);
+                });
+              });
+              Promise.all(imageOverviewPromises).then((overviewImages) => {
+                setFieldValue("overviewImages", overviewImages);
+              });
+            }}
+          >
+            {({ getRootProps, getInputProps, isDragActive }) => (
+              <div
+                {...getRootProps()}
+                className={`p-4 ${
+                  isDragActive ? "bg-blue-100" : "bg-gray-100"
+                } hover:cursor-pointer`}
+              >
+                <input name="overviewImages" {...getInputProps()} />
+                {isDragActive ? (
+                  <p className="text-center text-sm">Drop overviewImages here!</p>
+                ) : (
+                  <p className="text-center text-sm">
+                    Drag and Drop or click to select overviewImages
+                  </p>
+                )}
+              </div>
+            )}
+          </Dropzone>
+          <div className="flex mt-2 gap-2">
+            {values.overviewImages.map((overviewImage, index) => (
+              <img
+                key={index}
+                src={overviewImage}
+                alt={`Preview ${index + 1}`}
+                className="w-20 h-20 object-cover"
+              />
+            ))}
+          </div>
         </div>
+
+         */}
 
         {/* Submit Button */}
         <button
