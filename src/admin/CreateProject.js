@@ -751,7 +751,7 @@ const CreateProject = () => {
     Promise.all(filePromises).then(callback);
   };
   
-  const ImageDropzone = ({ name, setFieldValue, values }) => (
+  const ImageDropzone = ({ name, setFieldValue, values,placeholder  }) => (
     <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
       <Dropzone
         acceptedFiles=".jpg,.jpeg,.png"
@@ -763,21 +763,34 @@ const CreateProject = () => {
         }}
       >
         {({ getRootProps, getInputProps, isDragActive }) => (
+          // <div
+          //   {...getRootProps()}
+          //   className={`p-4 ${
+          //     isDragActive ? "bg-blue-100" : "bg-gray-100"
+          //   } hover:cursor-pointer`}
+          // >
+          //   <input name={name} {...getInputProps()} />
+          //   {isDragActive ? (
+          //     <p className="text-center text-sm">Drop your image files here!</p>
+          //   ) : (
+          //     <p className="text-center text-sm">
+          //       Drag and drop  or click to select images
+          //     </p>
+          //   )}
+          // </div>
           <div
-            {...getRootProps()}
-            className={`p-4 ${
-              isDragActive ? "bg-blue-100" : "bg-gray-100"
-            } hover:cursor-pointer`}
-          >
-            <input name={name} {...getInputProps()} />
-            {isDragActive ? (
-              <p className="text-center text-sm">Drop your files here!</p>
-            ) : (
-              <p className="text-center text-sm">
-                Drag and drop or click to select images
-              </p>
-            )}
-          </div>
+          {...getRootProps()}
+          className={`p-4 ${isDragActive ? "bg-blue-100" : "bg-gray-100"} hover:cursor-pointer`}
+        >
+          <input name={name} {...getInputProps()} />
+          {isDragActive ? (
+            <p className="text-center text-sm">Drop your image files here!</p>
+          ) : values[name]?.length === 0 ? (
+            <p className="text-center text-sm">{placeholder}</p> // Display the custom placeholder text
+          ) : (
+            <p className="text-center text-sm">Click to upload more images</p>
+          )}
+        </div>
         )}
       </Dropzone>
       <div className="flex mt-2 gap-2">
@@ -1488,7 +1501,7 @@ const CreateProject = () => {
           </div>
            ))}
 
-          // start 
+         
 
 
           {/* Project mosqueName */}
@@ -1765,66 +1778,35 @@ const CreateProject = () => {
           )}
         </div>
 
-        {/* Dropzone for Multiple Images */}
-        {/* <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
-          <Dropzone
-            acceptedFiles=".jpg,.jpeg,.png"
-            multiple
-            onDrop={(acceptedFiles) => {
-              const imagePromises = acceptedFiles.map((file) => {
-                const reader = new FileReader();
-                return new Promise((resolve) => {
-                  reader.onload = () => resolve(reader.result);
-                  reader.readAsDataURL(file);
-                });
-              });
-              Promise.all(imagePromises).then((images) => {
-                setFieldValue("images", images);
-              });
-            }}
-          >
-            {({ getRootProps, getInputProps, isDragActive }) => (
-              <div
-                {...getRootProps()}
-                className={`p-4 ${
-                  isDragActive ? "bg-blue-100" : "bg-gray-100"
-                } hover:cursor-pointer`}
-              >
-                <input name="images" {...getInputProps()} />
-                {isDragActive ? (
-                  <p className="text-center text-sm">Drop here!</p>
-                ) : (
-                  <p className="text-center text-sm">
-                    Drag and Drop or click to select images
-                  </p>
-                )}
-              </div>
-            )}
-          </Dropzone>
-          <div className="flex mt-2 gap-2">
-            {values.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Preview ${index + 1}`}
-                className="w-20 h-20 object-cover"
-              />
-            ))}
-          </div>
-        </div> */}
-
+        
+{/* 
 <ImageDropzone
     name="images"
     setFieldValue={setFieldValue}
     values={values}
+    
   />
   <ImageDropzone
     name="overviewImages"
     setFieldValue={setFieldValue}
     values={values}
   />
+ */}
 
 
+<ImageDropzone
+  name="images"
+  setFieldValue={setFieldValue}
+  values={values}
+  placeholder="Drag and drop or click to select images for Project"
+ />
+
+<ImageDropzone
+  name="overviewImages"
+  setFieldValue={setFieldValue}
+  values={values}
+  placeholder="Drag and drop or click to select images for Overview"
+/>
 
 
 

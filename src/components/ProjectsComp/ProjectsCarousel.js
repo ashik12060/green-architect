@@ -50,7 +50,8 @@ const ProjectsCarousel = () => {
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          992: { slidesPerView: 3 },
+          1200: { slidesPerView: 4 },
         }}
       >
         {projects.map((project) => (
@@ -63,25 +64,7 @@ const ProjectsCarousel = () => {
             >
               <Link to={`/project/${project._id}`} className="block h-full">
                 <div className="w-full h-full flex overflow-hidden">
-                  {/* {project.images && project.images.length > 0 ? (
-                    project.images.map((image, idx) => (
-                      <img
-                        key={idx}
-                        src={image.url}
-                        alt={project.title.en || "Project Image"}
-                        className={`object-cover ${
-                          idx === 0 ? "w-full" : "w-1/3"
-                        } transition-all duration-300`}
-                      />
-                    ))
-                  ) : (
-                    <img
-                      src="/path/to/placeholder.jpg"
-                      alt="Placeholder"
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                   */}
+                  
                   {project.images && project.images.length > 0 ? (
                     <img
                       src={project.images[0].url} // Display only the first image
