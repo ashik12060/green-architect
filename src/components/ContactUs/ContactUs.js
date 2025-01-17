@@ -86,6 +86,7 @@ function ContactUs() {
               {/* Call Us */}
               <div className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <div className="text-green-600">
+                
                   {/* Phone Icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +108,8 @@ function ContactUs() {
                     {" "}
                     {t("callUs")}
                   </h3>
-                  <p className="text-gray-900"> {t("phoneNumber")}</p>
+                  <a  className="text-gray-900" href="tel:+8801706046312"> {t("phoneNumber")}</a>
+                 
                 </div>
               </div>
 
@@ -136,7 +138,7 @@ function ContactUs() {
                   </h3>
                   <p>
                     <a
-                      href="mailto:info@architectcompany.com"
+                      href="mailto:info@greenshelterdd.com"
                       className=" text-gray-900 hover:text-green-600 hover:underline transition duration-200"
                     >
                       {t("emailAddress")}
