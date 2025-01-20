@@ -21,6 +21,7 @@ const ProductsInfo = ({ isAdmin }) => {
         const { data } = await axiosInstance.get(
           `${process.env.REACT_APP_API_URL}/api/products/show`
         );
+        console.log(data);
 
         const allProducts = data.products || [];
         allProducts.sort((a, b) => a.order - b.order);

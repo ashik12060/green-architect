@@ -85,64 +85,6 @@ const AdminDashboard = () => {
     }
   };
 
-  // Draggable Row Component
-  // const DraggableRow = ({ index, product }) => {
-  //   const [, drag] = useDrag({
-  //     type: ItemType,
-  //     item: { index },
-  //   });
-
-  //   const [, drop] = useDrop({
-  //     accept: ItemType,
-  //     hover: (item) => {
-  //       if (item.index !== index) {
-  //         moveProduct(item.index, index);
-  //         item.index = index;
-  //       }
-  //     },
-  //     drop: saveNewOrder, // Save the new order after drop
-  //   });
-
-  //   return (
-  //     <motion.tr
-  //       ref={(node) => drag(drop(node))}
-  //       className="border-b border-gray-200 hover:bg-gray-100"
-  //       initial={{ opacity: 0, scale: 0.95 }}
-  //       animate={{ opacity: 1, scale: 1 }}
-  //       transition={{ duration: 0.3 }}
-  //     >
-  //       <td className="py-3 px-6 text-left">{product._id}</td>
-  //       <td className="py-3 px-6 text-left">
-  //         {product.title?.en || "No Title"}
-  //       </td>
-  //       <td className="py-3 px-6 text-left">
-  //         <img src={product.image.url} alt="Product" className="w-20 h-20" />
-  //       </td>
-  //       <td className="py-3 px-6 text-left">
-  //         {product.postedBy?.name || "Unknown"}
-  //       </td>
-  //       <td className="py-3 px-6 text-left">
-  //         {new Date(product.createdAt).toLocaleString()}
-  //       </td>
-  //       <td className="py-3 px-6 text-left">
-  //         <div className="flex items-center space-x-2">
-  //           <Link
-  //             to={`/admin/product/edit/${product._id}`}
-  //             className="text-blue-500"
-  //           >
-  //             Edit
-  //           </Link>
-  //           <button
-  //             className="text-red-500"
-  //             onClick={() => console.log("Delete product:", product._id)}
-  //           >
-  //             Delete
-  //           </button>
-  //         </div>
-  //       </td>
-  //     </motion.tr>
-  //   );
-  // };
   const DraggableRow = ({ index, product }) => {
     const [, drag] = useDrag({
       type: ItemType,
@@ -187,13 +129,21 @@ const AdminDashboard = () => {
               to={`/admin/product/edit/${product._id}`}
               className="text-blue-500"
             >
-              Edit
+             <IconButton aria-label="edit">
+              <EditIcon sx={{ color: "#1976d2" }} />
+            </IconButton>
             </Link>
+
+
+
+            
+
+
             <button
               className="text-red-500"
               onClick={(e) => deleteProductById(e, product._id)}
             >
-              Delete
+              <DeleteIcon sx={{ color: "red" }} />
             </button>
           </div>
         </td>
@@ -406,23 +356,23 @@ const AdminDashboard = () => {
     }
   };
 
-  // Delete product by ID
   const deleteProductById = async (e, id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-      try {
-        const result = await axiosInstance.delete(
-          `${process.env.REACT_APP_API_URL}/api/delete/product/${id}`
-        );
-        if (result?.data?.success === true) {
-          toast.success("Product deleted");
-          displayProduct();
+        try {
+            const result = await axiosInstance.delete(
+                `${process.env.REACT_APP_API_URL}/api/delete/product/${id}`
+            );
+            if (result?.data?.success === true) {
+                toast.success("Product deleted");
+                displayProduct();
+            }
+        } catch (error) {
+            console.error("Error deleting product:", error); // Log full error for better debugging
+            toast.error("Failed to delete product");
         }
-      } catch (error) {
-        console.log(error);
-        toast.error(error);
-      }
     }
-  };
+};
+
 
   // Delete Project by ID
   const deleteProjectById = async (e, id) => {
@@ -963,70 +913,7 @@ const AdminDashboard = () => {
             </table>
           </div>
 
-          // <div>
-
-          //   <div className="overflow-x-auto">
-          //     {/* Replace with your posts table here */}
-          //     <div>
-          //       <h4 className="text-black text-4xl pb-3">Products</h4>
-          //       <div className="pb-2 flex justify-end">
-          //         <Link to="/admin/product/create">
-          //           <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-          //             <AddIcon className="mr-2" />
-          //             Add Product
-          //           </button>
-          //         </Link>
-          //       </div>
-          //       <div className="overflow-x-auto">
-          //         <table className="min-w-full bg-white">
-          //           <thead>
-          //             <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-          //               {ProductColumns.map((column) => (
-          //                 <th
-          //                   key={column.field}
-          //                   className="py-3 px-6 text-left"
-          //                 >
-          //                   {column.headerName}
-          //                 </th>
-          //               ))}
-          //             </tr>
-          //           </thead>
-          //           <tbody className="text-gray-600 text-sm font-light">
-          //             {products.length > 0 ? (
-          //               products.map((product) => (
-          //                 <tr
-          //                   key={product._id}
-          //                   className="border-b border-gray-200 hover:bg-gray-100"
-          //                 >
-          //                   {ProductColumns.map((column) => (
-          //                     <td
-          //                       key={column.field}
-          //                       className="py-3 px-6 text-left"
-          //                     >
-          //                       {column.renderCell
-          //                         ? column.renderCell({ row: product })
-          //                         : product[column.field]}
-          //                     </td>
-          //                   ))}
-          //                 </tr>
-          //               ))
-          //             ) : (
-          //               <tr>
-          //                 <td
-          //                   colSpan={PostColumns.length}
-          //                   className="text-center py-4"
-          //                 >
-          //                   No product found.
-          //                 </td>
-          //               </tr>
-          //             )}
-          //           </tbody>
-          //         </table>
-          //       </div>
-          //     </div>
-          //     <p>Your product Table Here</p>
-          //   </div>
-          // </div>
+          
         );
 
       case "projects":

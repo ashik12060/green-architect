@@ -11,19 +11,19 @@ import { modules } from "../components/moduleToolbar";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../pages/axiosInstance";
-// import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup.object({
-    en: yup.string("Add a title in English").required("Title is required"),
-    bn: yup.string("Add a title in bengali").required("Title is required"),
-    es: yup.string("Add a title in Danish").required("Title is required"),
+  title: yup.object().shape({
+    en: yup.string().required("Title in English is required"),
+    bn: yup.string().required("Title in Bengali is required"),
+    es: yup.string().required("Title in Danish is required"),
   }),
-  content: yup.object({
-    en: yup.string("Add a title in English").required("Title is required"),
-    bn: yup.string("Add a title in bengali").required("Title is required"),
-    es: yup.string("Add a title in Danish").required("Title is required"),
+  content: yup.object().shape({
+    en: yup.string().required("Content in English is required"),
+    bn: yup.string().required("Content in Bengali is required"),
+    es: yup.string().required("Content in Danish is required"),
   }),
+  image: yup.string().required("Image is required"),
 });
 
 const EditProduct = () => {
@@ -63,19 +63,18 @@ const EditProduct = () => {
   const singleProductById = async () => {
     // console.log(id)
     try {
-      // 
-      const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/product/${id}`
+      //
+      const { data } = await axiosInstance.get(
+        `${process.env.REACT_APP_API_URL}/api/product/${id}`
       );
-      values.title.en = data.post.title.en; // Fetch English title
-      values.title.bn = data.post.title.bn; // Fetch Bengali title
-      values.title.es = data.post.title.es; // Fetch Danish title
-      values.content.en = data.post.designation.en; // Fetch English designation
-      values.content.bn = data.post.designation.bn; // Fetch Bengali designation
-      values.content.es = data.post.designation.es; // Fetch Danish designation
-      setImagePreview(data.post.image.url);
-      // setTitle(data.product.title);
-      // setContent(data.product.content);
-      // setImagePreview(data.product.image.url);
+      setFieldValue("title.en", data.product.title.en);
+      setFieldValue("title.bn", data.product.title.bn);
+      setFieldValue("title.es", data.product.title.es);
+      setFieldValue("content.en", data.product.content.en);
+      setFieldValue("content.bn", data.product.content.bn);
+      setFieldValue("content.es", data.product.content.es);
+      setImagePreview(data.product.image.url);
+
       console.log("single product admin", data.product);
     } catch (error) {
       console.log(error);
@@ -89,9 +88,12 @@ const EditProduct = () => {
 
   const updateProduct = async (values) => {
     try {
-      const result = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/product/${id}`, values);
+      const result = await axiosInstance.put(
+        `${process.env.REACT_APP_API_URL}/api/update/product/${id}`,
+        values
+      );
 
-      console.log(result)
+      console.log(result);
       if (result?.data?.success === true) {
         toast.success("product updated");
         navigate("/admin/dashboard");
@@ -102,15 +104,29 @@ const EditProduct = () => {
     }
   };
 
+  const validateFile = (file) => {
+    const validTypes = ["image/jpeg", "image/png"];
+    if (!validTypes.includes(file.type)) {
+      toast.error("Only JPEG and PNG are allowed.");
+      return false;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("File size must be less than 5MB.");
+      return false;
+    }
+    return true;
+  };
+  
+
   return (
     <>
-      <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
+      <Box sx={{ bgColor: "white", padding: "20px 200px" }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
-          {" "}
-          Edit Product{" "}
+          Edit product
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-        <Typography variant="subtitle1">Title</Typography>
+          {/* Title Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">Title</Typography>
           <TextField
             sx={{ mb: 3 }}
             fullWidth
@@ -198,24 +214,26 @@ const EditProduct = () => {
             error={touched.content?.es && Boolean(errors.content?.es)}
             helperText={touched.content?.es && errors.content?.es}
           />
-        
-   
 
-
-          <Box border="2px dashed blue" sx={{ p: 1 }}>
+          {/* Dropzone for Image Upload */}
+          <Box border="2px dashed blue" sx={{ p: 1, mb: 3 }}>
             <Dropzone
               acceptedFiles=".jpg,.jpeg,.png"
               multiple={false}
-              //maxFiles={3}
-              onDrop={(acceptedFiles) =>
-                acceptedFiles.map((file, index) => {
-                  const reader = new FileReader();
-                  reader.readAsDataURL(file);
-                  reader.onloadend = () => {
-                    setFieldValue("image", reader.result);
-                  };
-                })
-              }
+              
+              onDrop={(acceptedFiles) => {
+                acceptedFiles.forEach((file) => {
+                  if (validateFile(file)) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = () => {
+                      setFieldValue("image", reader.result);
+                      setImagePreview(reader.result);
+                    };
+                  }
+                });
+              }}
+              
             >
               {({ getRootProps, getInputProps, isDragActive }) => (
                 <Box
@@ -228,62 +246,40 @@ const EditProduct = () => {
                 >
                   <input name="image" {...getInputProps()} />
                   {isDragActive ? (
-                    <>
-                      <p style={{ textAlign: "center" }}>
-                        <CloudUploadIcon
-                          sx={{ color: "primary.main", mr: 2 }}
-                        />
-                      </p>
-                      <p style={{ textAlign: "center", fontSize: "12px" }}>
-                        {" "}
-                        Drop here!
-                      </p>
-                    </>
-                  ) : values.image === null ? (
-                    <>
-                      <p style={{ textAlign: "center" }}>
-                        <CloudUploadIcon
-                          sx={{ color: "primary.main", mr: 2 }}
-                        />
-                      </p>
-                      <p style={{ textAlign: "center", fontSize: "12px" }}>
-                        Drag and Drop image here or click to choose
-                      </p>
-                    </>
+                    <p style={{ textAlign: "center" }}>
+                      <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
+                      Drop here!
+                    </p>
                   ) : (
                     <>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-around",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Box>
-                          <img
-                            style={{ maxWidth: "100px" }}
-                            src={
-                              values.image === "" ? imagePreview : values.image
-                            }
-                            alt=""
+                      {imagePreview ? (
+                        <img
+                          style={{ maxWidth: "100px" }}
+                          src={imagePreview}
+                          alt="Preview"
+                        />
+                      ) : (
+                        <p style={{ textAlign: "center" }}>
+                          <CloudUploadIcon
+                            sx={{ color: "primary.main", mr: 2 }}
                           />
-                        </Box>
-                      </Box>
+                          Drag and Drop image here or click to choose
+                        </p>
+                      )}
                     </>
                   )}
                 </Box>
               )}
             </Dropzone>
           </Box>
+
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            elevation={0}
             sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
-            // disabled={loading}
           >
-            Update Product
+            Update product
           </Button>
         </Box>
       </Box>

@@ -86,7 +86,7 @@ const CreateProduct = () => {
        const data = {
         title: { en: titleEn, bn: titleBn, es: titleEs },
         content: { en: contentEn, bn: contentBn, es: contentEs },
-        image: image,
+       image,
       };
 
 
@@ -131,6 +131,7 @@ const CreateProduct = () => {
           />
           {touched.titleEn && errors.titleEn && <p className="text-red-500 text-sm">{errors.titleEn}</p>}
         </div>
+
         <div className="mb-3">
           <label htmlFor="title" className="block mb-1 text-sm font-medium">Product title</label>
           <input
@@ -155,7 +156,7 @@ const CreateProduct = () => {
             onBlur={handleBlur}
             className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.titleEs && errors.titleEs ? 'border-red-500' : ''}`}
           />
-          {touched.titletitleEsEn && errors.titleEs && <p titleEs="text-red-500 text-sm">{errors.titleEs}</p>}
+          {touched.titleEs && errors.titleEs && <p titleEs="text-red-500 text-sm">{errors.titleEs}</p>}
         </div>
 
         <div className="mb-3">
