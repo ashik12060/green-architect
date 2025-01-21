@@ -14,81 +14,171 @@ import axiosInstance from "../pages/axiosInstance";
 // import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup.object({
+  title: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  content: yup.object({
+  content: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  address: yup.object({
+  address: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  landArea: yup.object({
+  landArea: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  floors: yup.object({
+  floors: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  frontRoad: yup.object({
+  frontRoad: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  units: yup.object({
+  units: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  parking: yup.object({
+  parking: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  apartmentFloor: yup.object({
+  apartmentFloor: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  size: yup.object({
+  size: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  bedroom: yup.object({
+  bedroom: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  bathroom: yup.object({
+  bathroom: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  launchDate: yup.object({
+  launchDate: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  collectionName: yup.object({
+  collectionName: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
-  buildingType: yup.object({
+  buildingType: yup.object().shape({
     en: yup.string("Add a title in English").required("Title is required"),
     bn: yup.string("Add a title in bengali").required("Title is required"),
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
+  mosque: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  college: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  school: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  market: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  bank1: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  bank2: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  atm: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  busStop: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  mosqueName: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  collegeName: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  schoolName: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  marketName: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  bank1Name: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  bank2Name: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+  atmName: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+  busStopName: yup.object().shape({
+    en: yup.string("Add a title in English").required("Title is required"),
+    bn: yup.string("Add a title in bengali").required("Title is required"),
+    es: yup.string("Add a title in Danish").required("Title is required"),
+  }),
+
+
   category: yup.string("Select a category").required("Category is required"),
 
 });
@@ -137,10 +227,29 @@ const EditProject = () => {
       apartmentFloor: { en: "", bn: "", es: "" },
       size: { en: "", bn: "", es: "" },
       bedroom: { en: "", bn: "", es: "" },
-      launchDate: { en: "", bn: "", es: "" },
       bathroom: { en: "", bn: "", es: "" },
+      launchDate: { en: "", bn: "", es: "" },
       collectionName: { en: "", bn: "", es: "" },
       buildingType: { en: "", bn: "", es: "" },
+
+      mosque: { en: "", bn: "", es: "" },
+      college: { en: "", bn: "", es: "" },
+      school: { en: "", bn: "", es: "" },
+      market: { en: "", bn: "", es: "" },
+      bank1: { en: "", bn: "", es: "" },
+      bank2: { en: "", bn: "", es: "" },
+
+      atm: { en: "", bn: "", es: "" },
+      busStop: { en: "", bn: "", es: "" },
+      mosqueName: { en: "", bn: "", es: "" },
+      collegeName: { en: "", bn: "", es: "" },
+      schoolName: { en: "", bn: "", es: "" },
+      marketName: { en: "", bn: "", es: "" },
+      bank1Name: { en: "", bn: "", es: "" },
+      bank2Name: { en: "", bn: "", es: "" },
+      atmName: { en: "", bn: "", es: "" },
+      busStopName: { en: "", bn: "", es: "" },
+
       image: "",
     },
 
@@ -161,70 +270,201 @@ const EditProject = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/project/${id}`
       );
-      values.title.en = data.post.title.en; 
-      values.title.bn = data.post.title.bn; 
-      values.title.es = data.post.title.es; 
+      console.log(data)
+      setFieldValue("title.en", data.project.title.en);
+      setFieldValue("title.bn", data.project.title.bn);
+      setFieldValue("title.es", data.project.title.es);
 
-      values.content.en = data.post.designation.en; 
-      values.content.bn = data.post.designation.bn; 
-      values.content.es = data.post.designation.es; 
+      setFieldValue("content.en", data.project.content.en);
+      setFieldValue("content.bn", data.project.content.bn);
+      setFieldValue("content.es", data.project.content.es);
+
+      setFieldValue("address.en", data.project.address.en);
+      setFieldValue("address.bn", data.project.address.bn);
+      setFieldValue("address.es", data.project.address.es);
+
+
+      setFieldValue("landArea.en", data.project.landArea.en);
+      setFieldValue("landArea.bn", data.project.landArea.bn);
+      setFieldValue("landArea.es", data.project.landArea.es);
+
+      setFieldValue("floors.en", data.project.floors.en);
+      setFieldValue("floors.bn", data.project.floors.bn);
+      setFieldValue("floors.es", data.project.floors.es);
+
+      setFieldValue("apartmentFloor.en", data.project.apartmentFloor.en);
+      setFieldValue("apartmentFloor.bn", data.project.apartmentFloor.bn);
+      setFieldValue("apartmentFloor.es", data.project.apartmentFloor.es);
+
       
-      values.address.en = data.post.address.en; 
-      values.address.bn = data.post.address.bn; 
-      values.address.es = data.post.address.es; 
+      setFieldValue("size.en", data.project.size.en);
+      setFieldValue("size.bn", data.project.size.bn);
+      setFieldValue("size.es", data.project.size.es);
 
-      values.landArea.en = data.post.landArea.en; 
-      values.landArea.bn = data.post.landArea.bn; 
-      values.landArea.es = data.post.landArea.es; 
+      
+      setFieldValue("bedroom.en", data.project.bedroom.en);
+      setFieldValue("bedroom.bn", data.project.bedroom.bn);
+      setFieldValue("bedroom.es", data.project.bedroom.es);
 
-      values.floors.en = data.post.floors.en; 
-      values.floors.bn = data.post.floors.bn; 
-      values.floors.es = data.post.floors.es; 
+      setFieldValue("bathroom.en", data.project.bathroom.en);
+      setFieldValue("bathroom.bn", data.project.bathroom.bn);
+      setFieldValue("bathroom.es", data.project.bathroom.es);
 
-      values.frontRoad.en = data.post.frontRoad.en; 
-      values.frontRoad.bn = data.post.frontRoad.bn; 
-      values.frontRoad.es = data.post.frontRoad.es; 
+      
+      setFieldValue("launchDate.en", data.project.launchDate.en);
+      setFieldValue("launchDate.bn", data.project.launchDate.bn);
+      setFieldValue("launchDate.es", data.project.launchDate.es);
 
-      values.units.en = data.post.units.en; 
-      values.units.bn = data.post.units.bn; 
-      values.units.es = data.post.units.es; 
+     
 
-      values.parking.en = data.post.parking.en; 
-      values.parking.bn = data.post.parking.bn; 
-      values.parking.es = data.post.parking.es; 
+      setFieldValue("collectionName.en", data.project.collectionName.en);
+      setFieldValue("collectionName.bn", data.project.collectionName.bn);
+      setFieldValue("collectionName.es", data.project.collectionName.es);
 
-      values.apartmentFloor.en = data.post.apartmentFloor.en; 
-      values.apartmentFloor.bn = data.post.apartmentFloor.bn; 
-      values.apartmentFloor.es = data.post.apartmentFloor.es; 
 
-      values.size.en = data.post.size.en; 
-      values.size.bn = data.post.size.bn; 
-      values.size.es = data.post.size.es; 
+      setFieldValue("buildingType.en", data.project.buildingType.en);
+      setFieldValue("buildingType.bn", data.project.buildingType.bn);
+      setFieldValue("buildingType.es", data.project.buildingType.es);
 
-      values.bedroom.en = data.post.bedroom.en; 
-      values.bedroom.bn = data.post.bedroom.bn; 
-      values.bedroom.es = data.post.bedroom.es;  
 
-      values.launchDate.en = data.post.launchDate.en; 
-      values.launchDate.bn = data.post.launchDate.bn; 
-      values.launchDate.es = data.post.launchDate.es;  
 
-      values.bathroom.en = data.post.bathroom.en; 
-      values.bathroom.bn = data.post.bathroom.bn; 
-      values.bathroom.es = data.post.bathroom.es; 
+      setFieldValue("frontRoad.en", data.project.frontRoad.en);
+      setFieldValue("frontRoad.bn", data.project.frontRoad.bn);
+      setFieldValue("frontRoad.es", data.project.frontRoad.es);
 
-      values.collectionName.en = data.post.collectionName.en; 
-      values.collectionName.bn = data.post.collectionName.bn; 
-      values.collectionName.es = data.post.collectionName.es; 
+      setFieldValue("units.en", data.project.units.en);
+      setFieldValue("units.bn", data.project.units.bn);
+      setFieldValue("units.es", data.project.units.es);
 
-      values.buildingType.en = data.post.buildingType.en; 
-      values.buildingType.bn = data.post.buildingType.bn; 
-      values.buildingType.es = data.post.buildingType.es; 
+      setFieldValue("parking.en", data.project.parking.en);
+      setFieldValue("parking.bn", data.project.parking.bn);
+      setFieldValue("parking.es", data.project.parking.es);
 
-      setImagePreview(data.post.image.url);
-      // setTitle(data.project.title);
-      // setContent(data.project.content);
-      // setImagePreview(data.project.image.url);
+     
+      setFieldValue("parking.en", data.project.parking.en);
+      setFieldValue("parking.bn", data.project.parking.bn);
+      setFieldValue("parking.es", data.project.parking.es);
+
+     
+      setFieldValue("apartmentFloor.en", data.project.apartmentFloor.en);
+      setFieldValue("apartmentFloor.bn", data.project.apartmentFloor.bn);
+      setFieldValue("apartmentFloor.es", data.project.apartmentFloor.es);
+
+     
+      setFieldValue("size.en", data.project.size.en);
+      setFieldValue("size.bn", data.project.size.bn);
+      setFieldValue("size.es", data.project.size.es);
+
+     
+      setFieldValue("bedroom.en", data.project.bedroom.en);
+      setFieldValue("bedroom.bn", data.project.bedroom.bn);
+      setFieldValue("bedroom.es", data.project.bedroom.es);
+
+     
+      setFieldValue("bathroom.en", data.project.bathroom.en);
+      setFieldValue("bathroom.bn", data.project.bathroom.bn);
+      setFieldValue("bathroom.es", data.project.bathroom.es);
+
+     
+      setFieldValue("launchDate.en", data.project.launchDate.en);
+      setFieldValue("launchDate.bn", data.project.launchDate.bn);
+      setFieldValue("launchDate.es", data.project.launchDate.es);
+
+     
+      setFieldValue("collectionName.en", data.project.collectionName.en);
+      setFieldValue("collectionName.bn", data.project.collectionName.bn);
+      setFieldValue("collectionName.es", data.project.collectionName.es);
+
+     
+      setFieldValue("buildingType.en", data.project.buildingType.en);
+      setFieldValue("buildingType.bn", data.project.buildingType.bn);
+      setFieldValue("buildingType.es", data.project.buildingType.es);
+
+     
+      setFieldValue("mosque.en", data.project.mosque.en);
+      setFieldValue("mosque.bn", data.project.mosque.bn);
+      setFieldValue("mosque.es", data.project.mosque.es);
+
+     
+      setFieldValue("college.en", data.project.college.en);
+      setFieldValue("college.bn", data.project.college.bn);
+      setFieldValue("college.es", data.project.college.es);
+
+     
+      setFieldValue("school.en", data.project.school.en);
+      setFieldValue("school.bn", data.project.school.bn);
+      setFieldValue("school.es", data.project.school.es);
+
+     
+      setFieldValue("market.en", data.project.market.en);
+      setFieldValue("market.bn", data.project.market.bn);
+      setFieldValue("market.es", data.project.market.es);
+
+     
+      setFieldValue("bank1.en", data.project.bank1.en);
+      setFieldValue("bank1.bn", data.project.bank1.bn);
+      setFieldValue("bank1.es", data.project.bank1.es);
+
+     
+      setFieldValue("bank2.en", data.project.bank2.en);
+      setFieldValue("bank2.bn", data.project.bank2.bn);
+      setFieldValue("bank2.es", data.project.bank2.es);
+
+     
+      setFieldValue("atm.en", data.project.atm.en);
+      setFieldValue("atm.bn", data.project.atm.bn);
+      setFieldValue("atm.es", data.project.atm.es);
+
+     
+      setFieldValue("busStop.en", data.project.busStop.en);
+      setFieldValue("busStop.bn", data.project.busStop.bn);
+      setFieldValue("busStop.es", data.project.busStop.es);
+
+     
+      setFieldValue("mosqueName.en", data.project.mosqueName.en);
+      setFieldValue("mosqueName.bn", data.project.mosqueName.bn);
+      setFieldValue("mosqueName.es", data.project.mosqueName.es);
+
+     
+      setFieldValue("collegeName.en", data.project.collegeName.en);
+      setFieldValue("collegeName.bn", data.project.collegeName.bn);
+      setFieldValue("collegeName.es", data.project.collegeName.es);
+
+     
+      setFieldValue("schoolName.en", data.project.schoolName.en);
+      setFieldValue("schoolName.bn", data.project.schoolName.bn);
+      setFieldValue("schoolName.es", data.project.schoolName.es);
+
+     
+      setFieldValue("marketName.en", data.project.marketName.en);
+      setFieldValue("marketName.bn", data.project.marketName.bn);
+      setFieldValue("marketName.es", data.project.marketName.es);
+
+     
+      setFieldValue("bank1Name.en", data.project.bank1Name.en);
+      setFieldValue("bank1Name.bn", data.project.bank1Name.bn);
+      setFieldValue("bank1Name.es", data.project.bank1Name.es);
+
+     
+     
+      setFieldValue("bank2Name.en", data.project.bank2Name.en);
+      setFieldValue("bank2Name.bn", data.project.bank2Name.bn);
+      setFieldValue("bank2Name.es", data.project.bank2Name.es);
+
+     
+     
+      setFieldValue("atmName.en", data.project.atmName.en);
+      setFieldValue("atmName.bn", data.project.atmName.bn);
+      setFieldValue("atmName.es", data.project.atmName.es);
+
+     
+     
+      setFieldValue("busStopName.en", data.project.busStopName.en);
+      setFieldValue("busStopName.bn", data.project.busStopName.bn);
+      setFieldValue("busStopName.es", data.project.busStopName.es);
+
+      setImagePreview(data.project.image.url);
+    
       console.log("single project admin", data.project);
     } catch (error) {
       console.log(error);
@@ -1033,7 +1273,830 @@ const EditProject = () => {
 
 
 
-          {/* end */}
+          {/* new start */}
+
+          
+          
+          {/* mosque Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">mosque</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="mosque-en"
+            label="mosque (English)"
+            name="mosque.en"
+            multiline
+            rows={4}
+            placeholder="mosque in English"
+            value={values.mosque.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.mosque?.en && Boolean(errors.mosque?.en)}
+            helperText={touched.mosque?.en && errors.mosque?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="mosque-bn"
+            label="mosque (Bengali)"
+            name="mosque.bn"
+            multiline
+            rows={4}
+            placeholder="mosque in Bengali"
+            value={values.mosque.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.mosque?.bn && Boolean(errors.mosque?.bn)}
+            helperText={touched.mosque?.bn && errors.mosque?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="mosque-es"
+            label="mosque (Danish)"
+            name="mosque.es"
+            multiline
+            rows={4}
+            placeholder="mosque in Danish"
+            value={values.mosque.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.mosque?.es && Boolean(errors.mosque?.es)}
+            helperText={touched.mosque?.es && errors.mosque?.es}
+          />
+
+          {/* college Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">college</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="college-en"
+            label="college (English)"
+            name="college.en"
+            multiline
+            rows={4}
+            placeholder="college in English"
+            value={values.college.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.college?.en && Boolean(errors.college?.en)}
+            helperText={touched.college?.en && errors.college?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="college-bn"
+            label="college (Bengali)"
+            name="college.bn"
+            multiline
+            rows={4}
+            placeholder="college in Bengali"
+            value={values.college.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.college?.bn && Boolean(errors.college?.bn)}
+            helperText={touched.college?.bn && errors.college?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="college-es"
+            label="college (Danish)"
+            name="college.es"
+            multiline
+            rows={4}
+            placeholder="college in Danish"
+            value={values.college.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.college?.es && Boolean(errors.college?.es)}
+            helperText={touched.college?.es && errors.college?.es}
+          />
+
+
+
+          {/* school Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">school</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="school-en"
+            label="school (English)"
+            name="school.en"
+            multiline
+            rows={4}
+            placeholder="school in English"
+            value={values.school.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.school?.en && Boolean(errors.school?.en)}
+            helperText={touched.school?.en && errors.school?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="school-bn"
+            label="school (Bengali)"
+            name="school.bn"
+            multiline
+            rows={4}
+            placeholder="school in Bengali"
+            value={values.school.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.school?.bn && Boolean(errors.school?.bn)}
+            helperText={touched.school?.bn && errors.school?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="school-es"
+            label="school (Danish)"
+            name="school.es"
+            multiline
+            rows={4}
+            placeholder="school in Danish"
+            value={values.school.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.school?.es && Boolean(errors.school?.es)}
+            helperText={touched.school?.es && errors.school?.es}
+          />
+
+
+          {/* market Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">market</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="market-en"
+            label="market (English)"
+            name="market.en"
+            multiline
+            rows={4}
+            placeholder="market in English"
+            value={values.market.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.market?.en && Boolean(errors.market?.en)}
+            helperText={touched.market?.en && errors.market?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="market-bn"
+            label="market (Bengali)"
+            name="market.bn"
+            multiline
+            rows={4}
+            placeholder="market in Bengali"
+            value={values.market.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.market?.bn && Boolean(errors.market?.bn)}
+            helperText={touched.market?.bn && errors.market?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="market-es"
+            label="market (Danish)"
+            name="market.es"
+            multiline
+            rows={4}
+            placeholder="market in Danish"
+            value={values.market.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.market?.es && Boolean(errors.market?.es)}
+            helperText={touched.market?.es && errors.market?.es}
+          />
+
+          {/* bank1 Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">bank1</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank1-en"
+            label="bank1 (English)"
+            name="bank1.en"
+            multiline
+            rows={4}
+            placeholder="bank1 in English"
+            value={values.bank1.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank1?.en && Boolean(errors.bank1?.en)}
+            helperText={touched.bank1?.en && errors.bank1?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank1-bn"
+            label="bank1 (Bengali)"
+            name="bank1.bn"
+            multiline
+            rows={4}
+            placeholder="bank1 in Bengali"
+            value={values.bank1.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank1?.bn && Boolean(errors.bank1?.bn)}
+            helperText={touched.bank1?.bn && errors.bank1?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank1-es"
+            label="bank1 (Danish)"
+            name="bank1.es"
+            multiline
+            rows={4}
+            placeholder="bank1 in Danish"
+            value={values.bank1.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank1?.es && Boolean(errors.bank1?.es)}
+            helperText={touched.bank1?.es && errors.bank1?.es}
+          />
+
+
+          {/* bank2 Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">bank2</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank2-en"
+            label="bank2 (English)"
+            name="bank2.en"
+            multiline
+            rows={4}
+            placeholder="bank2 in English"
+            value={values.bank2.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank2?.en && Boolean(errors.bank2?.en)}
+            helperText={touched.bank2?.en && errors.bank2?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank2-bn"
+            label="bank2 (Bengali)"
+            name="bank2.bn"
+            multiline
+            rows={4}
+            placeholder="bank2 in Bengali"
+            value={values.bank2.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank2?.bn && Boolean(errors.bank2?.bn)}
+            helperText={touched.bank2?.bn && errors.bank2?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank2-es"
+            label="bank2 (Danish)"
+            name="bank2.es"
+            multiline
+            rows={4}
+            placeholder="bank2 in Danish"
+            value={values.bank2.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank2?.es && Boolean(errors.bank2?.es)}
+            helperText={touched.bank2?.es && errors.bank2?.es}
+          />
+
+
+          {/* atm Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">atm</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="atm-en"
+            label="atm (English)"
+            name="atm.en"
+            multiline
+            rows={4}
+            placeholder="atm in English"
+            value={values.atm.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.atm?.en && Boolean(errors.atm?.en)}
+            helperText={touched.atm?.en && errors.atm?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="atm-bn"
+            label="atm (Bengali)"
+            name="atm.bn"
+            multiline
+            rows={4}
+            placeholder="atm in Bengali"
+            value={values.atm.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.atm?.bn && Boolean(errors.atm?.bn)}
+            helperText={touched.atm?.bn && errors.atm?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="atm-es"
+            label="atm (Danish)"
+            name="atm.es"
+            multiline
+            rows={4}
+            placeholder="atm in Danish"
+            value={values.atm.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.atm?.es && Boolean(errors.atm?.es)}
+            helperText={touched.atm?.es && errors.atm?.es}
+          />
+
+
+          {/* busStop Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">busStop</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="busStop-en"
+            label="busStop (English)"
+            name="busStop.en"
+            multiline
+            rows={4}
+            placeholder="busStop in English"
+            value={values.busStop.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.busStop?.en && Boolean(errors.busStop?.en)}
+            helperText={touched.busStop?.en && errors.busStop?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="busStop-bn"
+            label="busStop (Bengali)"
+            name="busStop.bn"
+            multiline
+            rows={4}
+            placeholder="busStop in Bengali"
+            value={values.busStop.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.busStop?.bn && Boolean(errors.busStop?.bn)}
+            helperText={touched.busStop?.bn && errors.busStop?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="busStop-es"
+            label="busStop (Danish)"
+            name="busStop.es"
+            multiline
+            rows={4}
+            placeholder="busStop in Danish"
+            value={values.busStop.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.busStop?.es && Boolean(errors.busStop?.es)}
+            helperText={touched.busStop?.es && errors.busStop?.es}
+          />
+
+
+
+          {/* mosqueName Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">mosqueName</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="mosqueName-en"
+            label="mosqueName (English)"
+            name="mosqueName.en"
+            multiline
+            rows={4}
+            placeholder="mosqueName in English"
+            value={values.mosqueName.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.mosqueName?.en && Boolean(errors.mosqueName?.en)}
+            helperText={touched.mosqueName?.en && errors.mosqueName?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="mosqueName-bn"
+            label="mosqueName (Bengali)"
+            name="mosqueName.bn"
+            multiline
+            rows={4}
+            placeholder="mosqueName in Bengali"
+            value={values.mosqueName.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.mosqueName?.bn && Boolean(errors.mosqueName?.bn)}
+            helperText={touched.mosqueName?.bn && errors.mosqueName?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="mosqueName-es"
+            label="mosqueName (Danish)"
+            name="mosqueName.es"
+            multiline
+            rows={4}
+            placeholder="mosqueName in Danish"
+            value={values.mosqueName.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.mosqueName?.es && Boolean(errors.mosqueName?.es)}
+            helperText={touched.mosqueName?.es && errors.mosqueName?.es}
+          />
+
+          {/* collegeName Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">collegeName</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="collegeName-en"
+            label="collegeName (English)"
+            name="collegeName.en"
+            multiline
+            rows={4}
+            placeholder="collegeName in English"
+            value={values.collegeName.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.collegeName?.en && Boolean(errors.collegeName?.en)}
+            helperText={touched.collegeName?.en && errors.collegeName?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="collegeName-bn"
+            label="collegeName (Bengali)"
+            name="collegeName.bn"
+            multiline
+            rows={4}
+            placeholder="collegeName in Bengali"
+            value={values.collegeName.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.collegeName?.bn && Boolean(errors.collegeName?.bn)}
+            helperText={touched.collegeName?.bn && errors.collegeName?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="collegeName-es"
+            label="collegeName (Danish)"
+            name="collegeName.es"
+            multiline
+            rows={4}
+            placeholder="collegeName in Danish"
+            value={values.collegeName.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.collegeName?.es && Boolean(errors.collegeName?.es)}
+            helperText={touched.collegeName?.es && errors.collegeName?.es}
+          />
+
+
+          {/* schoolName Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">schoolNameEn</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="schoolName-en"
+            label="schoolName (English)"
+            name="schoolName.en"
+            multiline
+            rows={4}
+            placeholder="schoolName in English"
+            value={values.schoolName.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.schoolName?.en && Boolean(errors.schoolName?.en)}
+            helperText={touched.schoolName?.en && errors.schoolName?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="schoolName-bn"
+            label="schoolName (Bengali)"
+            name="schoolName.bn"
+            multiline
+            rows={4}
+            placeholder="schoolName in Bengali"
+            value={values.schoolName.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.schoolName?.bn && Boolean(errors.schoolName?.bn)}
+            helperText={touched.schoolName?.bn && errors.schoolName?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="schoolName-es"
+            label="schoolName (Danish)"
+            name="schoolName.es"
+            multiline
+            rows={4}
+            placeholder="schoolName in Danish"
+            value={values.schoolName.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.schoolName?.es && Boolean(errors.schoolName?.es)}
+            helperText={touched.schoolName?.es && errors.schoolName?.es}
+          />
+
+
+
+          {/* marketName Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">marketName</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="marketName-en"
+            label="marketName (English)"
+            name="marketName.en"
+            multiline
+            rows={4}
+            placeholder="marketName in English"
+            value={values.marketName.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.marketName?.en && Boolean(errors.marketName?.en)}
+            helperText={touched.marketName?.en && errors.marketName?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="marketName-bn"
+            label="marketName (Bengali)"
+            name="marketName.bn"
+            multiline
+            rows={4}
+            placeholder="marketName in Bengali"
+            value={values.marketName.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.marketName?.bn && Boolean(errors.marketName?.bn)}
+            helperText={touched.marketName?.bn && errors.marketName?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="marketName-es"
+            label="marketName (Danish)"
+            name="marketName.es"
+            multiline
+            rows={4}
+            placeholder="marketName in Danish"
+            value={values.marketName.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.marketName?.es && Boolean(errors.marketName?.es)}
+            helperText={touched.marketName?.es && errors.marketName?.es}
+          />
+
+
+
+          {/* bank1Name Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">bank1Name</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank1Name-en"
+            label="bank1Name (English)"
+            name="bank1Name.en"
+            multiline
+            rows={4}
+            placeholder="bank1Name in English"
+            value={values.bank1Name.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank1Name?.en && Boolean(errors.bank1Name?.en)}
+            helperText={touched.bank1Name?.en && errors.bank1Name?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank1Name-bn"
+            label="bank1Name (Bengali)"
+            name="bank1Name.bn"
+            multiline
+            rows={4}
+            placeholder="bank1Name in Bengali"
+            value={values.bank1Name.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank1Name?.bn && Boolean(errors.bank1Name?.bn)}
+            helperText={touched.bank1Name?.bn && errors.bank1Name?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank1Name-es"
+            label="bank1Name (Danish)"
+            name="bank1Name.es"
+            multiline
+            rows={4}
+            placeholder="bank1Name in Danish"
+            value={values.bank1Name.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank1Name?.es && Boolean(errors.bank1Name?.es)}
+            helperText={touched.bank1Name?.es && errors.bank1Name?.es}
+          />
+
+
+
+          {/* bank1Name Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">bank2Name</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank2Name-en"
+            label="bank2Name (English)"
+            name="bank2Name.en"
+            multiline
+            rows={4}
+            placeholder="bank2Name in English"
+            value={values.bank2Name.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank2Name?.en && Boolean(errors.bank2Name?.en)}
+            helperText={touched.bank2Name?.en && errors.bank2Name?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank2Name-bn"
+            label="bank2Name (Bengali)"
+            name="bank2Name.bn"
+            multiline
+            rows={4}
+            placeholder="bank2Name in Bengali"
+            value={values.bank2Name.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank2Name?.bn && Boolean(errors.bank2Name?.bn)}
+            helperText={touched.bank2Name?.bn && errors.bank2Name?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="bank2Name-es"
+            label="bank2Name (Danish)"
+            name="bank2Name.es"
+            multiline
+            rows={4}
+            placeholder="bank2Name in Danish"
+            value={values.bank2Name.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.bank2Name?.es && Boolean(errors.bank2Name?.es)}
+            helperText={touched.bank2Name?.es && errors.bank2Name?.es}
+          />
+
+
+          {/* atmName Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">bank2Name</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="atmName-en"
+            label="atmName (English)"
+            name="atmName.en"
+            multiline
+            rows={4}
+            placeholder="atmName in English"
+            value={values.atmName.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.atmName?.en && Boolean(errors.atmName?.en)}
+            helperText={touched.atmName?.en && errors.atmName?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="atmName-bn"
+            label="atmName (Bengali)"
+            name="atmName.bn"
+            multiline
+            rows={4}
+            placeholder="atmName in Bengali"
+            value={values.atmName.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.atmName?.bn && Boolean(errors.atmName?.bn)}
+            helperText={touched.atmName?.bn && errors.atmName?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="atmName-es"
+            label="atmName (Danish)"
+            name="atmName.es"
+            multiline
+            rows={4}
+            placeholder="atmName in Danish"
+            value={values.atmName.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.atmName?.es && Boolean(errors.atmName?.es)}
+            helperText={touched.atmName?.es && errors.atmName?.es}
+          />
+
+          {/* busStopName Inputs for Multiple Languages */}
+          <Typography variant="subtitle1">busStopName</Typography>
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="busStopName-en"
+            label="busStopName (English)"
+            name="busStopName.en"
+            multiline
+            rows={4}
+            placeholder="busStopName in English"
+            value={values.busStopName.en}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.busStopName?.en && Boolean(errors.busStopName?.en)}
+            helperText={touched.busStopName?.en && errors.busStopName?.en}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="busStopName-bn"
+            label="busStopName (Bengali)"
+            name="busStopName.bn"
+            multiline
+            rows={4}
+            placeholder="busStopName in Bengali"
+            value={values.busStopName.bn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.busStopName?.bn && Boolean(errors.busStopName?.bn)}
+            helperText={touched.busStopName?.bn && errors.busStopName?.bn}
+          />
+
+          <TextField
+            sx={{ mb: 3 }}
+            fullWidth
+            id="busStopName-es"
+            label="busStopName (Danish)"
+            name="busStopName.es"
+            multiline
+            rows={4}
+            placeholder="busStopName in Danish"
+            value={values.busStopName.es}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.busStopName?.es && Boolean(errors.busStopName?.es)}
+            helperText={touched.busStopName?.es && errors.busStopName?.es}
+          />
+
+
+
+
+          {/* new end */}
 
           <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone

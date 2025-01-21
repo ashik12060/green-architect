@@ -33,7 +33,6 @@ const validationSchema = yup.object({
     .min(1, "Content must have at least 1 character")
     .required("Content in Danish is required"),
 
-  // starts
   addressEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
@@ -307,8 +306,6 @@ collegeEn: yup
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
 
-// start
-// next
 
 mosqueNameEn: yup
     .string("Add a title in English")
@@ -509,7 +506,7 @@ const CreateProject = () => {
       busStopBn: "",
       busStopEs: "",
 
-      // start
+  
       
       mosqueNameEn: "",
       mosqueNameBn: "",

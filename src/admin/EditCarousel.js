@@ -14,11 +14,11 @@ import axiosInstance from "../pages/axiosInstance";
 // import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup.object({
-    en: yup.string("Add a title in English").required("Title is required"),
-    bn: yup.string("Add a title in bengali").required("Title is required"),
-    es: yup.string("Add a title in Danish").required("Title is required"),
-  }),
+  title: yup.object().shape({
+     en: yup.string().required("Title in English is required"),
+     bn: yup.string().required("Title in Bengali is required"),
+     es: yup.string().required("Title in Danish is required"),
+   }),
 });
 
 const EditCarousel = () => {
@@ -53,16 +53,15 @@ const EditCarousel = () => {
     },
   });
 
-  //show post by Id
+  //show carousel by Id
   const singleCarouselById = async () => {
-    // console.log(id)
     try {
       // 
       const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/carousel/${id}`
       );
-      values.title.en = data.member.title.en; // Fetch English title
-      values.title.bn = data.member.title.bn; // Fetch Bengali title
-      values.title.es = data.member.title.es; // Fetch Danish title
+      setFieldValue("title.en", data.carousel.title.en);
+      setFieldValue("title.bn", data.carousel.title.bn);
+      setFieldValue("title.es", data.carousel.title.es);
       setImagePreview(data.carousel.image.url);
       console.log("single carousel admin", data.carousel);
     } catch (error) {
