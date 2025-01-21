@@ -1,7 +1,6 @@
 import React from 'react'
 import OurServices from '../../components/OurServices/OurServices'
 import Footer from '../../components/Shared/Footer/Footer'
-import SmallHeader from '../../components/Shared/Headers/SmallHeader'
 import Header from '../../components/Shared/Headers/Header'
 import img from '../../assets/23338.jpg'
 import { useTranslation } from 'react-i18next'
@@ -16,7 +15,7 @@ const Services = () => {
 
      {/* cover photo */}
      <div
-      className="relative h-56 bg-cover bg-center flex items-center justify-center text-white"
+      className="relative h-80 bg-cover bg-center flex items-center justify-center text-white"
       style={{ 
         backgroundImage: `url(${img})`,
         backgroundSize: 'cover',

@@ -1,5 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import { Trans } from "react-i18next";
+
 
 // import enCommon from './locales/en/common.json';
 import enContact from './Language/en/encontact.json'
@@ -73,6 +75,7 @@ import dnSingleProject from './Language/dn/dnSingleProject.json'
 
 
 
+
 i18n
   .use(initReactI18next)
   .init({
@@ -140,6 +143,13 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    
   });
+  <Trans
+          i18nKey="preDesign"
+          components={{
+            green: <span style={{ color: "green", fontWeight: "bold" }} />,
+          }}
+        />
 
 export default i18n;

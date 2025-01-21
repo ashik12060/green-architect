@@ -14,7 +14,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo/green shelter.jpeg";
+import logo from "../../../assets/green shelter.jpeg";
 import { useTheme } from "../../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import "./Footer.css";

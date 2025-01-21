@@ -24,47 +24,46 @@ const MembersCard = ({
   console.log(article);
 
   return (
-         <div>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg relative group">
+    <div>
+      <div className="max-w-sm rounded overflow-hidden shadow-lg relative group ">
         {/* <img className="w-full h-56" src={image} alt="name" /> */}
 
         <Link to={`/member/${id}`}>
-        <img className="w-full h-56" src={image} alt="name" />
-            </Link>
+          <img className="w-full h-80" src={image} alt="name" />
+        </Link>
 
         {/* Social icons container */}
         <div className="absolute bottom-0 right-2 p-2 hidden group-hover:flex flex-col bg-green-700 space-y-2 rounded-r-lg">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/Greenshelter18"
             className="inline-block text-white "
             aria-label="Facebook"
+            target="_black"
           >
-           <FontAwesomeIcon icon={faFacebookF} />
+            <FontAwesomeIcon icon={faFacebookF} />
           </a>
           <a
-            href="https://twitter.com"
+            href="#"
             className="inline-block  text-white"
             aria-label="Twitter"
           >
-           <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
-            href="https://www.instagram.com"
+            href="#"
             className="inline-block  text-white"
             aria-label="Instagram"
           >
-           <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </div>
       </div>
 
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2"></div>
-        <p className="text-white text-base">{title}</p>
-        <p className="text-white text-base">{designation}</p>
-        {/* <p className="text-white text-base">{article}</p> */}
+        <p className="text-black font-bold text-lg">{title}</p>
+        <p className="text-black  text-base"><i>{designation}</i></p>
       </div>
-      
     </div>
   );
 };

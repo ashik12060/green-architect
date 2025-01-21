@@ -30,7 +30,7 @@ const Members = () => {
   }, []);
 
   return (
-    <div className="bg-black min-h-34">
+    <div className="min-h-34">
       <div className="container mx-auto py-16 min-h-24">
         <div className="flex flex-wrap mx-10 gap-y-16">
           {loading ? (

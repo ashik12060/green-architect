@@ -1067,15 +1067,6 @@ const AdminDashboard = () => {
               {/* Replace with your R&D table here */}
 
               <div>
-                <h4 className="text-black text-4xl pb-3">Products</h4>
-                <div className="pb-2 flex justify-end">
-                  <Link to="/admin/rnd/create">
-                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-                      <AddIcon className="mr-2" />
-                      Add Product
-                    </button>
-                  </Link>
-                </div>
                 <div className="overflow-x-auto">
                   <table className="min-w-full bg-white">
                     <thead>

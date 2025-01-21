@@ -21,6 +21,7 @@ const SingleMember = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/member/${id}`
       );
+      console.log(data);
       setMember(data.member);
     } catch (error) {
       console.log(error);

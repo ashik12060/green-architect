@@ -13,16 +13,17 @@ import axiosInstance from "../pages/axiosInstance";
 // import axiosInstance from "../pages/axiosInstance";
 
 const validationSchema = yup.object({
-  title: yup.object({
-    en: yup.string("Add a title in English").required("Title is required"),
-    bn: yup.string("Add a title in bengali").required("Title is required"),
-    es: yup.string("Add a title in Danish").required("Title is required"),
-  }),
-  content: yup.object({
-    en: yup.string("Add a title in English").required("Title is required"),
-    bn: yup.string("Add a title in bengali").required("Title is required"),
-    es: yup.string("Add a title in Danish").required("Title is required"),
-  }),
+  title: yup.object().shape({
+     en: yup.string().required("Title in English is required"),
+     bn: yup.string().required("Title in Bengali is required"),
+     es: yup.string().required("Title in Danish is required"),
+   }),
+   content: yup.object().shape({
+     en: yup.string().required("Content in English is required"),
+     bn: yup.string().required("Content in Bengali is required"),
+     es: yup.string().required("Content in Danish is required"),
+   }),
+   image: yup.string().required("Image is required"),
   
 });
 
@@ -59,12 +60,12 @@ const EditRnd = () => {
       // 
       const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/rnd/${id}`);
       
-      values.title.en = data.rnd.title.en; // Fetch English title
-      values.title.bn = data.rnd.title.bn; // Fetch Bengali title
-      values.title.es = data.rnd.title.es; // Fetch Danish title
-      values.content.en = data.rnd.designation.en; // Fetch English designation
-      values.content.bn = data.rnd.designation.bn; // Fetch Bengali designation
-      values.content.es = data.rnd.designation.es; // Fetch Danish designation
+      setFieldValue("title.en", data.rnd.title.en);
+      setFieldValue("title.bn", data.rnd.title.bn);
+      setFieldValue("title.es", data.rnd.title.es);
+      setFieldValue("content.en", data.rnd.content.en);
+      setFieldValue("content.bn", data.rnd.content.bn);
+      setFieldValue("content.es", data.rnd.content.es);
       setImagePreview(data.rnd.image.url);
     } catch (error) {
       console.log(error);
@@ -81,13 +82,30 @@ const EditRnd = () => {
       const { data } = await axiosInstance.put(`${process.env.REACT_APP_API_URL}/api/update/rnd/${id}`, values);
       if (data.success === true) {
         toast.success("Rnd updated");
-        navigate("/admin/dashboard");
+        
       }
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.error);
     }
   };
+
+
+
+
+  const validateFile = (file) => {
+    const validTypes = ["image/jpeg", "image/png"];
+    if (!validTypes.includes(file.type)) {
+      toast.error("Only JPEG and PNG are allowed.");
+      return false;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("File size must be less than 5MB.");
+      return false;
+    }
+    return true;
+  };
+  
 
   return (
     <>
@@ -185,7 +203,7 @@ const EditRnd = () => {
           />
 
 
-          <Box border="2px dashed blue" sx={{ p: 1 }}>
+          {/* <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone
               acceptedFiles=".jpg,.jpeg,.png"
               multiple={false}
@@ -212,6 +230,68 @@ const EditRnd = () => {
               )}
             </Dropzone>
           </Box>
+           */}
+
+
+ {/* Dropzone for Image Upload */}
+ <Box border="2px dashed blue" sx={{ p: 1, mb: 3 }}>
+            <Dropzone
+              acceptedFiles=".jpg,.jpeg,.png"
+              multiple={false}
+            
+              onDrop={(acceptedFiles) => {
+                acceptedFiles.forEach((file) => {
+                  if (validateFile(file)) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = () => {
+                      setFieldValue("image", reader.result);
+                      setImagePreview(reader.result);
+                    };
+                  }
+                });
+              }}
+              
+            >
+              {({ getRootProps, getInputProps, isDragActive }) => (
+                <Box
+                  {...getRootProps()}
+                  p="1rem"
+                  sx={{
+                    "&:hover": { cursor: "pointer" },
+                    bgColor: isDragActive ? "#cceffc" : "#fafafa",
+                  }}
+                >
+                  <input name="image" {...getInputProps()} />
+                  {isDragActive ? (
+                    <p style={{ textAlign: "center" }}>
+                      <CloudUploadIcon sx={{ color: "primary.main", mr: 2 }} />
+                      Drop here!
+                    </p>
+                  ) : (
+                    <>
+                      {imagePreview ? (
+                        <img
+                          style={{ maxWidth: "100px" }}
+                          src={imagePreview}
+                          alt="Preview"
+                        />
+                      ) : (
+                        <p style={{ textAlign: "center" }}>
+                          <CloudUploadIcon
+                            sx={{ color: "primary.main", mr: 2 }}
+                          />
+                          Drag and Drop image here or click to choose
+                        </p>
+                      )}
+                    </>
+                  )}
+                </Box>
+              )}
+            </Dropzone>
+          </Box>
+
+
           <Button
             type="submit"
             fullWidth

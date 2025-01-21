@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import backgroundImage from "../../assets/architect2.jpg";
+import backgroundImage from "../../assets/contact.jpg";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
