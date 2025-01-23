@@ -25,7 +25,7 @@ const RnD = () => {
   const [postRemoveLike, setPostRemoveLike] = useState([]);
   const [visibleRnds, setVisibleRnds] = useState(4);
   const { i18n } = useTranslation();
-  const { t } = useTranslation('Home'); 
+  const { t } = useTranslation("Home");
   const { isDarkMode } = useTheme();
 
   const showMoreRnds = () => {
@@ -70,11 +70,11 @@ const RnD = () => {
       <MiddleHeader />
       <Header />
       <div
-        className={`min-h-screen my-8 px-4 sm:px-6 lg:px-8 ${
+        className={`min-h-screen  my-8 px-4 sm:px-6 lg:px-8 ${
           isDarkMode ? " text-white" : "text-black"
         }`}
       >
-        <div className="text-center pt-4">
+        <div className="text-center  pt-4">
           <h3>
             <span className="text-3xl font-bold">
               <span
@@ -89,15 +89,15 @@ const RnD = () => {
             </span>
           </h3>
         </div>
-        <div className="pt-6 pb-10 min-h-[83vh] flex flex-col">
+        <div className="pt-6 pb-10 mx-3 min-h-[83vh] flex  flex-col">
           <div className="mx-auto max-w-7xl flex-grow">
             {loading ? (
               <Loader />
             ) : (
               <Grid container spacing={4}>
                 {uiPosts.slice(0, visibleRnds).map((product, index) => (
-                  <Grid item xs={12} sm={6} md={6} key={index}>
-                    <div className="transform hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden shadow-xl bg-white dark:bg-gray-800">
+                  <Grid item xs={12} sm={6} md={6} key={index} >
+                    <div className="transform transition-all duration-300 rounded-lg overflow-hidden shadow-xl bg-white dark:bg-gray-800">
                       <RndCard
                         image={product.image ? product.image.url : ""}
                         id={product._id}
@@ -132,6 +132,9 @@ const RnD = () => {
           )}
         </div>
       </div>
+
+     
+
       <Footer />
     </>
   );

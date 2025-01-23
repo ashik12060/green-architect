@@ -107,6 +107,8 @@ import SingleProject from "./pages/SingleProject";
 import Preloader from "./components/Preloader";
 import TopPage from "./components/TopPage/TopPage";
 import ModelMaking from "./components/OurServices/Design/ModelMaking";
+import Videos from "./components/Videos/Videos";
+import AddVideo from "./admin/AddVideo";
 
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
@@ -118,6 +120,7 @@ const CreateCarouselHOC = Layout(CreateCarousel);
 const CreateRndHOC = Layout(CreateRnd);
 const CreateMemberHOC = Layout(CreateMembers);
 const CreateVideoHOC = Layout(CreateVideo);
+const AddVideoHOC = Layout(AddVideo);
 
 const EditPostHOC = Layout(EditPost);
 const EditProjectHOC = Layout(EditProject);
@@ -160,6 +163,8 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />}></Route>
                   <Route path="/home" element={<Home />}></Route>
+                  <Route path="/videos" element={<Videos/>}></Route>
+
   
                   <Route path="/" element={<Home />}></Route>
                   <Route path="/home" element={<Home />}></Route>
@@ -285,7 +290,7 @@ function App() {
                       </AdminRoute>
                     }
                   />
-                  {/* create */}
+                  
                   <Route
                     path="/admin/post/create"
                     element={
@@ -299,6 +304,14 @@ function App() {
                     element={
                       <AdminRoute>
                         <CreateVideoHOC />
+                      </AdminRoute>
+                    }
+                  />
+                  <Route
+                    path="/admin/add-video/create"
+                    element={
+                      <AdminRoute>
+                        <AddVideoHOC />
                       </AdminRoute>
                     }
                   />

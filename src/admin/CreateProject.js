@@ -1,4 +1,3 @@
-
 import { useFormik } from "formik";
 import * as yup from "yup";
 import Dropzone from "react-dropzone";
@@ -76,36 +75,36 @@ const validationSchema = yup.object({
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    frontRoadBn: yup
+  frontRoadBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    frontRoadEs: yup
+  frontRoadEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    unitsEn: yup
+  unitsEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    unitsBn: yup
+  unitsBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    unitsEs: yup
+  unitsEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
 
-    parkingEn: yup
+  parkingEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    parkingBn: yup
+  parkingBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    parkingEs: yup
+  parkingEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
@@ -200,213 +199,212 @@ const validationSchema = yup.object({
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-// next
+  // next
 
-mosqueEn: yup
+  mosqueEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    mosqueBn: yup
+  mosqueBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    mosqueEs: yup
+  mosqueEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-// mosque, college, 
-collegeEn: yup
+  // mosque, college,
+  collegeEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    collegeBn: yup
+  collegeBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    collegeEs: yup
+  collegeEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // school, 
-    schoolEn: yup
+  // school,
+  schoolEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    schoolBn: yup
+  schoolBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    schoolEs: yup
+  schoolEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // market, 
-    marketEn: yup
+  // market,
+  marketEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    marketBn: yup
+  marketBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    marketEs: yup
+  marketEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // bank1, bank2, atm, busStop
+  // bank1, bank2, atm, busStop
   bank1En: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    bank1Bn: yup
+  bank1Bn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    bank1Es: yup
+  bank1Es: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // bank2, 
-    bank2En: yup
+  // bank2,
+  bank2En: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    bank2Bn: yup
+  bank2Bn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    bank2Es: yup
+  bank2Es: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // atm,
-    atmEn: yup
+  // atm,
+  atmEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    atmBn: yup
+  atmBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    atmEs: yup
+  atmEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // busStop
-    busStopEn: yup
+  // busStop
+  busStopEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    busStopBn: yup
+  busStopBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    busStopEs: yup
+  busStopEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
 
-
-mosqueNameEn: yup
+  mosqueNameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    mosqueNameBn: yup
+  mosqueNameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    mosqueNameEs: yup
+  mosqueNameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-// mosque, college, 
-collegeNameEn: yup
+  // mosque, college,
+  collegeNameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    collegeNameBn: yup
+  collegeNameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    collegeNameEs: yup
+  collegeNameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // school, 
-    schoolNameEn: yup
+  // school,
+  schoolNameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    schoolNameBn: yup
+  schoolNameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    schoolNameEs: yup
+  schoolNameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // market, 
-    marketNameEn: yup
+  // market,
+  marketNameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    marketNameBn: yup
+  marketNameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    marketNameEs: yup
+  marketNameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // bank1, bank2, atm, busStop
+  // bank1, bank2, atm, busStop
   bank1NameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    bank1NameBn: yup
+  bank1NameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    bank1NameEs: yup
+  bank1NameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // bank2, 
-    bank2NameEn: yup
+  // bank2,
+  bank2NameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    bank2NameBn: yup
+  bank2NameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    bank2NameEs: yup
+  bank2NameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // atm,
-    atmNameEn: yup
+  // atm,
+  atmNameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    atmNameBn: yup
+  atmNameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    atmNameEs: yup
+  atmNameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
-    // busStop
-    busStopNameEn: yup
+  // busStop
+  busStopNameEn: yup
     .string("Add a title in English")
     .min(1, "Title must have at least 1 character")
     .required("Title in English is required"),
-    busStopNameBn: yup
+  busStopNameBn: yup
     .string("Add a title in Bengali")
     .min(1, "Title must have at least 1 character")
     .required("Title in Bengali is required"),
-    busStopNameEs: yup
+  busStopNameEs: yup
     .string("Add a title in Danish")
     .min(1, "Title must have at least 1 character")
     .required("Title in Danish is required"),
@@ -442,15 +440,15 @@ const CreateProject = () => {
       floorsEn: "",
       floorsBn: "",
       floorsEs: "",
-      frontRoadEn:"",
-      frontRoadBn:"",
-      frontRoadEs:"",
-      unitsEn:"",
-      unitsBn:"",
-      unitsEs:"",
-      parkingEn:"",
-      parkingBn:"",
-      parkingEs:"",
+      frontRoadEn: "",
+      frontRoadBn: "",
+      frontRoadEs: "",
+      unitsEn: "",
+      unitsBn: "",
+      unitsEs: "",
+      parkingEn: "",
+      parkingBn: "",
+      parkingEs: "",
       apartmentFloorEn: "",
       apartmentFloorBn: "",
       apartmentFloorEs: "",
@@ -493,7 +491,7 @@ const CreateProject = () => {
       bank1En: "",
       bank1Bn: "",
       bank1Es: "",
-      
+
       bank2En: "",
       bank2Bn: "",
       bank2Es: "",
@@ -506,8 +504,6 @@ const CreateProject = () => {
       busStopBn: "",
       busStopEs: "",
 
-  
-      
       mosqueNameEn: "",
       mosqueNameBn: "",
       mosqueNameEs: "",
@@ -527,7 +523,7 @@ const CreateProject = () => {
       bank1NameEn: "",
       bank1NameBn: "",
       bank1NameEs: "",
-      
+
       bank2NameEn: "",
       bank2NameBn: "",
       bank2NameEs: "",
@@ -551,8 +547,6 @@ const CreateProject = () => {
     },
   });
 
- 
-
   const createNewProject = async (values) => {
     try {
       const {
@@ -572,14 +566,14 @@ const CreateProject = () => {
         floorsBn,
         floorsEs,
         frontRoadEn,
-      frontRoadBn,
-      frontRoadEs,
-      unitsEn,
-      unitsBn,
-      unitsEs,
-      parkingEn,
-      parkingBn,
-      parkingEs,
+        frontRoadBn,
+        frontRoadEs,
+        unitsEn,
+        unitsBn,
+        unitsEs,
+        parkingEn,
+        parkingBn,
+        parkingEs,
         apartmentFloorEn,
         apartmentFloorBn,
         apartmentFloorEs,
@@ -609,15 +603,15 @@ const CreateProject = () => {
         collegeEn,
         collegeBn,
         collegeEs,
-  
+
         schoolEn,
         schoolBn,
         schoolEs,
-  
+
         marketEn,
         marketBn,
         marketEs,
-  
+
         bank1En,
         bank1Bn,
         bank1Es,
@@ -625,18 +619,17 @@ const CreateProject = () => {
         bank2En,
         bank2Bn,
         bank2Es,
-  
+
         atmEn,
         atmBn,
         atmEs,
-  
+
         busStopEn,
         busStopBn,
         busStopEs,
 
-
         // start
-        
+
         mosqueNameEn,
         mosqueNameBn,
         mosqueNameEs,
@@ -644,15 +637,15 @@ const CreateProject = () => {
         collegeNameEn,
         collegeNameBn,
         collegeNameEs,
-  
+
         schoolNameEn,
         schoolNameBn,
         schoolNameEs,
-  
+
         marketNameEn,
         marketNameBn,
         marketNameEs,
-  
+
         bank1NameEn,
         bank1NameBn,
         bank1NameEs,
@@ -660,11 +653,11 @@ const CreateProject = () => {
         bank2NameEn,
         bank2NameBn,
         bank2NameEs,
-  
+
         atmNameEn,
         atmNameBn,
         atmNameEs,
-  
+
         busStopNameEn,
         busStopNameBn,
         busStopNameEs,
@@ -685,34 +678,51 @@ const CreateProject = () => {
         frontRoad: { en: frontRoadEn, bn: frontRoadBn, es: frontRoadEs },
         units: { en: unitsEn, bn: unitsBn, es: unitsEs },
         parking: { en: parkingEn, bn: parkingBn, es: parkingEs },
-        apartmentFloor: { en: apartmentFloorEn, bn: apartmentFloorBn, es: apartmentFloorEs },
+        apartmentFloor: {
+          en: apartmentFloorEn,
+          bn: apartmentFloorBn,
+          es: apartmentFloorEs,
+        },
         size: { en: sizeEn, bn: sizeBn, es: sizeEs },
         bedroom: { en: bedroomEn, bn: bedroomBn, es: bedroomEs },
         bathroom: { en: bathroomEn, bn: bathroomBn, es: bathroomEs },
         launchDate: { en: launchDateEn, bn: launchDateBn, es: launchDateEs },
-        collectionName: { en: collectionNameEn, bn: collectionNameBn, es: collectionNameEs },
-        buildingType: { en: buildingTypeEn, bn: buildingTypeBn, es: buildingTypeEs },
+        collectionName: {
+          en: collectionNameEn,
+          bn: collectionNameBn,
+          es: collectionNameEs,
+        },
+        buildingType: {
+          en: buildingTypeEn,
+          bn: buildingTypeBn,
+          es: buildingTypeEs,
+        },
 
         mosque: { en: mosqueEn, bn: mosqueBn, es: mosqueEs },
         college: { en: collegeEn, bn: collegeBn, es: collegeEs },
         school: { en: schoolEn, bn: schoolBn, es: schoolEs },
-        market: { en: marketEn, bn:marketBn, es: marketEs },
+        market: { en: marketEn, bn: marketBn, es: marketEs },
         bank1: { en: bank1En, bn: bank1Bn, es: bank1Es },
         bank2: { en: bank2En, bn: bank2Bn, es: bank2Es },
         atm: { en: atmEn, bn: atmBn, es: atmEs },
         busStop: { en: busStopEn, bn: busStopBn, es: busStopEs },
 
-
         mosqueName: { en: mosqueNameEn, bn: mosqueNameBn, es: mosqueNameEs },
-        collegeName: { en: collegeNameEn, bn: collegeNameBn, es: collegeNameEs },
+        collegeName: {
+          en: collegeNameEn,
+          bn: collegeNameBn,
+          es: collegeNameEs,
+        },
         schoolName: { en: schoolNameEn, bn: schoolNameBn, es: schoolNameEs },
-        marketName: { en: marketNameEn, bn:marketNameBn, es: marketNameEs },
+        marketName: { en: marketNameEn, bn: marketNameBn, es: marketNameEs },
         bank1Name: { en: bank1NameEn, bn: bank1NameBn, es: bank1NameEs },
         bank2Name: { en: bank2NameEn, bn: bank2NameBn, es: bank2NameEs },
         atmName: { en: atmNameEn, bn: atmNameBn, es: atmNameEs },
-        busStopName: { en: busStopNameEn, bn: busStopNameBn, es: busStopNameEs },
-
-
+        busStopName: {
+          en: busStopNameEn,
+          bn: busStopNameBn,
+          es: busStopNameEs,
+        },
 
         category, // Include category
         images,
@@ -744,11 +754,11 @@ const CreateProject = () => {
         reader.readAsDataURL(file);
       });
     });
-  
+
     Promise.all(filePromises).then(callback);
   };
-  
-  const ImageDropzone = ({ name, setFieldValue, values,placeholder  }) => (
+
+  const ImageDropzone = ({ name, setFieldValue, values, placeholder }) => (
     <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
       <Dropzone
         acceptedFiles=".jpg,.jpeg,.png"
@@ -760,34 +770,21 @@ const CreateProject = () => {
         }}
       >
         {({ getRootProps, getInputProps, isDragActive }) => (
-          // <div
-          //   {...getRootProps()}
-          //   className={`p-4 ${
-          //     isDragActive ? "bg-blue-100" : "bg-gray-100"
-          //   } hover:cursor-pointer`}
-          // >
-          //   <input name={name} {...getInputProps()} />
-          //   {isDragActive ? (
-          //     <p className="text-center text-sm">Drop your image files here!</p>
-          //   ) : (
-          //     <p className="text-center text-sm">
-          //       Drag and drop  or click to select images
-          //     </p>
-          //   )}
-          // </div>
           <div
-          {...getRootProps()}
-          className={`p-4 ${isDragActive ? "bg-blue-100" : "bg-gray-100"} hover:cursor-pointer`}
-        >
-          <input name={name} {...getInputProps()} />
-          {isDragActive ? (
-            <p className="text-center text-sm">Drop your image files here!</p>
-          ) : values[name]?.length === 0 ? (
-            <p className="text-center text-sm">{placeholder}</p> // Display the custom placeholder text
-          ) : (
-            <p className="text-center text-sm">Click to upload more images</p>
-          )}
-        </div>
+            {...getRootProps()}
+            className={`p-4 ${
+              isDragActive ? "bg-blue-100" : "bg-gray-100"
+            } hover:cursor-pointer`}
+          >
+            <input name={name} {...getInputProps()} />
+            {isDragActive ? (
+              <p className="text-center text-sm">Drop your image files here!</p>
+            ) : values[name]?.length === 0 ? (
+              <p className="text-center text-sm">{placeholder}</p> // Display the custom placeholder text
+            ) : (
+              <p className="text-center text-sm">Click to upload more images</p>
+            )}
+          </div>
         )}
       </Dropzone>
       <div className="flex mt-2 gap-2">
@@ -802,7 +799,6 @@ const CreateProject = () => {
       </div>
     </div>
   );
-  
 
   return (
     <div className="bg-white p-5 w-full max-w-3xl mx-auto">
@@ -849,7 +845,6 @@ const CreateProject = () => {
               id={`content${lang}`}
               name={`content${lang}`}
               placeholder={`Write project content  (${lang})...`}
-             
               value={values[`content${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -865,7 +860,6 @@ const CreateProject = () => {
           </div>
         ))}
 
-
         {/* starts */}
         {/* Project address */}
         {["En", "Bn", "Es"].map((lang) => (
@@ -880,7 +874,6 @@ const CreateProject = () => {
               id={`address${lang}`}
               name={`address${lang}`}
               placeholder={`Write project address (${lang})...`}
-             
               value={values[`address${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -909,7 +902,6 @@ const CreateProject = () => {
               id={`landArea${lang}`}
               name={`landArea${lang}`}
               placeholder={`Write project landArea (${lang})...`}
-              
               value={values[`landArea${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -920,11 +912,12 @@ const CreateProject = () => {
               }`}
             />
             {touched[`landArea${lang}`] && errors[`landArea${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`landArea${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`landArea${lang}`]}
+              </p>
             )}
           </div>
         ))}
-
 
         {/* Project floors */}
         {["En", "Bn", "Es"].map((lang) => (
@@ -939,7 +932,6 @@ const CreateProject = () => {
               id={`floors${lang}`}
               name={`floors${lang}`}
               placeholder={`Write project floors (${lang})...`}
-              
               value={values[`floors${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -955,7 +947,6 @@ const CreateProject = () => {
           </div>
         ))}
 
-
         {/* Project Front road */}
         {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`frontRoad${lang}`}>
@@ -969,7 +960,6 @@ const CreateProject = () => {
               id={`frontRoad${lang}`}
               name={`frontRoad${lang}`}
               placeholder={`Write project frontRoad (${lang})...`}
-              
               value={values[`frontRoad${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -980,12 +970,12 @@ const CreateProject = () => {
               }`}
             />
             {touched[`frontRoad${lang}`] && errors[`frontRoad${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`frontRoad${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`frontRoad${lang}`]}
+              </p>
             )}
           </div>
         ))}
-
-
 
         {/* Project units*/}
         {["En", "Bn", "Es"].map((lang) => (
@@ -1000,7 +990,6 @@ const CreateProject = () => {
               id={`units${lang}`}
               name={`units${lang}`}
               placeholder={`Write project units (${lang})...`}
-              
               value={values[`units${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1016,8 +1005,6 @@ const CreateProject = () => {
           </div>
         ))}
 
-
-
         {/* Project parking*/}
         {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`parking${lang}`}>
@@ -1031,7 +1018,6 @@ const CreateProject = () => {
               id={`parking${lang}`}
               name={`parking${lang}`}
               placeholder={`Write project parking (${lang})...`}
-              
               value={values[`parking${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1047,8 +1033,6 @@ const CreateProject = () => {
           </div>
         ))}
 
-
-
         {/* Project apartmentFloor */}
         {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`apartmentFloor${lang}`}>
@@ -1062,23 +1046,24 @@ const CreateProject = () => {
               id={`apartmentFloor${lang}`}
               name={`apartmentFloor${lang}`}
               placeholder={`Write project apartmentFloor (${lang})...`}
-              
               value={values[`apartmentFloor${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
               className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                touched[`apartmentFloor${lang}`] && errors[`apartmentFloor${lang}`]
+                touched[`apartmentFloor${lang}`] &&
+                errors[`apartmentFloor${lang}`]
                   ? "border-red-500"
                   : ""
               }`}
             />
-            {touched[`apartmentFloor${lang}`] && errors[`apartmentFloor${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`apartmentFloor${lang}`]}</p>
-            )}
+            {touched[`apartmentFloor${lang}`] &&
+              errors[`apartmentFloor${lang}`] && (
+                <p className="text-red-500 text-sm">
+                  {errors[`apartmentFloor${lang}`]}
+                </p>
+              )}
           </div>
         ))}
-
-
 
         {/* Project size */}
         {["En", "Bn", "Es"].map((lang) => (
@@ -1093,7 +1078,6 @@ const CreateProject = () => {
               id={`size${lang}`}
               name={`size${lang}`}
               placeholder={`Write project size (${lang})...`}
-              
               value={values[`size${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1109,8 +1093,6 @@ const CreateProject = () => {
           </div>
         ))}
 
-
-
         {/* Project bedroom */}
         {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`bedroom${lang}`}>
@@ -1124,7 +1106,6 @@ const CreateProject = () => {
               id={`bedroom${lang}`}
               name={`bedroom${lang}`}
               placeholder={`Write project bedroom (${lang})...`}
-              
               value={values[`bedroom${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1140,7 +1121,6 @@ const CreateProject = () => {
           </div>
         ))}
 
-
         {/* Project bathroom */}
         {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`bathroom${lang}`}>
@@ -1154,7 +1134,6 @@ const CreateProject = () => {
               id={`bathroom${lang}`}
               name={`bathroom${lang}`}
               placeholder={`Write project bathroom (${lang})...`}
-              
               value={values[`bathroom${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1165,11 +1144,12 @@ const CreateProject = () => {
               }`}
             />
             {touched[`bathroom${lang}`] && errors[`bathroom${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`bathroom${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`bathroom${lang}`]}
+              </p>
             )}
           </div>
         ))}
-
 
         {/* Project launchDate */}
         {["En", "Bn", "Es"].map((lang) => (
@@ -1184,7 +1164,6 @@ const CreateProject = () => {
               id={`launchDate${lang}`}
               name={`launchDate${lang}`}
               placeholder={`Write project launchDate (${lang})...`}
-              
               value={values[`launchDate${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1195,12 +1174,12 @@ const CreateProject = () => {
               }`}
             />
             {touched[`launchDate${lang}`] && errors[`launchDate${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`launchDate${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`launchDate${lang}`]}
+              </p>
             )}
           </div>
         ))}
-
-
 
         {/* Project collectionName */}
         {["En", "Bn", "Es"].map((lang) => (
@@ -1215,23 +1194,24 @@ const CreateProject = () => {
               id={`collectionName${lang}`}
               name={`collectionName${lang}`}
               placeholder={`Write project collectionName (${lang})...`}
-              
               value={values[`collectionName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
               className={`block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                touched[`collectionName${lang}`] && errors[`collectionName${lang}`]
+                touched[`collectionName${lang}`] &&
+                errors[`collectionName${lang}`]
                   ? "border-red-500"
                   : ""
               }`}
             />
-            {touched[`collectionName${lang}`] && errors[`collectionName${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`collectionName${lang}`]}</p>
-            )}
+            {touched[`collectionName${lang}`] &&
+              errors[`collectionName${lang}`] && (
+                <p className="text-red-500 text-sm">
+                  {errors[`collectionName${lang}`]}
+                </p>
+              )}
           </div>
         ))}
-
-
 
         {/* Project buildingType */}
         {["En", "Bn", "Es"].map((lang) => (
@@ -1246,7 +1226,6 @@ const CreateProject = () => {
               id={`buildingType${lang}`}
               name={`buildingType${lang}`}
               placeholder={`Write project buildingType (${lang})...`}
-              
               value={values[`buildingType${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1256,15 +1235,18 @@ const CreateProject = () => {
                   : ""
               }`}
             />
-            {touched[`buildingType${lang}`] && errors[`buildingType${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`buildingType${lang}`]}</p>
-            )}
+            {touched[`buildingType${lang}`] &&
+              errors[`buildingType${lang}`] && (
+                <p className="text-red-500 text-sm">
+                  {errors[`buildingType${lang}`]}
+                </p>
+              )}
           </div>
         ))}
 
         {/* new starts */}
-         {/* Project mosque */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project mosque */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`mosque${lang}`}>
             <label
               htmlFor={`mosque${lang}`}
@@ -1276,7 +1258,6 @@ const CreateProject = () => {
               id={`mosque${lang}`}
               name={`mosque${lang}`}
               placeholder={`Write project mosque (${lang})...`}
-              
               value={values[`mosque${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1292,8 +1273,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-         {/* Project college */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project college */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`college${lang}`}>
             <label
               htmlFor={`college${lang}`}
@@ -1305,7 +1286,6 @@ const CreateProject = () => {
               id={`college${lang}`}
               name={`college${lang}`}
               placeholder={`Write project college (${lang})...`}
-              
               value={values[`college${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1321,8 +1301,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-         {/* Project school */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project school */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`school${lang}`}>
             <label
               htmlFor={`school${lang}`}
@@ -1334,7 +1314,6 @@ const CreateProject = () => {
               id={`school${lang}`}
               name={`school${lang}`}
               placeholder={`Write project school (${lang})...`}
-              
               value={values[`school${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1350,9 +1329,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-
-         {/* Project market */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project market */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`market${lang}`}>
             <label
               htmlFor={`market${lang}`}
@@ -1364,7 +1342,6 @@ const CreateProject = () => {
               id={`market${lang}`}
               name={`market${lang}`}
               placeholder={`Write project market (${lang})...`}
-              
               value={values[`market${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1380,10 +1357,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-        
-
-         {/* Project bank1 */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project bank1 */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`bank1${lang}`}>
             <label
               htmlFor={`bank1${lang}`}
@@ -1395,7 +1370,6 @@ const CreateProject = () => {
               id={`bank1${lang}`}
               name={`bank1${lang}`}
               placeholder={`Write project bank1 (${lang})...`}
-              
               value={values[`bank1${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1411,8 +1385,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-         {/* Project bank2 */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project bank2 */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`bank2${lang}`}>
             <label
               htmlFor={`bank2${lang}`}
@@ -1424,7 +1398,6 @@ const CreateProject = () => {
               id={`bank2${lang}`}
               name={`bank2${lang}`}
               placeholder={`Write project bank2 (${lang})...`}
-              
               value={values[`bank2${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1440,8 +1413,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-         {/* Project atm */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project atm */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`atm${lang}`}>
             <label
               htmlFor={`atm${lang}`}
@@ -1453,7 +1426,6 @@ const CreateProject = () => {
               id={`atm${lang}`}
               name={`atm${lang}`}
               placeholder={`Write project atm (${lang})...`}
-              
               value={values[`atm${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1469,8 +1441,8 @@ const CreateProject = () => {
           </div>
         ))}
 
-         {/* Project busStop */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project busStop */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`busStop${lang}`}>
             <label
               htmlFor={`busStop${lang}`}
@@ -1482,7 +1454,6 @@ const CreateProject = () => {
               id={`busStop${lang}`}
               name={`busStop${lang}`}
               placeholder={`Write project busStop (${lang})...`}
-              
               value={values[`busStop${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1496,13 +1467,10 @@ const CreateProject = () => {
               <p className="text-red-500 text-sm">{errors[`busStop${lang}`]}</p>
             )}
           </div>
-           ))}
+        ))}
 
-         
-
-
-          {/* Project mosqueName */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project mosqueName */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`mosqueName${lang}`}>
             <label
               htmlFor={`mosqueName${lang}`}
@@ -1514,7 +1482,6 @@ const CreateProject = () => {
               id={`mosqueName${lang}`}
               name={`mosqueName${lang}`}
               placeholder={`Write project mosqueNameEs (${lang})...`}
-              
               value={values[`mosqueName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1525,26 +1492,26 @@ const CreateProject = () => {
               }`}
             />
             {touched[`mosqueName${lang}`] && errors[`mosqueName${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`mosqueName${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`mosqueName${lang}`]}
+              </p>
             )}
           </div>
-           ))}
+        ))}
 
-
-          {/* Project collegeNameEs */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project collegeNameEs */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`collegeName${lang}`}>
             <label
               htmlFor={`collegeName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-               College Name ({lang})
+              College Name ({lang})
             </label>
             <textarea
               id={`collegeName${lang}`}
               name={`collegeName${lang}`}
               placeholder={`Write project collegeName (${lang})...`}
-              
               value={values[`collegeName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1555,26 +1522,26 @@ const CreateProject = () => {
               }`}
             />
             {touched[`collegeName${lang}`] && errors[`collegeName${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`collegeName${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`collegeName${lang}`]}
+              </p>
             )}
           </div>
-           ))}
+        ))}
 
-
-          {/* Project schoolNameEs */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project schoolNameEs */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`schoolName${lang}`}>
             <label
               htmlFor={`schoolName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-               School Name ({lang})
+              School Name ({lang})
             </label>
             <textarea
               id={`schoolName${lang}`}
               name={`schoolName${lang}`}
               placeholder={`Write project schoolName (${lang})...`}
-              
               value={values[`schoolName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1585,26 +1552,26 @@ const CreateProject = () => {
               }`}
             />
             {touched[`schoolName${lang}`] && errors[`schoolName${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`schoolName${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`schoolName${lang}`]}
+              </p>
             )}
           </div>
-          ))}
+        ))}
 
-
-          {/* Project marketNameEs */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project marketNameEs */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`marketName${lang}`}>
             <label
               htmlFor={`marketName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-               Market Name ({lang})
+              Market Name ({lang})
             </label>
             <textarea
               id={`marketName${lang}`}
               name={`marketName${lang}`}
               placeholder={`Write project marketName (${lang})...`}
-              
               value={values[`marketName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1615,26 +1582,26 @@ const CreateProject = () => {
               }`}
             />
             {touched[`marketName${lang}`] && errors[`marketName${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`marketName${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`marketName${lang}`]}
+              </p>
             )}
           </div>
-            ))}
+        ))}
 
-
-          {/* Project bank1NameEs */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project bank1NameEs */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`bank1Name${lang}`}>
             <label
               htmlFor={`bank1Name${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-               First Bank Name ({lang})
+              First Bank Name ({lang})
             </label>
             <textarea
               id={`bank1Name${lang}`}
               name={`bank1Name${lang}`}
               placeholder={`Write project bank1Name(${lang})...`}
-              
               value={values[`bank1Name${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1645,14 +1612,15 @@ const CreateProject = () => {
               }`}
             />
             {touched[`bank1Name${lang}`] && errors[`bank1Name${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`bank1Name${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`bank1Name${lang}`]}
+              </p>
             )}
           </div>
-          ))}
+        ))}
 
-
-          {/* Project bank2NameEs */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project bank2NameEs */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`bank2Name${lang}`}>
             <label
               htmlFor={`bank2Name${lang}`}
@@ -1664,7 +1632,6 @@ const CreateProject = () => {
               id={`bank2Name${lang}`}
               name={`bank2Name${lang}`}
               placeholder={`Write project bank2Name (${lang})...`}
-              
               value={values[`bank2Name${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1675,14 +1642,15 @@ const CreateProject = () => {
               }`}
             />
             {touched[`bank2Name${lang}`] && errors[`bank2Name${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`bank2Name${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`bank2Name${lang}`]}
+              </p>
             )}
           </div>
-          ))}
+        ))}
 
-
-          {/* Project atmName */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project atmName */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`atmName${lang}`}>
             <label
               htmlFor={`atmName${lang}`}
@@ -1694,7 +1662,6 @@ const CreateProject = () => {
               id={`atmName${lang}`}
               name={`atmName${lang}`}
               placeholder={`Write project atmName(${lang})...`}
-              
               value={values[`atmName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1708,23 +1675,21 @@ const CreateProject = () => {
               <p className="text-red-500 text-sm">{errors[`atmName${lang}`]}</p>
             )}
           </div>
-          ))}
+        ))}
 
-
-          {/* Project busStopName */}
-         {["En", "Bn", "Es"].map((lang) => (
+        {/* Project busStopName */}
+        {["En", "Bn", "Es"].map((lang) => (
           <div className="mb-3" key={`busStopName${lang}`}>
             <label
               htmlFor={`busStopName${lang}`}
               className="block mb-1 text-sm font-medium"
             >
-               Bus Stop Name ({lang})
+              Bus Stop Name ({lang})
             </label>
             <textarea
               id={`busStopName${lang}`}
               name={`busStopName${lang}`}
               placeholder={`Write project busStopName (${lang})...`}
-              
               value={values[`busStopName${lang}`]}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -1735,13 +1700,14 @@ const CreateProject = () => {
               }`}
             />
             {touched[`busStopName${lang}`] && errors[`busStopName${lang}`] && (
-              <p className="text-red-500 text-sm">{errors[`busStopName${lang}`]}</p>
+              <p className="text-red-500 text-sm">
+                {errors[`busStopName${lang}`]}
+              </p>
             )}
           </div>
 
           // end lastest
         ))}
-
 
         {/* ends */}
 
@@ -1762,8 +1728,7 @@ const CreateProject = () => {
             }`}
           >
             <option value="">Select a category</option>
-            <option value="commercial">COMMERCIAL 
-            </option>
+            <option value="commercial">COMMERCIAL</option>
             <option value="healthcare">HEALTHCARE</option>
             <option value="residential">RESIDENTIAL</option>
             <option value="religious">RELIGIOUS</option>
@@ -1775,8 +1740,7 @@ const CreateProject = () => {
           )}
         </div>
 
-        
-{/* 
+        {/* 
 <ImageDropzone
     name="images"
     setFieldValue={setFieldValue}
@@ -1790,73 +1754,19 @@ const CreateProject = () => {
   />
  */}
 
+        <ImageDropzone
+          name="images"
+          setFieldValue={setFieldValue}
+          values={values}
+          placeholder="Drag and drop or click to select images for Project"
+        />
 
-<ImageDropzone
-  name="images"
-  setFieldValue={setFieldValue}
-  values={values}
-  placeholder="Drag and drop or click to select images for Project"
- />
-
-<ImageDropzone
-  name="overviewImages"
-  setFieldValue={setFieldValue}
-  values={values}
-  placeholder="Drag and drop or click to select images for Overview"
-/>
-
-
-
-
-        {/* Dropzone for Multiple overviewImages */}
-        {/* <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
-          <Dropzone
-            acceptedFiles=".jpg,.jpeg,.png"
-            multiple
-            onDrop={(acceptedFiles) => {
-              const imageOverviewPromises = acceptedFiles.map((file) => {
-                const reader = new FileReader();
-                return new Promise((resolve) => {
-                  reader.onload = () => resolve(reader.result);
-                  reader.readAsDataURL(file);
-                });
-              });
-              Promise.all(imageOverviewPromises).then((overviewImages) => {
-                setFieldValue("overviewImages", overviewImages);
-              });
-            }}
-          >
-            {({ getRootProps, getInputProps, isDragActive }) => (
-              <div
-                {...getRootProps()}
-                className={`p-4 ${
-                  isDragActive ? "bg-blue-100" : "bg-gray-100"
-                } hover:cursor-pointer`}
-              >
-                <input name="overviewImages" {...getInputProps()} />
-                {isDragActive ? (
-                  <p className="text-center text-sm">Drop overviewImages here!</p>
-                ) : (
-                  <p className="text-center text-sm">
-                    Drag and Drop or click to select overviewImages
-                  </p>
-                )}
-              </div>
-            )}
-          </Dropzone>
-          <div className="flex mt-2 gap-2">
-            {values.overviewImages.map((overviewImage, index) => (
-              <img
-                key={index}
-                src={overviewImage}
-                alt={`Preview ${index + 1}`}
-                className="w-20 h-20 object-cover"
-              />
-            ))}
-          </div>
-        </div>
-
-         */}
+        <ImageDropzone
+          name="overviewImages"
+          setFieldValue={setFieldValue}
+          values={values}
+          placeholder="Drag and drop or click to select images for Overview"
+        />
 
         {/* Submit Button */}
         <button

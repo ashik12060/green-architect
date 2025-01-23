@@ -1,137 +1,95 @@
-
-
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState, useEffect } from "react";
-import axios from "axios"; // Make sure you have axios installed
+import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  Button,
+} from "@mui/material";
 import axiosInstance from "../../pages/axiosInstance";
-import { useTheme } from "../../context/ThemeContext";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import Header from "../Shared/Headers/Header";
 
-
-function Videos() {
-  const [videos, setVideos] = useState([]); // Store videos from the API
-  const [playingVideo, setPlayingVideo] = useState(null); // Store the id of the playing video
+const Videos = () => {
+  const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { t } = useTranslation('Video'); 
-
-  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const { data } = await axiosInstance.get(`${process.env.REACT_APP_API_URL}/api/videos/show`);
-        console.log(data);
-        setVideos(data.videos || []); // Assuming your API returns an object with a 'videos' array
+        const response = await axiosInstance.get(
+          `${process.env.REACT_APP_API_URL}/api/videos/show`
+        );
+
+        setVideos(response.data.data);
+        setLoading(false);
       } catch (err) {
-        console.error("Error fetching videos:", err);
-        setError(err.message);
-      } finally {
+        setError("Failed to load videos");
         setLoading(false);
       }
     };
-
     fetchVideos();
   }, []);
 
-  const handlePlayClick = (videoId) => {
-    setPlayingVideo(videoId); // Set the clicked video as the playing video
+  if (loading) {
+    return <Typography variant="h6">Loading videos...</Typography>;
+  }
+
+  if (error) {
+    return (
+      <Typography variant="h6" color="error">
+        {error}
+      </Typography>
+    );
+  }
+
+  const getYouTubeVideoId = (url) => {
+    if (!url) return null; // Check if url is undefined or null
+    const regex =
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S+[\?\&]v=|[\S]*[\?\&]v=|\S+\?v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
   };
-
-  if (loading) return <p>{t('loading')}</p>;
-  if (error) return <p>{t('errorLoading')} {error}</p>;
-  
-
-  // Animation variants for both <h1> and <p> elements
-  const headerVariants = {
-    offscreen: { y: 50, opacity: 0 },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 2.5,
-      },
-    },
-  };
-
-
   return (
-    <div className={`flex flex-col items-center justify-center min-h-screen  pt-10  text-center my-10 font-bold  ${isDarkMode ? ' text-white bg-white' : 'text-black border border-gray-700'}`}>
-      <div className="w-full">
-        <div className="flex flex-col items-center justify-center">
-          {/* <h1 className="text-3xl font-bold text-gray-800  border-b-4 border-green-700"> {t('pageTitle')}</h1>
-          <p className="mt-2 text-gray-600">{t('location')}</p> */}
-          <motion.h1
-        className="lg:text-3xl sm:text-xl font-bold text-gray-800 border-b-4 border-green-700"
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: false, amount: 0.2 }}
-        variants={headerVariants}
-      >
-        {t('pageTitle')}
-      </motion.h1>
+    <div>
+      <Header />
+      <h5 className="text-center text-2xl font-bold py-10">Our Videos</h5>
+      <div className="flex flex-wrap justify-center gap-8 px-4">
+        {videos.map((video) => {
+          const videoId = getYouTubeVideoId(video.videoUrl); // Extract YouTube video ID from URL
+          const embedUrl = videoId
+            ? `https://www.youtube.com/embed/${videoId}`
+            : null; // Construct embed URL
 
-      {/* Location Description */}
-      <motion.p
-        className="mt-2 text-gray-600"
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: false, amount: 0.2 }}
-        variants={headerVariants}
-      >
-        {t('location')}
-      </motion.p>
-
-
-          
-          {/* Iterate over the fetched videos array to generate video sections */}
-          {videos.map((video) => (
-            <React.Fragment key={video._id}>
-              <div className="bg-black text-white w-full mt-8 py-4">
-                <ul className="flex justify-around">
-                  <li>{video.title}</li>
-                  <li className="hover:bg-white border transition duration-700 ease-in-out transform hover:text-black border-gray-600 px-2 py-1">
-                    {video.location}
-                  </li>
-                </ul>
+          return (
+            <div
+              key={video._id}
+              className="w-full sm:w-[48%] lg:w-[23%] bg-white shadow-lg rounded-md overflow-hidden"
+            >
+              {embedUrl ? (
+                <iframe
+                  src={embedUrl}
+                  title="Video"
+                  className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <div className="text-center text-gray-500 p-4">
+                  Invalid video URL
+                </div>
+              )}
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-center">
+                  {video.title.en}
+                </h3>
               </div>
-
-              {/* Video section */}
-              <div className="relative w-full h-96 group transition-transform duration-500 transform hover:scale-105">
-                {playingVideo !== video.id ? (
-                  <>
-                    <img
-                      src={video.thumbnail}
-                      alt={`${video.title} Thumbnail`}
-                      className="absolute w-full h-full object-cover"
-                    />
-                    <button
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black px-6 py-4 text-2xl rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                      onClick={() => handlePlayClick(video.id)}
-                    >
-                      <FontAwesomeIcon icon={faPlay} className="text-white text-2xl" />
-                    </button>
-                  </>
-                ) : (
-                  <iframe
-                    className="absolute w-full h-full"
-                    src={video.videoUrl}
-                    title={`${video.title} Video Player`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                )}
-              </div>
-            </React.Fragment>
-          ))}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
-}
+};
 
 export default Videos;

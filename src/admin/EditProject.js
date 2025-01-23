@@ -178,9 +178,7 @@ const validationSchema = yup.object({
     es: yup.string("Add a title in Danish").required("Title is required"),
   }),
 
-
   category: yup.string("Select a category").required("Category is required"),
-
 });
 
 const EditProject = () => {
@@ -200,7 +198,7 @@ const EditProject = () => {
   const [launchDate, setLaunchDate] = useState("");
   const [collectionName, setCollectionName] = useState("");
   const [buildingType, setBuildingType] = useState("");
-  
+
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
@@ -251,6 +249,8 @@ const EditProject = () => {
       busStopName: { en: "", bn: "", es: "" },
 
       image: "",
+      images: [],
+      overviewImages: [],
     },
 
     validationSchema: validationSchema,
@@ -270,7 +270,7 @@ const EditProject = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/project/${id}`
       );
-      console.log(data)
+      console.log(data);
       setFieldValue("title.en", data.project.title.en);
       setFieldValue("title.bn", data.project.title.bn);
       setFieldValue("title.es", data.project.title.es);
@@ -282,7 +282,6 @@ const EditProject = () => {
       setFieldValue("address.en", data.project.address.en);
       setFieldValue("address.bn", data.project.address.bn);
       setFieldValue("address.es", data.project.address.es);
-
 
       setFieldValue("landArea.en", data.project.landArea.en);
       setFieldValue("landArea.bn", data.project.landArea.bn);
@@ -296,12 +295,10 @@ const EditProject = () => {
       setFieldValue("apartmentFloor.bn", data.project.apartmentFloor.bn);
       setFieldValue("apartmentFloor.es", data.project.apartmentFloor.es);
 
-      
       setFieldValue("size.en", data.project.size.en);
       setFieldValue("size.bn", data.project.size.bn);
       setFieldValue("size.es", data.project.size.es);
 
-      
       setFieldValue("bedroom.en", data.project.bedroom.en);
       setFieldValue("bedroom.bn", data.project.bedroom.bn);
       setFieldValue("bedroom.es", data.project.bedroom.es);
@@ -310,23 +307,17 @@ const EditProject = () => {
       setFieldValue("bathroom.bn", data.project.bathroom.bn);
       setFieldValue("bathroom.es", data.project.bathroom.es);
 
-      
       setFieldValue("launchDate.en", data.project.launchDate.en);
       setFieldValue("launchDate.bn", data.project.launchDate.bn);
       setFieldValue("launchDate.es", data.project.launchDate.es);
-
-     
 
       setFieldValue("collectionName.en", data.project.collectionName.en);
       setFieldValue("collectionName.bn", data.project.collectionName.bn);
       setFieldValue("collectionName.es", data.project.collectionName.es);
 
-
       setFieldValue("buildingType.en", data.project.buildingType.en);
       setFieldValue("buildingType.bn", data.project.buildingType.bn);
       setFieldValue("buildingType.es", data.project.buildingType.es);
-
-
 
       setFieldValue("frontRoad.en", data.project.frontRoad.en);
       setFieldValue("frontRoad.bn", data.project.frontRoad.bn);
@@ -340,131 +331,106 @@ const EditProject = () => {
       setFieldValue("parking.bn", data.project.parking.bn);
       setFieldValue("parking.es", data.project.parking.es);
 
-     
       setFieldValue("parking.en", data.project.parking.en);
       setFieldValue("parking.bn", data.project.parking.bn);
       setFieldValue("parking.es", data.project.parking.es);
 
-     
       setFieldValue("apartmentFloor.en", data.project.apartmentFloor.en);
       setFieldValue("apartmentFloor.bn", data.project.apartmentFloor.bn);
       setFieldValue("apartmentFloor.es", data.project.apartmentFloor.es);
 
-     
       setFieldValue("size.en", data.project.size.en);
       setFieldValue("size.bn", data.project.size.bn);
       setFieldValue("size.es", data.project.size.es);
 
-     
       setFieldValue("bedroom.en", data.project.bedroom.en);
       setFieldValue("bedroom.bn", data.project.bedroom.bn);
       setFieldValue("bedroom.es", data.project.bedroom.es);
 
-     
       setFieldValue("bathroom.en", data.project.bathroom.en);
       setFieldValue("bathroom.bn", data.project.bathroom.bn);
       setFieldValue("bathroom.es", data.project.bathroom.es);
 
-     
       setFieldValue("launchDate.en", data.project.launchDate.en);
       setFieldValue("launchDate.bn", data.project.launchDate.bn);
       setFieldValue("launchDate.es", data.project.launchDate.es);
 
-     
       setFieldValue("collectionName.en", data.project.collectionName.en);
       setFieldValue("collectionName.bn", data.project.collectionName.bn);
       setFieldValue("collectionName.es", data.project.collectionName.es);
 
-     
       setFieldValue("buildingType.en", data.project.buildingType.en);
       setFieldValue("buildingType.bn", data.project.buildingType.bn);
       setFieldValue("buildingType.es", data.project.buildingType.es);
 
-     
       setFieldValue("mosque.en", data.project.mosque.en);
       setFieldValue("mosque.bn", data.project.mosque.bn);
       setFieldValue("mosque.es", data.project.mosque.es);
 
-     
       setFieldValue("college.en", data.project.college.en);
       setFieldValue("college.bn", data.project.college.bn);
       setFieldValue("college.es", data.project.college.es);
 
-     
       setFieldValue("school.en", data.project.school.en);
       setFieldValue("school.bn", data.project.school.bn);
       setFieldValue("school.es", data.project.school.es);
 
-     
       setFieldValue("market.en", data.project.market.en);
       setFieldValue("market.bn", data.project.market.bn);
       setFieldValue("market.es", data.project.market.es);
 
-     
       setFieldValue("bank1.en", data.project.bank1.en);
       setFieldValue("bank1.bn", data.project.bank1.bn);
       setFieldValue("bank1.es", data.project.bank1.es);
 
-     
       setFieldValue("bank2.en", data.project.bank2.en);
       setFieldValue("bank2.bn", data.project.bank2.bn);
       setFieldValue("bank2.es", data.project.bank2.es);
 
-     
       setFieldValue("atm.en", data.project.atm.en);
       setFieldValue("atm.bn", data.project.atm.bn);
       setFieldValue("atm.es", data.project.atm.es);
 
-     
       setFieldValue("busStop.en", data.project.busStop.en);
       setFieldValue("busStop.bn", data.project.busStop.bn);
       setFieldValue("busStop.es", data.project.busStop.es);
 
-     
       setFieldValue("mosqueName.en", data.project.mosqueName.en);
       setFieldValue("mosqueName.bn", data.project.mosqueName.bn);
       setFieldValue("mosqueName.es", data.project.mosqueName.es);
 
-     
       setFieldValue("collegeName.en", data.project.collegeName.en);
       setFieldValue("collegeName.bn", data.project.collegeName.bn);
       setFieldValue("collegeName.es", data.project.collegeName.es);
 
-     
       setFieldValue("schoolName.en", data.project.schoolName.en);
       setFieldValue("schoolName.bn", data.project.schoolName.bn);
       setFieldValue("schoolName.es", data.project.schoolName.es);
 
-     
       setFieldValue("marketName.en", data.project.marketName.en);
       setFieldValue("marketName.bn", data.project.marketName.bn);
       setFieldValue("marketName.es", data.project.marketName.es);
 
-     
       setFieldValue("bank1Name.en", data.project.bank1Name.en);
       setFieldValue("bank1Name.bn", data.project.bank1Name.bn);
       setFieldValue("bank1Name.es", data.project.bank1Name.es);
 
-     
-     
       setFieldValue("bank2Name.en", data.project.bank2Name.en);
       setFieldValue("bank2Name.bn", data.project.bank2Name.bn);
       setFieldValue("bank2Name.es", data.project.bank2Name.es);
 
-     
-     
       setFieldValue("atmName.en", data.project.atmName.en);
       setFieldValue("atmName.bn", data.project.atmName.bn);
       setFieldValue("atmName.es", data.project.atmName.es);
 
-     
-     
       setFieldValue("busStopName.en", data.project.busStopName.en);
       setFieldValue("busStopName.bn", data.project.busStopName.bn);
       setFieldValue("busStopName.es", data.project.busStopName.es);
 
-      setImagePreview(data.project.image.url);
-    
+      // setImagePreview(data.project.image.url);
+      setFieldValue("images", data.project.images.url || []);
+      setFieldValue("overviewImages", data.project.overviewImages.url || []);
+
       console.log("single project admin", data.project);
     } catch (error) {
       console.log(error);
@@ -493,6 +459,52 @@ const EditProject = () => {
       toast.error(error.response.data.error);
     }
   };
+
+
+  const ImageDropzone = ({ name, setFieldValue, values, placeholder }) => (
+    <div className="border-2 border-dashed border-blue-500 p-2 mb-4">
+      <Dropzone
+        acceptedFiles=".jpg,.jpeg,.png"
+        multiple
+        onDrop={(acceptedFiles) => {
+          handleFileUpload(acceptedFiles, (images) => {
+            setFieldValue(name, [...values[name], ...images]); // Append new images to existing ones
+          });
+        }}
+      >
+        {({ getRootProps, getInputProps, isDragActive }) => (
+          <div
+            {...getRootProps()}
+            className={`p-4 ${
+              isDragActive ? "bg-blue-100" : "bg-gray-100"
+            } hover:cursor-pointer`}
+          >
+            <input name={name} {...getInputProps()} />
+            {isDragActive ? (
+              <p className="text-center text-sm">Drop your image files here!</p>
+            ) : values[name]?.length === 0 ? (
+              <p className="text-center text-sm">{placeholder}</p>
+            ) : (
+              <p className="text-center text-sm">Click to upload more images</p>
+            )}
+          </div>
+        )}
+      </Dropzone>
+  
+      {/* Display existing or uploaded images */}
+      <div className="flex mt-2 gap-2">
+        {values[name]?.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Preview ${index + 1}`}
+            className="w-20 h-20 object-cover"
+          />
+        ))}
+      </div>
+    </div>
+  );
+  
 
   return (
     <>
@@ -596,7 +608,6 @@ const EditProject = () => {
 
           {/* start */}
 
-          
           {/* address Inputs for Multiple Languages */}
           <Typography variant="subtitle1">Address</Typography>
           <TextField
@@ -647,8 +658,6 @@ const EditProject = () => {
             helperText={touched.address?.es && errors.address?.es}
           />
 
-
-          
           {/* landArea Inputs for Multiple Languages */}
           <Typography variant="subtitle1">landArea</Typography>
           <TextField
@@ -699,8 +708,6 @@ const EditProject = () => {
             helperText={touched.landArea?.es && errors.landArea?.es}
           />
 
-
-          
           {/* floors Inputs for Multiple Languages */}
           <Typography variant="subtitle1">floors</Typography>
           <TextField
@@ -751,8 +758,6 @@ const EditProject = () => {
             helperText={touched.floors?.es && errors.floors?.es}
           />
 
-
-          
           {/* frontRoad Inputs for Multiple Languages */}
           <Typography variant="subtitle1">Front Road</Typography>
           <TextField
@@ -803,8 +808,6 @@ const EditProject = () => {
             helperText={touched.frontRoad?.es && errors.frontRoad?.es}
           />
 
-
-          
           {/* units Inputs for Multiple Languages */}
           <Typography variant="subtitle1">Units</Typography>
           <TextField
@@ -855,8 +858,6 @@ const EditProject = () => {
             helperText={touched.units?.es && errors.units?.es}
           />
 
-
-          
           {/* parking Inputs for Multiple Languages */}
           <Typography variant="subtitle1">parking</Typography>
           <TextField
@@ -907,8 +908,6 @@ const EditProject = () => {
             helperText={touched.parking?.es && errors.parking?.es}
           />
 
-
-          
           {/* apartmentFloor Inputs for Multiple Languages */}
           <Typography variant="subtitle1">apartmentFloor</Typography>
           <TextField
@@ -923,7 +922,9 @@ const EditProject = () => {
             value={values.apartmentFloor.en}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.apartmentFloor?.en && Boolean(errors.apartmentFloor?.en)}
+            error={
+              touched.apartmentFloor?.en && Boolean(errors.apartmentFloor?.en)
+            }
             helperText={touched.apartmentFloor?.en && errors.apartmentFloor?.en}
           />
 
@@ -939,7 +940,9 @@ const EditProject = () => {
             value={values.apartmentFloor.bn}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.apartmentFloor?.bn && Boolean(errors.apartmentFloor?.bn)}
+            error={
+              touched.apartmentFloor?.bn && Boolean(errors.apartmentFloor?.bn)
+            }
             helperText={touched.apartmentFloor?.bn && errors.apartmentFloor?.bn}
           />
 
@@ -955,12 +958,12 @@ const EditProject = () => {
             value={values.apartmentFloor.es}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.apartmentFloor?.es && Boolean(errors.apartmentFloor?.es)}
+            error={
+              touched.apartmentFloor?.es && Boolean(errors.apartmentFloor?.es)
+            }
             helperText={touched.apartmentFloor?.es && errors.apartmentFloor?.es}
           />
 
-
-          
           {/* size Inputs for Multiple Languages */}
           <Typography variant="subtitle1">size</Typography>
           <TextField
@@ -1011,8 +1014,6 @@ const EditProject = () => {
             helperText={touched.size?.es && errors.size?.es}
           />
 
-
-          
           {/* bedroom Inputs for Multiple Languages */}
           <Typography variant="subtitle1">bedroom</Typography>
           <TextField
@@ -1063,8 +1064,6 @@ const EditProject = () => {
             helperText={touched.bedroom?.es && errors.bedroom?.es}
           />
 
-
-          
           {/* launchDate Inputs for Multiple Languages */}
           <Typography variant="subtitle1">launchDate</Typography>
           <TextField
@@ -1079,7 +1078,9 @@ const EditProject = () => {
             value={values.launchDate.en}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.contlaunchDateent?.en && Boolean(errors.launchDate?.en)}
+            error={
+              touched.contlaunchDateent?.en && Boolean(errors.launchDate?.en)
+            }
             helperText={touched.launchDate?.en && errors.launchDate?.en}
           />
 
@@ -1115,8 +1116,6 @@ const EditProject = () => {
             helperText={touched.launchDate?.es && errors.launchDate?.es}
           />
 
-
-          
           {/* bathroom Inputs for Multiple Languages */}
           <Typography variant="subtitle1">bathroom</Typography>
           <TextField
@@ -1167,8 +1166,6 @@ const EditProject = () => {
             helperText={touched.bathroom?.es && errors.bathroom?.es}
           />
 
-
-          
           {/* collectionName Inputs for Multiple Languages */}
           <Typography variant="subtitle1">collectionName</Typography>
           <TextField
@@ -1183,7 +1180,9 @@ const EditProject = () => {
             value={values.collectionName.en}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.collectionName?.en && Boolean(errors.collectionName?.en)}
+            error={
+              touched.collectionName?.en && Boolean(errors.collectionName?.en)
+            }
             helperText={touched.collectionName?.en && errors.collectionName?.en}
           />
 
@@ -1199,7 +1198,9 @@ const EditProject = () => {
             value={values.collectionName.bn}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.collectionName?.bn && Boolean(errors.collectionName?.bn)}
+            error={
+              touched.collectionName?.bn && Boolean(errors.collectionName?.bn)
+            }
             helperText={touched.collectionName?.bn && errors.collectionName?.bn}
           />
 
@@ -1215,12 +1216,12 @@ const EditProject = () => {
             value={values.content.es}
             onChange={collectionName}
             onBlur={handleBlur}
-            error={touched.collectionName?.es && Boolean(errors.collectionName?.es)}
+            error={
+              touched.collectionName?.es && Boolean(errors.collectionName?.es)
+            }
             helperText={touched.collectionName?.es && errors.collectionName?.es}
           />
 
-
-          
           {/* buildingType Inputs for Multiple Languages */}
           <Typography variant="subtitle1">buildingType</Typography>
           <TextField
@@ -1271,12 +1272,8 @@ const EditProject = () => {
             helperText={touched.buildingType?.es && errors.buildingType?.es}
           />
 
-
-
           {/* new start */}
 
-          
-          
           {/* mosque Inputs for Multiple Languages */}
           <Typography variant="subtitle1">mosque</Typography>
           <TextField
@@ -1377,8 +1374,6 @@ const EditProject = () => {
             helperText={touched.college?.es && errors.college?.es}
           />
 
-
-
           {/* school Inputs for Multiple Languages */}
           <Typography variant="subtitle1">school</Typography>
           <TextField
@@ -1428,7 +1423,6 @@ const EditProject = () => {
             error={touched.school?.es && Boolean(errors.school?.es)}
             helperText={touched.school?.es && errors.school?.es}
           />
-
 
           {/* market Inputs for Multiple Languages */}
           <Typography variant="subtitle1">market</Typography>
@@ -1530,7 +1524,6 @@ const EditProject = () => {
             helperText={touched.bank1?.es && errors.bank1?.es}
           />
 
-
           {/* bank2 Inputs for Multiple Languages */}
           <Typography variant="subtitle1">bank2</Typography>
           <TextField
@@ -1580,7 +1573,6 @@ const EditProject = () => {
             error={touched.bank2?.es && Boolean(errors.bank2?.es)}
             helperText={touched.bank2?.es && errors.bank2?.es}
           />
-
 
           {/* atm Inputs for Multiple Languages */}
           <Typography variant="subtitle1">atm</Typography>
@@ -1632,7 +1624,6 @@ const EditProject = () => {
             helperText={touched.atm?.es && errors.atm?.es}
           />
 
-
           {/* busStop Inputs for Multiple Languages */}
           <Typography variant="subtitle1">busStop</Typography>
           <TextField
@@ -1682,8 +1673,6 @@ const EditProject = () => {
             error={touched.busStop?.es && Boolean(errors.busStop?.es)}
             helperText={touched.busStop?.es && errors.busStop?.es}
           />
-
-
 
           {/* mosqueName Inputs for Multiple Languages */}
           <Typography variant="subtitle1">mosqueName</Typography>
@@ -1785,7 +1774,6 @@ const EditProject = () => {
             helperText={touched.collegeName?.es && errors.collegeName?.es}
           />
 
-
           {/* schoolName Inputs for Multiple Languages */}
           <Typography variant="subtitle1">schoolNameEn</Typography>
           <TextField
@@ -1835,8 +1823,6 @@ const EditProject = () => {
             error={touched.schoolName?.es && Boolean(errors.schoolName?.es)}
             helperText={touched.schoolName?.es && errors.schoolName?.es}
           />
-
-
 
           {/* marketName Inputs for Multiple Languages */}
           <Typography variant="subtitle1">marketName</Typography>
@@ -1888,8 +1874,6 @@ const EditProject = () => {
             helperText={touched.marketName?.es && errors.marketName?.es}
           />
 
-
-
           {/* bank1Name Inputs for Multiple Languages */}
           <Typography variant="subtitle1">bank1Name</Typography>
           <TextField
@@ -1940,8 +1924,6 @@ const EditProject = () => {
             helperText={touched.bank1Name?.es && errors.bank1Name?.es}
           />
 
-
-
           {/* bank1Name Inputs for Multiple Languages */}
           <Typography variant="subtitle1">bank2Name</Typography>
           <TextField
@@ -1991,7 +1973,6 @@ const EditProject = () => {
             error={touched.bank2Name?.es && Boolean(errors.bank2Name?.es)}
             helperText={touched.bank2Name?.es && errors.bank2Name?.es}
           />
-
 
           {/* atmName Inputs for Multiple Languages */}
           <Typography variant="subtitle1">bank2Name</Typography>
@@ -2093,12 +2074,9 @@ const EditProject = () => {
             helperText={touched.busStopName?.es && errors.busStopName?.es}
           />
 
-
-
-
           {/* new end */}
 
-          <Box border="2px dashed blue" sx={{ p: 1 }}>
+          {/* <Box border="2px dashed blue" sx={{ p: 1 }}>
             <Dropzone
               acceptedFiles=".jpg,.jpeg,.png"
               multiple={false}
@@ -2170,7 +2148,22 @@ const EditProject = () => {
                 </Box>
               )}
             </Dropzone>
-          </Box>
+          </Box> */}
+
+          <ImageDropzone
+            name="images"
+            setFieldValue={setFieldValue}
+            values={values}
+            placeholder="Drag and drop or click to select images for Project"
+          />
+
+          <ImageDropzone
+            name="overviewImages"
+            setFieldValue={setFieldValue}
+            values={values}
+            placeholder="Drag and drop or click to select images for Overview"
+          />
+
           <Button
             type="submit"
             fullWidth

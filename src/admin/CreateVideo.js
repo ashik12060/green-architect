@@ -9,10 +9,23 @@ import axiosInstance from "../pages/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
-  title: yup
-    .string("Add a video title")
-    .min(1, "text content should have a minimum of 1 characters ")
-    .required("video title is required"),
+  // title: yup
+  //   .string("Add a video title")
+  //   .min(1, "text content should have a minimum of 1 characters ")
+  //   .required("video title is required"),
+
+   titleEn: yup
+      .string("Add a  title in English")
+      .min(1, "Title must have at least 1 character")
+      .required(" title in English is required"),
+    titleBn: yup
+      .string("Add a  title in Bengali")
+      .min(1, "Title must have at least 1 character")
+      .required(" title in Bengali is required"),
+    titleEs: yup
+      .string("Add a  title in Danish")
+      .min(1, "Title must have at least 1 character")
+      .required(" title in Danish is required"),
 
     thumbnail: yup
     .string("Add text thumbnail")
@@ -37,7 +50,10 @@ const CreateVideo = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: "",
+      titleEn: "",
+      titleBn: "",
+      titleEs: "",
+
       thumbnail: "",
       videoUrl: "",
       image: null,
@@ -51,12 +67,31 @@ const CreateVideo = () => {
     },
   });
 
+
+
   const createNewVideo = async (values) => {
     try {
+      const {
+        titleEn,
+        titleBn,
+        titleEs,
+        thumbnail,
+        videoUrl,
+        image,
+      } = values;
 
-      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/video/create`, values);
+       // Structure the data for multilingual support
+       const data = {
+        title: { en: titleEn, bn: titleBn, es: titleEs },
+        thumbnail,
+        videoUrl,
+       image,
+      };
+
+
+      const result = await axiosInstance.post(`${process.env.REACT_APP_API_URL}/api/video/create`, data);
       if (result?.data?.success === true) {
-        toast.success("Video added successfully.");
+        toast.success("Video created");
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -64,6 +99,8 @@ const CreateVideo = () => {
       toast.error(error);
     }
   };
+
+
   const modules = {
     // ...
     clipboard: {
@@ -84,22 +121,54 @@ const CreateVideo = () => {
           Add Video{" "}
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          
           <TextField
-            sx={{ mb: 3 }}
             fullWidth
-            id="title"
-            label="Video title"
-            name="title"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            placeholder="Video title"
-            value={values.title}
+            sx={{ mb: 3 }}
+            id="titleEn"
+            label="Post Title (English)"
+            name="titleEn"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Post title in English"
+            value={values.titleEn}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.title && Boolean(errors.title)}
-            helperText={touched.title && errors.title}
+            error={touched.titleEn && Boolean(errors.titleEn)}
+            helperText={touched.titleEn && errors.titleEn}
           />
+
+          {/* Title in Bengali */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="titleBn"
+            label="Post Title (Bengali)"
+            name="titleBn"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Post title in Bengali"
+            value={values.titleBn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.titleBn && Boolean(errors.titleBn)}
+            helperText={touched.titleBn && errors.titleBn}
+          />
+
+          {/* Title in Danish */}
+          <TextField
+            fullWidth
+            sx={{ mb: 3 }}
+            id="titleEs"
+            label="Post Title (Danish)"
+            name="titleEs"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Post title in Danish"
+            value={values.titleEs}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.titleEs && Boolean(errors.titleEs)}
+            helperText={touched.titleEs && errors.titleEs}
+          />
+          
 
           <Box sx={{ mb: 3 }}>
             <TextField

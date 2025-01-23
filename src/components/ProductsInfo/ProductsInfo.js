@@ -121,41 +121,39 @@ const ProductsInfo = ({ isAdmin }) => {
 
   return (
     <div className="flex flex-col items-center gap-6 px-4 sm:px-8 lg:px-32 mt-10 mb-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {products.map((product, index) => (
           <DraggableCard key={product._id} index={index} product={product} />
         ))}
       </div>
 
-      {/* {selectedProduct && (
+      {selectedProduct && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 relative w-[90%] max-w-2xl">
+          <div className="bg-white rounded-lg p-4 sm:p-6 relative w-[90%] max-w-4xl h-auto max-h-[90%] overflow-y-auto">
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-red-500 font-bold text-xl hover:text-gray-800 transition"
+              className="absolute top-[-2] right-0 bg-red-600 px-2 text-white font-bold text-xl  transition"
             >
               ✕
             </button>
-            <div className="w-full h-96 overflow-hidden rounded">
+            <div className="w-full h-60 sm:h-80 overflow-hidden rounded">
               <img
                 src={selectedProduct.image?.url || "/path/to/placeholder.jpg"}
                 alt={selectedProduct.title[i18n.language] || "Product Image"}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex justify-between mt-4">
-              <div>
-                <h2 className="text-xl font-bold">
-                  {selectedProduct.title[i18n.language]}
-                </h2>
-                <p className="text-gray-700 mt-2">
-                  {selectedProduct.content[i18n.language]}
-                </p>
-              </div>
-              <div className="mt-4">
+            <div className="flex flex-col mt-4 gap-4">
+              <h2 className="text-xl font-bold text-center sm:text-left">
+                {selectedProduct.title[i18n.language]}
+              </h2>
+              <p className="text-gray-700 text-justify">
+                {selectedProduct.content[i18n.language]}
+              </p>
+              <div className="flex justify-center sm:justify-end mt-4">
                 <Link
                   to="/contact"
-                  className="bg-green-700 px-4 py-2 font-bold text-white rounded hover:bg-green-600 transition"
+                  className="bg-green-700 px-6 py-2 font-bold text-white rounded hover:bg-green-600 transition"
                 >
                   Buy Now
                 </Link>
@@ -163,44 +161,7 @@ const ProductsInfo = ({ isAdmin }) => {
             </div>
           </div>
         </div>
-      )} */}
-
-{selectedProduct && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="bg-white rounded-lg p-4 sm:p-6 relative w-[90%] max-w-4xl h-auto max-h-[90%] overflow-y-auto">
-      <button
-        onClick={closeModal}
-        className="absolute top-[-2] right-0 bg-red-600 px-2 text-white font-bold text-xl  transition"
-      >
-        ✕
-      </button>
-      <div className="w-full h-60 sm:h-80 overflow-hidden rounded">
-        <img
-          src={selectedProduct.image?.url || "/path/to/placeholder.jpg"}
-          alt={selectedProduct.title[i18n.language] || "Product Image"}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="flex flex-col mt-4 gap-4">
-        <h2 className="text-xl font-bold text-center sm:text-left">
-          {selectedProduct.title[i18n.language]}
-        </h2>
-        <p className="text-gray-700 text-justify">
-          {selectedProduct.content[i18n.language]}
-        </p>
-        <div className="flex justify-center sm:justify-end mt-4">
-          <Link
-            to="/contact"
-            className="bg-green-700 px-6 py-2 font-bold text-white rounded hover:bg-green-600 transition"
-          >
-            Buy Now
-          </Link>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
     </div>
   );
 };

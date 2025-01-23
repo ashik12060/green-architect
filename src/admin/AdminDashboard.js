@@ -23,6 +23,7 @@ const AdminDashboard = () => {
   const [members, setMembers] = useState([]);
   const [carousels, setCarousels] = useState([]);
   const [videos, setVideos] = useState([]);
+  
   const [activeTab, setActiveTab] = useState("posts");
 
 
@@ -563,6 +564,62 @@ const AdminDashboard = () => {
   ];
 
   // video column
+  // const VideoColumns = [
+  //   {
+  //     field: "_id",
+  //     headerName: "Video ID",
+  //     width: 150,
+  //     editable: true,
+  //   },
+  //   {
+  //     field: "title",
+  //     headerName: "Video title",
+  //     width: 150,
+  //   },
+  //   // {
+  //   //   field: "image",
+  //   //   headerName: "Image",
+  //   //   width: 150,
+  //   //   renderCell: (params) => (
+  //   //     <img width="40%" src={params.row.image.url} alt="img" />
+  //   //   ),
+  //   // },
+
+  //   {
+  //     field: "postedBy",
+  //     headerName: "Posted by",
+  //     width: 150,
+  //     renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
+  //   },
+  //   {
+  //     field: "createdAt",
+  //     headerName: "Created At",
+  //     width: 150,
+  //     renderCell: (params) =>
+  //       moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
+  //   },
+  //   {
+  //     field: "Actions",
+  //     width: 100,
+  //     renderCell: (value) => (
+  //       <div className="flex justify-between">
+  //         <Link to={`/admin/video/edit/${value.row._id}`}>
+  //           <IconButton aria-label="edit">
+  //             <EditIcon sx={{ color: "#1976d2" }} />
+  //           </IconButton>
+  //         </Link>
+  //         <IconButton
+  //           aria-label="delete"
+  //           onClick={(e) => deleteVideoById(e, value.row._id)}
+  //         >
+  //           <DeleteIcon sx={{ color: "red" }} />
+  //         </IconButton>
+  //       </div>
+  //     ),
+  //   },
+  // ];
+
+
   const VideoColumns = [
     {
       field: "_id",
@@ -572,23 +629,15 @@ const AdminDashboard = () => {
     },
     {
       field: "title",
-      headerName: "Video title",
+      headerName: "Video Title",
       width: 150,
+      renderCell: (params) => params.row.title.en || "No Title", // Show the English title
     },
-    {
-      field: "image",
-      headerName: "Image",
-      width: 150,
-      renderCell: (params) => (
-        <img width="40%" src={params.row.image.url} alt="img" />
-      ),
-    },
-
     {
       field: "postedBy",
-      headerName: "Posted by",
+      headerName: "Posted By",
       width: 150,
-      renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
+      renderCell: (params) => params.row.postedBy?.name || "Unknown",
     },
     {
       field: "createdAt",
@@ -617,6 +666,7 @@ const AdminDashboard = () => {
       ),
     },
   ];
+  
 
   // Research and Development columns
   const RndColumns = [
@@ -805,6 +855,7 @@ const AdminDashboard = () => {
     { name: "Products", value: "products" },
     { name: "Projects", value: "projects" },
     { name: "Videos", value: "videos" },
+    { name: "New Videos", value: "New Videos" },
     { name: "Research & Development", value: "rnd" },
     { name: "Members", value: "members" },
     { name: "Carousel Images", value: "carousel" },
@@ -983,14 +1034,82 @@ const AdminDashboard = () => {
           </div>
         );
 
-      case "videos":
+      // case "videos":
+      //   return (
+      //     <div>
+      //      <div className="overflow-x-auto">
+      //         <div>
+      //           <h4 className="text-black text-4xl pb-3">Videos</h4>
+      //           <div className="pb-2 flex justify-end">
+      //             <Link to="/admin/video/create">
+      //               <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+      //                 <AddIcon className="mr-2" />
+      //                 Add Project
+      //               </button>
+      //             </Link>
+      //           </div>
+      //           <div className="overflow-x-auto">
+      //             <table className="min-w-full bg-white">
+      //               <thead>
+      //                 <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      //                   {VideoColumns.map((column) => (
+      //                     <th
+      //                       key={column.field}
+      //                       className="py-3 px-6 text-left"
+      //                     >
+      //                       {column.headerName}
+      //                     </th>
+      //                   ))}
+      //                 </tr>
+      //               </thead>
+      //               <tbody className="text-gray-600 text-sm font-light">
+      //                 {videos.length > 0 ? (
+      //                   videos.map((video) => (
+      //                     <tr
+      //                       key={video._id}
+      //                       className="border-b border-gray-200 hover:bg-gray-100"
+      //                     >
+      //                       {VideoColumns.map((column) => (
+      //                         <td
+      //                           key={column.field}
+      //                           className="py-3 px-6 text-left"
+      //                         >
+      //                           {column.renderCell
+      //                             ? column.renderCell({ row: video })
+      //                             : video[column.field]}
+      //                         </td>
+      //                       ))}
+      //                     </tr>
+      //                   ))
+      //                 ) : (
+      //                   <tr>
+      //                     <td
+      //                       colSpan={VideoColumns.length}
+      //                       className="text-center py-4"
+      //                     >
+      //                       No Projects found.
+      //                     </td>
+      //                   </tr>
+      //                 )}
+      //               </tbody>
+      //             </table>
+      //           </div>
+      //         </div>
+
+             
+      //       </div>
+      //     </div>
+      //   );
+      
+      
+      case "New Videos":
         return (
           <div>
            <div className="overflow-x-auto">
               <div>
-                <h4 className="text-black text-4xl pb-3">Videos</h4>
+                <h4 className="text-black text-4xl pb-3">New Videos</h4>
                 <div className="pb-2 flex justify-end">
-                  <Link to="/admin/video/create">
+                  <Link to="/admin/add-video/create">
                     <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
                       <AddIcon className="mr-2" />
                       Add Project
@@ -1011,7 +1130,8 @@ const AdminDashboard = () => {
                         ))}
                       </tr>
                     </thead>
-                    <tbody className="text-gray-600 text-sm font-light">
+
+                    {/* <tbody className="text-gray-600 text-sm font-light">
                       {videos.length > 0 ? (
                         videos.map((video) => (
                           <tr
@@ -1040,7 +1160,33 @@ const AdminDashboard = () => {
                           </td>
                         </tr>
                       )}
-                    </tbody>
+                    </tbody> */}
+                    <tbody className="text-gray-600 text-sm font-light">
+  {videos?.length > 0 ? (
+    videos.map((video) => (
+      <tr
+        key={video._id}
+        className="border-b border-gray-200 hover:bg-gray-100"
+      >
+        {VideoColumns.map((column) => (
+          <td key={column.field} className="py-3 px-6 text-left">
+            {column.renderCell
+              ? column.renderCell({ row: video })
+              : video[column.field]}
+          </td>
+        ))}
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan={VideoColumns.length} className="text-center py-4">
+        No Projects found.
+      </td>
+    </tr>
+  )}
+</tbody>
+
+
                   </table>
                 </div>
               </div>
@@ -1049,7 +1195,10 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
-      case "rnd":
+      
+      
+      
+        case "rnd":
         return (
           <div>
             <h4 className="text-black text-4xl pb-3">

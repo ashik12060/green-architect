@@ -88,13 +88,71 @@ export const ServiceCard = () => {
   };
 
   return (
-    <div className={`${isDarkMode ? "text-white" : "bg-gray-100"}`}>
-      <div className="container lg:mx-auto lg:px-4 px-20 lg:py-16 py-20">
+  //   <div className={`${isDarkMode ? "text-white" : "bg-gray-100"}`}>
+  //     <div className="container lg:mx-auto lg:px-4 px-20 lg:py-16 py-20">
        
-        <motion.h1
-      className={`lg:text-4xl sm:text-xl font-bold text-center mb-10 ${
+  //       <motion.h1
+  //     className={`lg:text-4xl sm:text-xl font-bold text-center mb-10 ${
+  //       isDarkMode ? "text-white" : "text-black"
+  //     }`}
+  //     initial="offscreen"
+  //     whileInView="onscreen"
+  //     viewport={{ once: false, amount: 0.2 }}
+  //     variants={headerVariants}
+  //   >
+  //     {t("ourServices")}
+  //   </motion.h1>
+
+  //       <motion.div
+  //         className="grid grid-cols-2 lg:p-1 sm:p-10 md:grid-cols-2 lg:grid-cols-3 gap-8"
+  //         initial="hidden"
+  //         animate="visible"
+  //         variants={{
+  //           visible: {
+  //             transition: {
+  //               staggerChildren: 0.2, 
+  //             },
+  //           },
+  //         }}
+  //       >
+  //         {serviceList.map((service, index) => (
+  //           <motion.div key={index} variants={cardVariants} whileHover={hoverEffect.hover}>
+  //             {/* Make the whole card clickable */}
+  //             <Link
+  //               to={service.link}
+  //               className={`relative  bg-white rounded-lg shadow-md p-10 text-center overflow-hidden group block min-h-[350px] ${
+  //                 isDarkMode ? "bg-gray-800 text-white" : "text-black"
+  //               }`}
+  //             >
+  //               <div className="absolute inset-0 border-2 border-green-500 rounded-lg animate-border group-hover:animate-border-hover"></div>
+  //               <div className="mb-4 relative z-10">
+  //                 <FontAwesomeIcon
+  //                   icon={service.icon}
+                    
+  //                   className="text-gray-500 mb-4 lg:text-4xl text-xl"
+  //                 />
+  //                 <h2 className="ml-2 text-black  lg:text-xl text-lg font-bold">{t(service.title)}</h2>
+  //               </div>
+  //               <p className="text-gray-700 relative lg:text-lg text-sm z-10">{t(service.description)}</p>
+  //               <div className="mt-4 inline-block px-4 py-2 text-green-700 font-bold rounded-lg relative z-10 hover:border-2 hover:border-green-800 lg:text-xl text-sm">
+  //                 {t("seeMore")}
+  //                 <FontAwesomeIcon
+  //                   className="ps-2 animate-pulse text-green-700"
+  //                   icon={faAnglesRight}
+  //                 />
+  //               </div>
+  //             </Link>
+  //           </motion.div>
+  //         ))}
+  //       </motion.div>
+  //     </div>
+  //   </div>
+<div className={`${isDarkMode ? "text-white" : "bg-gray-100"}`}>
+  <div className="container mx-auto px-4 lg:px-20 py-10 lg:py-16">
+    <motion.h1
+      className={`text-center font-bold mb-10 ${
         isDarkMode ? "text-white" : "text-black"
-      }`}
+      } lg:text-4xl sm:text-2xl text-xl`}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: false, amount: 0.2 }}
@@ -103,49 +161,58 @@ export const ServiceCard = () => {
       {t("ourServices")}
     </motion.h1>
 
+    <motion.div
+      className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+    >
+      {serviceList.map((service, index) => (
         <motion.div
-          className="grid grid-cols-1 lg:p-1 sm:p-10 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.2, 
-              },
-            },
-          }}
+          key={index}
+          variants={cardVariants}
+          whileHover={hoverEffect.hover}
         >
-          {serviceList.map((service, index) => (
-            <motion.div key={index} variants={cardVariants} whileHover={hoverEffect.hover}>
-              {/* Make the whole card clickable */}
-              <Link
-                to={service.link}
-                className={`relative  bg-white rounded-lg shadow-md p-10 text-center overflow-hidden group block min-h-[350px] ${
-                  isDarkMode ? "bg-gray-800 text-white" : "text-black"
-                }`}
-              >
-                <div className="absolute inset-0 border-2 border-green-500 rounded-lg animate-border group-hover:animate-border-hover"></div>
-                <div className="mb-4 relative z-10">
-                  <FontAwesomeIcon
-                    icon={service.icon}
-                    
-                    className="text-gray-500 mb-4 lg:text-4xl text-xl"
-                  />
-                  <h2 className="ml-2 text-black  lg:text-xl text-lg font-bold">{t(service.title)}</h2>
-                </div>
-                <p className="text-gray-700 relative lg:text-lg text-sm z-10">{t(service.description)}</p>
-                <div className="mt-4 inline-block px-4 py-2 text-green-700 font-bold rounded-lg relative z-10 hover:border-2 hover:border-green-800 lg:text-xl text-sm">
-                  {t("seeMore")}
-                  <FontAwesomeIcon
-                    className="ps-2 animate-pulse text-green-700"
-                    icon={faAnglesRight}
-                  />
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+          {/* Make the whole card clickable */}
+          <Link
+            to={service.link}
+            className={`relative bg-white rounded-lg shadow-md p-6 sm:p-8 text-center overflow-hidden group block  h-[300px] max-h-[400px] ${ // Adjusted min height
+              isDarkMode ? "bg-gray-800 text-white" : "text-black"
+            } flex flex-col`}
+          >
+            <div className="absolute inset-0 border-2 border-green-500 rounded-lg animate-border group-hover:animate-border-hover"></div>
+            <div className="mb-4 relative z-10">
+              <FontAwesomeIcon
+                icon={service.icon}
+                className="text-gray-500 mb-4 lg:text-4xl text-2xl"
+              />
+              <h2 className="ml-2 lg:text-xl text-lg font-bold">
+                {t(service.title)}
+              </h2>
+            </div>
+            <p className="relative z-10 lg:text-lg text-sm text-gray-700 flex-grow">
+              {t(service.description)}
+            </p>
+            <div className="mt-4 inline-block px-4 py-2 text-green-700 font-bold rounded-lg relative z-10 hover:border-2 hover:border-green-800 lg:text-lg text-sm">
+              {t("seeMore")}
+              <FontAwesomeIcon
+                className="ps-2 animate-pulse text-green-700"
+                icon={faAnglesRight}
+              />
+            </div>
+          </Link>
         </motion.div>
-      </div>
-    </div>
+      ))}
+    </motion.div>
+  </div>
+</div>
+
+  
   );
 };
