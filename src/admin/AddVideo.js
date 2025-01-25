@@ -83,7 +83,7 @@ const AddVideo = () => {
       );
       if (result?.data?.success === true) {
         toast.success("video created successfully.");
-        navigate("/admin/dashboard");
+        // navigate("/admin/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -114,7 +114,7 @@ const AddVideo = () => {
             label=" Title (English)"
             name="titleEn"
             InputLabelProps={{ shrink: true }}
-            placeholder="Post title in English"
+            placeholder="Video title in English"
             value={values.titleEn}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -159,7 +159,7 @@ const AddVideo = () => {
             fullWidth
             sx={{ mb: 3 }}
             id="videoUrl"
-            label="videoUrl (English)"
+            label="Enter Video URL"
             name="videoUrl"
             multiline
             rows={4}

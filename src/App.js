@@ -299,14 +299,7 @@ function App() {
                       </AdminRoute>
                     }
                   />
-                  <Route
-                    path="/admin/video/create"
-                    element={
-                      <AdminRoute>
-                        <CreateVideoHOC />
-                      </AdminRoute>
-                    }
-                  />
+                 
                   <Route
                     path="/admin/add-video/create"
                     element={

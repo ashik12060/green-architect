@@ -22,10 +22,10 @@ const AdminDashboard = () => {
   const [rnds, setRnd] = useState([]);
   const [members, setMembers] = useState([]);
   const [carousels, setCarousels] = useState([]);
-  const [videos, setVideos] = useState([]);
-  
-  const [activeTab, setActiveTab] = useState("posts");
+  // const [videos, setVideos] = useState([]);
+  const [newVideos, setNewVideos] = useState([]);
 
+  const [activeTab, setActiveTab] = useState("posts");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -52,8 +52,6 @@ const AdminDashboard = () => {
     updatedProducts.splice(toIndex, 0, movedProduct);
     setProducts(updatedProducts);
   };
-
- 
 
   const saveNewOrder = async () => {
     const reorderedIds = products.map((product) => product._id);
@@ -91,7 +89,7 @@ const AdminDashboard = () => {
       type: ItemType,
       item: { index },
     });
-  
+
     const [, drop] = useDrop({
       accept: ItemType,
       hover: (item) => {
@@ -102,7 +100,7 @@ const AdminDashboard = () => {
       },
       drop: saveNewOrder, // Save the new order after drop
     });
-  
+
     return (
       <motion.tr
         ref={(node) => drag(drop(node))}
@@ -130,15 +128,10 @@ const AdminDashboard = () => {
               to={`/admin/product/edit/${product._id}`}
               className="text-blue-500"
             >
-             <IconButton aria-label="edit">
-              <EditIcon sx={{ color: "#1976d2" }} />
-            </IconButton>
+              <IconButton aria-label="edit">
+                <EditIcon sx={{ color: "#1976d2" }} />
+              </IconButton>
             </Link>
-
-
-
-            
-
 
             <button
               className="text-red-500"
@@ -151,7 +144,6 @@ const AdminDashboard = () => {
       </motion.tr>
     );
   };
-  
 
   const displayPost = async () => {
     try {
@@ -181,7 +173,7 @@ const AdminDashboard = () => {
       const { data } = await axiosInstance.get(
         `${process.env.REACT_APP_API_URL}/api/videos/show`
       );
-      setVideos(data.videos);
+      setNewVideos(data.videos);
     } catch (error) {
       console.log(error);
     }
@@ -190,6 +182,43 @@ const AdminDashboard = () => {
   useEffect(() => {
     displayVideo();
   }, []);
+
+ 
+  const displayNewVideos = async () => {
+    try {
+      const response = await axiosInstance.get(
+        `${process.env.REACT_APP_API_URL}/api/videos/show`
+      );
+  
+      console.log("Raw API Response:", response); // Debug API response
+  
+      // Extract the array from the nested data property
+      const videoData = response.data?.data || []; // Safely access the array
+  
+      console.log("Is Data an Array:", Array.isArray(videoData)); // Verify data type
+  
+      // Map the videos to include English titles
+      const englishNewVideos = videoData.map((video) => ({
+        ...video,
+        title: video.title?.en || "No Title", // Safely access title.en
+      }));
+  
+      console.log("Mapped Videos:", englishNewVideos); // Debug mapped data
+      setNewVideos(englishNewVideos);
+    } catch (error) {
+      console.error("Error fetching videos:", error); // Log errors
+    }
+  };
+  useEffect(() => {
+    displayNewVideos();
+  }, []);
+  
+  useEffect(() => {
+  }, [newVideos]);
+  
+  
+
+
 
   // Display products
   const displayProduct = async () => {
@@ -321,16 +350,34 @@ const AdminDashboard = () => {
     }
   };
 
+  // // Delete video by ID
+  // const deleteVideoById = async (e, id) => {
+  //   if (window.confirm("Are you sure you want to delete this video?")) {
+  //     try {
+  //       const result = await axiosInstance.delete(
+  //         `${process.env.REACT_APP_API_URL}/api/delete/video/${id}`
+  //       );
+  //       if (result?.data?.success === true) {
+  //         toast.success("Item deleted");
+  //         displayVideo();
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //       toast.error(error);
+  //     }
+  //   }
+  // };
+
   // Delete video by ID
-  const deleteVideoById = async (e, id) => {
+  const deleteNewVideoById = async (e, id) => {
     if (window.confirm("Are you sure you want to delete this video?")) {
       try {
         const result = await axiosInstance.delete(
           `${process.env.REACT_APP_API_URL}/api/delete/video/${id}`
         );
         if (result?.data?.success === true) {
-          toast.success("Item deleted");
-          displayVideo();
+          toast.success("New Video deleted");
+          displayNewVideo();
         }
       } catch (error) {
         console.log(error);
@@ -359,21 +406,20 @@ const AdminDashboard = () => {
 
   const deleteProductById = async (e, id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-        try {
-            const result = await axiosInstance.delete(
-                `${process.env.REACT_APP_API_URL}/api/delete/product/${id}`
-            );
-            if (result?.data?.success === true) {
-                toast.success("Product deleted");
-                displayProduct();
-            }
-        } catch (error) {
-            console.error("Error deleting product:", error); // Log full error for better debugging
-            toast.error("Failed to delete product");
+      try {
+        const result = await axiosInstance.delete(
+          `${process.env.REACT_APP_API_URL}/api/delete/product/${id}`
+        );
+        if (result?.data?.success === true) {
+          toast.success("Product deleted");
+          displayProduct();
         }
+      } catch (error) {
+        console.error("Error deleting product:", error); // Log full error for better debugging
+        toast.error("Failed to delete product");
+      }
     }
-};
-
+  };
 
   // Delete Project by ID
   const deleteProjectById = async (e, id) => {
@@ -411,7 +457,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // ne
+
   // Delete carousel by ID
   const deleteCarouselById = async (e, id) => {
     if (window.confirm("Are you sure you want to delete this carousel item?")) {
@@ -563,64 +609,9 @@ const AdminDashboard = () => {
     },
   ];
 
-  // video column
-  // const VideoColumns = [
-  //   {
-  //     field: "_id",
-  //     headerName: "Video ID",
-  //     width: 150,
-  //     editable: true,
-  //   },
-  //   {
-  //     field: "title",
-  //     headerName: "Video title",
-  //     width: 150,
-  //   },
-  //   // {
-  //   //   field: "image",
-  //   //   headerName: "Image",
-  //   //   width: 150,
-  //   //   renderCell: (params) => (
-  //   //     <img width="40%" src={params.row.image.url} alt="img" />
-  //   //   ),
-  //   // },
-
-  //   {
-  //     field: "postedBy",
-  //     headerName: "Posted by",
-  //     width: 150,
-  //     renderCell: (params) => params.row.postedBy?.name || "Unknown", // Safely access name
-  //   },
-  //   {
-  //     field: "createdAt",
-  //     headerName: "Created At",
-  //     width: 150,
-  //     renderCell: (params) =>
-  //       moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
-  //   },
-  //   {
-  //     field: "Actions",
-  //     width: 100,
-  //     renderCell: (value) => (
-  //       <div className="flex justify-between">
-  //         <Link to={`/admin/video/edit/${value.row._id}`}>
-  //           <IconButton aria-label="edit">
-  //             <EditIcon sx={{ color: "#1976d2" }} />
-  //           </IconButton>
-  //         </Link>
-  //         <IconButton
-  //           aria-label="delete"
-  //           onClick={(e) => deleteVideoById(e, value.row._id)}
-  //         >
-  //           <DeleteIcon sx={{ color: "red" }} />
-  //         </IconButton>
-  //       </div>
-  //     ),
-  //   },
-  // ];
 
 
-  const VideoColumns = [
+  const NewVideoColumns = [
     {
       field: "_id",
       headerName: "Video ID",
@@ -631,21 +622,9 @@ const AdminDashboard = () => {
       field: "title",
       headerName: "Video Title",
       width: 150,
-      renderCell: (params) => params.row.title.en || "No Title", // Show the English title
+      renderCell: (params) => params.row.title || "No Title", // Show the English title
     },
-    {
-      field: "postedBy",
-      headerName: "Posted By",
-      width: 150,
-      renderCell: (params) => params.row.postedBy?.name || "Unknown",
-    },
-    {
-      field: "createdAt",
-      headerName: "Created At",
-      width: 150,
-      renderCell: (params) =>
-        moment(params.row.createdAt).format("YYYY-MM-DD HH:mm:ss"),
-    },
+
     {
       field: "Actions",
       width: 100,
@@ -658,7 +637,7 @@ const AdminDashboard = () => {
           </Link>
           <IconButton
             aria-label="delete"
-            onClick={(e) => deleteVideoById(e, value.row._id)}
+            onClick={(e) => deleteNewVideoById(e, value.row._id)}
           >
             <DeleteIcon sx={{ color: "red" }} />
           </IconButton>
@@ -666,7 +645,6 @@ const AdminDashboard = () => {
       ),
     },
   ];
-  
 
   // Research and Development columns
   const RndColumns = [
@@ -854,7 +832,7 @@ const AdminDashboard = () => {
     { name: "Posts", value: "posts" },
     { name: "Products", value: "products" },
     { name: "Projects", value: "projects" },
-    { name: "Videos", value: "videos" },
+    // { name: "Videos", value: "videos" },
     { name: "New Videos", value: "New Videos" },
     { name: "Research & Development", value: "rnd" },
     { name: "Members", value: "members" },
@@ -963,8 +941,6 @@ const AdminDashboard = () => {
               </tbody>
             </table>
           </div>
-
-          
         );
 
       case "projects":
@@ -1034,82 +1010,14 @@ const AdminDashboard = () => {
           </div>
         );
 
-      // case "videos":
-      //   return (
-      //     <div>
-      //      <div className="overflow-x-auto">
-      //         <div>
-      //           <h4 className="text-black text-4xl pb-3">Videos</h4>
-      //           <div className="pb-2 flex justify-end">
-      //             <Link to="/admin/video/create">
-      //               <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
-      //                 <AddIcon className="mr-2" />
-      //                 Add Project
-      //               </button>
-      //             </Link>
-      //           </div>
-      //           <div className="overflow-x-auto">
-      //             <table className="min-w-full bg-white">
-      //               <thead>
-      //                 <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-      //                   {VideoColumns.map((column) => (
-      //                     <th
-      //                       key={column.field}
-      //                       className="py-3 px-6 text-left"
-      //                     >
-      //                       {column.headerName}
-      //                     </th>
-      //                   ))}
-      //                 </tr>
-      //               </thead>
-      //               <tbody className="text-gray-600 text-sm font-light">
-      //                 {videos.length > 0 ? (
-      //                   videos.map((video) => (
-      //                     <tr
-      //                       key={video._id}
-      //                       className="border-b border-gray-200 hover:bg-gray-100"
-      //                     >
-      //                       {VideoColumns.map((column) => (
-      //                         <td
-      //                           key={column.field}
-      //                           className="py-3 px-6 text-left"
-      //                         >
-      //                           {column.renderCell
-      //                             ? column.renderCell({ row: video })
-      //                             : video[column.field]}
-      //                         </td>
-      //                       ))}
-      //                     </tr>
-      //                   ))
-      //                 ) : (
-      //                   <tr>
-      //                     <td
-      //                       colSpan={VideoColumns.length}
-      //                       className="text-center py-4"
-      //                     >
-      //                       No Projects found.
-      //                     </td>
-      //                   </tr>
-      //                 )}
-      //               </tbody>
-      //             </table>
-      //           </div>
-      //         </div>
-
-             
-      //       </div>
-      //     </div>
-      //   );
-      
-      
-      case "New Videos":
+      case "videos":
         return (
           <div>
-           <div className="overflow-x-auto">
+            <div className="overflow-x-auto">
               <div>
-                <h4 className="text-black text-4xl pb-3">New Videos</h4>
+                <h4 className="text-black text-4xl pb-3">Videos</h4>
                 <div className="pb-2 flex justify-end">
-                  <Link to="/admin/add-video/create">
+                  <Link to="/admin/video/create">
                     <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
                       <AddIcon className="mr-2" />
                       Add Project
@@ -1130,6 +1038,42 @@ const AdminDashboard = () => {
                         ))}
                       </tr>
                     </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                      {videos && videos.length > 0 ? ( // Check if 'videos' is defined and has length
+                        videos.map((video) => (
+                          <tr
+                            key={video._id}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                          >
+                            {VideoColumns && VideoColumns.length > 0 ? (
+                              VideoColumns.map((column) => (
+                                <td
+                                  key={column.field}
+                                  className="py-3 px-6 text-left"
+                                >
+                                  {column.renderCell
+                                    ? column.renderCell({ row: video })
+                                    : video[column.field]}
+                                </td>
+                              ))
+                            ) : (
+                              <td className="text-center py-4" colSpan={2}>
+                                No columns available
+                              </td>
+                            )}
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td
+                            colSpan={VideoColumns?.length || 1} // Ensure we don't pass undefined
+                            className="text-center py-4"
+                          >
+                            No Projects found.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
 
                     {/* <tbody className="text-gray-600 text-sm font-light">
                       {videos.length > 0 ? (
@@ -1161,44 +1105,103 @@ const AdminDashboard = () => {
                         </tr>
                       )}
                     </tbody> */}
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "New Videos":
+        return (
+          <div>
+            <div className="overflow-x-auto">
+              <div>
+                <h4 className="text-black text-4xl pb-3">New Videos</h4>
+                <div className="pb-2 flex justify-end">
+                  <Link to="/admin/add-video/create">
+                    <button className="bg-green-500 text-white py-2 px-4 rounded flex items-center">
+                      <AddIcon className="mr-2" />
+                      Add Project
+                    </button>
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        {NewVideoColumns.map((column) => (
+                          <th
+                            key={column.field}
+                            className="py-3 px-6 text-left"
+                          >
+                            {column.headerName}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+
                     <tbody className="text-gray-600 text-sm font-light">
-  {videos?.length > 0 ? (
-    videos.map((video) => (
-      <tr
-        key={video._id}
-        className="border-b border-gray-200 hover:bg-gray-100"
-      >
-        {VideoColumns.map((column) => (
+                      {newVideos?.length > 0 ? (
+                        newVideos.map((video) => (
+                          <tr
+                            key={video._id}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                          >
+                            {NewVideoColumns.map((column) => (
+                              <td
+                                key={column.field}
+                                className="py-3 px-6 text-left"
+                              >
+                                {column.renderCell
+                                  ? column.renderCell({ row: video })
+                                  : video[column.field] || "N/A"}{" "}
+                              </td>
+                            ))}
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td
+                            colSpan={NewVideoColumns.length}
+                            className="text-center py-4"
+                          >
+                            No Projects found.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+{/* 
+<tbody className="text-gray-600 text-sm font-light">
+  {newVideos.length > 0 ? (
+    newVideos.map((video) => (
+      <tr key={video._id} className="border-b border-gray-200 hover:bg-gray-100">
+        {NewVideoColumns.map((column) => (
           <td key={column.field} className="py-3 px-6 text-left">
-            {column.renderCell
-              ? column.renderCell({ row: video })
-              : video[column.field]}
+            {column.renderCell ? column.renderCell({ row: video }) : video[column.field]}
           </td>
         ))}
       </tr>
     ))
   ) : (
     <tr>
-      <td colSpan={VideoColumns.length} className="text-center py-4">
-        No Projects found.
+      <td colSpan={NewVideoColumns.length} className="text-center py-4">
+        No videos found.
       </td>
     </tr>
   )}
-</tbody>
+</tbody> */}
+
 
 
                   </table>
                 </div>
               </div>
-
-             
             </div>
           </div>
         );
-      
-      
-      
-        case "rnd":
+
+      case "rnd":
         return (
           <div>
             <h4 className="text-black text-4xl pb-3">
